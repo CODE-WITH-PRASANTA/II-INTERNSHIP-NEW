@@ -77,9 +77,9 @@
 .InternshipBreadcrumb-dot--one {
   position: absolute;
   top: -14px;
-  left: 20px;
-  width: 9px;
-  height: 9px;
+  left: 36px;
+  width: 11px;
+  height: 11px;
   border-radius: 50%;
   background-color: var(--InternshipBreadcrumb-yellow);
   box-shadow: 0 0 10px rgba(254, 209, 48, 0.7);
@@ -90,10 +90,10 @@
 /* Floating Dot 2 */
 .InternshipBreadcrumb-dot--two {
   position: absolute;
-  top: 6px;
-  left: 36px;
-  width: 6px;
-  height: 6px;
+  top: 10px;
+  left: 92px;
+  width: 8px;
+  height: 8px;
   border-radius: 50%;
   background-color: var(--InternshipBreadcrumb-yellow);
   box-shadow: 0 0 8px rgba(254, 209, 48, 0.6);
@@ -103,12 +103,12 @@
 
 @keyframes InternshipBreadcrumb-float-down {
   0% { transform: translateY(0px) scale(1); }
-  100% { transform: translateY(14px) scale(1.15); }
+  100% { transform: translateY(18px) scale(1.15); }
 }
 
 @keyframes InternshipBreadcrumb-float-up {
   0% { transform: translateY(0px) scale(1.1); }
-  100% { transform: translateY(-12px) scale(0.9); }
+  100% { transform: translateY(-16px) scale(0.9); }
 }
 
 /* Tag Pill */
@@ -135,7 +135,7 @@
   letter-spacing: 0.2px;
 }
 
-/* Main Heading */
+/* Main Heading with Running Shimmer Animation */
 .InternshipBreadcrumb-title {
   margin: 0 0 18px 0;
   font-size: 64px;
@@ -147,27 +147,24 @@
 }
 
 .InternshipBreadcrumb-title-line {
-  color: var(--InternshipBreadcrumb-white);
-}
-
-.InternshipBreadcrumb-title-highlight {
-  color: var(--InternshipBreadcrumb-yellow);
+  display: inline-block;
   background: linear-gradient(
     90deg, 
-    #dacb4c 0%, 
-    #fed130 35%, 
-    #ffffff 70%, 
-    #fed130 100%
+    #c9b570 0%, 
+    #ffffff 25%, 
+    #dacb4c 50%, 
+    #fed130 75%, 
+    #ffffff 100%
   );
-  background-size: 200% auto;
+  background-size: 250% auto;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
-  animation: InternshipBreadcrumb-shimmer 8s linear infinite;
+  animation: InternshipBreadcrumb-shimmer 9s linear infinite;
 }
 
 @keyframes InternshipBreadcrumb-shimmer {
   0% { background-position: 0% center; }
-  100% { background-position: 200% center; }
+  100% { background-position: 250% center; }
 }
 
 /* Breadcrumb Navigation Trail */
@@ -237,7 +234,7 @@
   border: 1px solid rgba(255, 255, 255, 0.1);
   box-shadow: 0 24px 48px -12px rgba(0, 0, 0, 0.45);
   display: flex;
-  align-items: flex-end;
+  align-items: center;
   justify-content: center;
   overflow: hidden;
 }
@@ -247,11 +244,11 @@
   position: absolute;
   width: 250px;
   height: 250px;
-  top: 15px;
-  right: 55px;
+  top: 30px;
+  right: 95px;
   background-color: var(--InternshipBreadcrumb-yellow);
   border-radius: 36px;
-  transform: rotate(18deg);
+  transform: rotate(20deg);
   z-index: 1;
 }
 
@@ -259,9 +256,8 @@
 .InternshipBreadcrumb-img {
   position: relative;
   z-index: 2;
-  width: 100%;
-  height: auto;
-  max-height: 360px;
+  width: 632px;
+  height: 376px;
   object-fit: contain;
   display: block;
 }
