@@ -1,12 +1,12 @@
 @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800;900&display=swap');
 
 :root {
-  --ImmersionBreadcrumb-bg-green: #01432c;
-  --ImmersionBreadcrumb-yellow: #fed130;
-  --ImmersionBreadcrumb-yellow-light: #fff280;
-  --ImmersionBreadcrumb-white: #ffffff;
-  --ImmersionBreadcrumb-text-muted: rgba(255, 255, 255, 0.85);
-  --ImmersionBreadcrumb-card-green: #013f2a;
+  --InternshipBreadcrumb-bg-green: #01432c;
+  --InternshipBreadcrumb-yellow: #fed130;
+  --InternshipBreadcrumb-yellow-light: #fff280;
+  --InternshipBreadcrumb-white: #ffffff;
+  --InternshipBreadcrumb-text-muted: rgba(255, 255, 255, 0.85);
+  --InternshipBreadcrumb-card-green: #013f2a;
 }
 
 * {
@@ -14,7 +14,7 @@
 }
 
 /* Outer Wrapper */
-.ImmersionBreadcrumb-wrapper {
+.InternshipBreadcrumb-wrapper {
   width: 100%;
   padding: 0;
   margin: 0;
@@ -23,7 +23,7 @@
 }
 
 /* Curved Banner Container */
-.ImmersionBreadcrumb-container {
+.InternshipBreadcrumb-container {
   position: relative;
   width: 100%;
   margin: 0 auto;
@@ -35,7 +35,7 @@
 }
 
 /* Subtle Dot Texture */
-.ImmersionBreadcrumb-grid-bg {
+.InternshipBreadcrumb-grid-bg {
   position: absolute;
   inset: 0;
   width: 100%;
@@ -47,7 +47,7 @@
 }
 
 /* Main Grid Layout */
-.ImmersionBreadcrumb-content-grid {
+.InternshipBreadcrumb-content-grid {
   position: relative;
   z-index: 2;
   max-width: 1360px;
@@ -59,13 +59,13 @@
 }
 
 /* Left Column: Text */
-.ImmersionBreadcrumb-text-col {
+.InternshipBreadcrumb-text-col {
   display: flex;
   flex-direction: column;
 }
 
 /* Tag Wrapper & Floating Dots */
-.ImmersionBreadcrumb-tag-wrapper {
+.InternshipBreadcrumb-tag-wrapper {
   position: relative;
   display: inline-flex;
   align-items: center;
@@ -74,45 +74,45 @@
 }
 
 /* Floating Dot 1 */
-.ImmersionBreadcrumb-dot--one {
+.InternshipBreadcrumb-dot--one {
   position: absolute;
   top: -14px;
   left: 36px;
   width: 11px;
   height: 11px;
   border-radius: 50%;
-  background-color: var(--ImmersionBreadcrumb-yellow);
+  background-color: var(--InternshipBreadcrumb-yellow);
   box-shadow: 0 0 10px rgba(254, 209, 48, 0.7);
-  animation: ImmersionBreadcrumb-float-down 3s ease-in-out infinite alternate;
+  animation: InternshipBreadcrumb-float-down 3s ease-in-out infinite alternate;
   z-index: 3;
 }
 
 /* Floating Dot 2 */
-.ImmersionBreadcrumb-dot--two {
+.InternshipBreadcrumb-dot--two {
   position: absolute;
   top: 10px;
   left: 92px;
   width: 8px;
   height: 8px;
   border-radius: 50%;
-  background-color: var(--ImmersionBreadcrumb-yellow);
+  background-color: var(--InternshipBreadcrumb-yellow);
   box-shadow: 0 0 8px rgba(254, 209, 48, 0.6);
-  animation: ImmersionBreadcrumb-float-up 2.6s ease-in-out infinite alternate;
+  animation: InternshipBreadcrumb-float-up 2.6s ease-in-out infinite alternate;
   z-index: 3;
 }
 
-@keyframes ImmersionBreadcrumb-float-down {
+@keyframes InternshipBreadcrumb-float-down {
   0% { transform: translateY(0px) scale(1); }
   100% { transform: translateY(18px) scale(1.15); }
 }
 
-@keyframes ImmersionBreadcrumb-float-up {
+@keyframes InternshipBreadcrumb-float-up {
   0% { transform: translateY(0px) scale(1.1); }
   100% { transform: translateY(-16px) scale(0.9); }
 }
 
 /* Tag Pill */
-.ImmersionBreadcrumb-tag {
+.InternshipBreadcrumb-tag {
   display: inline-flex;
   align-items: center;
   gap: 8px;
@@ -124,11 +124,11 @@
   border-radius: 9999px;
 }
 
-.ImmersionBreadcrumb-tag-icon {
+.InternshipBreadcrumb-tag-icon {
   font-size: 14px;
 }
 
-.ImmersionBreadcrumb-tag-text {
+.InternshipBreadcrumb-tag-text {
   font-size: 13.5px;
   font-weight: 600;
   color: #e5f4ee;
@@ -136,7 +136,7 @@
 }
 
 /* Main Heading with Running Shimmer Animation */
-.ImmersionBreadcrumb-title {
+.InternshipBreadcrumb-title {
   margin: 0 0 18px 0;
   font-size: 64px;
   font-weight: 900;
@@ -146,7 +146,7 @@
   flex-direction: column;
 }
 
-.ImmersionBreadcrumb-title-line {
+.InternshipBreadcrumb-title-line {
   display: inline-block;
   background: linear-gradient(
     90deg, 
@@ -159,16 +159,16 @@
   background-size: 250% auto;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
-  animation: ImmersionBreadcrumb-shimmer 9s linear infinite;
+  animation: InternshipBreadcrumb-shimmer 9s linear infinite;
 }
 
-@keyframes ImmersionBreadcrumb-shimmer {
+@keyframes InternshipBreadcrumb-shimmer {
   0% { background-position: 0% center; }
   100% { background-position: 250% center; }
 }
 
 /* Breadcrumb Navigation Trail */
-.ImmersionBreadcrumb-nav {
+.InternshipBreadcrumb-nav {
   display: inline-flex;
   align-items: center;
   gap: 8px;
@@ -177,60 +177,60 @@
   font-weight: 600;
 }
 
-.ImmersionBreadcrumb-nav-item {
+.InternshipBreadcrumb-nav-item {
   display: inline-flex;
   align-items: center;
   gap: 5px;
 }
 
-.ImmersionBreadcrumb-home-icon {
+.InternshipBreadcrumb-home-icon {
   font-size: 14px;
 }
 
-.ImmersionBreadcrumb-link {
+.InternshipBreadcrumb-link {
   color: rgba(255, 255, 255, 0.85);
   text-decoration: none;
   transition: color 0.2s ease;
 }
 
-.ImmersionBreadcrumb-link:hover {
-  color: var(--ImmersionBreadcrumb-yellow);
+.InternshipBreadcrumb-link:hover {
+  color: var(--InternshipBreadcrumb-yellow);
   text-decoration: underline;
 }
 
-.ImmersionBreadcrumb-separator {
+.InternshipBreadcrumb-separator {
   color: rgba(255, 255, 255, 0.4);
   font-weight: 400;
 }
 
-.ImmersionBreadcrumb-active {
-  color: var(--ImmersionBreadcrumb-yellow);
+.InternshipBreadcrumb-active {
+  color: var(--InternshipBreadcrumb-yellow);
 }
 
 /* Description Text */
-.ImmersionBreadcrumb-description {
+.InternshipBreadcrumb-description {
   margin: 0;
   font-size: 15px;
   line-height: 1.65;
-  color: var(--ImmersionBreadcrumb-text-muted);
+  color: var(--InternshipBreadcrumb-text-muted);
   max-width: 520px;
 }
 
 /* Right Column: Custom Rounded Frame Container */
-.ImmersionBreadcrumb-media-col {
+.InternshipBreadcrumb-media-col {
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
-.ImmersionBreadcrumb-frame {
+.InternshipBreadcrumb-frame {
   position: relative;
   width: 100%;
   margin-top: 30px;
   max-width: 500px;
   min-height: 380px;
   border-radius: 36px;
-  background-color: var(--ImmersionBreadcrumb-card-green);
+  background-color: var(--InternshipBreadcrumb-card-green);
   border: 1px solid rgba(255, 255, 255, 0.1);
   box-shadow: 0 24px 48px -12px rgba(0, 0, 0, 0.45);
   display: flex;
@@ -240,35 +240,30 @@
 }
 
 /* Rotated Yellow Badge inside Frame */
-.ImmersionBreadcrumb-yellow-badge {
+.InternshipBreadcrumb-yellow-badge {
   position: absolute;
   width: 250px;
   height: 250px;
   top: 30px;
   right: 95px;
-  background-color: var(--ImmersionBreadcrumb-yellow);
+  background-color: var(--InternshipBreadcrumb-yellow);
   border-radius: 36px;
   transform: rotate(20deg);
   z-index: 1;
 }
 
 /* Foreground Student Cutout Image */
-.ImmersionBreadcrumb-img {
+.InternshipBreadcrumb-img {
   position: relative;
   z-index: 2;
-<<<<<<< HEAD
-  width: 100%;
-  max-width: 632px;
-=======
   width: 632px;
->>>>>>> 7d428f83b455176cfb2b652c06112dcd56b38ae7
   height: 376px;
   object-fit: contain;
   display: block;
 }
 
 /* Organic Bottom Wave Shape */
-.ImmersionBreadcrumb-wave-curve {
+.InternshipBreadcrumb-wave-curve {
   position: absolute;
   bottom: -1px;
   left: 0;
@@ -278,98 +273,94 @@
   z-index: 3;
 }
 
-.ImmersionBreadcrumb-wave-curve svg {
+.InternshipBreadcrumb-wave-curve svg {
   position: relative;
   display: block;
   width: 100%;
   height: 60px;
 }
 
-<<<<<<< HEAD
-/* Responsive Breakpoints */
-=======
 /* ==========================================================================
    Responsive Adaptations
    ========================================================================== */
->>>>>>> 7d428f83b455176cfb2b652c06112dcd56b38ae7
 @media (max-width: 1200px) {
-  .ImmersionBreadcrumb-container {
+  .InternshipBreadcrumb-container {
     padding: 60px 48px 120px 48px;
   }
-  .ImmersionBreadcrumb-title {
+  .InternshipBreadcrumb-title {
     font-size: 52px;
   }
-  .ImmersionBreadcrumb-frame {
+  .InternshipBreadcrumb-frame {
     max-width: 440px;
     min-height: 340px;
   }
-  .ImmersionBreadcrumb-yellow-badge {
+  .InternshipBreadcrumb-yellow-badge {
     width: 210px;
     height: 210px;
   }
 }
 
 @media (max-width: 1024px) {
-  .ImmersionBreadcrumb-content-grid {
+  .InternshipBreadcrumb-content-grid {
     grid-template-columns: 1fr;
     gap: 40px;
   }
 
-  .ImmersionBreadcrumb-title {
+  .InternshipBreadcrumb-title {
     font-size: 48px;
   }
 
-  .ImmersionBreadcrumb-media-col {
+  .InternshipBreadcrumb-media-col {
     justify-content: flex-start;
   }
 
-  .ImmersionBreadcrumb-frame {
+  .InternshipBreadcrumb-frame {
     max-width: 460px;
   }
 }
 
 @media (max-width: 768px) {
-  .ImmersionBreadcrumb-container {
+  .InternshipBreadcrumb-container {
     padding: 50px 24px 90px 24px;
   }
 
-  .ImmersionBreadcrumb-title {
+  .InternshipBreadcrumb-title {
     font-size: 38px;
     letter-spacing: -0.8px;
   }
 
-  .ImmersionBreadcrumb-nav {
+  .InternshipBreadcrumb-nav {
     font-size: 12.5px;
     flex-wrap: wrap;
   }
 
-  .ImmersionBreadcrumb-description {
+  .InternshipBreadcrumb-description {
     font-size: 14px;
   }
 
-  .ImmersionBreadcrumb-frame {
+  .InternshipBreadcrumb-frame {
     max-width: 100%;
     min-height: 300px;
     border-radius: 28px;
   }
 
-  .ImmersionBreadcrumb-yellow-badge {
+  .InternshipBreadcrumb-yellow-badge {
     width: 180px;
     height: 180px;
     right: 20px;
   }
 
-  .ImmersionBreadcrumb-wave-curve svg {
+  .InternshipBreadcrumb-wave-curve svg {
     height: 40px;
   }
 }
 
 @media (max-width: 480px) {
-  .ImmersionBreadcrumb-title {
+  .InternshipBreadcrumb-title {
     font-size: 32px;
   }
 
-  .ImmersionBreadcrumb-yellow-badge {
+  .InternshipBreadcrumb-yellow-badge {
     width: 140px;
     height: 140px;
     right: 15px;

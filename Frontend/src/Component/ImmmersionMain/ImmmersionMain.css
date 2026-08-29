@@ -1,0 +1,431 @@
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap');
+
+/* --- Container & Canvas --- */
+.ImmmersionMain-container {
+  position: relative;
+  width: 100%;
+  min-height: 100vh;
+  background-color: #ffffff;
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  color: #334155;
+  padding: 60px 24px;
+  overflow: hidden;
+  box-sizing: border-box;
+}
+
+/* --- Decorative Background Elements --- */
+.ImmmersionMain-bg-circle-top {
+  position: absolute;
+  top: -120px;
+  right: -100px;
+  width: 350px;
+  height: 350px;
+  border-radius: 50%;
+  border: 1.5px solid rgba(45, 106, 79, 0.12);
+  pointer-events: none;
+}
+
+.ImmmersionMain-bg-dots {
+  position: absolute;
+  width: 100px;
+  height: 80px;
+  background-image: radial-gradient(#2d6a4f 1.5px, transparent 1.5px);
+  background-size: 12px 12px;
+  opacity: 0.25;
+  pointer-events: none;
+}
+
+.ImmmersionMain-bg-dots-left {
+  top: 180px;
+  left: 30px;
+}
+
+.ImmmersionMain-bg-dots-right {
+  bottom: 280px;
+  right: 40px;
+}
+
+.ImmmersionMain-bg-wave {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 350px;
+  height: 250px;
+  background: radial-gradient(circle at bottom left, #74c69d 0%, #2d6a4f 70%, transparent 70%);
+  opacity: 0.15;
+  filter: blur(40px);
+  border-radius: 0 100% 0 0;
+  pointer-events: none;
+}
+
+/* --- Content Wrapper --- */
+.ImmmersionMain-wrapper {
+  max-width: 1240px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 36px;
+}
+
+/* --- Section Header --- */
+.ImmmersionMain-header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 12px;
+}
+
+.ImmmersionMain-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.82rem;
+  font-weight: 700;
+  color: #2d6a4f;
+  letter-spacing: 0.08em;
+  background: #eef7f2;
+  padding: 6px 14px;
+  border-radius: 50px;
+  margin-bottom: 2px;
+}
+
+.ImmmersionMain-heading {
+  font-size: 2.3rem;
+  font-weight: 800;
+  color: #1b4332;
+  margin: 0;
+  letter-spacing: -0.02em;
+}
+
+.ImmmersionMain-header-desc {
+  max-width: 860px;
+  font-size: 0.96rem;
+  line-height: 1.7;
+  color: #55655e;
+  margin-top: 4px;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  text-align: left;
+}
+
+.ImmmersionMain-header-desc p {
+  margin: 0;
+}
+
+/* --- Two-Column Cards Grid --- */
+.ImmmersionMain-grid-two {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 32px;
+}
+
+/* --- Reusable Card Styles --- */
+.ImmmersionMain-card {
+  background: #ffffff;
+  border-radius: 24px;
+  padding: 36px 32px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.03);
+  border: 1px solid rgba(226, 232, 240, 0.85);
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  transition: transform 0.35s ease, box-shadow 0.35s ease;
+}
+
+.ImmmersionMain-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 20px 35px -5px rgba(45, 106, 79, 0.09);
+}
+
+.ImmmersionMain-card-header {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.ImmmersionMain-card-icon {
+  width: 52px;
+  height: 52px;
+  border-radius: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.04);
+}
+
+.ImmmersionMain-card-icon-tech {
+  background: #e3f2fd;
+  color: #1976d2;
+}
+
+.ImmmersionMain-card-icon-social {
+  background: #e8f5e9;
+  color: #2e7d32;
+}
+
+.ImmmersionMain-card-icon-summary {
+  background: #fff8e1;
+  color: #d97706;
+}
+
+.ImmmersionMain-card-title {
+  font-size: 1.35rem;
+  font-weight: 800;
+  color: #1b4332;
+  margin: 0;
+}
+
+.ImmmersionMain-card-body {
+  font-size: 0.94rem;
+  line-height: 1.65;
+  color: #55655e;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.ImmmersionMain-card-body p {
+  margin: 0;
+}
+
+.ImmmersionMain-badge-note {
+  font-weight: 600;
+  color: #2d6a4f;
+  background: #f4f9f6;
+  padding: 12px 16px;
+  border-left: 3.5px solid #2d6a4f;
+  border-radius: 0 8px 8px 0;
+  font-size: 0.92rem;
+  line-height: 1.55;
+}
+
+/* --- Banner / Opportunity Card --- */
+.ImmmersionMain-opportunity-card {
+  background: linear-gradient(135deg, #ffffff 0%, #f4f9f6 100%);
+  border-radius: 20px;
+  padding: 28px 32px;
+  border: 1px solid rgba(45, 106, 79, 0.15);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.03);
+  transition: transform 0.35s ease, box-shadow 0.35s ease;
+}
+
+.ImmmersionMain-opportunity-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 18px 30px -5px rgba(45, 106, 79, 0.1);
+}
+
+.ImmmersionMain-opportunity-content {
+  font-size: 0.96rem;
+  line-height: 1.7;
+  color: #2d6a4f;
+}
+
+.ImmmersionMain-opportunity-content p {
+  margin: 0;
+}
+
+/* --- Differences Section --- */
+.ImmmersionMain-diff-section {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  margin-top: 10px;
+}
+
+.ImmmersionMain-diff-header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 8px;
+}
+
+.ImmmersionMain-diff-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+}
+
+.ImmmersionMain-diff-item {
+  background: #ffffff;
+  border-radius: 20px;
+  padding: 24px 28px;
+  border: 1px solid rgba(226, 232, 240, 0.85);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.02);
+  display: flex;
+  gap: 18px;
+  align-items: flex-start;
+  transition: transform 0.35s ease, box-shadow 0.35s ease;
+}
+
+.ImmmersionMain-diff-item:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 15px 30px -5px rgba(45, 106, 79, 0.08);
+}
+
+.ImmmersionMain-diff-num {
+  width: 40px;
+  height: 40px;
+  border-radius: 12px;
+  background: #eef7f2;
+  color: #2d6a4f;
+  font-weight: 800;
+  font-size: 1.15rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.ImmmersionMain-diff-content {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  flex: 1;
+}
+
+.ImmmersionMain-diff-title {
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: #1b4332;
+  margin: 0;
+}
+
+.ImmmersionMain-list {
+  margin: 0;
+  padding-left: 18px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.ImmmersionMain-list li {
+  font-size: 0.92rem;
+  line-height: 1.55;
+  color: #55655e;
+}
+
+/* --- Summary / In Short Card --- */
+.ImmmersionMain-summary-card {
+  background: #ffffff;
+  border-radius: 24px;
+  padding: 36px 32px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.03);
+  border: 1px solid rgba(226, 232, 240, 0.85);
+  display: flex;
+  flex-direction: column;
+  gap: 22px;
+  transition: transform 0.35s ease, box-shadow 0.35s ease;
+}
+
+.ImmmersionMain-summary-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 18px 35px -5px rgba(45, 106, 79, 0.09);
+}
+
+.ImmmersionMain-summary-header {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.ImmmersionMain-summary-title {
+  font-size: 1.4rem;
+  font-weight: 800;
+  color: #1b4332;
+  margin: 0;
+}
+
+.ImmmersionMain-summary-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+}
+
+.ImmmersionMain-summary-pill {
+  background: #fbfbf7;
+  border: 1.5px dashed #2d6a4f;
+  border-radius: 16px;
+  padding: 16px 20px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.ImmmersionMain-pill-tag {
+  background: #2d6a4f;
+  color: #ffffff;
+  padding: 4px 12px;
+  border-radius: 8px;
+  font-weight: 700;
+  font-size: 0.9rem;
+}
+
+.ImmmersionMain-pill-tag-intern {
+  background: #1b4332;
+}
+
+.ImmmersionMain-pill-eq {
+  font-weight: 800;
+  color: #2d6a4f;
+  font-size: 1.1rem;
+}
+
+.ImmmersionMain-pill-text {
+  font-weight: 600;
+  color: #1b4332;
+  font-size: 0.95rem;
+}
+
+/* --- Responsive Media Queries --- */
+
+/* Tablets / Small Desktops */
+@media (max-width: 1024px) {
+  .ImmmersionMain-grid-two,
+  .ImmmersionMain-diff-grid,
+  .ImmmersionMain-summary-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+}
+
+/* Mobile Devices */
+@media (max-width: 768px) {
+  .ImmmersionMain-container {
+    padding: 40px 16px;
+  }
+
+  .ImmmersionMain-wrapper {
+    gap: 28px;
+  }
+
+  .ImmmersionMain-heading {
+    font-size: 1.8rem;
+  }
+
+  .ImmmersionMain-header-desc {
+    font-size: 0.92rem;
+  }
+
+  .ImmmersionMain-card,
+  .ImmmersionMain-diff-item,
+  .ImmmersionMain-opportunity-card,
+  .ImmmersionMain-summary-card {
+    padding: 24px 18px;
+  }
+
+  .ImmmersionMain-card-title,
+  .ImmmersionMain-summary-title {
+    font-size: 1.2rem;
+  }
+
+  .ImmmersionMain-diff-item {
+    gap: 14px;
+  }
+}
