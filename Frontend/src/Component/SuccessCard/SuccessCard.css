@@ -1,0 +1,196 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap');
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* Outer Wrapper for Page Spacing */
+.success-card-wrapper {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 40px 20px;
+  background-color: #f7faf8;
+}
+
+/* Main Card Container */
+.success-card-container {
+  position: relative;
+  width: 100%;
+  /* max-width: 1100px; */
+  background: radial-gradient(120% 120% at 90% 90%, #15803d 0%, #064e3b 50%, #022c22 100%);
+  border-radius: 36px;
+  padding: 56px 40px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  box-shadow: 0 25px 50px -12px rgba(6, 78, 59, 0.35);
+  overflow: hidden;
+}
+
+/* Optional Subtle Grid Background Overlay */
+.success-card-container::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: radial-gradient(rgba(255, 255, 255, 0.08) 1px, transparent 1px);
+  background-size: 16px 16px;
+  pointer-events: none;
+}
+
+/* Pill Badge Top */
+.success-card-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background-color: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  padding: 6px 16px;
+  border-radius: 30px;
+  margin-bottom: 24px;
+  z-index: 1;
+}
+
+.success-card-badge-icon {
+  color: #f59e0b;
+  font-size: 12px;
+}
+
+.success-card-badge span {
+  color: #ffffff;
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 1px;
+}
+
+/* Heading Styling */
+.success-card-title {
+  color: #ffffff;
+  font-family: 'Playfair Display', Georgia, serif;
+  font-size: 44px;
+  font-weight: 700;
+  line-height: 1.25;
+  margin-bottom: 16px;
+  max-width: 850px;
+  z-index: 1;
+}
+
+/* Subtitle Description */
+.success-card-description {
+  color: rgba(255, 255, 255, 0.85);
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-size: 15px;
+  font-weight: 400;
+  line-height: 1.6;
+  max-width: 640px;
+  margin-bottom: 36px;
+  z-index: 1;
+}
+
+/* Action Buttons Wrapper */
+.success-card-actions {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  z-index: 1;
+}
+
+/* Primary Yellow Button */
+.success-card-btn-primary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  background-color: #eab308;
+  color: #022c22;
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-size: 14px;
+  font-weight: 700;
+  padding: 14px 28px;
+  border-radius: 30px;
+  border: none;
+  cursor: pointer;
+  transition: all 0.25s ease;
+  box-shadow: 0 4px 14px rgba(234, 179, 8, 0.3);
+}
+
+.success-card-btn-primary:hover {
+  background-color: #facc15;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(234, 179, 8, 0.4);
+}
+
+.success-card-btn-icon {
+  font-size: 16px;
+  transition: transform 0.2s ease;
+}
+
+.success-card-btn-primary:hover .success-card-btn-icon {
+  transform: translateX(3px);
+}
+
+/* Secondary Outlined Button */
+.success-card-btn-secondary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background-color: rgba(255, 255, 255, 0.06);
+  color: #ffffff;
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-size: 14px;
+  font-weight: 600;
+  padding: 14px 28px;
+  border-radius: 30px;
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  cursor: pointer;
+  transition: all 0.25s ease;
+}
+
+.success-card-btn-secondary:hover {
+  background-color: rgba(255, 255, 255, 0.15);
+  border-color: rgba(255, 255, 255, 0.4);
+  transform: translateY(-2px);
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+  .success-card-container {
+    padding: 40px 24px;
+    border-radius: 24px;
+  }
+
+  .success-card-title {
+    font-size: 32px;
+  }
+
+  .success-card-description {
+    font-size: 14px;
+    margin-bottom: 28px;
+  }
+
+  .success-card-actions {
+    flex-direction: column;
+    width: 100%;
+    max-width: 300px;
+  }
+
+  .success-card-btn-primary,
+  .success-card-btn-secondary {
+    width: 100%;
+  }
+}
+
+@media (max-width: 480px) {
+  .success-card-title {
+    font-size: 26px;
+  }
+}
