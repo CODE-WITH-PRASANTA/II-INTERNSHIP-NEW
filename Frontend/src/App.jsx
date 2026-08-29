@@ -17,6 +17,10 @@ import RunningInternships from "./Pages/RunningInternships/RunningInternships";
 import OnCampusInternships from "./Pages/OnCampusInternships/OnCampusInternships";
 import VirtualInternship from "./Pages/VirtualInternship/VirtualInternship";
 import Donate from "./Pages/Donate/Donate";
+import EducationalInstitutes from "./Pages/EducationalInstitutes/EducationalInstitutes";
+import PlacementCompanies from "./Pages/PlacementCompanies/PlacementCompanies";
+import TrainingSupport from "./Pages/TrainingSupport/TrainingSupport";
+
 
 
 
@@ -42,6 +46,9 @@ const App = () => {
         <Route path="/internships/on-campus" element={<OnCampusInternships/>}/>
         <Route path="/internships/virtual" element={<VirtualInternship/>}/>
         <Route path="/donate" element={<Donate/>}/>
+       <Route path="/partners/educational" element={<EducationalInstitutes/>}/>
+       <Route path="/partners/placement" element={<PlacementCompanies/>}/>
+       <Route path="/partners/training" element={<TrainingSupport/>}/>
       </Routes>
       <Footer />
     </BrowserRouter>
