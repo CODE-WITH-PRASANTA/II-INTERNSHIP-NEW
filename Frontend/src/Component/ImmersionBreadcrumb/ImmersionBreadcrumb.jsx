@@ -1,7 +1,6 @@
 import React from 'react';
 import './ImmersionBreadcrumb.css';
 
-import breadcrumbImage from '../../assets/F-img.webp';
 // Custom local image asset
 import breadcrumbImage from '../../assets/AboutUs-breadcrumb.webp';
 
@@ -20,7 +19,6 @@ const ImmersionBreadcrumb = () => {
             
             {/* Tag Pill with Animated Floating Yellow Dots */}
             <div className="ImmersionBreadcrumb-tag-wrapper">
-              <span className="ImmersionBreadcrumb-dot ImmersionBreadcrumb-dot--one" />
               {/* Dot 1: Floats Up-to-Down */}
               <span className="ImmersionBreadcrumb-dot ImmersionBreadcrumb-dot--one" />
               {/* Dot 2: Floats Down-to-Up (Reverse) */}
@@ -28,14 +26,6 @@ const ImmersionBreadcrumb = () => {
 
               <div className="ImmersionBreadcrumb-tag">
                 <span className="ImmersionBreadcrumb-tag-icon">✨</span>
-                <span className="ImmersionBreadcrumb-tag-text">Experience & Learning</span>
-              </div>
-            </div>
-
-            {/* Main Title with Flowing Gradient Shimmer Animation */}
-            <h1 className="ImmersionBreadcrumb-title">
-              <span className="ImmersionBreadcrumb-title-line">Immersion</span>
-              <span className="ImmersionBreadcrumb-title-line">Program</span>
                 <span className="ImmersionBreadcrumb-tag-text">Experiential Learning</span>
               </div>
             </div>
@@ -54,7 +44,6 @@ const ImmersionBreadcrumb = () => {
               </span>
               <span className="ImmersionBreadcrumb-separator">/</span>
               <span className="ImmersionBreadcrumb-nav-item">
-                <a href="/programs" className="ImmersionBreadcrumb-link">Programs</a>
                 <a href="/about" className="ImmersionBreadcrumb-link">About Us</a>
               </span>
               <span className="ImmersionBreadcrumb-separator">/</span>
@@ -63,14 +52,6 @@ const ImmersionBreadcrumb = () => {
 
             {/* Description Text */}
             <p className="ImmersionBreadcrumb-description">
-              Dive deep into intensive, hands-on learning experiences designed to bridge foundational theory with practical industry expertise and real-world mastery.
-            </p>
-          </div>
-
-          {/* Right Column: Rounded Frame, Yellow Badge & Foreground Image */}
-          <div className="ImmersionBreadcrumb-media-col">
-            <div className="ImmersionBreadcrumb-frame">
-              {/* Rotated yellow accent badge */}
               Experience real-world training with our purposeful, structured, and skill-based immersion programs.
             </p>
           </div>
@@ -84,7 +65,6 @@ const ImmersionBreadcrumb = () => {
               {/* Foreground Image */}
               <img 
                 src={breadcrumbImage} 
-                alt="Immersion Program Experience" 
                 alt="Students collaborating with laptop" 
                 className="ImmersionBreadcrumb-img"
               />

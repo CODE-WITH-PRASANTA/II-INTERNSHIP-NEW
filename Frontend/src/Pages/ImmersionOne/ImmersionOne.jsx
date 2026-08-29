@@ -1,11 +1,11 @@
 import React from 'react'
-import ImmersionBreadcrumb from '../../Component/ImmersionBreadcrumb/ImmersionBreadcrumb';
+import ImmersionOneBreadcrumb from '../../Component/ImmersionOneBreadcrumb/ImmersionOneBreadcrumb';
 import AvailableImmersion from '../../Component/AvailableImmersion/AvailableImmersion';
 
 const ImmersionOne = () => {
   return (
     <div>
-      <ImmersionBreadcrumb />
+      <ImmersionOneBreadcrumb />
       <AvailableImmersion />
     </div>
   );

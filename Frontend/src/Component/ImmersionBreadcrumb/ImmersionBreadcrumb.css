@@ -256,12 +256,7 @@
 .ImmersionBreadcrumb-img {
   position: relative;
   z-index: 2;
-<<<<<<< HEAD
-  width: 100%;
-  max-width: 632px;
-=======
   width: 632px;
->>>>>>> 7d428f83b455176cfb2b652c06112dcd56b38ae7
   height: 376px;
   object-fit: contain;
   display: block;
@@ -285,13 +280,9 @@
   height: 60px;
 }
 
-<<<<<<< HEAD
-/* Responsive Breakpoints */
-=======
 /* ==========================================================================
    Responsive Adaptations
    ========================================================================== */
->>>>>>> 7d428f83b455176cfb2b652c06112dcd56b38ae7
 @media (max-width: 1200px) {
   .ImmersionBreadcrumb-container {
     padding: 60px 48px 120px 48px;
