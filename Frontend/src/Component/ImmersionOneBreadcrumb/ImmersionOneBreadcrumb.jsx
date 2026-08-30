@@ -32,8 +32,7 @@ const ImmersionOneBreadcrumb = () => {
 
             {/* Main Title */}
             <h1 className="ImmersionOneBreadcrumb-title">
-              <span className="ImmersionOneBreadcrumb-title-line">Industry</span>
-              <span className="ImmersionOneBreadcrumb-title-line">Immersion</span>
+              <span className="ImmersionOneBreadcrumb-title-line">Industry Immersion</span>
               <span className="ImmersionOneBreadcrumb-title-line">Program</span>
             </h1>
 

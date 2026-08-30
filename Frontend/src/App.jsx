@@ -17,6 +17,9 @@ import ImmersionOne from "./Pages/ImmersionOne/ImmersionOne";
 import RunningInternships from "./Pages/RunningInternships/RunningInternships";
 import OnCampusInternship from "./Pages/OnCampusInternship/OnCampusInternship";
 import VirtualInternship from "./Pages/VirtualInternship/VirtualInternship";
+import EducationalInstitute from "./Pages/EducationalInstitute/EducationalInstitute";
+import JobPlacement from "./Pages/JobPlacement/JobPlacement";
+import TechnicalSupport from "./Pages/TechnicalSupport/TechnicalSupport";
 
 
 const App = () => {
@@ -38,6 +41,10 @@ const App = () => {
         <Route path="/internships/running" element={<RunningInternships/>} />
         <Route path="/internships/on-campus" element={<OnCampusInternship/>} />
         <Route path="/internships/virtual" element={<VirtualInternship/>} />
+
+        <Route path="/partners/educational" element={<EducationalInstitute/>} />
+        <Route path="/partners/placement" element={<JobPlacement/>} />
+        <Route path="/partners/training" element={<TechnicalSupport/>} />
 
 
        <Route path="/recruitment" element={<Recuirment/>}/>
