@@ -14,6 +14,9 @@ import Loginpage from "./Component/Loginpage/Loginpage";
 import Protectrouter from "./Component/Protectrouter/Protectrouter";
 import ContactUs from "./Pages/ContactUs/ContactUs";
 import ImmersionOne from "./Pages/ImmersionOne/ImmersionOne";
+import RunningInternships from "./Pages/RunningInternships/RunningInternships";
+import OnCampusInternship from "./Pages/OnCampusInternship/OnCampusInternship";
+import VirtualInternship from "./Pages/VirtualInternship/VirtualInternship";
 
 
 const App = () => {
@@ -31,6 +34,12 @@ const App = () => {
         <Route path="/about/team" element={<TeamMember/>} />
         <Route path="/about/internship" element={<Internship/>} />
         <Route path="/about/immersion" element={<Immersion/>} />
+
+        <Route path="/internships/running" element={<RunningInternships/>} />
+        <Route path="/internships/on-campus" element={<OnCampusInternship/>} />
+        <Route path="/internships/virtual" element={<VirtualInternship/>} />
+
+
        <Route path="/recruitment" element={<Recuirment/>}/>
        <Route path="/login" element={<Loginpage/>}/>
        <Route path="/protectrouter" element={<Protectrouter/>}/>

@@ -1,7 +1,8 @@
 import React from 'react';
 import './ImmersionOneBreadcrumb.css';
 
-import breadcrumbImage from '../../assets/F-img.webp';
+// Custom local image asset
+import breadcrumbImage from '../../assets/AboutUs-breadcrumb.webp';
 
 const ImmersionOneBreadcrumb = () => {
   return (
@@ -16,23 +17,24 @@ const ImmersionOneBreadcrumb = () => {
           {/* Left Column: Text & Breadcrumb Details */}
           <div className="ImmersionOneBreadcrumb-text-col">
             
-            {/* Tag Pill with Animated Floating Dots */}
+            {/* Tag Pill with Animated Floating Yellow Dots */}
             <div className="ImmersionOneBreadcrumb-tag-wrapper">
+              {/* Dot 1: Floats Up-to-Down */}
               <span className="ImmersionOneBreadcrumb-dot ImmersionOneBreadcrumb-dot--one" />
+              {/* Dot 2: Floats Down-to-Up (Reverse) */}
               <span className="ImmersionOneBreadcrumb-dot ImmersionOneBreadcrumb-dot--two" />
 
               <div className="ImmersionOneBreadcrumb-tag">
-                <span className="ImmersionOneBreadcrumb-tag-icon">✨</span>
-                <span className="ImmersionOneBreadcrumb-tag-text">Experiential Learning</span>
+                <span className="ImmersionOneBreadcrumb-tag-icon">🚀</span>
+                <span className="ImmersionOneBreadcrumb-tag-text">ACCELERATE YOUR CAREER</span>
               </div>
             </div>
 
             {/* Main Title */}
             <h1 className="ImmersionOneBreadcrumb-title">
-              <span className="ImmersionOneBreadcrumb-title-line">Immersion &amp;</span>
-              <span className="ImmersionOneBreadcrumb-title-line ImmersionOneBreadcrumb-title-highlight">
-                Internships
-              </span>
+              <span className="ImmersionOneBreadcrumb-title-line">Industry</span>
+              <span className="ImmersionOneBreadcrumb-title-line">Immersion</span>
+              <span className="ImmersionOneBreadcrumb-title-line">Program</span>
             </h1>
 
             {/* Breadcrumb Navigation Trail */}
@@ -43,20 +45,19 @@ const ImmersionOneBreadcrumb = () => {
               </span>
               <span className="ImmersionOneBreadcrumb-separator">/</span>
               <span className="ImmersionOneBreadcrumb-nav-item">
-                <a href="/programs" className="ImmersionOneBreadcrumb-link">Programs</a>
+                <a href="/immersion" className="ImmersionOneBreadcrumb-link">Immersion</a>
               </span>
               <span className="ImmersionOneBreadcrumb-separator">/</span>
-              <span className="ImmersionOneBreadcrumb-active" aria-current="page">Immersion</span>
+              <span className="ImmersionOneBreadcrumb-active">Industry Immersion Program</span>
             </nav>
 
             {/* Description Text */}
             <p className="ImmersionOneBreadcrumb-description">
-              Dive deep into intensive, hands-on learning experiences designed to bridge 
-              foundational theory with practical industry expertise and real-world mastery.
+              Dive deep into real-world tech. Experience a corporate environment, work on live industry projects, and bridge the gap between academic learning and professional mastery.
             </p>
           </div>
 
-          {/* Right Column: Rounded Frame, Accent Badge & Foreground Image */}
+          {/* Right Column: Custom Rounded Frame Container */}
           <div className="ImmersionOneBreadcrumb-media-col">
             <div className="ImmersionOneBreadcrumb-frame">
               {/* Yellow tilted badge inside the frame */}
@@ -65,9 +66,8 @@ const ImmersionOneBreadcrumb = () => {
               {/* Foreground Image */}
               <img 
                 src={breadcrumbImage} 
-                alt="Students collaborating with laptop" 
+                alt="Industry Immersion Program" 
                 className="ImmersionOneBreadcrumb-img"
-                loading="eager"
               />
             </div>
           </div>
