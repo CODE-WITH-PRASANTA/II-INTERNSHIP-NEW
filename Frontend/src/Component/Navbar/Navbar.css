@@ -87,7 +87,7 @@
 }
 
 .Navbar-logo-img {
-  height: 44px;
+  height: 50px;
   width: auto;
   max-width: 180px;
   object-fit: contain;
@@ -96,7 +96,7 @@
 }
 
 .Navbar-container--scrolled .Navbar-logo-img {
-  height: 36px;
+  height: 50px;
 }
 
 /* ==========================================================================
@@ -129,8 +129,8 @@
   align-items: center;
   gap: 4px;
   padding: 7px 10px;
-  font-size: 13.5px;
-  font-weight: 500;
+  font-size: 14.5px;
+  font-weight: 550;
   color: var(--Navbar-text-main);
   text-decoration: none;
   border-radius: 8px;
