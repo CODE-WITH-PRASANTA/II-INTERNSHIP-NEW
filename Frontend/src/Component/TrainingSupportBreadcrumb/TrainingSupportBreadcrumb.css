@@ -1,12 +1,12 @@
-@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800;900&family=Playfair+Display:ital,wght@0,400..700;1,400..700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800;900&display=swap');
 
 :root {
-  --VirtualInternshipBreadcrumb-bg-green: #01432c;
-  --VirtualInternshipBreadcrumb-yellow: #fed130;
-  --VirtualInternshipBreadcrumb-yellow-light: #fff280;
-  --VirtualInternshipBreadcrumb-white: #ffffff;
-  --VirtualInternshipBreadcrumb-text-muted: rgba(255, 255, 255, 0.85);
-  --VirtualInternshipBreadcrumb-card-green: #013f2a;
+  --TrainingSupportBreadcrumb-bg-green: #01432c;
+  --TrainingSupportBreadcrumb-yellow: #fed130;
+  --TrainingSupportBreadcrumb-yellow-light: #fff280;
+  --TrainingSupportBreadcrumb-white: #ffffff;
+  --TrainingSupportBreadcrumb-text-muted: rgba(255, 255, 255, 0.85);
+  --TrainingSupportBreadcrumb-card-green: #013f2a;
 }
 
 * {
@@ -14,7 +14,7 @@
 }
 
 /* Outer Wrapper */
-.VirtualInternshipBreadcrumb-wrapper {
+.TrainingSupportBreadcrumb-wrapper {
   width: 100%;
   padding: 0;
   margin: 0;
@@ -23,7 +23,7 @@
 }
 
 /* Curved Banner Container */
-.VirtualInternshipBreadcrumb-container {
+.TrainingSupportBreadcrumb-container {
   position: relative;
   width: 100%;
   margin: 0 auto;
@@ -35,7 +35,7 @@
 }
 
 /* Subtle Dot Texture */
-.VirtualInternshipBreadcrumb-grid-bg {
+.TrainingSupportBreadcrumb-grid-bg {
   position: absolute;
   inset: 0;
   width: 100%;
@@ -47,7 +47,7 @@
 }
 
 /* Main Grid Layout */
-.VirtualInternshipBreadcrumb-content-grid {
+.TrainingSupportBreadcrumb-content-grid {
   position: relative;
   z-index: 2;
   max-width: 1360px;
@@ -59,13 +59,13 @@
 }
 
 /* Left Column: Text */
-.VirtualInternshipBreadcrumb-text-col {
+.TrainingSupportBreadcrumb-text-col {
   display: flex;
   flex-direction: column;
 }
 
 /* Tag Wrapper & Floating Dots */
-.VirtualInternshipBreadcrumb-tag-wrapper {
+.TrainingSupportBreadcrumb-tag-wrapper {
   position: relative;
   display: inline-flex;
   align-items: center;
@@ -74,45 +74,45 @@
 }
 
 /* Floating Dot 1 */
-.VirtualInternshipBreadcrumb-dot--one {
+.TrainingSupportBreadcrumb-dot--one {
   position: absolute;
   top: -14px;
-  left: 20px;
-  width: 9px;
-  height: 9px;
+  left: 36px;
+  width: 11px;
+  height: 11px;
   border-radius: 50%;
-  background-color: var(--VirtualInternshipBreadcrumb-yellow);
+  background-color: var(--TrainingSupportBreadcrumb-yellow);
   box-shadow: 0 0 10px rgba(254, 209, 48, 0.7);
-  animation: VirtualInternshipBreadcrumb-float-down 3s ease-in-out infinite alternate;
+  animation: TrainingSupportBreadcrumb-float-down 3s ease-in-out infinite alternate;
   z-index: 3;
 }
 
 /* Floating Dot 2 */
-.VirtualInternshipBreadcrumb-dot--two {
+.TrainingSupportBreadcrumb-dot--two {
   position: absolute;
-  top: 6px;
-  left: 36px;
-  width: 6px;
-  height: 6px;
+  top: 10px;
+  left: 92px;
+  width: 8px;
+  height: 8px;
   border-radius: 50%;
-  background-color: var(--VirtualInternshipBreadcrumb-yellow);
+  background-color: var(--TrainingSupportBreadcrumb-yellow);
   box-shadow: 0 0 8px rgba(254, 209, 48, 0.6);
-  animation: VirtualInternshipBreadcrumb-float-up 2.6s ease-in-out infinite alternate;
+  animation: TrainingSupportBreadcrumb-float-up 2.6s ease-in-out infinite alternate;
   z-index: 3;
 }
 
-@keyframes VirtualInternshipBreadcrumb-float-down {
+@keyframes TrainingSupportBreadcrumb-float-down {
   0% { transform: translateY(0px) scale(1); }
-  100% { transform: translateY(14px) scale(1.15); }
+  100% { transform: translateY(18px) scale(1.15); }
 }
 
-@keyframes VirtualInternshipBreadcrumb-float-up {
+@keyframes TrainingSupportBreadcrumb-float-up {
   0% { transform: translateY(0px) scale(1.1); }
-  100% { transform: translateY(-12px) scale(0.9); }
+  100% { transform: translateY(-16px) scale(0.9); }
 }
 
 /* Tag Pill */
-.VirtualInternshipBreadcrumb-tag {
+.TrainingSupportBreadcrumb-tag {
   display: inline-flex;
   align-items: center;
   gap: 8px;
@@ -124,52 +124,51 @@
   border-radius: 9999px;
 }
 
-.VirtualInternshipBreadcrumb-tag-icon {
+.TrainingSupportBreadcrumb-tag-icon {
   font-size: 14px;
-  color: var(--VirtualInternshipBreadcrumb-yellow);
 }
 
-.VirtualInternshipBreadcrumb-tag-text {
-  font-size: 13px;
-  font-weight: 800;
-  color: #ffffff;
-  letter-spacing: 0.8px;
+.TrainingSupportBreadcrumb-tag-text {
+  font-size: 13.5px;
+  font-weight: 600;
+  color: #e5f4ee;
+  letter-spacing: 0.2px;
 }
 
-/* Main Heading */
-.VirtualInternshipBreadcrumb-title {
+/* Main Heading with Running Shimmer Animation */
+.TrainingSupportBreadcrumb-title {
   margin: 0 0 18px 0;
-  font-family: 'Playfair Display', Georgia, serif;
-  font-size: 66px;
-  font-weight: 700;
-  line-height: 1.1;
-  letter-spacing: -0.5px;
+  font-size: 64px;
+  font-weight: 900;
+  line-height: 1.08;
+  letter-spacing: -1.5px;
   display: flex;
   flex-direction: column;
 }
 
-.VirtualInternshipBreadcrumb-title-line {
+.TrainingSupportBreadcrumb-title-line {
   display: inline-block;
   background: linear-gradient(
     90deg, 
-    #ffffff 0%, 
-    #ffffff 50%, 
+    #c9b570 0%, 
+    #ffffff 25%, 
+    #dacb4c 50%, 
     #fed130 75%, 
     #ffffff 100%
   );
-  background-size: 200% auto;
+  background-size: 250% auto;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
-  animation: VirtualInternshipBreadcrumb-shimmer 8s linear infinite;
+  animation: TrainingSupportBreadcrumb-shimmer 9s linear infinite;
 }
 
-@keyframes VirtualInternshipBreadcrumb-shimmer {
+@keyframes TrainingSupportBreadcrumb-shimmer {
   0% { background-position: 0% center; }
-  100% { background-position: 200% center; }
+  100% { background-position: 250% center; }
 }
 
 /* Breadcrumb Navigation Trail */
-.VirtualInternshipBreadcrumb-nav {
+.TrainingSupportBreadcrumb-nav {
   display: inline-flex;
   align-items: center;
   gap: 8px;
@@ -178,95 +177,94 @@
   font-weight: 600;
 }
 
-.VirtualInternshipBreadcrumb-nav-item {
+.TrainingSupportBreadcrumb-nav-item {
   display: inline-flex;
   align-items: center;
   gap: 5px;
 }
 
-.VirtualInternshipBreadcrumb-home-icon {
+.TrainingSupportBreadcrumb-home-icon {
   font-size: 14px;
 }
 
-.VirtualInternshipBreadcrumb-link {
+.TrainingSupportBreadcrumb-link {
   color: rgba(255, 255, 255, 0.85);
   text-decoration: none;
   transition: color 0.2s ease;
 }
 
-.VirtualInternshipBreadcrumb-link:hover {
-  color: var(--VirtualInternshipBreadcrumb-yellow);
+.TrainingSupportBreadcrumb-link:hover {
+  color: var(--TrainingSupportBreadcrumb-yellow);
   text-decoration: underline;
 }
 
-.VirtualInternshipBreadcrumb-separator {
+.TrainingSupportBreadcrumb-separator {
   color: rgba(255, 255, 255, 0.4);
   font-weight: 400;
 }
 
-.VirtualInternshipBreadcrumb-active {
-  color: var(--VirtualInternshipBreadcrumb-yellow);
+.TrainingSupportBreadcrumb-active {
+  color: var(--TrainingSupportBreadcrumb-yellow);
 }
 
 /* Description Text */
-.VirtualInternshipBreadcrumb-description {
+.TrainingSupportBreadcrumb-description {
   margin: 0;
-  font-weight: 400;
   font-size: 15px;
   line-height: 1.65;
-  color: var(--VirtualInternshipBreadcrumb-text-muted);
+  color: var(--TrainingSupportBreadcrumb-text-muted);
   max-width: 520px;
 }
 
 /* Right Column: Custom Rounded Frame Container */
-.VirtualInternshipBreadcrumb-media-col {
+.TrainingSupportBreadcrumb-media-col {
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
-.VirtualInternshipBreadcrumb-frame {
+.TrainingSupportBreadcrumb-frame {
   position: relative;
   width: 100%;
   margin-top: 30px;
   max-width: 500px;
   min-height: 380px;
   border-radius: 36px;
-  background-color: var(--VirtualInternshipBreadcrumb-card-green);
+  background-color: var(--TrainingSupportBreadcrumb-card-green);
   border: 1px solid rgba(255, 255, 255, 0.1);
   box-shadow: 0 24px 48px -12px rgba(0, 0, 0, 0.45);
   display: flex;
-  align-items: flex-end;
+  align-items: center;
   justify-content: center;
   overflow: hidden;
 }
 
 /* Rotated Yellow Badge inside Frame */
-.VirtualInternshipBreadcrumb-yellow-badge {
+.TrainingSupportBreadcrumb-yellow-badge {
   position: absolute;
   width: 250px;
   height: 250px;
   top: 30px;
   right: 95px;
-  background-color: var(--VirtualInternshipBreadcrumb-yellow);
+  background-color: var(--TrainingSupportBreadcrumb-yellow);
   border-radius: 36px;
   transform: rotate(20deg);
   z-index: 1;
 }
 
 /* Foreground Student Cutout Image */
-.VirtualInternshipBreadcrumb-img {
+.TrainingSupportBreadcrumb-img {
   position: relative;
   z-index: 2;
   width: 632px;
   height: 376px;
-  max-height: 376px;
+  /* max-height: 340px; */
   object-fit: contain;
   display: block;
 }
 
 /* Organic Bottom Wave Shape */
-.VirtualInternshipBreadcrumb-wave-curve {
+.TrainingSupportBreadcrumb-wave-curve {
   position: absolute;
   bottom: -1px;
   left: 0;
@@ -276,92 +274,94 @@
   z-index: 3;
 }
 
-.VirtualInternshipBreadcrumb-wave-curve svg {
+.TrainingSupportBreadcrumb-wave-curve svg {
   position: relative;
   display: block;
   width: 100%;
   height: 60px;
 }
 
-/* Responsive Adaptations */
+/* ==========================================================================
+   Responsive Adaptations
+   ========================================================================== */
 @media (max-width: 1200px) {
-  .VirtualInternshipBreadcrumb-container {
+  .TrainingSupportBreadcrumb-container {
     padding: 60px 48px 120px 48px;
   }
-  .VirtualInternshipBreadcrumb-title {
-    font-size: 54px;
+  .TrainingSupportBreadcrumb-title {
+    font-size: 52px;
   }
-  .VirtualInternshipBreadcrumb-frame {
+  .TrainingSupportBreadcrumb-frame {
     max-width: 440px;
     min-height: 340px;
   }
-  .VirtualInternshipBreadcrumb-yellow-badge {
+  .TrainingSupportBreadcrumb-yellow-badge {
     width: 210px;
     height: 210px;
   }
 }
 
 @media (max-width: 1024px) {
-  .VirtualInternshipBreadcrumb-content-grid {
+  .TrainingSupportBreadcrumb-content-grid {
     grid-template-columns: 1fr;
     gap: 40px;
   }
 
-  .VirtualInternshipBreadcrumb-title {
+  .TrainingSupportBreadcrumb-title {
     font-size: 48px;
   }
 
-  .VirtualInternshipBreadcrumb-media-col {
+  .TrainingSupportBreadcrumb-media-col {
     justify-content: flex-start;
   }
 
-  .VirtualInternshipBreadcrumb-frame {
+  .TrainingSupportBreadcrumb-frame {
     max-width: 460px;
   }
 }
 
 @media (max-width: 768px) {
-  .VirtualInternshipBreadcrumb-container {
+  .TrainingSupportBreadcrumb-container {
     padding: 50px 24px 90px 24px;
   }
 
-  .VirtualInternshipBreadcrumb-title {
+  .TrainingSupportBreadcrumb-title {
     font-size: 38px;
-    letter-spacing: -0.5px;
+    letter-spacing: -0.8px;
   }
 
-  .VirtualInternshipBreadcrumb-nav {
+  .TrainingSupportBreadcrumb-nav {
     font-size: 12.5px;
     flex-wrap: wrap;
   }
 
-  .VirtualInternshipBreadcrumb-description {
+  .TrainingSupportBreadcrumb-description {
     font-size: 14px;
   }
 
-  .VirtualInternshipBreadcrumb-frame {
+  .TrainingSupportBreadcrumb-frame {
     max-width: 100%;
     min-height: 300px;
     border-radius: 28px;
   }
 
-  .VirtualInternshipBreadcrumb-yellow-badge {
+  .TrainingSupportBreadcrumb-yellow-badge {
     width: 180px;
     height: 180px;
     right: 20px;
   }
 
-  .VirtualInternshipBreadcrumb-wave-curve svg {
+  .TrainingSupportBreadcrumb-wave-curve svg {
     height: 40px;
   }
 }
 
 @media (max-width: 480px) {
-  .VirtualInternshipBreadcrumb-title {
+  .TrainingSupportBreadcrumb-title {
     font-size: 32px;
   }
 
-  .VirtualInternshipBreadcrumb-yellow-badge {
+  .TrainingSupportBreadcrumb-yellow-badge {
     width: 140px;
     height: 140px;
     right: 15px;

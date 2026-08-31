@@ -1,0 +1,552 @@
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap');
+
+.OnCampusCard-wrapper {
+  width: 100%;
+  min-height: 100vh;
+  background-color: #f8faf9;
+  font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+  padding: 40px 24px;
+  color: #1e293b;
+  box-sizing: border-box;
+}
+
+.OnCampusCard-container {
+  max-width: 1400px;
+  margin: 0 auto;
+  display: flex;
+  gap: 32px;
+  align-items: flex-start;
+}
+
+/* ==========================================================================
+   LEFT SIDEBAR / FILTERS
+   ========================================================================== */
+.OnCampusCard-sidebar {
+  width: 300px;
+  flex-shrink: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.OnCampusCard-filter-box {
+  background: #ffffff;
+  border-radius: 16px;
+  padding: 24px;
+  border: 1px solid rgba(226, 232, 240, 0.8);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.02);
+}
+
+.OnCampusCard-filter-title {
+  margin: 0 0 16px 0;
+  font-size: 16px;
+  font-weight: 700;
+  color: #0f172a;
+}
+
+.OnCampusCard-search-input-wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.OnCampusCard-search-icon {
+  position: absolute;
+  left: 14px;
+  color: #94a3b8;
+  font-size: 16px;
+}
+
+.OnCampusCard-search-input {
+  width: 100%;
+  padding: 12px 14px 12px 40px;
+  border-radius: 10px;
+  border: 1px solid #e2e8f0;
+  background-color: #f8fafc;
+  font-size: 14px;
+  color: #334155;
+  outline: none;
+  transition: all 0.2s ease;
+}
+
+.OnCampusCard-search-input:focus {
+  border-color: #10b981;
+  background-color: #ffffff;
+  box-shadow: 0 0 0 3px rgba(16, 185, 129, 0.1);
+}
+
+.OnCampusCard-filter-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 24px;
+}
+
+.OnCampusCard-filter-header-left {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.OnCampusCard-filter-main-icon {
+  color: #10b981;
+  font-size: 18px;
+}
+
+.OnCampusCard-filter-header-title {
+  font-weight: 700;
+  font-size: 16px;
+  color: #0f172a;
+}
+
+.OnCampusCard-clear-btn {
+  background: none;
+  border: none;
+  color: #94a3b8;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  cursor: pointer;
+  padding: 0;
+  transition: color 0.2s;
+}
+
+.OnCampusCard-clear-btn:hover {
+  color: #ef4444;
+}
+
+.OnCampusCard-filter-group {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.OnCampusCard-group-title {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-weight: 700;
+  font-size: 14px;
+  color: #1e293b;
+  margin-bottom: 4px;
+}
+
+.OnCampusCard-group-icon {
+  color: #10b981;
+  font-size: 16px;
+}
+
+.OnCampusCard-group-icon.stipend-icon {
+  color: #f59e0b;
+}
+
+.OnCampusCard-checkbox-label {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 14px;
+  color: #64748b;
+  cursor: pointer;
+  user-select: none;
+}
+
+.OnCampusCard-checkbox-label input[type="checkbox"] {
+  width: 16px;
+  height: 16px;
+  border-radius: 4px;
+  accent-color: #10b981;
+  cursor: pointer;
+}
+
+.OnCampusCard-divider {
+  border: none;
+  border-top: 1px solid #f1f5f9;
+  margin: 20px 0;
+}
+
+
+/* ==========================================================================
+   MAIN CONTENT HEADER & TOGGLE
+   ========================================================================== */
+.OnCampusCard-content {
+  flex-grow: 1;
+}
+
+.OnCampusCard-content-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 24px;
+}
+
+.OnCampusCard-main-heading {
+  font-size: 26px;
+  font-weight: 800;
+  color: #0f172a;
+  margin: 0 0 4px 0;
+}
+
+.OnCampusCard-sub-heading {
+  font-size: 14px;
+  color: #64748b;
+  margin: 0;
+}
+
+.OnCampusCard-view-toggle {
+  display: flex;
+  align-items: center;
+  background-color: #f1f5f9;
+  padding: 4px;
+  border-radius: 9999px;
+  gap: 2px;
+}
+
+.OnCampusCard-toggle-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 16px;
+  border-radius: 9999px;
+  border: none;
+  background: transparent;
+  color: #64748b;
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.OnCampusCard-toggle-btn.active {
+  background-color: #059669;
+  color: #ffffff;
+  box-shadow: 0 2px 8px rgba(5, 150, 105, 0.25);
+}
+
+
+/* ==========================================================================
+   CARD LAYOUT - GRID VS LIST MODES
+   ========================================================================== */
+.OnCampusCard-list-container.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(380px, 1fr));
+  gap: 24px;
+}
+
+.OnCampusCard-list-container.list {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+/* Base Card Styling */
+.OnCampusCard-item {
+  background: #ffffff;
+  border-radius: 20px;
+  border: 1px solid #e2e8f0;
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.OnCampusCard-item:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 12px 28px -8px rgba(0, 0, 0, 0.08);
+}
+
+/* Distinct List View Styling (Reference 3 Layout) */
+.OnCampusCard-item.list {
+  display: grid;
+  grid-template-columns: 280px 1fr auto;
+  gap: 24px;
+  align-items: start;
+}
+
+/* Card Header */
+.OnCampusCard-item-header {
+  display: flex;
+  gap: 14px;
+  margin-bottom: 16px;
+}
+
+.OnCampusCard-item.list .OnCampusCard-item-header {
+  margin-bottom: 0;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.OnCampusCard-briefcase-badge {
+  width: 44px;
+  height: 44px;
+  border-radius: 12px;
+  background-color: #e6f4ef;
+  color: #059669;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 20px;
+  flex-shrink: 0;
+}
+
+.OnCampusCard-title-block {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.OnCampusCard-item-title {
+  margin: 0;
+  font-size: 17px;
+  font-weight: 700;
+  color: #0f172a;
+  line-height: 1.35;
+}
+
+.OnCampusCard-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.OnCampusCard-tag-pill {
+  font-size: 10px;
+  font-weight: 800;
+  padding: 3px 8px;
+  border-radius: 6px;
+  background-color: #e6f4ef;
+  color: #059669;
+  letter-spacing: 0.3px;
+}
+
+/* Card Body */
+.OnCampusCard-item-body {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.OnCampusCard-item-description {
+  margin: 0;
+  font-size: 13.5px;
+  line-height: 1.5;
+  color: #64748b;
+}
+
+/* Project Focus Block */
+.OnCampusCard-focus-box {
+  background-color: #f6faf8;
+  border: 1px dashed #d1fae5;
+  border-radius: 12px;
+  padding: 12px 14px;
+}
+
+.OnCampusCard-section-label {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 0.5px;
+  color: #94a3b8;
+  margin-bottom: 6px;
+}
+
+.OnCampusCard-section-label.focus {
+  color: #059669;
+}
+
+.OnCampusCard-section-label.tools {
+  color: #f59e0b;
+}
+
+.OnCampusCard-section-icon {
+  font-size: 13px;
+}
+
+.OnCampusCard-focus-title {
+  font-size: 14px;
+  font-weight: 700;
+  color: #0f172a;
+}
+
+/* Modules & Tools Pills */
+.OnCampusCard-pills-wrap {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.OnCampusCard-module-pill {
+  background-color: #f1f5f9;
+  color: #475569;
+  font-size: 12px;
+  font-weight: 600;
+  padding: 4px 10px;
+  border-radius: 6px;
+}
+
+.OnCampusCard-tech-pill {
+  background-color: #e6f4ef;
+  color: #059669;
+  font-size: 12px;
+  font-weight: 600;
+  padding: 4px 10px;
+  border-radius: 6px;
+}
+
+/* Duration Line */
+.OnCampusCard-duration-block {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 12px;
+  margin-top: 4px;
+}
+
+.OnCampusCard-duration-icon {
+  color: #3b82f6;
+  font-size: 14px;
+}
+
+.OnCampusCard-duration-label {
+  color: #94a3b8;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+}
+
+.OnCampusCard-duration-value {
+  color: #0f172a;
+  font-weight: 700;
+  font-size: 13.5px;
+}
+
+/* Card Footer Actions */
+.OnCampusCard-item-footer {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-top: 20px;
+  padding-top: 16px;
+  border-top: 1px solid #f1f5f9;
+}
+
+.OnCampusCard-item.list .OnCampusCard-item-footer {
+  margin-top: 0;
+  padding-top: 0;
+  border-top: none;
+  flex-direction: row;
+}
+
+.OnCampusCard-btn-view {
+  border: 1px solid #cbd5e1;
+  background-color: #ffffff;
+  color: #059669;
+  font-size: 13px;
+  font-weight: 700;
+  padding: 9px 14px;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.OnCampusCard-btn-view:hover {
+  background-color: #f8fafc;
+  border-color: #94a3b8;
+}
+
+.OnCampusCard-btn-interest {
+  flex-grow: 1;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  background-color: #059669;
+  color: #ffffff;
+  border: none;
+  font-size: 13px;
+  font-weight: 700;
+  padding: 10px 18px;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.OnCampusCard-item.list .OnCampusCard-btn-interest {
+  flex-grow: 0;
+}
+
+.OnCampusCard-btn-interest:hover {
+  background-color: #047857;
+}
+
+.OnCampusCard-send-icon {
+  font-size: 13px;
+}
+
+.OnCampusCard-btn-share {
+  width: 38px;
+  height: 38px;
+  border-radius: 10px;
+  border: 1px solid #f1f5f9;
+  background-color: #f8fafc;
+  color: #64748b;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  font-size: 15px;
+  transition: all 0.2s ease;
+}
+
+.OnCampusCard-btn-share:hover {
+  background-color: #e2e8f0;
+  color: #0f172a;
+}
+
+
+/* ==========================================================================
+   RESPONSIVE ADAPTATIONS
+   ========================================================================== */
+@media (max-width: 1024px) {
+  .OnCampusCard-container {
+    flex-direction: column;
+  }
+
+  .OnCampusCard-sidebar {
+    width: 100%;
+  }
+
+  .OnCampusCard-item.list {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+
+  .OnCampusCard-item.list .OnCampusCard-item-footer {
+    border-top: 1px solid #f1f5f9;
+    padding-top: 16px;
+  }
+}
+
+@media (max-width: 640px) {
+  .OnCampusCard-wrapper {
+    padding: 20px 12px;
+  }
+
+  .OnCampusCard-content-header {
+    flex-direction: column;
+    gap: 16px;
+  }
+
+  .OnCampusCard-list-container.grid {
+    grid-template-columns: 1fr;
+  }
+
+  .OnCampusCard-item-footer {
+    flex-wrap: wrap;
+  }
+
+  .OnCampusCard-btn-interest {
+    width: 100%;
+  }
+}
