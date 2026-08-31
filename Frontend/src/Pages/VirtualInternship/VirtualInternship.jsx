@@ -5,8 +5,8 @@ import VirtualInternshipCard from '../../Component/VirtualInternshipCard/Virtual
 const VirtualInternship = () => {
   return (
     <div>
-<VirtualInternshipBreadcrumb/>
-<VirtualInternshipCard/>
+      <VirtualInternshipBreadcrumb/>
+       <VirtualInternshipCard/>
     </div>
   )
 }
