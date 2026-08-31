@@ -1,6 +1,8 @@
 import React from 'react';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import Mainlayout from './Layout/Mainlayout/Mainlayout';
+import Notification from './Pages/Notification/Notification';
+
 
 const PagePlaceholder = ({ title }) => (
   <div className="content-placeholder">
@@ -42,7 +44,7 @@ const App = () => {
           />
 
           <Route
-            path="notifications"
+            path="/notifications"
             element={<PagePlaceholder title="Notifications" />}
           />
 
@@ -51,10 +53,7 @@ const App = () => {
             element={<PagePlaceholder title="Payments" />}
           />
 
-          <Route
-            path="profile"
-            element={<PagePlaceholder title="Profile" />}
-          />
+          <Route path="/notification" element={<Notification/>}/>
 
           <Route
             path="settings"

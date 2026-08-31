@@ -1,3 +1,8 @@
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap');
+
+/* =========================================
+   TOPBAR MAIN CONTAINER
+   ========================================= */
 .topbar-container {
   height: 64px;
   background-color: #ffffff;
@@ -8,7 +13,7 @@
   border-bottom: 1px solid #e5e7eb;
   position: sticky;
   top: 0;
-  z-index: 30;
+  z-index: 50;
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.03);
   font-family: 'Plus Jakarta Sans', sans-serif;
   box-sizing: border-box;
@@ -21,8 +26,6 @@
   gap: 8px;
   font-size: 13.5px;
   white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
 }
 
 .breadcrumb-link {
@@ -54,7 +57,7 @@
   font-weight: 600;
 }
 
-/* Right Section */
+/* Right Controls */
 .topbar-right-controls {
   display: flex;
   align-items: center;
@@ -88,10 +91,7 @@
   outline: none;
   transition: all 0.2s ease;
   font-family: inherit;
-}
-
-.search-input::placeholder {
-  color: #94a3b8;
+  box-sizing: border-box;
 }
 
 .search-input:focus {
@@ -145,14 +145,31 @@
   flex-shrink: 0;
 }
 
-/* Profile Area (Always Visible) */
+/* =========================================
+   PROFILE SECTION & DROPDOWN (FIXED)
+   ========================================= */
+.profile-dropdown-wrapper {
+  position: relative;
+  display: inline-block;
+}
+
+/* Topbar Profile Trigger Button */
 .topbar-profile-section {
-  display: flex !important;
+  display: flex;
   align-items: center;
-  gap: 8px;
+  gap: 10px;
   cursor: pointer;
   user-select: none;
-  flex-shrink: 0;
+  padding: 4px 8px;
+  border-radius: 12px;
+  border: 1px solid transparent;
+  transition: background-color 0.2s ease, border-color 0.2s ease;
+}
+
+.topbar-profile-section:hover,
+.topbar-profile-section.active {
+  background-color: #f1f5f9;
+  border-color: #e2e8f0;
 }
 
 .profile-text {
@@ -174,85 +191,198 @@
 }
 
 .profile-avatar {
-  width: 34px;
-  height: 34px;
+  width: 36px;
+  height: 36px;
   border-radius: 50%;
-  background-color: #d1fae5;
-  color: #065f46;
+  background: linear-gradient(135deg, #a7f3d0 0%, #34d399 100%);
+  color: #064e3b;
   font-weight: 700;
-  font-size: 13.5px;
+  font-size: 14px;
   display: flex;
   align-items: center;
   justify-content: center;
-  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
   flex-shrink: 0;
 }
 
 .profile-dropdown-icon {
   color: #9ca3af;
+  transition: transform 0.2s ease, color 0.2s ease;
+}
+
+.profile-dropdown-icon.rotate-icon {
+  transform: rotate(180deg);
+  color: #007a65;
+}
+
+/* Dropdown Menu Box */
+.profile-dropdown-menu {
+  position: absolute;
+  top: calc(100% + 8px);
+  right: 0;
+  width: 240px;
+  background-color: #ffffff;
+  border-radius: 16px;
+  border: 1px solid #e2e8f0;
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.12);
+  padding: 8px 0;
+  z-index: 100;
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
+}
+
+/* User Info inside Dropdown */
+.dropdown-user-header {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 10px 16px;
+}
+
+.dropdown-avatar {
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  background: #006653;
+  color: #ffffff;
+  font-weight: 700;
+  font-size: 15px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   flex-shrink: 0;
 }
 
-/* ===================================================
-   RESPONSIVE BREAKPOINTS (Tablet & Mobile Fixes)
-   =================================================== */
+.dropdown-user-info {
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
 
-/* 1. Tablet Responsive (max-width: 992px) */
+.dropdown-user-name {
+  margin: 0;
+  font-size: 13.5px;
+  font-weight: 700;
+  color: #0f172a;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.dropdown-user-email {
+  margin: 2px 0 0 0;
+  font-size: 11px;
+  color: #64748b;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.dropdown-divider {
+  height: 1px;
+  background-color: #f1f5f9;
+  margin: 6px 0;
+  width: 100%;
+}
+
+.dropdown-menu-list {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  padding: 0 6px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+/* Dropdown Action Buttons (Vertical Alignment & Resetting Default Button Styles) */
+.dropdown-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  width: 100%;
+  padding: 9px 12px;
+  border-radius: 10px;
+  background: transparent;
+  border: none;
+  outline: none;
+  font-size: 13px;
+  font-weight: 500;
+  color: #475569;
+  cursor: pointer;
+  text-align: left;
+  transition: all 0.15s ease;
+  font-family: inherit;
+  box-sizing: border-box;
+}
+
+.dropdown-item:hover {
+  background-color: #f8fafc;
+  color: #007a65;
+}
+
+.dropdown-item-icon {
+  color: #94a3b8;
+  flex-shrink: 0;
+  transition: color 0.15s ease;
+}
+
+.dropdown-item:hover .dropdown-item-icon {
+  color: #007a65;
+}
+
+/* Logout Item */
+.dropdown-item.logout-btn {
+  color: #ef4444;
+  margin: 0;
+  padding: 9px 12px;
+}
+
+.dropdown-item.logout-btn:hover {
+  background-color: #fef2f2;
+  color: #dc2626;
+}
+
+.dropdown-item.logout-btn .dropdown-item-icon {
+  color: #ef4444;
+}
+
+/* =========================================
+   RESPONSIVE MEDIA QUERIES
+   ========================================= */
 @media (max-width: 992px) {
   .topbar-container {
-    padding: 0 16px 0 64px; /* Hamburger button के लिए जगह छोड़ता है */
+    padding: 0 16px 0 64px;
   }
-
   .topbar-search-box {
-    display: none; /* सर्च बार टैबलेट/मोबाइल में छुप जाएगा */
-  }
-
-  .topbar-right-controls {
-    gap: 12px;
+    display: none;
   }
 }
 
-/* 2. Small Tablets & Big Mobiles (max-width: 768px) */
 @media (max-width: 768px) {
   .profile-text {
-    display: none; /* सिर्फ नाम और रोल टेक्स्ट छिपेगा, Avatar और Icon हमेशा दिखेगा */
+    display: none;
   }
 }
 
-/* 3. Mobile Devices (max-width: 480px) */
 @media (max-width: 480px) {
   .topbar-container {
     padding: 0 12px 0 58px;
     height: 58px;
   }
 
-  /* ब्रेडक्रंब्स में केवल करंट पेज दिखेगा ताकि जगह बचे */
   .breadcrumb-link span,
   .breadcrumb-segment,
   .breadcrumb-separator {
     display: none;
   }
 
-  .breadcrumb-link {
-    display: flex;
-  }
-
   .breadcrumb-current {
     font-size: 13px;
   }
 
-  .topbar-right-controls {
-    gap: 8px;
-  }
-
-  .topbar-divider {
-    height: 20px;
-    margin: 0 2px;
-  }
-
-  .profile-avatar {
-    width: 30px;
-    height: 30px;
-    font-size: 12px;
+  .profile-dropdown-menu {
+    width: 210px;
+    right: 0;
   }
 }
