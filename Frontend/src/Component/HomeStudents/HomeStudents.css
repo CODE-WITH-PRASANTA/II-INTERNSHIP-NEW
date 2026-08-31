@@ -8,7 +8,7 @@
   position: relative;
   width: 100%;
   background-color: #ffffff;
-  padding: 3rem 1.5rem;
+  padding: 4rem 1.5rem;
   overflow: hidden;
   user-select: none;
   font-family: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
@@ -16,7 +16,7 @@
 
 @media (min-width: 768px) {
   .home-students {
-    padding: 6rem 2rem;
+    padding: 5rem 2rem 6rem;
   }
 }
 
@@ -25,15 +25,14 @@
   margin: 0 auto;
   display: grid;
   grid-template-columns: 1fr;
-  gap: 3rem;
+  gap: 3.5rem;
   align-items: center;
-  min-height: 500px;
 }
 
 @media (min-width: 1024px) {
   .home-students__container {
     grid-template-columns: 1fr 1fr;
-    gap: 2rem;
+    gap: 3rem;
   }
 }
 
@@ -44,19 +43,22 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
-  min-height: 420px;
+  padding-top: 2rem;
+  padding-bottom: 4.5rem;
 }
 
 @media (min-width: 1024px) {
   .home-students__left-col {
     padding-right: 2rem;
+    padding-top: 3rem;
+    padding-bottom: 5rem;
   }
 }
 
 .home-students__text-content {
   position: relative;
   z-index: 10;
-  max-width: 480px;
+  max-width: 460px;
 }
 
 .home-students__title {
@@ -76,7 +78,7 @@
 
 @media (min-width: 1024px) {
   .home-students__title {
-    font-size: 3.6rem;
+    font-size: 3.5rem;
   }
 }
 
@@ -89,19 +91,26 @@
   color: #6b7280;
   font-size: 1.05rem;
   line-height: 1.65;
+  max-width: 420px;
 }
 
-/* Floating Decorative Bubbles */
+/* Floating Decorative Bubbles Wrapper */
+.home-students__floating-avatars-wrapper {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: 5;
+}
+
+/* Floating Avatar Bubbles Base Style */
 .home-students__floating-avatar {
   position: absolute;
   border-radius: 9999px;
   overflow: hidden;
-  border: 2.5px solid #ffffff;
-  box-shadow: 0 8px 24px -4px rgba(0, 0, 0, 0.12);
+  border: 3px solid #ffffff;
+  box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.12);
   transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-  filter: grayscale(100%) contrast(1.1);
-  opacity: 0.85;
-  pointer-events: none;
+  filter: grayscale(100%) opacity(0.75);
 }
 
 .home-students__floating-avatar-img {
@@ -111,57 +120,89 @@
   display: block;
 }
 
+/* Active Avatar State */
 .home-students__floating-avatar--active {
-  filter: grayscale(0%) contrast(1);
-  opacity: 1;
-  transform: scale(1.08);
+  filter: grayscale(0%) opacity(1);
+  transform: scale(1.12);
   border-color: #057a55;
-  box-shadow: 0 12px 28px -4px rgba(5, 122, 85, 0.25);
+  box-shadow: 0 12px 28px -4px rgba(5, 122, 85, 0.35);
   z-index: 20;
 }
 
-/* Exact Positions for Floating Avatars */
+/* Repositioned Floating Avatars around text perimeter */
+
+/* Avatar 1 - Top Left above Title */
 .home-students__floating-avatar--pos-1 {
-  width: 3.5rem;
-  height: 3.5rem;
-  top: 1.5rem;
-  left: 1rem;
+  width: 3.25rem;
+  height: 3.25rem;
+  top: -1.5rem;
+  left: 0rem;
 }
 
+/* Avatar 2 - Top Right offset above "What Our" */
 .home-students__floating-avatar--pos-2 {
-  width: 5.5rem;
-  height: 5.5rem;
-  bottom: 2.5rem;
+  width: 4rem;
+  height: 4rem;
+  top: -2.5rem;
+  left: 11rem;
+}
+
+/* Avatar 3 - Bottom Left below paragraph */
+.home-students__floating-avatar--pos-3 {
+  width: 3.5rem;
+  height: 3.5rem;
+  bottom: 0.25rem;
   left: 0.5rem;
 }
 
-.home-students__floating-avatar--pos-3 {
-  width: 4rem;
-  height: 4rem;
-  bottom: -1rem;
-  left: 9rem;
-}
-
+/* Avatar 4 - Bottom Center below paragraph */
 .home-students__floating-avatar--pos-4 {
-  width: 3.75rem;
-  height: 3.75rem;
-  bottom: 1.25rem;
-  left: 17rem;
+  width: 4.5rem;
+  height: 4.5rem;
+  bottom: -2rem;
+  left: 7.5rem;
 }
 
+/* Avatar 5 - Bottom Right below paragraph */
 .home-students__floating-avatar--pos-5 {
-  width: 2.75rem;
-  height: 2.75rem;
+  width: 3rem;
+  height: 3rem;
   bottom: 0.5rem;
-  right: 2rem;
+  left: 15rem;
 }
 
-@media (min-width: 768px) {
-  .home-students__floating-avatar--pos-1 { width: 4.5rem; height: 4.5rem; top: 2.5rem; left: 2rem; }
-  .home-students__floating-avatar--pos-2 { width: 6.5rem; height: 6.5rem; bottom: 3rem; left: 1rem; }
-  .home-students__floating-avatar--pos-3 { width: 4.75rem; height: 4.75rem; bottom: -1rem; left: 12rem; }
-  .home-students__floating-avatar--pos-4 { width: 4.25rem; height: 4.25rem; bottom: 1.5rem; left: 21rem; }
-  .home-students__floating-avatar--pos-5 { width: 3.25rem; height: 3.25rem; bottom: 0.5rem; right: 4rem; }
+/* Tablet / Desktop Positioning Adjustments */
+@media (min-width: 640px) {
+  .home-students__floating-avatar--pos-1 {
+    width: 3.75rem;
+    height: 3.75rem;
+    top: -2rem;
+    left: 0.5rem;
+  }
+  .home-students__floating-avatar--pos-2 {
+    width: 4.75rem;
+    height: 4.75rem;
+    top: -3rem;
+    left: 13.5rem;
+  }
+  .home-students__floating-avatar--pos-3 {
+    width: 4rem;
+    height: 4rem;
+    bottom: 0.5rem;
+    left: 1rem;
+  }
+  .home-students__floating-avatar--pos-4 {
+    width: 5.25rem;
+    height: 5.25rem;
+    bottom: -2.5rem;
+    left: 9rem;
+  }
+  .home-students__floating-avatar--pos-5 {
+    width: 3.5rem;
+    height: 3.5rem;
+    bottom: 0.5rem;
+    left: 17.5rem;
+  }
 }
 
 /* ================= Right Side (Testimonial Card & Controls) ================= */

@@ -152,6 +152,15 @@ const Footer = () => {
         <div className="Footer-bottom">
           <p className="Footer-copyright">
             <span className="Footer-copy-symbol">©</span> 2026 International Institute of Internship™ All Rights Reserved.
+            <span className="Footer-dev-separator">|</span> Developed by{' '}
+            <a 
+              href="https://prwebstock.com/" 
+              target="_blank" 
+              rel="noopener noreferrer" 
+              className="Footer-dev-link"
+            >
+              PR WEBSTOCK
+            </a>
           </p>
           <div className="Footer-legal-links">
             <a href="/privacy-policy" className="Footer-legal-link">Privacy Policy</a>

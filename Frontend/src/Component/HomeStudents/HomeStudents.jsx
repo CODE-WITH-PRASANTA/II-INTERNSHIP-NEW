@@ -98,24 +98,26 @@ const HomeStudents = () => {
         
         {/* ================= LEFT COLUMN ================= */}
         <div className="home-students__left-col">
-          {/* Floating Grayscale & Active Bubbles */}
-          {floatingAvatarsData.map((avatar) => {
-            const isActive = avatar.linkedTestimonialIndex === currentIndex;
-            return (
-              <div
-                key={avatar.id}
-                className={`home-students__floating-avatar ${avatar.posClass} ${
-                  isActive ? 'home-students__floating-avatar--active' : ''
-                }`}
-              >
-                <img
-                  src={avatar.src}
-                  alt={avatar.name}
-                  className="home-students__floating-avatar-img"
-                />
-              </div>
-            );
-          })}
+          {/* Floating Grayscale & Active Bubbles Container */}
+          <div className="home-students__floating-avatars-wrapper">
+            {floatingAvatarsData.map((avatar) => {
+              const isActive = avatar.linkedTestimonialIndex === currentIndex;
+              return (
+                <div
+                  key={avatar.id}
+                  className={`home-students__floating-avatar ${avatar.posClass} ${
+                    isActive ? 'home-students__floating-avatar--active' : ''
+                  }`}
+                >
+                  <img
+                    src={avatar.src}
+                    alt={avatar.name}
+                    className="home-students__floating-avatar-img"
+                  />
+                </div>
+              );
+            })}
+          </div>
 
           {/* Heading and Subtext */}
           <div className="home-students__text-content">
@@ -126,7 +128,7 @@ const HomeStudents = () => {
             </h2>
             <p className="home-students__description">
               Our students consistently praise the transformative learning experience
-              we provide. Here’s what they say about our courses
+              we provide. Here’s what they say about our courses.
             </p>
           </div>
         </div>
