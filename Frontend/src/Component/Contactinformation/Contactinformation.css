@@ -1,0 +1,468 @@
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800;900&display=swap');
+
+:root {
+  --ci-primary-green: #016948;
+  --ci-deep-green: #01432c;
+  --ci-light-mint: #e2f7ed;
+  --ci-text-dark: #0f172a;
+  --ci-text-muted: #64748b;
+  --ci-card-bg: rgba(255, 255, 255, 0.92);
+  --ci-border-light: rgba(226, 232, 240, 0.8);
+  --ci-focus-border: #016948;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+/* ==========================================================================
+   Outer Section with 3D Layering Setup
+   ========================================================================== */
+.contact-info-section {
+  width: 100%;
+  min-height: 100vh;
+  padding: 80px 40px 120px 40px;
+  background-color: #f0f7f4;
+  font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+  position: relative;
+  overflow: hidden;
+  perspective: 1200px; /* 3D Perspective Context */
+}
+
+/* ==========================================================================
+   3D Ambient Highlight Background & Floating Orbs
+   ========================================================================== */
+.contact-3d-bg-wrap {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  overflow: hidden;
+  z-index: 1;
+}
+
+/* Subtle 3D Grid Texture */
+.contact-3d-grid-texture {
+  position: absolute;
+  inset: 0;
+  background-image: 
+    linear-gradient(rgba(1, 105, 72, 0.05) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(1, 105, 72, 0.05) 1px, transparent 1px);
+  background-size: 40px 40px;
+  mask-image: radial-gradient(ellipse 80% 80% at 50% 50%, black 20%, transparent 80%);
+  -webkit-mask-image: radial-gradient(ellipse 80% 80% at 50% 50%, black 20%, transparent 80%);
+  opacity: 0.6;
+}
+
+/* 3D Glowing Orb 1 (Top Left Emerald Highlight) */
+.contact-3d-orb--1 {
+  position: absolute;
+  top: -10%;
+  left: -5%;
+  width: 600px;
+  height: 600px;
+  background: radial-gradient(circle, rgba(1, 105, 72, 0.22) 0%, rgba(37, 211, 102, 0.08) 50%, transparent 75%);
+  filter: blur(50px);
+  border-radius: 50%;
+  animation: orbFloat3D1 14s ease-in-out infinite alternate;
+}
+
+/* 3D Glowing Orb 2 (Bottom Right Soft Gold / Mint Glow) */
+.contact-3d-orb--2 {
+  position: absolute;
+  bottom: -15%;
+  right: -5%;
+  width: 700px;
+  height: 700px;
+  background: radial-gradient(circle, rgba(254, 209, 48, 0.16) 0%, rgba(1, 105, 72, 0.12) 50%, transparent 80%);
+  filter: blur(60px);
+  border-radius: 50%;
+  animation: orbFloat3D2 16s ease-in-out infinite alternate;
+}
+
+/* 3D Glowing Orb 3 (Center Dynamic Ambient Light) */
+.contact-3d-orb--3 {
+  position: absolute;
+  top: 40%;
+  left: 45%;
+  width: 450px;
+  height: 450px;
+  background: radial-gradient(circle, rgba(164, 244, 207, 0.35) 0%, transparent 70%);
+  filter: blur(70px);
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+}
+
+@keyframes orbFloat3D1 {
+  0% { transform: translateY(0px) translateX(0px) scale(1); }
+  50% { transform: translateY(40px) translateX(30px) scale(1.1); }
+  100% { transform: translateY(-20px) translateX(15px) scale(0.95); }
+}
+
+@keyframes orbFloat3D2 {
+  0% { transform: translateY(0px) translateX(0px) scale(1); }
+  50% { transform: translateY(-50px) translateX(-35px) scale(1.15); }
+  100% { transform: translateY(20px) translateX(-15px) scale(0.9); }
+}
+
+/* Toast Message */
+.contact-toast-notification {
+  position: fixed;
+  top: 24px;
+  right: 24px;
+  background: linear-gradient(135deg, #01432c 0%, #016948 100%);
+  color: #ffffff;
+  padding: 12px 24px;
+  border-radius: 12px;
+  box-shadow: 0 20px 40px rgba(1, 67, 44, 0.3);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 13.5px;
+  font-weight: 700;
+  z-index: 9999;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  animation: ciToastIn 0.35s ease;
+}
+
+@keyframes ciToastIn {
+  from { opacity: 0; transform: translateY(-20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* Main Grid Container */
+.contact-info-container {
+  position: relative;
+  z-index: 2;
+  max-width: 1360px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 60px;
+  align-items: flex-start;
+}
+
+/* ==========================================================================
+   Left Column: Header & Cards Grid
+   ========================================================================== */
+.contact-left-col {
+  display: flex;
+  flex-direction: column;
+}
+
+.contact-header-block {
+  margin-bottom: 32px;
+}
+
+.contact-main-heading {
+  font-size: 42px;
+  font-weight: 900;
+  color: var(--ci-text-dark);
+  letter-spacing: -0.8px;
+  margin: 0 0 12px 0;
+  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.04);
+}
+
+.contact-sub-heading {
+  font-size: 15.5px;
+  line-height: 1.65;
+  color: var(--ci-text-muted);
+  max-width: 520px;
+  margin: 0;
+}
+
+/* 2x2 Cards Grid */
+.contact-cards-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 22px;
+}
+
+/* 3D Elevated Feature Cards */
+.contact-feature-card {
+  background: var(--ci-card-bg);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.9);
+  border-radius: 24px;
+  padding: 38px 24px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  text-decoration: none;
+  cursor: pointer;
+  position: relative;
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  box-shadow: 
+    0 10px 30px -10px rgba(0, 0, 0, 0.05),
+    0 2px 6px rgba(0, 0, 0, 0.02),
+    inset 0 1px 0 rgba(255, 255, 255, 0.8);
+}
+
+/* 3D Floating Hover on Whole Card */
+.contact-feature-card:hover {
+  transform: translateY(-10px) scale(1.02);
+  border-color: rgba(1, 105, 72, 0.3);
+  box-shadow: 
+    0 26px 50px -12px rgba(1, 67, 44, 0.16),
+    0 10px 20px -5px rgba(1, 105, 72, 0.08),
+    inset 0 1px 0 rgba(255, 255, 255, 1);
+}
+
+/* Icon Bubble (Default Mint -> Hover Deep Green 3D Pop) */
+.contact-icon-bubble {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  background-color: var(--ci-light-mint);
+  color: var(--ci-primary-green);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 20px;
+  box-shadow: 0 4px 12px rgba(1, 105, 72, 0.1);
+  transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.contact-feature-card:hover .contact-icon-bubble {
+  background-color: var(--ci-deep-green);
+  color: #ffffff;
+  transform: scale(1.15) rotate(6deg);
+  box-shadow: 0 10px 25px rgba(1, 67, 44, 0.35);
+}
+
+.contact-card-title {
+  font-size: 16.5px;
+  font-weight: 800;
+  color: var(--ci-text-dark);
+  margin: 0 0 8px 0;
+  transition: color 0.25s ease;
+}
+
+.contact-feature-card:hover .contact-card-title {
+  color: var(--ci-deep-green);
+}
+
+.contact-card-text {
+  font-size: 13px;
+  line-height: 1.55;
+  color: var(--ci-text-muted);
+  margin: 0;
+}
+
+.contact-card-text.highlight-link {
+  font-weight: 700;
+  color: #1e293b;
+}
+
+/* ==========================================================================
+   Right Column: Send us a Message (3D Glass Surface Card)
+   ========================================================================== */
+.contact-right-col {
+  display: flex;
+  justify-content: center;
+}
+
+.contact-form-card {
+  width: 100%;
+  background: var(--ci-card-bg);
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+  border-radius: 30px;
+  padding: 48px 46px;
+  border: 1px solid rgba(255, 255, 255, 0.95);
+  box-shadow: 
+    0 30px 60px -15px rgba(1, 67, 44, 0.1),
+    0 10px 25px -5px rgba(0, 0, 0, 0.04),
+    inset 0 1px 1px rgba(255, 255, 255, 0.9);
+  transition: box-shadow 0.3s ease;
+}
+
+.contact-form-header {
+  margin-bottom: 28px;
+}
+
+.contact-form-title {
+  font-size: 28px;
+  font-weight: 900;
+  color: var(--ci-text-dark);
+  margin: 0 0 6px 0;
+  letter-spacing: -0.5px;
+}
+
+.contact-form-subtitle {
+  font-size: 14px;
+  color: var(--ci-text-muted);
+  margin: 0;
+}
+
+/* Form Controls */
+.contact-actual-form {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.contact-form-dual-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+
+.contact-input-field-group {
+  display: flex;
+  flex-direction: column;
+}
+
+.contact-input-field-group label {
+  font-size: 11px;
+  font-weight: 800;
+  color: #334155;
+  letter-spacing: 0.6px;
+  margin-bottom: 8px;
+  text-transform: uppercase;
+}
+
+.contact-input-wrapper {
+  position: relative;
+  width: 100%;
+}
+
+/* Inputs and Textareas with 3D Depth */
+.contact-input-wrapper input,
+.contact-input-wrapper textarea {
+  width: 100%;
+  background: #ffffff;
+  border: 1.5px solid var(--ci-border-light);
+  border-radius: 14px;
+  padding: 14px 18px;
+  font-size: 14px;
+  color: var(--ci-text-dark);
+  font-family: inherit;
+  outline: none;
+  transition: all 0.3s ease;
+  box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.02);
+}
+
+.contact-input-wrapper textarea {
+  resize: vertical;
+  min-height: 120px;
+}
+
+.contact-input-wrapper input::placeholder,
+.contact-input-wrapper textarea::placeholder {
+  color: #94a3b8;
+}
+
+.contact-input-wrapper input:hover,
+.contact-input-wrapper textarea:hover {
+  border-color: #cbd5e1;
+}
+
+/* 3D Highlight on Focus */
+.contact-input-wrapper input:focus,
+.contact-input-wrapper textarea:focus {
+  border-color: var(--ci-focus-border);
+  box-shadow: 
+    0 0 0 4px rgba(1, 105, 72, 0.12),
+    0 8px 18px rgba(1, 105, 72, 0.06);
+  background-color: #ffffff;
+  transform: translateY(-1px);
+}
+
+/* 3D Send Message Button */
+.contact-send-btn {
+  width: 100%;
+  height: 54px;
+  background: linear-gradient(135deg, #016948 0%, #01855b 100%);
+  color: #ffffff;
+  border: none;
+  border-radius: 14px;
+  font-size: 15px;
+  font-weight: 800;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+  box-shadow: 
+    0 12px 26px -6px rgba(1, 105, 72, 0.45),
+    inset 0 1px 1px rgba(255, 255, 255, 0.3);
+  margin-top: 6px;
+}
+
+.contact-send-btn:hover {
+  background: linear-gradient(135deg, #015438 0%, #016948 100%);
+  transform: translateY(-3px);
+  box-shadow: 
+    0 18px 34px -6px rgba(1, 67, 44, 0.55),
+    inset 0 1px 1px rgba(255, 255, 255, 0.4);
+}
+
+.contact-send-btn:active {
+  transform: translateY(0);
+}
+
+.contact-send-icon-badge {
+  position: absolute;
+  right: 14px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 36px;
+  height: 36px;
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.25s ease;
+}
+
+.contact-send-btn:hover .contact-send-icon-badge {
+  transform: translateY(-50%) translateX(4px) rotate(8deg);
+  background: rgba(255, 255, 255, 0.3);
+}
+
+/* ==========================================================================
+   Responsive Adaptations
+   ========================================================================== */
+@media (max-width: 1100px) {
+  .contact-info-container {
+    grid-template-columns: 1fr;
+    gap: 50px;
+  }
+  .contact-main-heading {
+    font-size: 34px;
+  }
+}
+
+@media (max-width: 768px) {
+  .contact-info-section {
+    padding: 50px 20px 80px 20px;
+  }
+  .contact-main-heading {
+    font-size: 30px;
+  }
+  .contact-cards-grid {
+    grid-template-columns: 1fr;
+  }
+  .contact-form-card {
+    padding: 32px 22px;
+    border-radius: 22px;
+  }
+  .contact-form-dual-row {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 480px) {
+  .contact-main-heading {
+    font-size: 26px;
+  }
+  .contact-form-title {
+    font-size: 22px;
+  }
+}

@@ -1,0 +1,507 @@
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,700;0,800;0,900;1,700;1,800;1,900&display=swap');
+
+/* --- Root Variables Scoped to HomeCourses --- */
+:root {
+  --hc-primary-green: #008751;
+  --hc-bright-green: #00c068;
+  --hc-dark-green: #03482e;
+  --hc-ticker-yellow: #f6b300;
+  --hc-ticker-text: #2a1f00;
+  --hc-text-dark: #1b2420;
+  --hc-text-muted: #64746d;
+  --hc-font-serif: 'Playfair Display', Georgia, serif;
+  --hc-font-sans: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+}
+
+/* --- Container --- */
+.home-courses-container {
+  position: relative;
+  min-height: 100vh;
+  width: 100%;
+  background: radial-gradient(circle at 10% 25%, #ebfbf3 0%, #ffffff 52%, #eafcf1 100%);
+  font-family: var(--hc-font-sans);
+  color: var(--hc-text-dark);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  overflow: hidden;
+  box-sizing: border-box;
+}
+
+/* --- Ambient Glows & Sparkles --- */
+.home-courses-bg-glow {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(100px);
+  z-index: 0;
+  pointer-events: none;
+}
+
+.home-courses-bg-glow--top-left {
+  width: 360px;
+  height: 360px;
+  background: rgba(0, 192, 104, 0.16);
+  top: -80px;
+  left: -60px;
+}
+
+.home-courses-bg-glow--center-right {
+  width: 500px;
+  height: 500px;
+  background: rgba(0, 135, 81, 0.08);
+  top: 10%;
+  right: -60px;
+}
+
+.home-courses-sparkle {
+  position: absolute;
+  color: var(--hc-bright-green);
+  pointer-events: none;
+  z-index: 1;
+  opacity: 0.85;
+}
+
+.home-courses-sparkle--1 { 
+  top: 10%; 
+  left: 3%; 
+  font-size: 1.5rem;
+  animation: hcSparklePulse 3s infinite alternate; 
+}
+
+.home-courses-sparkle--2 { 
+  top: 22%; 
+  left: 41%; 
+  font-size: 1.1rem; 
+  animation: hcSparklePulse 4s infinite alternate-reverse; 
+}
+
+.home-courses-sparkle--3 { 
+  top: 5%; 
+  right: 18%; 
+  font-size: 1.3rem;
+  animation: hcSparklePulse 3.5s infinite alternate; 
+}
+
+@keyframes hcSparklePulse {
+  0% { transform: scale(0.85); opacity: 0.4; }
+  100% { transform: scale(1.15); opacity: 1; }
+}
+
+/* --- Main Layout Grid --- */
+.home-courses-wrapper {
+  max-width: 1340px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 3rem 2.5rem 0 2.5rem;
+  display: grid;
+  grid-template-columns: 1.05fr 0.95fr;
+  align-items: center;
+  gap: 2rem;
+  position: relative;
+  z-index: 2;
+  flex: 1;
+}
+
+/* --- Left Column Content --- */
+.home-courses-text-col {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  z-index: 3;
+}
+
+.home-courses-trust-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.45rem 1.25rem;
+  background: var(--hc-primary-green);
+  color: #ffffff;
+  border-radius: 999px;
+  font-size: 0.88rem;
+  font-weight: 500;
+  margin-bottom: 1.8rem;
+  box-shadow: 0 4px 14px rgba(0, 135, 81, 0.2);
+}
+
+.home-courses-trust-badge-icon {
+  font-size: 0.95rem;
+  color: #8affcc;
+}
+
+.home-courses-title {
+  font-family: var(--hc-font-serif);
+  font-size: clamp(2.8rem, 5.2vw, 4.6rem);
+  line-height: 1.08;
+  font-weight: 900;
+  color: var(--hc-text-dark);
+  letter-spacing: -0.015em;
+  margin: 0 0 1.25rem 0;
+}
+
+.home-courses-title-highlight {
+  color: var(--hc-bright-green);
+  font-style: normal;
+  font-weight: 900;
+}
+
+.home-courses-title-underline {
+  border-bottom: 3.5px solid var(--hc-bright-green);
+  display: inline-block;
+  line-height: 0.85;
+}
+
+.home-courses-subtitle {
+  font-size: 1.05rem;
+  line-height: 1.6;
+  color: var(--hc-text-muted);
+  max-width: 440px;
+  margin: 0 0 2.2rem 0;
+}
+
+/* --- CTA & Social Row --- */
+.home-courses-cta-row {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 2.5rem;
+}
+
+.home-courses-cta-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.9rem;
+  padding: 0.55rem 0.65rem 0.55rem 1.6rem;
+  background: var(--hc-primary-green);
+  color: #ffffff;
+  border: none;
+  outline: none;
+  font-family: var(--hc-font-sans);
+  font-size: 0.95rem;
+  font-weight: 600;
+  border-radius: 999px;
+  cursor: pointer;
+  transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 0 8px 22px rgba(0, 135, 81, 0.25);
+}
+
+.home-courses-cta-btn:hover {
+  background: #006f42;
+  transform: translateY(-2px);
+  box-shadow: 0 12px 28px rgba(0, 135, 81, 0.35);
+}
+
+.home-courses-cta-btn-arrow {
+  background: #ffffff;
+  color: var(--hc-primary-green);
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.2s ease;
+}
+
+.home-courses-cta-btn:hover .home-courses-cta-btn-arrow {
+  transform: translateX(3px);
+}
+
+/* --- Instructor Avatars --- */
+.home-courses-proof {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+}
+
+.home-courses-proof-label {
+  font-size: 0.82rem;
+  font-weight: 700;
+  color: var(--hc-text-dark);
+}
+
+.home-courses-avatar-group {
+  display: flex;
+  align-items: center;
+}
+
+.home-courses-avatar-img {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  border: 2px solid #ffffff;
+  object-fit: cover;
+  margin-left: -8px;
+  background-color: #e5e7eb;
+}
+
+.home-courses-avatar-img:first-child {
+  margin-left: 0;
+}
+
+.home-courses-avatar-plus {
+  background: var(--hc-primary-green);
+  color: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.95rem;
+  font-weight: 700;
+}
+
+/* --- Right Column Visual Elements --- */
+.home-courses-visual-col {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  min-height: 520px;
+}
+
+.home-courses-geometric-shape {
+  position: absolute;
+  width: 280px;
+  height: 340px;
+  background: #009355;
+  border-radius: 36px;
+  transform: rotate(16deg);
+  top: 14%;
+  right: 18%;
+  z-index: 1;
+  box-shadow: 0 15px 35px rgba(0, 147, 85, 0.25);
+}
+
+.home-courses-ring {
+  position: absolute;
+  border: 1.5px solid rgba(0, 135, 81, 0.2);
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.home-courses-ring--inner {
+  width: 420px;
+  height: 420px;
+  top: 5%;
+}
+
+.home-courses-ring--outer {
+  width: 530px;
+  height: 530px;
+  top: -5%;
+}
+
+.home-courses-dotted-pattern {
+  position: absolute;
+  top: 10%;
+  right: 1%;
+  width: 140px;
+  height: 140px;
+  background-image: radial-gradient(#008751 1.5px, transparent 1.5px);
+  background-size: 14px 14px;
+  opacity: 0.22;
+  z-index: 1;
+}
+
+/* Cutout Image Container */
+.home-courses-image-frame {
+  position: relative;
+  z-index: 2;
+  width: 100%;
+  max-width: 540px;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+}
+
+.home-courses-student-img {
+  width: 100%;
+  height: auto;
+  max-height: 540px;
+  object-fit: contain;
+  display: block;
+  filter: drop-shadow(0 20px 25px rgba(0, 0, 0, 0.08));
+}
+
+/* --- Rating Card --- */
+.home-courses-rating-card {
+  position: absolute;
+  bottom: 80px;
+  right: 0;
+  z-index: 4;
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  padding: 0.65rem 1.15rem;
+  border-radius: 16px;
+  box-shadow: 0 16px 32px rgba(0, 0, 0, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.85);
+  animation: hcFloatCard 4s ease-in-out infinite;
+}
+
+@keyframes hcFloatCard {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-7px); }
+}
+
+.home-courses-rating-star {
+  background: #def9eb;
+  color: var(--hc-primary-green);
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.home-courses-rating-info {
+  display: flex;
+  flex-direction: column;
+}
+
+.home-courses-rating-score {
+  font-size: 1rem;
+  font-weight: 800;
+  color: var(--hc-text-dark);
+  line-height: 1.1;
+}
+
+.home-courses-rating-text {
+  font-size: 0.72rem;
+  color: var(--hc-text-muted);
+  font-weight: 600;
+}
+
+/* --- Ticker / Ribbon Area --- */
+.home-courses-ticker-section {
+  position: relative;
+  width: 100%;
+  margin-top: 1rem;
+  overflow: hidden;
+  z-index: 5;
+}
+
+/* Yellow Ribbon Overlay */
+.home-courses-ticker-wrapper--yellow {
+  background: var(--hc-ticker-yellow);
+  color: var(--hc-ticker-text);
+  padding: 1.05rem 0;
+  transform: rotate(-1.5deg) scale(1.05);
+  transform-origin: center;
+  box-shadow: 0 -4px 18px rgba(0, 0, 0, 0.08);
+  position: relative;
+  z-index: 2;
+}
+
+.home-courses-ticker-track {
+  display: flex;
+  width: max-content;
+  animation: hcScrollTicker 32s linear infinite;
+}
+
+.home-courses-ticker-track:hover {
+  animation-play-state: paused;
+}
+
+.home-courses-ticker-item {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0 2.4rem;
+  font-family: var(--hc-font-serif);
+  font-size: 1.25rem;
+  font-weight: 800;
+  letter-spacing: 0.01em;
+  white-space: nowrap;
+}
+
+.home-courses-ticker-star {
+  font-size: 1.35rem;
+  color: var(--hc-ticker-text);
+}
+
+/* Dark Green Base Strip Behind */
+.home-courses-ticker-base-green {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 28px;
+  background: var(--hc-dark-green);
+  z-index: 1;
+}
+
+@keyframes hcScrollTicker {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-33.33%); }
+}
+
+/* --- Responsive Layout --- */
+@media (max-width: 992px) {
+  .home-courses-wrapper {
+    grid-template-columns: 1fr;
+    text-align: center;
+    gap: 3.5rem;
+    padding-top: 2rem;
+  }
+
+  .home-courses-text-col {
+    align-items: center;
+  }
+
+  .home-courses-subtitle {
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .home-courses-cta-row {
+    justify-content: center;
+  }
+
+  .home-courses-visual-col {
+    min-height: 440px;
+  }
+
+  .home-courses-image-frame {
+    max-width: 400px;
+  }
+
+  .home-courses-rating-card {
+    right: 5%;
+    bottom: 30px;
+  }
+}
+
+@media (max-width: 576px) {
+  .home-courses-title {
+    font-size: 2.2rem;
+  }
+
+  .home-courses-cta-row {
+    flex-direction: column;
+    gap: 1.5rem;
+    width: 100%;
+  }
+
+  .home-courses-cta-btn {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .home-courses-rating-card {
+    right: 0;
+    left: 0;
+    margin: 0 auto;
+    width: fit-content;
+    bottom: 20px;
+  }
+
+  .home-courses-ticker-item {
+    font-size: 1rem;
+    padding: 0 1.5rem;
+  }
+}

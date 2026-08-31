@@ -1,0 +1,554 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Playfair+Display:wght@700;800;900&display=swap');
+
+/* --- Section Reset & Layout --- */
+.home-workshops-section {
+  position: relative;
+  background-color: #ffffff;
+  padding: 30px 24px;
+  font-family: 'DM Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+  color: #64748b;
+  overflow: hidden;
+}
+
+.home-workshops-container {
+  max-width: 1240px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1.1fr 1fr;
+  align-items: center;
+  gap: 70px;
+}
+
+/* --- Left Column: Visual Showcase --- */
+.home-workshops-media-column {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 30px 20px;
+}
+
+/* Ambient Pulse Background Blob */
+.home-workshops-bg-blob {
+  position: absolute;
+  width: 540px;
+  height: 540px;
+  background: radial-gradient(circle, #edf7f2 0%, #fbfdfc 70%, transparent 100%);
+  border-radius: 50%;
+  top: -40px;
+  left: -50px;
+  z-index: 1;
+  animation: homeWorkshopsBlobFloat 8s ease-in-out infinite alternate;
+}
+
+/* Decorative Outer Circle */
+.home-workshops-outline-circle {
+  position: absolute;
+  width: 350px;
+  height: 350px;
+  border: 1.5px solid #d4dfd8;
+  border-radius: 50%;
+  top: 10px;
+  right: 20px;
+  z-index: 1;
+  animation: homeWorkshopsSpinSlow 25s linear infinite;
+}
+
+/* Dotted Pattern Accent */
+.home-workshops-dotted-pattern {
+  position: absolute;
+  top: 50px;
+  left: 60px;
+  display: grid;
+  grid-template-columns: repeat(3, 4px);
+  gap: 8px;
+  z-index: 2;
+}
+
+.home-workshops-dotted-pattern span {
+  width: 4px;
+  height: 4px;
+  background-color: #94a3b8;
+  border-radius: 50%;
+  opacity: 0.6;
+}
+
+/* Image Container */
+.home-workshops-image-wrapper {
+  position: relative;
+  width: 100%;
+  max-width: 460px;
+  height: 340px;
+  border-radius: 90px 30px 90px 30px;
+  overflow: hidden;
+  box-shadow: 0 24px 50px rgba(0, 50, 30, 0.08);
+  z-index: 2;
+  background-color: #e2e8f0;
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+.home-workshops-image-wrapper:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 30px 60px rgba(0, 50, 30, 0.12);
+}
+
+.home-workshops-main-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.6s ease;
+}
+
+.home-workshops-image-wrapper:hover .home-workshops-main-img {
+  transform: scale(1.05);
+}
+
+/* Video Play Button & Pulse Rings */
+.home-workshops-play-btn {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 72px;
+  height: 72px;
+  background: #ffffff;
+  border-radius: 50%;
+  border: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.18);
+  cursor: pointer;
+  z-index: 3;
+  transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.home-workshops-play-icon {
+  width: 26px;
+  height: 26px;
+  fill: #e60000;
+  margin-left: 4px;
+  position: relative;
+  z-index: 2;
+  transition: transform 0.2s ease;
+}
+
+.home-workshops-play-pulse,
+.home-workshops-play-pulse-delayed {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.7);
+  z-index: 1;
+  pointer-events: none;
+  animation: homeWorkshopsPulse 2s infinite;
+}
+
+.home-workshops-play-pulse-delayed {
+  animation-delay: 1s;
+}
+
+.home-workshops-play-btn:hover {
+  transform: translate(-50%, -50%) scale(1.12);
+}
+
+.home-workshops-play-btn:hover .home-workshops-play-icon {
+  transform: scale(1.1);
+}
+
+/* Tilted Live Badge with Floating Keyframe */
+.home-workshops-live-badge {
+  position: absolute;
+  top: 30px;
+  right: 40px;
+  background: #ffffff;
+  border: 2px solid #00875a;
+  border-radius: 10px;
+  padding: 8px 18px;
+  font-size: 0.85rem;
+  font-weight: 800;
+  color: #00875a;
+  letter-spacing: 0.5px;
+  z-index: 4;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.06);
+  animation: homeWorkshopsBadgeFloat 4s ease-in-out infinite alternate;
+}
+
+.home-workshops-badge-dash {
+  position: absolute;
+  background-color: #00875a;
+  border-radius: 2px;
+}
+
+.home-workshops-badge-dash.top-dash {
+  width: 14px;
+  height: 2.5px;
+  top: -6px;
+  left: 12px;
+}
+
+.home-workshops-badge-dash.right-dash {
+  width: 10px;
+  height: 2.5px;
+  top: -5px;
+  right: 16px;
+}
+
+/* --- Right Column: Content --- */
+.home-workshops-content-column {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  z-index: 2;
+}
+
+.home-workshops-pill-tag {
+  display: inline-block;
+  background-color: #dcf2e8;
+  color: #00875a;
+  font-size: 0.85rem;
+  font-weight: 700;
+  padding: 6px 18px;
+  border-radius: 50px;
+  margin-bottom: 22px;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.home-workshops-pill-tag:hover {
+  background-color: #c8ebd9;
+  transform: translateY(-1px);
+}
+
+.home-workshops-heading {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-size: 3.1rem;
+  line-height: 1.15;
+  color: #111827;
+  font-weight: 900;
+  margin: 0 0 20px 0;
+  letter-spacing: -0.5px;
+}
+
+.home-workshops-description {
+  font-size: 0.95rem;
+  line-height: 1.7;
+  color: #6b7280;
+  margin: 0 0 36px 0;
+  max-width: 530px;
+}
+
+/* Feature Grid */
+.home-workshops-features-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 24px;
+  margin-bottom: 40px;
+  width: 100%;
+}
+
+.home-workshops-feature-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 14px;
+  transition: transform 0.3s ease;
+}
+
+.home-workshops-feature-item:hover {
+  transform: translateY(-2px);
+}
+
+.home-workshops-icon-box {
+  flex-shrink: 0;
+  width: 50px;
+  height: 50px;
+  background-color: #00875a;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #ffffff;
+  box-shadow: 0 6px 16px rgba(0, 135, 90, 0.25);
+  transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+.home-workshops-feature-item:hover .home-workshops-icon-box {
+  transform: scale(1.08) rotate(3deg);
+  background-color: #006b47;
+}
+
+.home-workshops-icon {
+  width: 24px;
+  height: 24px;
+}
+
+.home-workshops-feature-text h3 {
+  font-size: 1rem;
+  font-weight: 700;
+  line-height: 1.35;
+  color: #111827;
+  margin: 0 0 6px 0;
+}
+
+.home-workshops-feature-text p {
+  font-size: 0.82rem;
+  line-height: 1.55;
+  color: #6b7280;
+  margin: 0;
+}
+
+/* CTA Button */
+.home-workshops-cta-wrapper {
+  width: 100%;
+}
+
+.home-workshops-cta-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #00875a;
+  color: #ffffff;
+  border: 2px solid #00875a;
+  padding: 6px 6px 6px 26px;
+  border-radius: 8px;
+  font-size: 0.95rem;
+  font-weight: 700;
+  font-family: inherit;
+  cursor: pointer;
+  min-width: 220px;
+  gap: 16px;
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  box-shadow: 0 4px 14px rgba(0, 135, 90, 0.25);
+}
+
+.home-workshops-arrow-circle {
+  width: 40px;
+  height: 40px;
+  background: #ffffff;
+  border-radius: 6px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.home-workshops-arrow-icon {
+  width: 18px;
+  height: 18px;
+  stroke: #00875a;
+  transition: stroke 0.3s ease, transform 0.3s ease;
+}
+
+.home-workshops-cta-btn:hover {
+  background-color: #006b47;
+  border-color: #006b47;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 22px rgba(0, 107, 71, 0.35);
+}
+
+.home-workshops-cta-btn:hover .home-workshops-arrow-circle {
+  background-color: #111827;
+}
+
+.home-workshops-cta-btn:hover .home-workshops-arrow-icon {
+  stroke: #ffffff;
+  transform: translateX(3px);
+}
+
+/* --- Video Modal Styles --- */
+.home-workshops-modal-backdrop {
+  position: fixed;
+  inset: 0;
+  background-color: rgba(15, 23, 42, 0.85);
+  backdrop-filter: blur(8px);
+  z-index: 9999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  animation: homeWorkshopsFadeIn 0.3s ease;
+}
+
+.home-workshops-modal-content {
+  position: relative;
+  width: 100%;
+  max-width: 850px;
+  background: #000000;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.7);
+  animation: homeWorkshopsScaleUp 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.home-workshops-modal-close {
+  position: absolute;
+  top: 10px;
+  right: 14px;
+  background: rgba(255, 255, 255, 0.15);
+  border: none;
+  color: #ffffff;
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  font-size: 24px;
+  line-height: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  z-index: 10;
+  transition: background-color 0.2s ease, transform 0.2s ease;
+}
+
+.home-workshops-modal-close:hover {
+  background: rgba(255, 255, 255, 0.3);
+  transform: rotate(90deg);
+}
+
+.home-workshops-video-frame-wrap {
+  position: relative;
+  padding-bottom: 56.25%; /* 16:9 Aspect Ratio */
+  height: 0;
+}
+
+.home-workshops-video-frame-wrap iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: none;
+}
+
+/* --- Keyframe Animations --- */
+@keyframes homeWorkshopsPulse {
+  0% {
+    transform: scale(1);
+    opacity: 0.8;
+  }
+  100% {
+    transform: scale(1.6);
+    opacity: 0;
+  }
+}
+
+@keyframes homeWorkshopsBadgeFloat {
+  0% {
+    transform: rotate(10deg) translateY(0px);
+  }
+  100% {
+    transform: rotate(8deg) translateY(-8px);
+  }
+}
+
+@keyframes homeWorkshopsBlobFloat {
+  0% {
+    transform: scale(1) translate(0px, 0px);
+  }
+  100% {
+    transform: scale(1.05) translate(10px, -10px);
+  }
+}
+
+@keyframes homeWorkshopsSpinSlow {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes homeWorkshopsFadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes homeWorkshopsScaleUp {
+  from {
+    transform: scale(0.92);
+    opacity: 0;
+  }
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+/* --- Responsive Media Queries --- */
+@media (max-width: 1024px) {
+  .home-workshops-container {
+    gap: 40px;
+  }
+  
+  .home-workshops-heading {
+    font-size: 2.5rem;
+  }
+}
+
+@media (max-width: 868px) {
+  .home-workshops-container {
+    grid-template-columns: 1fr;
+    gap: 50px;
+  }
+
+  .home-workshops-media-column {
+    max-width: 500px;
+    margin: 0 auto;
+    width: 100%;
+  }
+
+  .home-workshops-content-column {
+    align-items: center;
+    text-align: center;
+  }
+
+  .home-workshops-description {
+    text-align: center;
+  }
+
+  .home-workshops-features-grid {
+    text-align: left;
+  }
+}
+
+@media (max-width: 560px) {
+  .home-workshops-section {
+    padding: 60px 16px;
+  }
+
+  .home-workshops-heading {
+    font-size: 2.1rem;
+  }
+
+  .home-workshops-image-wrapper {
+    height: 260px;
+    border-radius: 50px 20px 50px 20px;
+  }
+
+  .home-workshops-bg-blob {
+    width: 330px;
+    height: 330px;
+  }
+
+  .home-workshops-outline-circle {
+    width: 240px;
+    height: 240px;
+  }
+
+  .home-workshops-features-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .home-workshops-cta-btn {
+    width: 100%;
+  }
+}

@@ -1,0 +1,460 @@
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Playfair+Display:ital,wght@0,700;0,800;0,900;1,700;1,800;1,900&display=swap');
+
+/* --- Root Scoped Variables --- */
+:root {
+  --hg-forest-green: #005a36;
+  --hg-emerald-radial: #027a4b;
+  --hg-ticker-yellow: #f5b300;
+  --hg-ticker-text: #2a1f00;
+  --hg-card-bg: #d8f3e5;
+  --hg-leaf-bg: #eef8f1;
+  --hg-text-white: #ffffff;
+  --hg-text-light: #e0fbee;
+  --hg-text-dark: #122119;
+  --hg-text-muted: #4e6358;
+  --hg-font-serif: 'Playfair Display', Georgia, serif;
+  --hg-font-sans: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+}
+
+/* --- Main Section Container --- */
+.home-goals-section {
+  position: relative;
+  background-color: var(--hg-forest-green);
+  background-image: radial-gradient(circle at 80% 20%, var(--hg-emerald-radial) 0%, var(--hg-forest-green) 75%);
+  font-family: var(--hc-font-sans, var(--hg-font-sans));
+  color: var(--hg-text-white);
+  padding: 0 0 7.5rem 0;
+  overflow: hidden;
+  box-sizing: border-box;
+}
+
+* --- Top Ticker Ribbon --- */
+.home-goals-ticker-wrapper {
+  position: relative;
+  z-index: 5;
+  width: 100%;
+  overflow: hidden;
+  background: var(--hg-ticker-yellow);
+  color: var(--hg-ticker-text);
+  padding: 1.15rem 0;
+  transform: rotate(-1.5deg) scale(1.04);
+  transform-origin: center;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.16);
+  margin-top: -12px;
+}
+
+.home-goals-ticker-track {
+  display: flex;
+  width: max-content;
+  animation: hgScrollTicker 32s linear infinite;
+}
+
+.home-goals-ticker-track:hover {
+  animation-play-state: paused;
+}
+
+.home-goals-ticker-item {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.8rem;
+  padding: 0 2.4rem;
+  font-family: var(--hg-font-serif);
+  font-size: 1.25rem;
+  font-weight: 800;
+  letter-spacing: 0.015em;
+  white-space: nowrap;
+}
+
+.home-goals-ticker-star {
+  font-size: 1.35rem;
+  color: var(--hg-ticker-text);
+}
+
+@keyframes hgScrollTick/er {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-33.33%); }
+}
+
+/* --- Background Dot Pattern --- */
+.home-goals-bg-pattern {
+  position: absolute;
+  inset: 0;
+  background-image: radial-gradient(rgba(255, 255, 255, 0.08) 1.2px, transparent 1.2px);
+  background-size: 22px 22px;
+  pointer-events: none;
+  z-index: 1;
+}
+
+/* --- Main Content Container --- */
+.home-goals-container {
+  max-width: 1320px;
+  margin: 0 auto;
+  padding: 4.5rem 2rem 0 2rem;
+  position: relative;
+  z-index: 2;
+}
+
+/* --- Header Row --- */
+.home-goals-header-row {
+  display: grid;
+  grid-template-columns: 0.95fr 1.05fr;
+  align-items: center;
+  gap: 4.5rem;
+  margin-bottom: 4.5rem;
+}
+
+/* Left Media Frame with Chamfer Cut */
+.home-goals-media-col {
+  display: flex;
+  flex-direction: column;
+  gap: 1.8rem;
+}
+
+.home-goals-media-frame {
+  width: 100%;
+  max-width: 440px;
+  height: 250px;
+  border-radius: 28px 28px 75px 28px;
+  overflow: hidden;
+  box-shadow: 0 20px 42px rgba(0, 0, 0, 0.35);
+  transition: transform 0.35s ease;
+  background-color: #000;
+}
+
+.home-goals-media-frame:hover {
+  transform: scale(1.02);
+}
+
+.home-goals-media-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* Circular Rotating Stamp Video Badge */
+.home-goals-play-badge {
+  display: flex;
+  align-items: center;
+  gap: 1.3rem;
+  cursor: pointer;
+  max-width: 450px;
+  user-select: none;
+  transition: opacity 0.2s ease;
+}
+
+.home-goals-play-badge:hover {
+  opacity: 0.95;
+}
+
+.home-goals-play-stamp {
+  position: relative;
+  width: 64px;
+  height: 64px;
+  min-width: 64px;
+  background: var(--hg-ticker-yellow);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 8px 22px rgba(245, 179, 0, 0.4);
+  transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.home-goals-play-badge:hover .home-goals-play-stamp {
+  transform: scale(1.08) rotate(15deg);
+}
+
+.home-goals-stamp-svg {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  animation: hgRotateStamp 14s linear infinite;
+}
+
+@keyframes hgRotateStamp {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+.home-goals-stamp-text {
+  font-family: var(--hg-font-sans);
+  font-size: 9px;
+  font-weight: 800;
+  letter-spacing: 2px;
+  fill: #004d2e;
+}
+
+.home-goals-play-btn-center {
+  width: 32px;
+  height: 32px;
+  background: #008751;
+  color: #ffffff;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 2;
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.25);
+}
+
+.home-goals-play-btn-center svg {
+  margin-left: 2px;
+}
+
+.home-goals-play-text {
+  font-size: 1.05rem;
+  font-weight: 600;
+  line-height: 1.45;
+  color: var(--hg-text-light);
+  margin: 0;
+}
+
+.home-goals-highlight {
+  color: var(--hg-ticker-yellow);
+  font-weight: 800;
+}
+
+/* Right Content Column */
+.home-goals-heading {
+  font-family: var(--hg-font-serif);
+  font-size: clamp(2.8rem, 4.8vw, 4.2rem);
+  line-height: 1.08;
+  font-weight: 800;
+  color: var(--hg-text-white);
+  letter-spacing: -0.015em;
+  margin: 0 0 2rem 0;
+}
+
+.home-goals-bullets {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 1.15rem;
+}
+
+.home-goals-bullet-item {
+  display: flex;
+  align-items: center;
+  gap: 0.9rem;
+  font-size: 1.1rem;
+  font-weight: 500;
+  color: var(--hg-text-light);
+}
+
+.home-goals-bullet-star {
+  color: var(--hg-ticker-yellow);
+  font-size: 1.25rem;
+}
+
+/* --- Feature Cards Grid --- */
+.home-goals-cards-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2.2rem;
+  position: relative;
+  z-index: 3;
+}
+
+.home-goals-card {
+  position: relative;
+  background: var(--hg-card-bg);
+  border-radius: 28px;
+  padding: 1.15rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.3rem;
+  color: var(--hg-text-dark);
+  box-shadow: 0 16px 36px rgba(0, 0, 0, 0.22);
+  cursor: pointer;
+  transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+  overflow: hidden;
+}
+
+.home-goals-card:hover {
+  transform: translateY(-10px) scale(1.02);
+  background: #ffffff;
+  box-shadow: 0 24px 50px rgba(0, 0, 0, 0.32);
+}
+
+.home-goals-card-img-wrap {
+  width: 100%;
+  height: 185px;
+  border-radius: 20px;
+  overflow: hidden;
+}
+
+.home-goals-card-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+  display: block;
+}
+
+.home-goals-card:hover .home-goals-card-img {
+  transform: scale(1.08);
+}
+
+.home-goals-card-body {
+  padding: 0 0.5rem 0.6rem 0.5rem;
+  position: relative;
+  z-index: 2;
+}
+
+.home-goals-card-title {
+  font-size: 1.3rem;
+  font-weight: 800;
+  color: var(--hg-text-dark);
+  margin: 0 0 0.65rem 0;
+  transition: color 0.25s ease;
+}
+
+.home-goals-card:hover .home-goals-card-title {
+  color: #008751;
+}
+
+.home-goals-card-desc {
+  font-size: 0.94rem;
+  line-height: 1.55;
+  color: var(--hg-text-muted);
+  margin: 0;
+}
+
+/* Organic Soft Cream Leaf Detail */
+.home-goals-card-leaf {
+  position: absolute;
+  bottom: -15px;
+  right: -15px;
+  width: 85px;
+  height: 95px;
+  background: var(--hg-leaf-bg);
+  border-radius: 65% 35% 55% 45% / 60% 40% 60% 40%;
+  pointer-events: none;
+  z-index: 1;
+  transition: transform 0.35s ease, background 0.35s ease;
+}
+
+.home-goals-card:hover .home-goals-card-leaf {
+  background: rgba(0, 135, 81, 0.08);
+  transform: scale(1.2) rotate(10deg);
+}
+
+/* --- Angled Bottom Edge Cut --- */
+.home-goals-bottom-angle {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 55px;
+  background: #ffffff;
+  clip-path: polygon(0 100%, 100% 100%, 100% 0);
+  z-index: 2;
+  pointer-events: none;
+}
+
+/* --- Video Modal Popup --- */
+.home-goals-modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.82);
+  backdrop-filter: blur(8px);
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1.5rem;
+  animation: hgFadeIn 0.25s ease-out;
+}
+
+.home-goals-modal-content {
+  position: relative;
+  width: 100%;
+  max-width: 800px;
+  background: #000000;
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 25px 50px rgba(0, 0, 0, 0.5);
+}
+
+.home-goals-modal-close {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.2);
+  color: #ffffff;
+  border: none;
+  font-size: 1.2rem;
+  cursor: pointer;
+  z-index: 10;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.2s ease;
+}
+
+.home-goals-modal-close:hover {
+  background: rgba(255, 255, 255, 0.4);
+}
+
+.home-goals-modal-iframe {
+  width: 100%;
+  height: 450px;
+  border: none;
+  display: block;
+}
+
+@keyframes hgFadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+/* --- Responsive Breakpoints --- */
+@media (max-width: 992px) {
+  .home-goals-header-row {
+    grid-template-columns: 1fr;
+    text-align: center;
+    gap: 3.5rem;
+  }
+
+  .home-goals-media-col {
+    align-items: center;
+  }
+
+  .home-goals-bullets {
+    align-items: center;
+  }
+
+  .home-goals-cards-grid {
+    grid-template-columns: 1fr;
+    max-width: 480px;
+    margin: 0 auto;
+  }
+}
+
+@media (max-width: 576px) {
+  .home-goals-heading {
+    font-size: 2.2rem;
+  }
+
+  .home-goals-ticker-item {
+    font-size: 1rem;
+    padding: 0 1.5rem;
+  }
+
+  .home-goals-play-badge {
+    flex-direction: column;
+    text-align: center;
+    gap: 0.8rem;
+  }
+
+  .home-goals-modal-iframe {
+    height: 260px;
+  }
+}
