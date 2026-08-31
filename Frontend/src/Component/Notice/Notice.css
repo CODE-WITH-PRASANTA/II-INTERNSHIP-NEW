@@ -1,0 +1,390 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+.auth-wrapper {
+  display: flex;
+  min-height: 100vh;
+  width: 100%;
+  background-color: #ffffff;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", sans-serif;
+}
+
+/* ================= LEFT BANNER & GLASS CARD ================= */
+.auth-banner-side {
+  flex: 1;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 40px;
+  position: relative;
+  background-color: #0b110e;
+}
+
+.glass-testimonial-card {
+  max-width: 480px;
+  width: 100%;
+  background: rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(28px);
+  -webkit-backdrop-filter: blur(28px);
+  border: 1px solid rgba(255, 255, 255, 0.16);
+  border-radius: 20px;
+  padding: 40px 36px;
+  color: #ffffff;
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.35);
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.quote-icon-box {
+  width: 42px;
+  height: 42px;
+  border-radius: 10px;
+  background: rgba(255, 255, 255, 0.12);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #ffffff;
+}
+
+.testimonial-text {
+  font-size: 1.05rem;
+  line-height: 1.65;
+  color: rgba(255, 255, 255, 0.92);
+  font-weight: 400;
+}
+
+.testimonial-author {
+  border-top: 1px solid rgba(255, 255, 255, 0.12);
+  padding-top: 18px;
+}
+
+.testimonial-author h4 {
+  font-size: 1.02rem;
+  font-weight: 600;
+  color: #ffffff;
+  margin-bottom: 3px;
+}
+
+.testimonial-author p {
+  font-size: 0.85rem;
+  color: rgba(255, 255, 255, 0.65);
+}
+
+/* ================= RIGHT FORM PANEL ================= */
+.auth-form-side {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 40px 24px;
+  background: #ffffff;
+}
+
+.auth-content-box {
+  max-width: 480px;
+  width: 100%;
+}
+
+.auth-header {
+  text-align: center;
+  margin-bottom: 28px;
+}
+
+.auth-header h2 {
+  font-size: 1.75rem;
+  font-weight: 700;
+  color: #111827;
+  margin-bottom: 8px;
+}
+
+.auth-header p {
+  font-size: 0.88rem;
+  color: #6b7280;
+}
+
+.auth-form {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.form-group label {
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  color: #374151;
+}
+
+.input-wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.input-icon {
+  position: absolute;
+  left: 14px;
+  width: 16px;
+  height: 16px;
+  color: #9ca3af;
+  pointer-events: none;
+}
+
+.input-wrapper input {
+  width: 100%;
+  padding: 12px 14px 12px 40px;
+  border: 1px solid #e5e7eb;
+  border-radius: 8px;
+  font-size: 0.92rem;
+  color: #111827;
+  background: #ffffff;
+  outline: none;
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.input-wrapper input:focus {
+  border-color: #007a4d;
+  box-shadow: 0 0 0 3px rgba(0, 122, 77, 0.12);
+}
+
+.eye-toggle-btn {
+  position: absolute;
+  right: 12px;
+  background: none;
+  border: none;
+  color: #9ca3af;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  padding: 4px;
+}
+
+.eye-toggle-btn:hover {
+  color: #4b5563;
+}
+
+/* ================= ROLES GRID ================= */
+.role-selector-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+}
+
+.role-card {
+  border: 1px solid #e5e7eb;
+  border-radius: 10px;
+  padding: 14px 12px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  cursor: pointer;
+  background: #ffffff;
+  transition: all 0.2s ease;
+}
+
+.role-card:hover {
+  border-color: #007a4d;
+}
+
+.role-card.selected {
+  border-color: #007a4d;
+  background: #f0fdf4;
+}
+
+.role-icon {
+  font-size: 1.25rem;
+  margin-bottom: 4px;
+}
+
+.role-name {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: #111827;
+}
+
+.role-card.selected .role-name {
+  color: #007a4d;
+}
+
+.role-caption {
+  font-size: 0.68rem;
+  color: #6b7280;
+  margin-top: 2px;
+  line-height: 1.2;
+}
+
+/* ================= DUAL COLUMN ROW ================= */
+.form-grid-dual {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+}
+
+/* ================= OPTIONS / CHECKBOX ================= */
+.form-row-options {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 0.75rem;
+}
+
+.checkbox-container {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  cursor: pointer;
+  font-size: 0.72rem;
+  font-weight: 600;
+  color: #4b5563;
+}
+
+.checkbox-container input {
+  accent-color: #007a4d;
+  width: 15px;
+  height: 15px;
+  cursor: pointer;
+}
+
+.forgot-link {
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: #007a4d;
+  text-decoration: none;
+}
+
+.forgot-link:hover {
+  text-decoration: underline;
+}
+
+.terms-row {
+  margin-top: 2px;
+}
+
+.terms-row a {
+  color: #007a4d;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.terms-row a:hover {
+  text-decoration: underline;
+}
+
+/* ================= BUTTONS ================= */
+.primary-auth-btn {
+  width: 100%;
+  background: #007a4d;
+  color: #ffffff;
+  padding: 12px;
+  border-radius: 8px;
+  border: none;
+  font-size: 0.95rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.2s, transform 0.1s;
+  margin-top: 6px;
+}
+
+.primary-auth-btn:hover {
+  background: #00633e;
+}
+
+.primary-auth-btn:active {
+  transform: scale(0.99);
+}
+
+.switch-prompt {
+  text-align: center;
+  font-size: 0.85rem;
+  color: #6b7280;
+  margin-top: 22px;
+}
+
+.switch-link-btn {
+  background: none;
+  border: none;
+  color: #007a4d;
+  font-weight: 600;
+  cursor: pointer;
+  font-size: 0.85rem;
+  padding: 0;
+}
+
+.switch-link-btn:hover {
+  text-decoration: underline;
+}
+
+/* ================= ANIMATIONS ================= */
+.auth-anim-view {
+  animation: smoothFadeUp 0.35s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.animate-fade-slide {
+  animation: glassCardIn 0.45s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+@keyframes smoothFadeUp {
+  0% {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes glassCardIn {
+  0% {
+    opacity: 0;
+    transform: scale(0.96) translateY(8px);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+  }
+}
+
+/* ================= RESPONSIVE DESIGN ================= */
+@media (max-width: 960px) {
+  .auth-wrapper {
+    flex-direction: column;
+  }
+
+  .auth-banner-side {
+    min-height: 320px;
+    padding: 30px 20px;
+  }
+
+  .glass-testimonial-card {
+    padding: 24px;
+  }
+
+  .auth-form-side {
+    padding: 36px 20px;
+  }
+}
+
+@media (max-width: 540px) {
+  .form-grid-dual {
+    grid-template-columns: 1fr;
+  }
+
+  .role-selector-grid {
+    grid-template-columns: 1fr;
+  }
+}

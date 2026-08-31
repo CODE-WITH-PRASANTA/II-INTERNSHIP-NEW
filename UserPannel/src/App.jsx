@@ -1,8 +1,17 @@
-import React from 'react';
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
-import Mainlayout from './Layout/Mainlayout/Mainlayout';
-import Notification from './Pages/Notification/Notification';
+import React from "react";
+import {
+  BrowserRouter,
+  Routes,
+  Route,
+  Navigate,
+} from "react-router-dom";
 
+import IdCard from "./Pages/IdCard/IdCard";
+import MyApplication from "./Pages/MyApplication/MyApplication";
+import BrowseInternships from "./Pages/BrowseInternships/BrowseInternships";
+import Mainlayout from "./Layout/Mainlayout/Mainlayout";
+import Notification from "./Pages/Notification/Notification";
+import Dashboard from "./Pages/Dashboard/Dashboard";
 
 const PagePlaceholder = ({ title }) => (
   <div className="content-placeholder">
@@ -17,34 +26,52 @@ const App = () => {
   return (
     <BrowserRouter>
       <Routes>
+
+        {/* Main Layout */}
         <Route path="/" element={<Mainlayout />}>
+
+          {/* Default Page */}
           <Route
             index
-            element={<PagePlaceholder title="Dashboard" />}
+            element={<Navigate to="/browseinternships" replace />}
           />
 
           <Route
-            path="browse-internships"
-            element={<PagePlaceholder title="Browse Internships" />}
-          />
+             path="/"
+             element={<Dashboard/>}/>
 
+          {/* Browse Internships */}
           <Route
-            path="applications"
-            element={<PagePlaceholder title="My Applications" />}
+            path="/browse-internships"
+            element={<BrowseInternships />}
           />
 
+          {/* My Application */}
           <Route
-            path="id-cards"
-            element={<PagePlaceholder title="ID Cards" />}
+            path="/applications"
+            element={<MyApplication />}
           />
 
+          {/* ID Card */}
+          <Route
+            path="/id-cards"
+            element={<IdCard />}
+          />
+
+           <Route
+            path="/notifications"
+            element={<Notification/>}
+          />
+
+
+          {/* Other Pages */}
           <Route
             path="certificates"
             element={<PagePlaceholder title="Certificates" />}
           />
 
           <Route
-            path="/notifications"
+            path="notifications"
             element={<PagePlaceholder title="Notifications" />}
           />
 
@@ -53,7 +80,10 @@ const App = () => {
             element={<PagePlaceholder title="Payments" />}
           />
 
-          <Route path="/notification" element={<Notification/>}/>
+          <Route
+            path="profile"
+            element={<PagePlaceholder title="Profile" />}
+          />
 
           <Route
             path="settings"
@@ -70,11 +100,14 @@ const App = () => {
             element={<PagePlaceholder title="Contact Support" />}
           />
 
+          {/* 404 */}
           <Route
             path="*"
             element={<PagePlaceholder title="404 - Page Not Found" />}
           />
+
         </Route>
+
       </Routes>
     </BrowserRouter>
   );

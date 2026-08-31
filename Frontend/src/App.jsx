@@ -35,6 +35,8 @@ import VirtualInternship from "./Pages/VirtualInternship/VirtualInternship";
 import EducationalInstitute from "./Pages/EducationalInstitute/EducationalInstitute";
 import JobPlacement from "./Pages/JobPlacement/JobPlacement";
 import TechnicalSupport from "./Pages/TechnicalSupport/TechnicalSupport";
+import Notice from "./Component/Notice/Notice";
+
 
 const App = () => {
   return (
@@ -75,6 +77,8 @@ const App = () => {
         {/* Auth & Protected Routes */}
         <Route path="/login" element={<Loginpage />} />
         <Route path="/protectrouter" element={<Protectrouter />} />
+        <Route path="Notice" element={<Notice/>}/>
+       
       </Routes>
       <Footer />
     </BrowserRouter>
