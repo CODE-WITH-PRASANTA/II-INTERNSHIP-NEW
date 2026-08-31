@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,400&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800;900&family=Playfair+Display:wght@500;600;700;800&display=swap');
 
 :root {
   --DonateBreadcrumb-bg-green: #01432c;
@@ -31,7 +31,7 @@
   overflow: hidden;
   background: 
     radial-gradient(ellipse 70% 60% at 0% 0%, rgba(0, 24, 15, 0.9) 0%, rgba(1, 55, 36, 0.5) 60%, transparent 100%),
-    linear-gradient(135deg, #003622 0%, #01432c 45%, #015438 80%, #026644 100%);
+    linear-gradient(135deg, #012b1c 0%, #01432c 45%, #015438 80%, #026644 100%);
 }
 
 /* Subtle Dot Texture */
@@ -70,16 +70,16 @@
   display: inline-flex;
   align-items: center;
   width: fit-content;
-  margin-bottom: 24px;
+  margin-bottom: 20px;
 }
 
 /* Floating Dot 1 */
 .DonateBreadcrumb-dot--one {
   position: absolute;
   top: -14px;
-  left: 36px;
-  width: 11px;
-  height: 11px;
+  left: 20px;
+  width: 9px;
+  height: 9px;
   border-radius: 50%;
   background-color: var(--DonateBreadcrumb-yellow);
   box-shadow: 0 0 10px rgba(254, 209, 48, 0.7);
@@ -90,10 +90,10 @@
 /* Floating Dot 2 */
 .DonateBreadcrumb-dot--two {
   position: absolute;
-  top: 10px;
-  left: 140px;
-  width: 8px;
-  height: 8px;
+  top: 6px;
+  left: 36px;
+  width: 6px;
+  height: 6px;
   border-radius: 50%;
   background-color: var(--DonateBreadcrumb-yellow);
   box-shadow: 0 0 8px rgba(254, 209, 48, 0.6);
@@ -103,12 +103,12 @@
 
 @keyframes DonateBreadcrumb-float-down {
   0% { transform: translateY(0px) scale(1); }
-  100% { transform: translateY(18px) scale(1.15); }
+  100% { transform: translateY(14px) scale(1.15); }
 }
 
 @keyframes DonateBreadcrumb-float-up {
   0% { transform: translateY(0px) scale(1.1); }
-  100% { transform: translateY(-16px) scale(0.9); }
+  100% { transform: translateY(-12px) scale(0.9); }
 }
 
 /* Tag Pill */
@@ -116,33 +116,33 @@
   display: inline-flex;
   align-items: center;
   gap: 8px;
-  padding: 8px 20px;
-  background-color: rgba(255, 255, 255, 0.08);
+  padding: 6px 18px;
+  background-color: rgba(255, 255, 255, 0.12);
   backdrop-filter: blur(8px);
   -webkit-backdrop-filter: blur(8px);
-  border: 1px solid rgba(255, 255, 255, 0.25);
+  border: 1px solid rgba(255, 255, 255, 0.18);
   border-radius: 9999px;
 }
 
 .DonateBreadcrumb-tag-icon {
   font-size: 14px;
-  display: inline-flex;
+  color: #4ade80;
 }
 
 .DonateBreadcrumb-tag-text {
-  font-size: 13px;
+  font-size: 12px;
   font-weight: 700;
-  color: #ffffff;
+  color: #e5f4ee;
   letter-spacing: 0.8px;
   text-transform: uppercase;
 }
 
-/* Main Serif Heading (Matching Image Style) */
+/* Main Heading */
 .DonateBreadcrumb-title {
-  margin: 0 0 20px 0;
+  margin: 0 0 18px 0;
   font-family: 'Playfair Display', Georgia, serif;
-  font-size: 68px;
-  font-weight: 500;
+  font-size: 66px;
+  font-weight: 700;
   line-height: 1.1;
   letter-spacing: -0.5px;
   display: flex;
@@ -150,24 +150,24 @@
 }
 
 .DonateBreadcrumb-title-line {
+  color: var(--DonateBreadcrumb-white);
   display: inline-block;
   background: linear-gradient(
     90deg, 
-    #e8f5e9 0%, 
-    #ffffff 25%, 
-    #fff280 50%, 
+    #ffffff 0%, 
+    #ffffff 50%, 
     #fed130 75%, 
     #ffffff 100%
   );
-  background-size: 250% auto;
+  background-size: 200% auto;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
-  animation: DonateBreadcrumb-shimmer 9s linear infinite;
+  animation: DonateBreadcrumb-shimmer 8s linear infinite;
 }
 
 @keyframes DonateBreadcrumb-shimmer {
   0% { background-position: 0% center; }
-  100% { background-position: 250% center; }
+  100% { background-position: 200% center; }
 }
 
 /* Breadcrumb Navigation Trail */
@@ -175,7 +175,7 @@
   display: inline-flex;
   align-items: center;
   gap: 8px;
-  margin-bottom: 24px;
+  margin-bottom: 22px;
   font-size: 13.5px;
   font-weight: 600;
 }
@@ -213,11 +213,10 @@
 /* Description Text */
 .DonateBreadcrumb-description {
   margin: 0;
-  font-size: 17px;
+  font-size: 15px;
   line-height: 1.65;
   color: var(--DonateBreadcrumb-text-muted);
-  max-width: 580px;
-  font-weight: 400;
+  max-width: 520px;
 }
 
 /* Right Column: Custom Rounded Frame Container */
@@ -230,7 +229,7 @@
 .DonateBreadcrumb-frame {
   position: relative;
   width: 100%;
-  margin-top: 20px;
+  margin-top: 30px;
   max-width: 500px;
   min-height: 380px;
   border-radius: 36px;
@@ -238,7 +237,7 @@
   border: 1px solid rgba(255, 255, 255, 0.1);
   box-shadow: 0 24px 48px -12px rgba(0, 0, 0, 0.45);
   display: flex;
-  align-items: center;
+  align-items: flex-end;
   justify-content: center;
   overflow: hidden;
 }
@@ -256,12 +255,13 @@
   z-index: 1;
 }
 
-/* Foreground Cutout Image */
+/* Foreground Student Cutout Image */
 .DonateBreadcrumb-img {
   position: relative;
   z-index: 2;
-  width: 100%;
+  width: 632px;
   height: 376px;
+  max-height: 376px;
   object-fit: contain;
   display: block;
 }
@@ -290,7 +290,7 @@
     padding: 60px 48px 120px 48px;
   }
   .DonateBreadcrumb-title {
-    font-size: 56px;
+    font-size: 54px;
   }
   .DonateBreadcrumb-frame {
     max-width: 440px;
@@ -327,7 +327,7 @@
   }
 
   .DonateBreadcrumb-title {
-    font-size: 40px;
+    font-size: 38px;
     letter-spacing: -0.5px;
   }
 
@@ -337,7 +337,7 @@
   }
 
   .DonateBreadcrumb-description {
-    font-size: 15px;
+    font-size: 14px;
   }
 
   .DonateBreadcrumb-frame {
@@ -359,7 +359,7 @@
 
 @media (max-width: 480px) {
   .DonateBreadcrumb-title {
-    font-size: 34px;
+    font-size: 32px;
   }
 
   .DonateBreadcrumb-yellow-badge {

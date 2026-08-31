@@ -1,7 +1,7 @@
 import React from 'react';
 import './DonateBreadcrumb.css';
 
-// Import your custom local image asset
+// Custom local image asset
 import breadcrumbImage from '../../assets/AboutUs-breadcrumb.webp';
 
 const DonateBreadcrumb = () => {
@@ -30,7 +30,7 @@ const DonateBreadcrumb = () => {
               </div>
             </div>
 
-            {/* Main Title with Running/Flowing White-to-Yellow Gradient Animation */}
+            {/* Main Title */}
             <h1 className="DonateBreadcrumb-title">
               <span className="DonateBreadcrumb-title-line">Make a Difference</span>
               <span className="DonateBreadcrumb-title-line">Today</span>
@@ -43,11 +43,7 @@ const DonateBreadcrumb = () => {
                 <a href="/" className="DonateBreadcrumb-link">Home</a>
               </span>
               <span className="DonateBreadcrumb-separator">/</span>
-              <span className="DonateBreadcrumb-nav-item">
-                <a href="/about" className="DonateBreadcrumb-link">About Us</a>
-              </span>
-              <span className="DonateBreadcrumb-separator">/</span>
-              <span className="DonateBreadcrumb-active">Support Our Mission</span>
+              <span className="DonateBreadcrumb-active">Donate</span>
             </nav>
 
             {/* Description Text */}
@@ -56,7 +52,7 @@ const DonateBreadcrumb = () => {
             </p>
           </div>
 
-          {/* Right Column: Green Rounded Frame, Yellow Badge & Student Image */}
+          {/* Right Column: Custom Rounded Frame Container */}
           <div className="DonateBreadcrumb-media-col">
             <div className="DonateBreadcrumb-frame">
               {/* Yellow tilted badge inside the frame */}
@@ -65,7 +61,7 @@ const DonateBreadcrumb = () => {
               {/* Foreground Image */}
               <img 
                 src={breadcrumbImage} 
-                alt="Support Our Mission" 
+                alt="Make a Difference Today" 
                 className="DonateBreadcrumb-img"
               />
             </div>
