@@ -19,8 +19,9 @@ const ContactBreadcrumb = () => {
             
             {/* Tag Pill with Animated Floating Yellow Dots */}
             <div className="ContactBreadcrumb-tag-wrapper">
-              {/* Floating Accent Dots */}
+              {/* Dot 1: Floats Up-to-Down */}
               <span className="ContactBreadcrumb-dot ContactBreadcrumb-dot--one" />
+              {/* Dot 2: Floats Down-to-Up (Reverse) */}
               <span className="ContactBreadcrumb-dot ContactBreadcrumb-dot--two" />
 
               <div className="ContactBreadcrumb-tag">
@@ -50,7 +51,7 @@ const ContactBreadcrumb = () => {
             </p>
           </div>
 
-          {/* Right Column: Custom Frame Container */}
+          {/* Right Column: Custom Rounded Frame Container */}
           <div className="ContactBreadcrumb-media-col">
             <div className="ContactBreadcrumb-frame">
               {/* Yellow tilted badge inside the frame */}
@@ -59,7 +60,7 @@ const ContactBreadcrumb = () => {
               {/* Foreground Image */}
               <img 
                 src={breadcrumbImage} 
-                alt="Get in Touch" 
+                alt="Get In Touch" 
                 className="ContactBreadcrumb-img"
               />
             </div>

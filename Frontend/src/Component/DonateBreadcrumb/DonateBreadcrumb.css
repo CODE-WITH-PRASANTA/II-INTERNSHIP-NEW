@@ -1,12 +1,12 @@
 @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800;900&family=Playfair+Display:wght@500;600;700;800&display=swap');
 
 :root {
-  --ContactBreadcrumb-bg-green: #01432c;
-  --ContactBreadcrumb-yellow: #fed130;
-  --ContactBreadcrumb-yellow-light: #fff280;
-  --ContactBreadcrumb-white: #ffffff;
-  --ContactBreadcrumb-text-muted: rgba(255, 255, 255, 0.85);
-  --ContactBreadcrumb-card-green: #013f2a;
+  --DonateBreadcrumb-bg-green: #01432c;
+  --DonateBreadcrumb-yellow: #fed130;
+  --DonateBreadcrumb-yellow-light: #fff280;
+  --DonateBreadcrumb-white: #ffffff;
+  --DonateBreadcrumb-text-muted: rgba(255, 255, 255, 0.85);
+  --DonateBreadcrumb-card-green: #013f2a;
 }
 
 * {
@@ -14,7 +14,7 @@
 }
 
 /* Outer Wrapper */
-.ContactBreadcrumb-wrapper {
+.DonateBreadcrumb-wrapper {
   width: 100%;
   padding: 0;
   margin: 0;
@@ -23,7 +23,7 @@
 }
 
 /* Curved Banner Container */
-.ContactBreadcrumb-container {
+.DonateBreadcrumb-container {
   position: relative;
   width: 100%;
   margin: 0 auto;
@@ -35,7 +35,7 @@
 }
 
 /* Subtle Dot Texture */
-.ContactBreadcrumb-grid-bg {
+.DonateBreadcrumb-grid-bg {
   position: absolute;
   inset: 0;
   width: 100%;
@@ -47,7 +47,7 @@
 }
 
 /* Main Grid Layout */
-.ContactBreadcrumb-content-grid {
+.DonateBreadcrumb-content-grid {
   position: relative;
   z-index: 2;
   max-width: 1360px;
@@ -59,13 +59,13 @@
 }
 
 /* Left Column: Text */
-.ContactBreadcrumb-text-col {
+.DonateBreadcrumb-text-col {
   display: flex;
   flex-direction: column;
 }
 
 /* Tag Wrapper & Floating Dots */
-.ContactBreadcrumb-tag-wrapper {
+.DonateBreadcrumb-tag-wrapper {
   position: relative;
   display: inline-flex;
   align-items: center;
@@ -74,45 +74,45 @@
 }
 
 /* Floating Dot 1 */
-.ContactBreadcrumb-dot--one {
+.DonateBreadcrumb-dot--one {
   position: absolute;
   top: -14px;
   left: 20px;
   width: 9px;
   height: 9px;
   border-radius: 50%;
-  background-color: var(--ContactBreadcrumb-yellow);
+  background-color: var(--DonateBreadcrumb-yellow);
   box-shadow: 0 0 10px rgba(254, 209, 48, 0.7);
-  animation: ContactBreadcrumb-float-down 3s ease-in-out infinite alternate;
+  animation: DonateBreadcrumb-float-down 3s ease-in-out infinite alternate;
   z-index: 3;
 }
 
 /* Floating Dot 2 */
-.ContactBreadcrumb-dot--two {
+.DonateBreadcrumb-dot--two {
   position: absolute;
   top: 6px;
   left: 36px;
   width: 6px;
   height: 6px;
   border-radius: 50%;
-  background-color: var(--ContactBreadcrumb-yellow);
+  background-color: var(--DonateBreadcrumb-yellow);
   box-shadow: 0 0 8px rgba(254, 209, 48, 0.6);
-  animation: ContactBreadcrumb-float-up 2.6s ease-in-out infinite alternate;
+  animation: DonateBreadcrumb-float-up 2.6s ease-in-out infinite alternate;
   z-index: 3;
 }
 
-@keyframes ContactBreadcrumb-float-down {
+@keyframes DonateBreadcrumb-float-down {
   0% { transform: translateY(0px) scale(1); }
   100% { transform: translateY(14px) scale(1.15); }
 }
 
-@keyframes ContactBreadcrumb-float-up {
+@keyframes DonateBreadcrumb-float-up {
   0% { transform: translateY(0px) scale(1.1); }
   100% { transform: translateY(-12px) scale(0.9); }
 }
 
 /* Tag Pill */
-.ContactBreadcrumb-tag {
+.DonateBreadcrumb-tag {
   display: inline-flex;
   align-items: center;
   gap: 8px;
@@ -124,12 +124,12 @@
   border-radius: 9999px;
 }
 
-.ContactBreadcrumb-tag-icon {
+.DonateBreadcrumb-tag-icon {
   font-size: 14px;
-  color: var(--ContactBreadcrumb-yellow);
+  color: #4ade80;
 }
 
-.ContactBreadcrumb-tag-text {
+.DonateBreadcrumb-tag-text {
   font-size: 12px;
   font-weight: 700;
   color: #e5f4ee;
@@ -138,7 +138,7 @@
 }
 
 /* Main Heading */
-.ContactBreadcrumb-title {
+.DonateBreadcrumb-title {
   margin: 0 0 18px 0;
   font-family: 'Playfair Display', Georgia, serif;
   font-size: 66px;
@@ -149,8 +149,8 @@
   flex-direction: column;
 }
 
-.ContactBreadcrumb-title-line {
-  color: var(--ContactBreadcrumb-white);
+.DonateBreadcrumb-title-line {
+  color: var(--DonateBreadcrumb-white);
   display: inline-block;
   background: linear-gradient(
     90deg, 
@@ -162,16 +162,16 @@
   background-size: 200% auto;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
-  animation: ContactBreadcrumb-shimmer 8s linear infinite;
+  animation: DonateBreadcrumb-shimmer 8s linear infinite;
 }
 
-@keyframes ContactBreadcrumb-shimmer {
+@keyframes DonateBreadcrumb-shimmer {
   0% { background-position: 0% center; }
   100% { background-position: 200% center; }
 }
 
 /* Breadcrumb Navigation Trail */
-.ContactBreadcrumb-nav {
+.DonateBreadcrumb-nav {
   display: inline-flex;
   align-items: center;
   gap: 8px;
@@ -180,60 +180,60 @@
   font-weight: 600;
 }
 
-.ContactBreadcrumb-nav-item {
+.DonateBreadcrumb-nav-item {
   display: inline-flex;
   align-items: center;
   gap: 5px;
 }
 
-.ContactBreadcrumb-home-icon {
+.DonateBreadcrumb-home-icon {
   font-size: 14px;
 }
 
-.ContactBreadcrumb-link {
+.DonateBreadcrumb-link {
   color: rgba(255, 255, 255, 0.85);
   text-decoration: none;
   transition: color 0.2s ease;
 }
 
-.ContactBreadcrumb-link:hover {
-  color: var(--ContactBreadcrumb-yellow);
+.DonateBreadcrumb-link:hover {
+  color: var(--DonateBreadcrumb-yellow);
   text-decoration: underline;
 }
 
-.ContactBreadcrumb-separator {
+.DonateBreadcrumb-separator {
   color: rgba(255, 255, 255, 0.4);
   font-weight: 400;
 }
 
-.ContactBreadcrumb-active {
-  color: var(--ContactBreadcrumb-yellow);
+.DonateBreadcrumb-active {
+  color: var(--DonateBreadcrumb-yellow);
 }
 
 /* Description Text */
-.ContactBreadcrumb-description {
+.DonateBreadcrumb-description {
   margin: 0;
   font-size: 15px;
   line-height: 1.65;
-  color: var(--ContactBreadcrumb-text-muted);
+  color: var(--DonateBreadcrumb-text-muted);
   max-width: 520px;
 }
 
 /* Right Column: Custom Rounded Frame Container */
-.ContactBreadcrumb-media-col {
+.DonateBreadcrumb-media-col {
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
-.ContactBreadcrumb-frame {
+.DonateBreadcrumb-frame {
   position: relative;
   width: 100%;
   margin-top: 30px;
   max-width: 500px;
   min-height: 380px;
   border-radius: 36px;
-  background-color: var(--ContactBreadcrumb-card-green);
+  background-color: var(--DonateBreadcrumb-card-green);
   border: 1px solid rgba(255, 255, 255, 0.1);
   box-shadow: 0 24px 48px -12px rgba(0, 0, 0, 0.45);
   display: flex;
@@ -243,20 +243,20 @@
 }
 
 /* Rotated Yellow Badge inside Frame */
-.ContactBreadcrumb-yellow-badge {
+.DonateBreadcrumb-yellow-badge {
   position: absolute;
   width: 250px;
   height: 250px;
   top: 30px;
   right: 95px;
-  background-color: var(--ContactBreadcrumb-yellow);
+  background-color: var(--DonateBreadcrumb-yellow);
   border-radius: 36px;
   transform: rotate(20deg);
   z-index: 1;
 }
 
 /* Foreground Student Cutout Image */
-.ContactBreadcrumb-img {
+.DonateBreadcrumb-img {
   position: relative;
   z-index: 2;
   width: 632px;
@@ -267,7 +267,7 @@
 }
 
 /* Organic Bottom Wave Shape */
-.ContactBreadcrumb-wave-curve {
+.DonateBreadcrumb-wave-curve {
   position: absolute;
   bottom: -1px;
   left: 0;
@@ -277,7 +277,7 @@
   z-index: 3;
 }
 
-.ContactBreadcrumb-wave-curve svg {
+.DonateBreadcrumb-wave-curve svg {
   position: relative;
   display: block;
   width: 100%;
@@ -286,83 +286,83 @@
 
 /* Responsive Adaptations */
 @media (max-width: 1200px) {
-  .ContactBreadcrumb-container {
+  .DonateBreadcrumb-container {
     padding: 60px 48px 120px 48px;
   }
-  .ContactBreadcrumb-title {
+  .DonateBreadcrumb-title {
     font-size: 54px;
   }
-  .ContactBreadcrumb-frame {
+  .DonateBreadcrumb-frame {
     max-width: 440px;
     min-height: 340px;
   }
-  .ContactBreadcrumb-yellow-badge {
+  .DonateBreadcrumb-yellow-badge {
     width: 210px;
     height: 210px;
   }
 }
 
 @media (max-width: 1024px) {
-  .ContactBreadcrumb-content-grid {
+  .DonateBreadcrumb-content-grid {
     grid-template-columns: 1fr;
     gap: 40px;
   }
 
-  .ContactBreadcrumb-title {
+  .DonateBreadcrumb-title {
     font-size: 48px;
   }
 
-  .ContactBreadcrumb-media-col {
+  .DonateBreadcrumb-media-col {
     justify-content: flex-start;
   }
 
-  .ContactBreadcrumb-frame {
+  .DonateBreadcrumb-frame {
     max-width: 460px;
   }
 }
 
 @media (max-width: 768px) {
-  .ContactBreadcrumb-container {
+  .DonateBreadcrumb-container {
     padding: 50px 24px 90px 24px;
   }
 
-  .ContactBreadcrumb-title {
+  .DonateBreadcrumb-title {
     font-size: 38px;
     letter-spacing: -0.5px;
   }
 
-  .ContactBreadcrumb-nav {
+  .DonateBreadcrumb-nav {
     font-size: 12.5px;
     flex-wrap: wrap;
   }
 
-  .ContactBreadcrumb-description {
+  .DonateBreadcrumb-description {
     font-size: 14px;
   }
 
-  .ContactBreadcrumb-frame {
+  .DonateBreadcrumb-frame {
     max-width: 100%;
     min-height: 300px;
     border-radius: 28px;
   }
 
-  .ContactBreadcrumb-yellow-badge {
+  .DonateBreadcrumb-yellow-badge {
     width: 180px;
     height: 180px;
     right: 20px;
   }
 
-  .ContactBreadcrumb-wave-curve svg {
+  .DonateBreadcrumb-wave-curve svg {
     height: 40px;
   }
 }
 
 @media (max-width: 480px) {
-  .ContactBreadcrumb-title {
+  .DonateBreadcrumb-title {
     font-size: 32px;
   }
 
-  .ContactBreadcrumb-yellow-badge {
+  .DonateBreadcrumb-yellow-badge {
     width: 140px;
     height: 140px;
     right: 15px;

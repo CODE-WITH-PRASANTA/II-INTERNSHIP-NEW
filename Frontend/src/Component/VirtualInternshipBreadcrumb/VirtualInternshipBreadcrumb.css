@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800;900&family=Playfair+Display:wght@500;600;700;800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800;900&family=Playfair+Display:ital,wght@0,400..700;1,400..700&display=swap');
 
 :root {
   --VirtualInternshipBreadcrumb-bg-green: #01432c;
@@ -130,11 +130,10 @@
 }
 
 .VirtualInternshipBreadcrumb-tag-text {
-  font-size: 12px;
-  font-weight: 700;
-  color: #e5f4ee;
+  font-size: 13px;
+  font-weight: 800;
+  color: #ffffff;
   letter-spacing: 0.8px;
-  text-transform: uppercase;
 }
 
 /* Main Heading */
@@ -150,7 +149,6 @@
 }
 
 .VirtualInternshipBreadcrumb-title-line {
-  color: var(--VirtualInternshipBreadcrumb-white);
   display: inline-block;
   background: linear-gradient(
     90deg, 
@@ -213,6 +211,7 @@
 /* Description Text */
 .VirtualInternshipBreadcrumb-description {
   margin: 0;
+  font-weight: 400;
   font-size: 15px;
   line-height: 1.65;
   color: var(--VirtualInternshipBreadcrumb-text-muted);

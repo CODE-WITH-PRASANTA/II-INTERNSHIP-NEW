@@ -1,11 +1,11 @@
-@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800;900&family=Playfair+Display:wght@500;600;700;800&display=swap');
 
 :root {
   --RecruitmentBreadcrumb-bg-green: #01432c;
   --RecruitmentBreadcrumb-yellow: #fed130;
   --RecruitmentBreadcrumb-yellow-light: #fff280;
   --RecruitmentBreadcrumb-white: #ffffff;
-  --RecruitmentBreadcrumb-text-muted: rgba(255, 255, 255, 0.9);
+  --RecruitmentBreadcrumb-text-muted: rgba(255, 255, 255, 0.85);
   --RecruitmentBreadcrumb-card-green: #013f2a;
 }
 
@@ -27,7 +27,7 @@
   position: relative;
   width: 100%;
   margin: 0 auto;
-  padding: 70px 80px 140px 80px;
+  padding: 60px 80px 140px 80px;
   overflow: hidden;
   background: 
     radial-gradient(ellipse 70% 60% at 0% 0%, rgba(0, 24, 15, 0.9) 0%, rgba(1, 55, 36, 0.5) 60%, transparent 100%),
@@ -64,28 +64,22 @@
   flex-direction: column;
 }
 
-/* Tag Wrapper & Floating Elements */
+/* Tag Wrapper & Floating Dots */
 .RecruitmentBreadcrumb-tag-wrapper {
   position: relative;
   display: inline-flex;
   align-items: center;
   width: fit-content;
-  margin-bottom: 12px;
+  margin-bottom: 20px;
 }
 
-.RecruitmentBreadcrumb-sparkle {
-  color: var(--RecruitmentBreadcrumb-yellow);
-  font-size: 22px;
-  animation: RecruitmentBreadcrumb-pulse 2s infinite ease-in-out;
-}
-
-/* Floating Dots */
+/* Floating Dot 1 */
 .RecruitmentBreadcrumb-dot--one {
   position: absolute;
-  top: -12px;
-  left: 28px;
-  width: 10px;
-  height: 10px;
+  top: -14px;
+  left: 20px;
+  width: 9px;
+  height: 9px;
   border-radius: 50%;
   background-color: var(--RecruitmentBreadcrumb-yellow);
   box-shadow: 0 0 10px rgba(254, 209, 48, 0.7);
@@ -93,12 +87,13 @@
   z-index: 3;
 }
 
+/* Floating Dot 2 */
 .RecruitmentBreadcrumb-dot--two {
   position: absolute;
-  top: 14px;
-  left: 55px;
-  width: 7px;
-  height: 7px;
+  top: 6px;
+  left: 36px;
+  width: 6px;
+  height: 6px;
   border-radius: 50%;
   background-color: var(--RecruitmentBreadcrumb-yellow);
   box-shadow: 0 0 8px rgba(254, 209, 48, 0.6);
@@ -108,37 +103,60 @@
 
 @keyframes RecruitmentBreadcrumb-float-down {
   0% { transform: translateY(0px) scale(1); }
-  100% { transform: translateY(16px) scale(1.15); }
+  100% { transform: translateY(14px) scale(1.15); }
 }
 
 @keyframes RecruitmentBreadcrumb-float-up {
   0% { transform: translateY(0px) scale(1.1); }
-  100% { transform: translateY(-14px) scale(0.9); }
+  100% { transform: translateY(-12px) scale(0.9); }
 }
 
-@keyframes RecruitmentBreadcrumb-pulse {
-  0%, 100% { transform: scale(1); opacity: 0.8; }
-  50% { transform: scale(1.2); opacity: 1; }
+/* Tag Pill */
+.RecruitmentBreadcrumb-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 6px 18px;
+  background-color: rgba(255, 255, 255, 0.12);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  border-radius: 9999px;
+}
+
+.RecruitmentBreadcrumb-tag-icon {
+  font-size: 14px;
+  color: var(--RecruitmentBreadcrumb-yellow);
+}
+
+.RecruitmentBreadcrumb-tag-text {
+  font-size: 12px;
+  font-weight: 700;
+  color: #e5f4ee;
+  letter-spacing: 0.8px;
+  text-transform: uppercase;
 }
 
 /* Main Heading */
 .RecruitmentBreadcrumb-title {
-  margin: 0 0 20px 0;
-  font-size: 64px;
-  font-weight: 800;
+  margin: 0 0 18px 0;
+  font-family: 'Playfair Display', Georgia, serif;
+  font-size: 66px;
+  font-weight: 700;
   line-height: 1.1;
-  letter-spacing: -1px;
+  letter-spacing: -0.5px;
   display: flex;
   flex-direction: column;
 }
 
 .RecruitmentBreadcrumb-title-line {
+  color: var(--RecruitmentBreadcrumb-white);
   display: inline-block;
   background: linear-gradient(
     90deg, 
     #ffffff 0%, 
-    #e6f7ec 40%, 
-    #fed130 80%, 
+    #ffffff 50%, 
+    #fed130 75%, 
     #ffffff 100%
   );
   background-size: 200% auto;
@@ -152,16 +170,56 @@
   100% { background-position: 200% center; }
 }
 
+/* Breadcrumb Navigation Trail */
+.RecruitmentBreadcrumb-nav {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 22px;
+  font-size: 13.5px;
+  font-weight: 600;
+}
+
+.RecruitmentBreadcrumb-nav-item {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.RecruitmentBreadcrumb-home-icon {
+  font-size: 14px;
+}
+
+.RecruitmentBreadcrumb-link {
+  color: rgba(255, 255, 255, 0.85);
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.RecruitmentBreadcrumb-link:hover {
+  color: var(--RecruitmentBreadcrumb-yellow);
+  text-decoration: underline;
+}
+
+.RecruitmentBreadcrumb-separator {
+  color: rgba(255, 255, 255, 0.4);
+  font-weight: 400;
+}
+
+.RecruitmentBreadcrumb-active {
+  color: var(--RecruitmentBreadcrumb-yellow);
+}
+
 /* Description Text */
 .RecruitmentBreadcrumb-description {
   margin: 0;
-  font-size: 16px;
-  line-height: 1.6;
+  font-size: 15px;
+  line-height: 1.65;
   color: var(--RecruitmentBreadcrumb-text-muted);
-  max-width: 540px;
+  max-width: 520px;
 }
 
-/* Right Column */
+/* Right Column: Custom Rounded Frame Container */
 .RecruitmentBreadcrumb-media-col {
   display: flex;
   justify-content: center;
@@ -171,23 +229,29 @@
 .RecruitmentBreadcrumb-frame {
   position: relative;
   width: 100%;
-  max-width: 520px;
+  margin-top: 30px;
+  max-width: 500px;
   min-height: 380px;
+  border-radius: 36px;
+  background-color: var(--RecruitmentBreadcrumb-card-green);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 24px 48px -12px rgba(0, 0, 0, 0.45);
   display: flex;
-  align-items: center;
+  align-items: flex-end;
   justify-content: center;
+  overflow: hidden;
 }
 
-/* Rotated Yellow Badge */
+/* Rotated Yellow Badge inside Frame */
 .RecruitmentBreadcrumb-yellow-badge {
   position: absolute;
-  width: 260px;
-  height: 260px;
-  top: 40px;
-  right: 40px;
+  width: 250px;
+  height: 250px;
+  top: 30px;
+  right: 95px;
   background-color: var(--RecruitmentBreadcrumb-yellow);
   border-radius: 36px;
-  transform: rotate(15deg);
+  transform: rotate(20deg);
   z-index: 1;
 }
 
@@ -195,9 +259,9 @@
 .RecruitmentBreadcrumb-img {
   position: relative;
   z-index: 2;
-  width: 100%;
-  max-width: 560px;
-  height: auto;
+  width: 632px;
+  height: 376px;
+  max-height: 376px;
   object-fit: contain;
   display: block;
 }
@@ -226,11 +290,15 @@
     padding: 60px 48px 120px 48px;
   }
   .RecruitmentBreadcrumb-title {
-    font-size: 52px;
+    font-size: 54px;
+  }
+  .RecruitmentBreadcrumb-frame {
+    max-width: 440px;
+    min-height: 340px;
   }
   .RecruitmentBreadcrumb-yellow-badge {
-    width: 220px;
-    height: 220px;
+    width: 210px;
+    height: 210px;
   }
 }
 
@@ -241,11 +309,15 @@
   }
 
   .RecruitmentBreadcrumb-title {
-    font-size: 46px;
+    font-size: 48px;
   }
 
   .RecruitmentBreadcrumb-media-col {
     justify-content: flex-start;
+  }
+
+  .RecruitmentBreadcrumb-frame {
+    max-width: 460px;
   }
 }
 
@@ -259,8 +331,19 @@
     letter-spacing: -0.5px;
   }
 
+  .RecruitmentBreadcrumb-nav {
+    font-size: 12.5px;
+    flex-wrap: wrap;
+  }
+
   .RecruitmentBreadcrumb-description {
-    font-size: 14.5px;
+    font-size: 14px;
+  }
+
+  .RecruitmentBreadcrumb-frame {
+    max-width: 100%;
+    min-height: 300px;
+    border-radius: 28px;
   }
 
   .RecruitmentBreadcrumb-yellow-badge {
@@ -282,6 +365,6 @@
   .RecruitmentBreadcrumb-yellow-badge {
     width: 140px;
     height: 140px;
-    right: 10px;
+    right: 15px;
   }
 }

@@ -1,8 +1,8 @@
 import React from 'react';
 import './RecruitmentBreadcrumb.css';
 
-// अपनी इमेज का पाथ यहाँ एडजस्ट करें
-import recruitmentImage from '../../assets/AboutUs-breadcrumb.webp';
+// Custom local image asset
+import breadcrumbImage from '../../assets/AboutUs-breadcrumb.webp';
 
 const RecruitmentBreadcrumb = () => {
   return (
@@ -14,14 +14,20 @@ const RecruitmentBreadcrumb = () => {
         {/* Content Section */}
         <div className="RecruitmentBreadcrumb-content-grid">
           
-          {/* Left Column: Text Details */}
+          {/* Left Column: Text & Breadcrumb Details */}
           <div className="RecruitmentBreadcrumb-text-col">
             
-            {/* Tag / Floating Sparkles */}
+            {/* Tag Pill with Animated Floating Yellow Dots */}
             <div className="RecruitmentBreadcrumb-tag-wrapper">
+              {/* Dot 1: Floats Up-to-Down */}
               <span className="RecruitmentBreadcrumb-dot RecruitmentBreadcrumb-dot--one" />
+              {/* Dot 2: Floats Down-to-Up (Reverse) */}
               <span className="RecruitmentBreadcrumb-dot RecruitmentBreadcrumb-dot--two" />
-              <span className="RecruitmentBreadcrumb-sparkle">✦</span>
+
+              <div className="RecruitmentBreadcrumb-tag">
+                <span className="RecruitmentBreadcrumb-tag-icon">✨</span>
+                <span className="RecruitmentBreadcrumb-tag-text">JOIN OUR TEAM</span>
+              </div>
             </div>
 
             {/* Main Title */}
@@ -30,13 +36,27 @@ const RecruitmentBreadcrumb = () => {
               <span className="RecruitmentBreadcrumb-title-line">Recruitment</span>
             </h1>
 
+            {/* Breadcrumb Navigation Trail */}
+            <nav className="RecruitmentBreadcrumb-nav" aria-label="Breadcrumb">
+              <span className="RecruitmentBreadcrumb-nav-item">
+                <span className="RecruitmentBreadcrumb-home-icon">🏠</span>
+                <a href="/" className="RecruitmentBreadcrumb-link">Home</a>
+              </span>
+              <span className="RecruitmentBreadcrumb-separator">/</span>
+              <span className="RecruitmentBreadcrumb-nav-item">
+                <a href="/internships" className="RecruitmentBreadcrumb-link">Internships</a>
+              </span>
+              <span className="RecruitmentBreadcrumb-separator">/</span>
+              <span className="RecruitmentBreadcrumb-active">Internship Recruitment</span>
+            </nav>
+
             {/* Description Text */}
             <p className="RecruitmentBreadcrumb-description">
               Aapke career ki shuruaat yahan se hoti hai! Join our Industrial Internship program to get hands-on experience, learn from industry experts, and work on real-world projects. Be a part of our next batch of interns.
             </p>
           </div>
 
-          {/* Right Column: Media Section */}
+          {/* Right Column: Custom Rounded Frame Container */}
           <div className="RecruitmentBreadcrumb-media-col">
             <div className="RecruitmentBreadcrumb-frame">
               {/* Yellow tilted badge inside the frame */}
@@ -44,8 +64,8 @@ const RecruitmentBreadcrumb = () => {
               
               {/* Foreground Image */}
               <img 
-                src={recruitmentImage} 
-                alt="Internship Recruitment Students" 
+                src={breadcrumbImage} 
+                alt="Internship Recruitment" 
                 className="RecruitmentBreadcrumb-img"
               />
             </div>
