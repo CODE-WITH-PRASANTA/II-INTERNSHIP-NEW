@@ -1,0 +1,357 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;800;900&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap');
+
+/* ==========================================================================
+   HomeStudents Main Styles
+   ========================================================================== */
+
+.home-students {
+  position: relative;
+  width: 100%;
+  background-color: #ffffff;
+  padding: 3rem 1.5rem;
+  overflow: hidden;
+  user-select: none;
+  font-family: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+}
+
+@media (min-width: 768px) {
+  .home-students {
+    padding: 6rem 2rem;
+  }
+}
+
+.home-students__container {
+  max-width: 1280px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 3rem;
+  align-items: center;
+  min-height: 500px;
+}
+
+@media (min-width: 1024px) {
+  .home-students__container {
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+  }
+}
+
+/* ================= Left Side (Hero Text & Avatars) ================= */
+
+.home-students__left-col {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  min-height: 420px;
+}
+
+@media (min-width: 1024px) {
+  .home-students__left-col {
+    padding-right: 2rem;
+  }
+}
+
+.home-students__text-content {
+  position: relative;
+  z-index: 10;
+  max-width: 480px;
+}
+
+.home-students__title {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-size: 2.5rem;
+  font-weight: 800;
+  line-height: 1.15;
+  color: #111827;
+  letter-spacing: -0.02em;
+}
+
+@media (min-width: 640px) {
+  .home-students__title {
+    font-size: 3.25rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .home-students__title {
+    font-size: 3.6rem;
+  }
+}
+
+.home-students__title-highlight {
+  color: #057a55;
+}
+
+.home-students__description {
+  margin-top: 1.5rem;
+  color: #6b7280;
+  font-size: 1.05rem;
+  line-height: 1.65;
+}
+
+/* Floating Decorative Bubbles */
+.home-students__floating-avatar {
+  position: absolute;
+  border-radius: 9999px;
+  overflow: hidden;
+  border: 2.5px solid #ffffff;
+  box-shadow: 0 8px 24px -4px rgba(0, 0, 0, 0.12);
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  filter: grayscale(100%) contrast(1.1);
+  opacity: 0.85;
+  pointer-events: none;
+}
+
+.home-students__floating-avatar-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.home-students__floating-avatar--active {
+  filter: grayscale(0%) contrast(1);
+  opacity: 1;
+  transform: scale(1.08);
+  border-color: #057a55;
+  box-shadow: 0 12px 28px -4px rgba(5, 122, 85, 0.25);
+  z-index: 20;
+}
+
+/* Exact Positions for Floating Avatars */
+.home-students__floating-avatar--pos-1 {
+  width: 3.5rem;
+  height: 3.5rem;
+  top: 1.5rem;
+  left: 1rem;
+}
+
+.home-students__floating-avatar--pos-2 {
+  width: 5.5rem;
+  height: 5.5rem;
+  bottom: 2.5rem;
+  left: 0.5rem;
+}
+
+.home-students__floating-avatar--pos-3 {
+  width: 4rem;
+  height: 4rem;
+  bottom: -1rem;
+  left: 9rem;
+}
+
+.home-students__floating-avatar--pos-4 {
+  width: 3.75rem;
+  height: 3.75rem;
+  bottom: 1.25rem;
+  left: 17rem;
+}
+
+.home-students__floating-avatar--pos-5 {
+  width: 2.75rem;
+  height: 2.75rem;
+  bottom: 0.5rem;
+  right: 2rem;
+}
+
+@media (min-width: 768px) {
+  .home-students__floating-avatar--pos-1 { width: 4.5rem; height: 4.5rem; top: 2.5rem; left: 2rem; }
+  .home-students__floating-avatar--pos-2 { width: 6.5rem; height: 6.5rem; bottom: 3rem; left: 1rem; }
+  .home-students__floating-avatar--pos-3 { width: 4.75rem; height: 4.75rem; bottom: -1rem; left: 12rem; }
+  .home-students__floating-avatar--pos-4 { width: 4.25rem; height: 4.25rem; bottom: 1.5rem; left: 21rem; }
+  .home-students__floating-avatar--pos-5 { width: 3.25rem; height: 3.25rem; bottom: 0.5rem; right: 4rem; }
+}
+
+/* ================= Right Side (Testimonial Card & Controls) ================= */
+
+.home-students__right-col {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+}
+
+.home-students__card-wrapper {
+  position: relative;
+  width: 100%;
+  max-width: 550px;
+}
+
+.home-students__card-backdrop {
+  position: absolute;
+  left: 1.25rem;
+  right: 1.25rem;
+  bottom: -0.85rem;
+  height: 4rem;
+  background-color: #f3f4f6;
+  border-radius: 28px;
+  z-index: 1;
+  opacity: 0.7;
+}
+
+.home-students__card {
+  position: relative;
+  z-index: 2;
+  background-color: #ffffff;
+  border-radius: 28px;
+  border: 1px solid #f3f4f6;
+  padding: 2.25rem 2rem;
+  box-shadow: 0 20px 45px -15px rgba(0, 0, 0, 0.06), 0 0 0 1px rgba(0, 0, 0, 0.03);
+  min-height: 300px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+@media (min-width: 640px) {
+  .home-students__card {
+    padding: 2.5rem;
+  }
+}
+
+.home-students__card-header {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin-bottom: 1.25rem;
+}
+
+.home-students__stars {
+  display: flex;
+  gap: 0.25rem;
+  color: #057a55;
+}
+
+.home-students__tagline {
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: #4b5563;
+}
+
+.home-students__quote {
+  font-size: 1.05rem;
+  line-height: 1.65;
+  color: #374151;
+  font-weight: 400;
+}
+
+@media (min-width: 640px) {
+  .home-students__quote {
+    font-size: 1.125rem;
+  }
+}
+
+.home-students__card-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 2rem;
+  padding-top: 1rem;
+}
+
+.home-students__author {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.home-students__author-avatar {
+  width: 3.5rem;
+  height: 3.5rem;
+  border-radius: 9999px;
+  object-fit: cover;
+  border: 2px solid #ffffff;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+}
+
+.home-students__author-name {
+  font-size: 1.125rem;
+  font-weight: 700;
+  color: #111827;
+  line-height: 1.2;
+}
+
+.home-students__author-role {
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: #6b7280;
+  margin-top: 0.2rem;
+}
+
+.home-students__quote-icon {
+  width: 3rem;
+  height: 2.5rem;
+  fill: #d1f2e3;
+  user-select: none;
+  pointer-events: none;
+}
+
+/* ================= Carousel Controls ================= */
+
+.home-students__controls {
+  width: 100%;
+  max-width: 550px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 2rem;
+  padding: 0 0.5rem;
+}
+
+.home-students__arrow-btn {
+  width: 2.75rem;
+  height: 2.75rem;
+  border-radius: 9999px;
+  background-color: #057a55;
+  color: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: none;
+  cursor: pointer;
+  box-shadow: 0 2px 8px rgba(5, 122, 85, 0.2);
+  transition: all 0.2s ease;
+}
+
+.home-students__arrow-btn:hover {
+  background-color: #046345;
+  transform: translateY(-1px);
+}
+
+.home-students__arrow-btn:active {
+  transform: scale(0.95);
+}
+
+.home-students__pagination {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+  flex: 1;
+  max-width: 180px;
+  margin: 0 1rem;
+}
+
+.home-students__counter {
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: #6b7280;
+  letter-spacing: 0.05em;
+}
+
+.home-students__progress-track {
+  width: 100%;
+  height: 4px;
+  background-color: #e5e7eb;
+  border-radius: 9999px;
+  overflow: hidden;
+}
+
+.home-students__progress-fill {
+  height: 100%;
+  background-color: #057a55;
+  border-radius: 9999px;
+  transition: width 0.3s ease-out;
+}

@@ -1,0 +1,565 @@
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap');
+
+:root {
+  --Navbar-bg: #ffffff;
+  --Navbar-text-main: #1f2937;
+  --Navbar-text-muted: #6b7280;
+  --Navbar-primary-green: #027a48;
+  --Navbar-primary-green-hover: #005a34;
+  --Navbar-primary-green-light: #ecfdf3;
+  --Navbar-border: rgba(0, 0, 0, 0.08);
+  --Navbar-shadow: 0 10px 30px -5px rgba(0, 0, 0, 0.08), 0 4px 6px -2px rgba(0, 0, 0, 0.03);
+  --Navbar-shadow-dropdown: 0 20px 40px -10px rgba(0, 0, 0, 0.12), 0 0 1px 1px rgba(0, 0, 0, 0.05);
+  --Navbar-transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+/* ==========================================================================
+   Outer Header Wrapper (Handles position & scroll transitions)
+   ========================================================================== */
+.Navbar-wrapper {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  transition: padding 0.35s cubic-bezier(0.4, 0, 0.2, 1), background-color 0.35s ease;
+}
+
+/* Initial State: Full width top banner */
+.Navbar-wrapper--initial {
+  padding: 0;
+  background-color: var(--Navbar-bg);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.06);
+}
+
+/* Scrolled State: Floating pill container */
+.Navbar-wrapper--scrolled {
+  padding: 12px 20px;
+  background-color: transparent;
+  border-bottom: none;
+}
+
+/* ==========================================================================
+   Inner Navbar Container
+   ========================================================================== */
+.Navbar-container {
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: var(--Navbar-bg);
+  transition: var(--Navbar-transition);
+}
+
+/* Initial container styling */
+.Navbar-container--initial {
+  max-width: 100%;
+  width: 100%;
+  padding: 10px 28px;
+  border-radius: 0;
+  border: none;
+  box-shadow: none;
+}
+
+/* Scrolled container styling (Floating Pill) */
+.Navbar-container--scrolled {
+  max-width: 1380px;
+  width: 100%;
+  padding: 6px 12px 6px 20px;
+  border-radius: 9999px;
+  border: 1px solid var(--Navbar-border);
+  box-shadow: var(--Navbar-shadow);
+}
+
+/* ==========================================================================
+   Logo
+   ========================================================================== */
+.Navbar-logo-link {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  flex-shrink: 0;
+}
+
+.Navbar-logo-img {
+  height: 60px;
+  width: auto;
+  max-width: 180px;
+  object-fit: contain;
+  display: block;
+  transition: height 0.3s ease;
+}
+
+.Navbar-container--scrolled .Navbar-logo-img {
+  height: 50px;
+}
+
+/* ==========================================================================
+   Desktop Navigation Menu & Links
+   ========================================================================== */
+.Navbar-menu {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.Navbar-list {
+  display: flex;
+  align-items: center;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  gap: 2px;
+}
+
+.Navbar-item {
+  position: relative;
+  height: 100%;
+  display: flex;
+  align-items: center;
+}
+
+.Navbar-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  padding: 7px 10px;
+  font-size: 14.5px;
+  font-weight: 550;
+  color: var(--Navbar-text-main);
+  text-decoration: none;
+  border-radius: 8px;
+  transition: var(--Navbar-transition);
+  white-space: nowrap;
+}
+
+.Navbar-link:hover,
+.Navbar-link--active {
+  color: var(--Navbar-primary-green);
+  background: var(--Navbar-primary-green-light);
+}
+
+.Navbar-arrow {
+  display: inline-flex;
+  align-items: center;
+  font-size: 12px;
+  transition: transform 0.25s ease;
+  color: var(--Navbar-text-muted);
+}
+
+.Navbar-link:hover .Navbar-arrow,
+.Navbar-arrow--up {
+  transform: rotate(180deg);
+  color: var(--Navbar-primary-green);
+}
+
+/* ==========================================================================
+   Action / Login Button
+   ========================================================================== */
+.Navbar-actions {
+  display: flex;
+  align-items: center;
+  margin-left: 6px;
+  flex-shrink: 0;
+}
+
+.Navbar-login-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--Navbar-primary-green);
+  color: #ffffff;
+  font-size: 13.5px;
+  font-weight: 600;
+  padding: 8px 20px;
+  border-radius: 9999px;
+  text-decoration: none;
+  box-shadow: 0 3px 8px rgba(2, 122, 72, 0.2);
+  transition: var(--Navbar-transition);
+  cursor: pointer;
+  white-space: nowrap;
+}
+
+.Navbar-login-btn:hover {
+  background: var(--Navbar-primary-green-hover);
+  box-shadow: 0 6px 14px rgba(2, 122, 72, 0.3);
+  transform: translateY(-1px);
+}
+
+.Navbar-login-btn:active {
+  transform: translateY(0);
+}
+
+/* ==========================================================================
+   Desktop Mega Dropdown Menu
+   ========================================================================== */
+.Navbar-dropdown {
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%) translateY(10px);
+  background: #ffffff;
+  border-radius: 18px;
+  padding: 16px;
+  border: 1px solid var(--Navbar-border);
+  box-shadow: var(--Navbar-shadow-dropdown);
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.25s ease, transform 0.25s ease, visibility 0.25s ease;
+  pointer-events: none;
+  z-index: 100;
+  margin-top: 10px;
+}
+
+/* Invisible Bridge to prevent closing on cursor move */
+.Navbar-dropdown::before {
+  content: '';
+  position: absolute;
+  top: -12px;
+  left: 0;
+  right: 0;
+  height: 14px;
+  background: transparent;
+}
+
+.Navbar-item--dropdown:hover .Navbar-dropdown,
+.Navbar-dropdown:hover,
+.Navbar-dropdown--visible {
+  opacity: 1;
+  visibility: visible;
+  transform: translateX(-50%) translateY(0);
+  pointer-events: auto;
+}
+
+.Navbar-dropdown-inner {
+  display: flex;
+  gap: 16px;
+  width: 540px;
+}
+
+/* Left Hero Card inside Dropdown */
+.Navbar-card {
+  position: relative;
+  width: 200px;
+  min-height: 230px;
+  border-radius: 12px;
+  overflow: hidden;
+  flex-shrink: 0;
+  background: #1e293b;
+  display: flex;
+  align-items: flex-end;
+}
+
+.Navbar-card-bg {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: brightness(0.65);
+  transition: transform 0.4s ease;
+}
+
+.Navbar-card:hover .Navbar-card-bg {
+  transform: scale(1.05);
+}
+
+.Navbar-card-overlay {
+  position: relative;
+  z-index: 1;
+  padding: 14px;
+  color: #ffffff;
+  background: linear-gradient(180deg, rgba(0,0,0,0) 0%, rgba(0,0,0,0.85) 100%);
+  width: 100%;
+}
+
+.Navbar-card-title {
+  margin: 0 0 4px 0;
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 1.2;
+}
+
+.Navbar-card-desc {
+  margin: 0;
+  font-size: 11px;
+  line-height: 1.4;
+  color: rgba(255, 255, 255, 0.85);
+}
+
+/* Right Dropdown Links */
+.Navbar-sublinks {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 4px;
+  flex: 1;
+}
+
+.Navbar-sublink-item {
+  display: flex;
+  align-items: flex-start;
+  padding: 8px 12px;
+  border-radius: 10px;
+  text-decoration: none;
+  transition: background 0.2s ease;
+}
+
+.Navbar-sublink-item:hover {
+  background: var(--Navbar-primary-green-light);
+}
+
+.Navbar-sublink-info {
+  display: flex;
+  flex-direction: column;
+}
+
+.Navbar-sublink-title {
+  margin: 0 0 2px 0;
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--Navbar-text-main);
+  transition: color 0.2s ease;
+}
+
+.Navbar-sublink-item:hover .Navbar-sublink-title {
+  color: var(--Navbar-primary-green);
+}
+
+.Navbar-sublink-desc {
+  margin: 0;
+  font-size: 11px;
+  color: var(--Navbar-text-muted);
+  line-height: 1.3;
+}
+
+/* ==========================================================================
+   Hamburger Toggle Button
+   ========================================================================== */
+.Navbar-mobile-toggle {
+  display: none;
+  flex-direction: column;
+  justify-content: space-around;
+  width: 32px;
+  height: 32px;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 4px;
+  z-index: 1001;
+}
+
+.Navbar-mobile-toggle span {
+  display: block;
+  width: 100%;
+  height: 2px;
+  background-color: var(--Navbar-text-main);
+  border-radius: 4px;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.Navbar-mobile-toggle--active span:nth-child(1) {
+  transform: translateY(7px) rotate(45deg);
+}
+
+.Navbar-mobile-toggle--active span:nth-child(2) {
+  opacity: 0;
+  transform: scale(0);
+}
+
+.Navbar-mobile-toggle--active span:nth-child(3) {
+  transform: translateY(-7px) rotate(-45deg);
+}
+
+/* ==========================================================================
+   RESPONSIVE BREAKPOINTS
+   ========================================================================== */
+
+/* Large Laptops / Screens with medium density */
+@media (max-width: 1320px) {
+  .Navbar-link {
+    padding: 6px 8px;
+    font-size: 12.5px;
+  }
+  .Navbar-dropdown-inner {
+    width: 470px;
+  }
+  .Navbar-card {
+    width: 160px;
+  }
+}
+
+/* Small Laptops & Tablets Landscape (Tight Screen Optimization) */
+@media (max-width: 1180px) {
+  .Navbar-container--initial {
+    padding: 10px 18px;
+  }
+  .Navbar-link {
+    padding: 5px 6px;
+    font-size: 12px;
+    gap: 2px;
+  }
+  .Navbar-logo-img {
+    height: 38px;
+    max-width: 140px;
+  }
+  .Navbar-login-btn {
+    padding: 7px 16px;
+    font-size: 12.5px;
+  }
+}
+
+/* Tablets Portrait & Mobile Devices */
+@media (max-width: 1024px) {
+  .Navbar-wrapper--initial,
+  .Navbar-wrapper--scrolled {
+    padding: 10px 14px;
+    background: transparent;
+  }
+
+  .Navbar-container--initial,
+  .Navbar-container--scrolled {
+    max-width: 100%;
+    border-radius: 16px;
+    padding: 8px 16px;
+    border: 1px solid var(--Navbar-border);
+    box-shadow: var(--Navbar-shadow);
+  }
+
+  .Navbar-mobile-toggle {
+    display: flex;
+  }
+
+  /* Full-width slide-down menu */
+  .Navbar-menu {
+    position: absolute;
+    top: calc(100% + 8px);
+    left: 14px;
+    right: 14px;
+    background: #ffffff;
+    border-radius: 16px;
+    flex-direction: column;
+    padding: 16px;
+    box-shadow: 0 16px 36px rgba(0, 0, 0, 0.15);
+    border: 1px solid var(--Navbar-border);
+    max-height: calc(85vh - 70px);
+    overflow-y: auto;
+    display: none;
+    align-items: stretch;
+  }
+
+  .Navbar-menu--open {
+    display: flex;
+    animation: menuFadeIn 0.25s ease forwards;
+  }
+
+  @keyframes menuFadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(-8px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  .Navbar-list {
+    flex-direction: column;
+    width: 100%;
+    align-items: stretch;
+    gap: 4px;
+  }
+
+  .Navbar-item {
+    width: 100%;
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .Navbar-link {
+    width: 100%;
+    justify-content: space-between;
+    padding: 11px 14px;
+    font-size: 14.5px;
+    border-radius: 10px;
+  }
+
+  /* Accordion dropdown on mobile */
+  .Navbar-dropdown {
+    position: static;
+    transform: none !important;
+    box-shadow: none;
+    border: none;
+    padding: 4px 0 8px 12px;
+    width: 100%;
+    display: none;
+    opacity: 1;
+    visibility: visible;
+    margin-top: 0;
+    border-left: 2px solid var(--Navbar-primary-green-light);
+  }
+
+  .Navbar-dropdown::before {
+    display: none;
+  }
+
+  .Navbar-dropdown--visible,
+  .Navbar-item--dropdown.active .Navbar-dropdown {
+    display: block;
+  }
+
+  .Navbar-dropdown-inner {
+    flex-direction: column;
+    width: 100%;
+    gap: 4px;
+  }
+
+  .Navbar-card {
+    display: none; /* Hide visual card in mobile drawers to save vertical space */
+  }
+
+  .Navbar-sublink-item {
+    padding: 9px 12px;
+  }
+
+  .Navbar-sublink-title {
+    font-size: 13.5px;
+  }
+
+  .Navbar-actions {
+    width: 100%;
+    margin-top: 12px;
+    margin-left: 0;
+    padding-top: 10px;
+    border-top: 1px solid var(--Navbar-border);
+  }
+
+  .Navbar-login-btn {
+    width: 100%;
+    padding: 11px;
+    font-size: 14px;
+  }
+}
+
+/* Extra Small Phones */
+@media (max-width: 480px) {
+  .Navbar-wrapper--initial,
+  .Navbar-wrapper--scrolled {
+    padding: 8px 10px;
+  }
+
+  .Navbar-menu {
+    left: 10px;
+    right: 10px;
+  }
+
+  .Navbar-logo-img {
+    height: 32px;
+  }
+}
