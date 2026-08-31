@@ -316,6 +316,23 @@
   font-weight: 600;
 }
 
+.Footer-dev-separator {
+  margin: 0 6px;
+  opacity: 0.5;
+}
+
+.Footer-dev-link {
+  color: var(--Footer-accent-yellow);
+  text-decoration: none;
+  font-weight: 700;
+  transition: color 0.2s ease;
+}
+
+.Footer-dev-link:hover {
+  color: #ffffff;
+  text-decoration: underline;
+}
+
 .Footer-legal-links {
   display: flex;
   align-items: center;
