@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800;900&family=Playfair+Display:wght@600;700;800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800;900&family=Playfair+Display:wght@500;600;700;800&display=swap');
 
 :root {
   --ContactBreadcrumb-bg-green: #01432c;
@@ -126,6 +126,7 @@
 
 .ContactBreadcrumb-tag-icon {
   font-size: 14px;
+  color: var(--ContactBreadcrumb-yellow);
 }
 
 .ContactBreadcrumb-tag-text {
@@ -140,9 +141,9 @@
 .ContactBreadcrumb-title {
   margin: 0 0 18px 0;
   font-family: 'Playfair Display', Georgia, serif;
-  font-size: 68px;
+  font-size: 66px;
   font-weight: 700;
-  line-height: 1.08;
+  line-height: 1.1;
   letter-spacing: -0.5px;
   display: flex;
   flex-direction: column;
@@ -150,6 +151,23 @@
 
 .ContactBreadcrumb-title-line {
   color: var(--ContactBreadcrumb-white);
+  display: inline-block;
+  background: linear-gradient(
+    90deg, 
+    #ffffff 0%, 
+    #ffffff 50%, 
+    #fed130 75%, 
+    #ffffff 100%
+  );
+  background-size: 200% auto;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: ContactBreadcrumb-shimmer 8s linear infinite;
+}
+
+@keyframes ContactBreadcrumb-shimmer {
+  0% { background-position: 0% center; }
+  100% { background-position: 200% center; }
 }
 
 /* Breadcrumb Navigation Trail */
@@ -243,7 +261,7 @@
   z-index: 2;
   width: 632px;
   height: 376px;
-  /* max-height: 360px; */
+  max-height: 376px;
   object-fit: contain;
   display: block;
 }
@@ -272,7 +290,7 @@
     padding: 60px 48px 120px 48px;
   }
   .ContactBreadcrumb-title {
-    font-size: 56px;
+    font-size: 54px;
   }
   .ContactBreadcrumb-frame {
     max-width: 440px;
@@ -291,7 +309,7 @@
   }
 
   .ContactBreadcrumb-title {
-    font-size: 50px;
+    font-size: 48px;
   }
 
   .ContactBreadcrumb-media-col {
@@ -309,7 +327,7 @@
   }
 
   .ContactBreadcrumb-title {
-    font-size: 40px;
+    font-size: 38px;
     letter-spacing: -0.5px;
   }
 
@@ -341,7 +359,7 @@
 
 @media (max-width: 480px) {
   .ContactBreadcrumb-title {
-    font-size: 34px;
+    font-size: 32px;
   }
 
   .ContactBreadcrumb-yellow-badge {

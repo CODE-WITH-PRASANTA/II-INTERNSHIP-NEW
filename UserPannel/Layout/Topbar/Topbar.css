@@ -1,0 +1,258 @@
+.topbar-container {
+  height: 64px;
+  background-color: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 24px;
+  border-bottom: 1px solid #e5e7eb;
+  position: sticky;
+  top: 0;
+  z-index: 30;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.03);
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  box-sizing: border-box;
+}
+
+/* Left: Breadcrumbs */
+.topbar-breadcrumb {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 13.5px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.breadcrumb-link {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  text-decoration: none;
+  color: #4b5563;
+  font-weight: 500;
+  transition: color 0.2s ease;
+}
+
+.breadcrumb-link:hover {
+  color: #006653;
+}
+
+.breadcrumb-segment {
+  color: #4b5563;
+  font-weight: 500;
+}
+
+.breadcrumb-separator {
+  color: #9ca3af;
+  flex-shrink: 0;
+}
+
+.breadcrumb-current {
+  color: #007a65;
+  font-weight: 600;
+}
+
+/* Right Section */
+.topbar-right-controls {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  flex-shrink: 0;
+}
+
+/* Search Box */
+.topbar-search-box {
+  position: relative;
+  display: flex;
+  align-items: center;
+  width: 240px;
+}
+
+.search-icon {
+  position: absolute;
+  left: 12px;
+  color: #9ca3af;
+  pointer-events: none;
+}
+
+.search-input {
+  width: 100%;
+  padding: 8px 12px 8px 36px;
+  border-radius: 12px;
+  border: 1px solid #e2e8f0;
+  background-color: #f8fafc;
+  color: #1e293b;
+  font-size: 13px;
+  outline: none;
+  transition: all 0.2s ease;
+  font-family: inherit;
+}
+
+.search-input::placeholder {
+  color: #94a3b8;
+}
+
+.search-input:focus {
+  background-color: #ffffff;
+  border-color: #008f75;
+  box-shadow: 0 0 0 3px rgba(0, 143, 117, 0.12);
+}
+
+/* Notification Bell */
+.notification-btn {
+  position: relative;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 6px;
+  color: #374151;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  transition: color 0.2s ease, transform 0.2s ease;
+}
+
+.notification-btn:hover {
+  color: #006653;
+  transform: scale(1.05);
+}
+
+.notification-badge {
+  position: absolute;
+  top: 1px;
+  right: 1px;
+  background: linear-gradient(135deg, #8b5cf6, #7c3aed);
+  color: #ffffff;
+  font-size: 10px;
+  font-weight: 700;
+  width: 17px;
+  height: 17px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 2px solid #ffffff;
+}
+
+/* Vertical Divider */
+.topbar-divider {
+  width: 1px;
+  height: 26px;
+  background-color: #e5e7eb;
+  flex-shrink: 0;
+}
+
+/* Profile Area (Always Visible) */
+.topbar-profile-section {
+  display: flex !important;
+  align-items: center;
+  gap: 8px;
+  cursor: pointer;
+  user-select: none;
+  flex-shrink: 0;
+}
+
+.profile-text {
+  display: flex;
+  flex-direction: column;
+  text-align: right;
+}
+
+.profile-user-name {
+  font-size: 13px;
+  font-weight: 600;
+  color: #1f2937;
+  line-height: 1.2;
+}
+
+.profile-user-role {
+  font-size: 11px;
+  color: #6b7280;
+}
+
+.profile-avatar {
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  background-color: #d1fae5;
+  color: #065f46;
+  font-weight: 700;
+  font-size: 13.5px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
+  flex-shrink: 0;
+}
+
+.profile-dropdown-icon {
+  color: #9ca3af;
+  flex-shrink: 0;
+}
+
+/* ===================================================
+   RESPONSIVE BREAKPOINTS (Tablet & Mobile Fixes)
+   =================================================== */
+
+/* 1. Tablet Responsive (max-width: 992px) */
+@media (max-width: 992px) {
+  .topbar-container {
+    padding: 0 16px 0 64px; /* Hamburger button के लिए जगह छोड़ता है */
+  }
+
+  .topbar-search-box {
+    display: none; /* सर्च बार टैबलेट/मोबाइल में छुप जाएगा */
+  }
+
+  .topbar-right-controls {
+    gap: 12px;
+  }
+}
+
+/* 2. Small Tablets & Big Mobiles (max-width: 768px) */
+@media (max-width: 768px) {
+  .profile-text {
+    display: none; /* सिर्फ नाम और रोल टेक्स्ट छिपेगा, Avatar और Icon हमेशा दिखेगा */
+  }
+}
+
+/* 3. Mobile Devices (max-width: 480px) */
+@media (max-width: 480px) {
+  .topbar-container {
+    padding: 0 12px 0 58px;
+    height: 58px;
+  }
+
+  /* ब्रेडक्रंब्स में केवल करंट पेज दिखेगा ताकि जगह बचे */
+  .breadcrumb-link span,
+  .breadcrumb-segment,
+  .breadcrumb-separator {
+    display: none;
+  }
+
+  .breadcrumb-link {
+    display: flex;
+  }
+
+  .breadcrumb-current {
+    font-size: 13px;
+  }
+
+  .topbar-right-controls {
+    gap: 8px;
+  }
+
+  .topbar-divider {
+    height: 20px;
+    margin: 0 2px;
+  }
+
+  .profile-avatar {
+    width: 30px;
+    height: 30px;
+    font-size: 12px;
+  }
+}

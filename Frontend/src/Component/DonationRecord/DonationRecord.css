@@ -1,0 +1,542 @@
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap');
+
+:root {
+  --dr-primary-green: #00966b;
+  --dr-primary-green-hover: #00805b;
+  --dr-dark-green: #01432c;
+  --dr-text-heading: #101828;
+  --dr-text-body: #475467;
+  --dr-text-muted: #667085;
+  --dr-bg-light: #f7faf8;
+  --dr-border-color: #e4e7ec;
+  --dr-badge-green-bg: #e6f4f0;
+  --dr-badge-green-text: #00805b;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+.DonationRecord-wrapper {
+  width: 100%;
+  min-height: 100vh;
+  background: linear-gradient(135deg, #fdfefd 0%, #f1f8f5 50%, #eef6f2 100%);
+  font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+  color: var(--dr-text-heading);
+  padding: 30px 20px 80px 20px;
+}
+
+/* ==========================
+   Top Floating Toggle Tabs
+   ========================== */
+.DonationRecord-tab-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 40px auto;
+  background-color: #e5ebe8;
+  padding: 6px;
+  border-radius: 12px;
+  width: fit-content;
+}
+
+.DonationRecord-tab-btn {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 22px;
+  border: none;
+  background: transparent;
+  font-size: 14.5px;
+  font-weight: 700;
+  color: #475467;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.25s ease;
+}
+
+.DonationRecord-tab-icon {
+  font-size: 17px;
+}
+
+.DonationRecord-tab-btn--active {
+  background-color: var(--dr-primary-green);
+  color: #ffffff;
+  box-shadow: 0 4px 12px rgba(0, 150, 107, 0.25);
+}
+
+/* Container Layout */
+.DonationRecord-content {
+  max-width: 1280px;
+  margin: 0 auto;
+}
+
+/* ==========================
+   Donation Grid View
+   ========================== */
+.DonationRecord-donation-grid {
+  display: grid;
+  grid-template-columns: 1.25fr 0.95fr;
+  gap: 48px;
+  align-items: start;
+}
+
+/* Left Section Details */
+.DonationRecord-info-section {
+  display: flex;
+  flex-direction: column;
+}
+
+.DonationRecord-main-title {
+  font-size: 48px;
+  font-weight: 800;
+  color: #00966b;
+  margin: 0 0 16px 0;
+  letter-spacing: -1px;
+}
+
+.DonationRecord-sub-description {
+  font-size: 16px;
+  line-height: 1.6;
+  color: #4b5563;
+  margin: 0 0 36px 0;
+  max-width: 640px;
+}
+
+.DonationRecord-info-block {
+  margin-bottom: 30px;
+}
+
+.DonationRecord-block-title {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 20px;
+  font-weight: 800;
+  color: #111827;
+  margin: 0 0 14px 0;
+}
+
+.DonationRecord-bar {
+  width: 5px;
+  height: 22px;
+  border-radius: 4px;
+  display: inline-block;
+}
+
+.DonationRecord-bar--orange {
+  background-color: #f97316;
+}
+
+.DonationRecord-bar--purple {
+  background-color: #6366f1;
+}
+
+.DonationRecord-bar--teal {
+  background-color: #10b981;
+}
+
+.DonationRecord-bar--pink {
+  background-color: #ec4899;
+}
+
+.DonationRecord-block-text {
+  font-size: 14.5px;
+  line-height: 1.7;
+  color: #4b5563;
+  margin: 0 0 14px 0;
+}
+
+.DonationRecord-tag-highlight {
+  background-color: #d1fae5;
+  color: #065f46;
+  padding: 3px 8px;
+  border-radius: 4px;
+  font-weight: 700;
+}
+
+/* ==========================
+   Right Side Form Card
+   ========================== */
+.DonationRecord-form-card {
+  background: #ffffff;
+  border-radius: 20px;
+  padding: 32px;
+  box-shadow: 0 20px 40px -15px rgba(0, 0, 0, 0.07);
+  border: 1px solid rgba(0, 0, 0, 0.04);
+}
+
+.DonationRecord-form-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 24px;
+}
+
+.DonationRecord-form-title {
+  font-size: 24px;
+  font-weight: 800;
+  margin: 0 0 6px 0;
+  color: #111827;
+}
+
+.DonationRecord-form-subtitle {
+  font-size: 13.5px;
+  color: #6b7280;
+  margin: 0;
+  line-height: 1.4;
+}
+
+.DonationRecord-heart-circle {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background-color: #d1fae5;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.DonationRecord-heart-icon {
+  color: #059669;
+  font-size: 20px;
+}
+
+/* Form Styles */
+.DonationRecord-form {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.DonationRecord-form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+
+.DonationRecord-form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.DonationRecord-label {
+  font-size: 11px;
+  font-weight: 800;
+  color: #111827;
+  letter-spacing: 0.5px;
+}
+
+.DonationRecord-asterisk {
+  color: #ef4444;
+  margin-left: 2px;
+}
+
+.DonationRecord-input,
+.DonationRecord-select,
+.DonationRecord-textarea {
+  width: 100%;
+  padding: 12px 16px;
+  background-color: #fafafa;
+  border: 1px solid #e5e7eb;
+  border-radius: 10px;
+  font-size: 13.5px;
+  color: #1f2937;
+  font-family: inherit;
+  outline: none;
+  transition: all 0.2s ease;
+}
+
+.DonationRecord-input:focus,
+.DonationRecord-select:focus,
+.DonationRecord-textarea:focus {
+  background-color: #ffffff;
+  border-color: var(--dr-primary-green);
+  box-shadow: 0 0 0 3px rgba(0, 150, 107, 0.12);
+}
+
+.DonationRecord-select-wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.DonationRecord-select {
+  appearance: none;
+  cursor: pointer;
+  padding-right: 36px;
+}
+
+.DonationRecord-select-arrow {
+  position: absolute;
+  right: 14px;
+  pointer-events: none;
+  color: #6b7280;
+  font-size: 18px;
+}
+
+.DonationRecord-textarea {
+  resize: vertical;
+}
+
+/* Submit Button */
+.DonationRecord-submit-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  width: 100%;
+  padding: 14px;
+  background-color: var(--dr-primary-green);
+  color: #ffffff;
+  border: none;
+  border-radius: 12px;
+  font-size: 16px;
+  font-weight: 700;
+  cursor: pointer;
+  margin-top: 6px;
+  transition: background-color 0.2s ease;
+}
+
+.DonationRecord-submit-btn:hover {
+  background-color: var(--dr-primary-green-hover);
+}
+
+.DonationRecord-submit-heart {
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  background-color: rgba(255, 255, 255, 0.2);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 14px;
+}
+
+/* Scan & Pay Section */
+.DonationRecord-scan-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 24px;
+  gap: 10px;
+}
+
+.DonationRecord-scan-label {
+  font-size: 11px;
+  font-weight: 700;
+  color: #9ca3af;
+  letter-spacing: 0.6px;
+}
+
+.DonationRecord-upi-badge {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 18px;
+  background-color: #f9fafb;
+  border: 1px solid #e5e7eb;
+  border-radius: 10px;
+  font-size: 12.5px;
+  font-weight: 600;
+  color: #374151;
+}
+
+.DonationRecord-qr-icon {
+  font-size: 18px;
+  color: #059669;
+}
+
+/* ==========================
+   Donation Records Table View
+   ========================== */
+.DonationRecord-records-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 28px;
+}
+
+.DonationRecord-records-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  gap: 20px;
+}
+
+.DonationRecord-records-title {
+  font-size: 36px;
+  font-weight: 800;
+  color: #111827;
+  margin: 0 0 6px 0;
+}
+
+.DonationRecord-records-subtitle {
+  font-size: 14.5px;
+  color: #6b7280;
+  margin: 0;
+}
+
+/* Search Box */
+.DonationRecord-search-box {
+  position: relative;
+  display: flex;
+  align-items: center;
+  min-width: 360px;
+}
+
+.DonationRecord-search-icon {
+  position: absolute;
+  left: 14px;
+  color: #9ca3af;
+  font-size: 18px;
+}
+
+.DonationRecord-search-input {
+  width: 100%;
+  padding: 12px 14px 12px 42px;
+  background-color: #ffffff;
+  border: 1px solid #d1d5db;
+  border-radius: 10px;
+  font-size: 13.5px;
+  color: #1f2937;
+  outline: none;
+}
+
+.DonationRecord-search-input:focus {
+  border-color: var(--dr-primary-green);
+  box-shadow: 0 0 0 3px rgba(0, 150, 107, 0.12);
+}
+
+/* Table Design */
+.DonationRecord-table-card {
+  background: #ffffff;
+  border-radius: 16px;
+  box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.05);
+  border: 1px solid #eaefe9;
+  overflow: hidden;
+}
+
+.DonationRecord-table-responsive {
+  width: 100%;
+  overflow-x: auto;
+}
+
+.DonationRecord-table {
+  width: 100%;
+  border-collapse: collapse;
+  text-align: left;
+  font-size: 13.5px;
+}
+
+.DonationRecord-table th {
+  background-color: #f3f7f5;
+  color: #374151;
+  font-weight: 700;
+  padding: 16px 20px;
+  border-bottom: 1px solid #e5e7eb;
+  white-space: nowrap;
+}
+
+.DonationRecord-table td {
+  padding: 18px 20px;
+  border-bottom: 1px solid #f3f4f6;
+  color: #4b5563;
+  vertical-align: middle;
+}
+
+.DonationRecord-table tbody tr:last-child td {
+  border-bottom: none;
+}
+
+.DonationRecord-td-sn {
+  font-weight: 700;
+  color: #111827;
+}
+
+.DonationRecord-pay-badge {
+  display: inline-block;
+  background-color: #e6f4f0;
+  color: #00805b;
+  font-family: monospace;
+  font-size: 13px;
+  font-weight: 700;
+  padding: 5px 10px;
+  border-radius: 6px;
+}
+
+.DonationRecord-td-name {
+  font-weight: 700;
+  color: #111827;
+}
+
+.DonationRecord-td-address {
+  color: #6b7280;
+}
+
+.DonationRecord-td-amount {
+  font-weight: 800;
+  color: #00966b;
+  font-size: 14px;
+}
+
+.DonationRecord-td-info {
+  font-style: italic;
+  color: #6b7280;
+  max-width: 260px;
+}
+
+.DonationRecord-empty-row {
+  text-align: center;
+  padding: 40px !important;
+  color: #9ca3af;
+  font-style: normal;
+}
+
+/* ==========================
+   Responsive Adaptations
+   ========================== */
+@media (max-width: 1024px) {
+  .DonationRecord-donation-grid {
+    grid-template-columns: 1fr;
+    gap: 36px;
+  }
+
+  .DonationRecord-records-header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .DonationRecord-search-box {
+    width: 100%;
+    min-width: 100%;
+  }
+}
+
+@media (max-width: 640px) {
+  .DonationRecord-wrapper {
+    padding: 20px 14px 50px 14px;
+  }
+
+  .DonationRecord-main-title {
+    font-size: 34px;
+  }
+
+  .DonationRecord-records-title {
+    font-size: 28px;
+  }
+
+  .DonationRecord-form-card {
+    padding: 20px;
+  }
+
+  .DonationRecord-form-row {
+    grid-template-columns: 1fr;
+  }
+
+  .DonationRecord-tab-btn {
+    padding: 8px 14px;
+    font-size: 13px;
+  }
+}
