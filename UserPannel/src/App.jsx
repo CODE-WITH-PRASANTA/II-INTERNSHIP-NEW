@@ -3,26 +3,99 @@ import {
   BrowserRouter,
   Routes,
   Route,
-  Navigate
+  Navigate,
 } from "react-router-dom";
+
 import IdCard from "./Pages/IdCard/IdCard";
 import MyApplication from "./Pages/MyApplication/MyApplication";
 import BrowseInternships from "./Pages/BrowseInternships/BrowseInternships";
+import Mainlayout from "./Layout/Mainlayout/Mainlayout";
+
+const PagePlaceholder = ({ title }) => (
+  <div className="content-placeholder">
+    <div className="placeholder-card">
+      <h2>{title} View</h2>
+      <p>This is where the {title} content will render.</p>
+    </div>
+  </div>
+);
 
 const App = () => {
   return (
     <BrowserRouter>
       <Routes>
-        {/* Default redirect to Browse Internships */}
-        <Route path="/" element={<Navigate to="/browseinternships" replace />} />
 
-        {/* Application Routes */}
-        <Route path="/idcard" element={<IdCard />} />
-        <Route path="/myapplication" element={<MyApplication />} />
-        <Route path="/browseinternships" element={<BrowseInternships />} />
+        {/* Main Layout */}
+        <Route path="/" element={<Mainlayout />}>
 
-        {/* Fallback route for unknown paths */}
-        <Route path="*" element={<Navigate to="/browseinternships" replace />} />
+          {/* Default Page */}
+          <Route
+            index
+            element={<Navigate to="/browseinternships" replace />}
+          />
+
+          {/* Browse Internships */}
+          <Route
+            path="/browse-internships"
+            element={<BrowseInternships />}
+          />
+
+          {/* My Application */}
+          <Route
+            path="/applications"
+            element={<MyApplication />}
+          />
+
+          {/* ID Card */}
+          <Route
+            path="/id-cards"
+            element={<IdCard />}
+          />
+
+          {/* Other Pages */}
+          <Route
+            path="certificates"
+            element={<PagePlaceholder title="Certificates" />}
+          />
+
+          <Route
+            path="notifications"
+            element={<PagePlaceholder title="Notifications" />}
+          />
+
+          <Route
+            path="payments"
+            element={<PagePlaceholder title="Payments" />}
+          />
+
+          <Route
+            path="profile"
+            element={<PagePlaceholder title="Profile" />}
+          />
+
+          <Route
+            path="settings"
+            element={<PagePlaceholder title="Settings" />}
+          />
+
+          <Route
+            path="help-center"
+            element={<PagePlaceholder title="Help Center" />}
+          />
+
+          <Route
+            path="contact-support"
+            element={<PagePlaceholder title="Contact Support" />}
+          />
+
+          {/* 404 */}
+          <Route
+            path="*"
+            element={<PagePlaceholder title="404 - Page Not Found" />}
+          />
+
+        </Route>
+
       </Routes>
     </BrowserRouter>
   );
