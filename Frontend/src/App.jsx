@@ -23,8 +23,8 @@ import Recuirment from "./Pages/Recuirment/Recuirment";
 // Media Pages
 import MediaVideos from "./Pages/MediaVideos/MediaVideos";
 import MediaPhotos from "./Pages/MediaPhotos/MediaPhotos";
-import OnlineMedia from "./Pages/OnlineMedia/OnlineMedia";
-import MediaNews from "./Pages/MediaNews/MediaNews";
+
+
 
 // Internship Pages
 import RunningInternships from "./Pages/RunningInternships/RunningInternships";
@@ -36,6 +36,8 @@ import EducationalInstitute from "./Pages/EducationalInstitute/EducationalInstit
 import JobPlacement from "./Pages/JobPlacement/JobPlacement";
 import TechnicalSupport from "./Pages/TechnicalSupport/TechnicalSupport";
 import Notice from "./Component/Notice/Notice";
+import MainOnlineMedia from "./Pages/MainOnlineMedia/MainOnlineMedia";
+import MainMediaNews from "./Pages/MainMediaNews/MainMediaNews";
 
 
 const App = () => {
@@ -61,8 +63,8 @@ const App = () => {
         {/* Media Routes */}
         <Route path="/media/video" element={<MediaVideos />} />
         <Route path="/media/photos" element={<MediaPhotos />} />
-        <Route path="/media/online" element={<OnlineMedia />} />
-        <Route path="/media/news" element={<MediaNews />} />
+        <Route path="/media/online" element={<MainOnlineMedia/>} />
+        <Route path="/media/news" element={<MainMediaNews/>} />
 
         {/* Internship Routes */}
         <Route path="/internships/running" element={<RunningInternships />} />
