@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import './PlacementCompaniesCard.css';
 import { 
   FiMapPin, 
@@ -8,10 +8,26 @@ import {
   FiAward, 
   FiUsers, 
   FiGlobe, 
-  FiSend 
+  FiSend,
+  FiX
 } from 'react-icons/fi';
 
 const PlacementCompaniesCard = () => {
+  const [isModalOpen, setIsModalOpen] = useState(false);
+  const [selectedCompany, setSelectedCompany] = useState(null);
+
+  // Form field states matching your target design
+  const [formData, setFormData] = useState({
+    name: '',
+    age: '18',
+    address: '',
+    mobile: '',
+    email: '',
+    qualification: '',
+    skill: '',
+    resume: null
+  });
+
   const companiesData = [
     {
       id: 1,
@@ -50,6 +66,32 @@ const PlacementCompaniesCard = () => {
       websiteUrl: 'https://example.com',
     },
   ];
+
+  const handleOpenModal = (company) => {
+    setSelectedCompany(company);
+    setIsModalOpen(true);
+  };
+
+  const handleCloseModal = () => {
+    setIsModalOpen(false);
+  };
+
+  const handleInputChange = (e) => {
+    const { name, value } = e.target;
+    setFormData((prev) => ({ ...prev, [name]: value }));
+  };
+
+  const handleFileChange = (e) => {
+    if (e.target.files && e.target.files[0]) {
+      setFormData((prev) => ({ ...prev, resume: e.target.files[0] }));
+    }
+  };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    console.log('Submitting application for:', selectedCompany?.name, formData);
+    handleCloseModal();
+  };
 
   return (
     <section className="PlacementCompaniesCard-wrapper">
@@ -183,7 +225,11 @@ const PlacementCompaniesCard = () => {
                 </div>
 
                 {/* Action Submit Button */}
-                <button type="button" className="PlacementCompaniesCard-action-btn">
+                <button 
+                  type="button" 
+                  className="PlacementCompaniesCard-action-btn"
+                  onClick={() => handleOpenModal(company)}
+                >
                   <span>Interest Send</span>
                   <div className="PlacementCompaniesCard-send-circle">
                     <FiSend />
@@ -196,6 +242,166 @@ const PlacementCompaniesCard = () => {
           ))}
         </div>
 
+      </div>
+
+      {/* Express Interest Modal */}
+      <div 
+        className={`PlacementCompaniesCard-modal-overlay ${isModalOpen ? 'show' : ''}`}
+        onClick={handleCloseModal}
+      >
+        <div 
+          className="PlacementCompaniesCard-modal-container"
+          onClick={(e) => e.stopPropagation()}
+        >
+          {/* Header */}
+          <div className="PlacementCompaniesCard-modal-header">
+            <div>
+              <h2 className="PlacementCompaniesCard-modal-title">Express Interest</h2>
+              <p className="PlacementCompaniesCard-modal-subtitle">
+                Apply for this opportunity at {selectedCompany ? selectedCompany.name : 'the company'}. Fill out all required fields.
+              </p>
+            </div>
+            <button 
+              type="button" 
+              className="PlacementCompaniesCard-modal-close-btn"
+              onClick={handleCloseModal}
+            >
+              <FiX />
+            </button>
+          </div>
+
+          {/* Form Content */}
+          <form onSubmit={handleSubmit} className="PlacementCompaniesCard-modal-form">
+            
+            {/* Name and Age Row */}
+            <div className="PlacementCompaniesCard-form-row">
+              <div className="PlacementCompaniesCard-form-group flex-wide">
+                <label className="PlacementCompaniesCard-input-label">NAME *</label>
+                <input 
+                  type="text" 
+                  name="name"
+                  placeholder="Enter your full name" 
+                  className="PlacementCompaniesCard-input"
+                  value={formData.name}
+                  onChange={handleInputChange}
+                  required
+                />
+              </div>
+              <div className="PlacementCompaniesCard-form-group flex-narrow">
+                <label className="PlacementCompaniesCard-input-label">AGE *</label>
+                <input 
+                  type="text" 
+                  name="age"
+                  placeholder="18" 
+                  className="PlacementCompaniesCard-input"
+                  value={formData.age}
+                  onChange={handleInputChange}
+                  required
+                />
+              </div>
+            </div>
+
+            {/* Address */}
+            <div className="PlacementCompaniesCard-form-group">
+              <label className="PlacementCompaniesCard-input-label">ADDRESS *</label>
+              <input 
+                type="text" 
+                name="address"
+                placeholder="Enter your full address" 
+                className="PlacementCompaniesCard-input"
+                value={formData.address}
+                onChange={handleInputChange}
+                required
+              />
+            </div>
+
+            {/* Mobile and Email Row */}
+            <div className="PlacementCompaniesCard-form-row">
+              <div className="PlacementCompaniesCard-form-group flex-half">
+                <label className="PlacementCompaniesCard-input-label">MOBILE *</label>
+                <input 
+                  type="text" 
+                  name="mobile"
+                  placeholder="+91 xxxxxxxxxx" 
+                  className="PlacementCompaniesCard-input"
+                  value={formData.mobile}
+                  onChange={handleInputChange}
+                  required
+                />
+              </div>
+              <div className="PlacementCompaniesCard-form-group flex-half">
+                <label className="PlacementCompaniesCard-input-label">EMAIL ID *</label>
+                <input 
+                  type="email" 
+                  name="email"
+                  placeholder="your.email@example.com" 
+                  className="PlacementCompaniesCard-input"
+                  value={formData.email}
+                  onChange={handleInputChange}
+                  required
+                />
+              </div>
+            </div>
+
+            {/* Qualification */}
+            <div className="PlacementCompaniesCard-form-group">
+              <label className="PlacementCompaniesCard-input-label">QUALIFICATION *</label>
+              <input 
+                type="text" 
+                name="qualification"
+                placeholder="e.g. B.Tech in Computer Science" 
+                className="PlacementCompaniesCard-input"
+                value={formData.qualification}
+                onChange={handleInputChange}
+                required
+              />
+            </div>
+
+            {/* Skill */}
+            <div className="PlacementCompaniesCard-form-group">
+              <label className="PlacementCompaniesCard-input-label">SKILL</label>
+              <input 
+                type="text" 
+                name="skill"
+                placeholder="e.g. React, Node.js, Python" 
+                className="PlacementCompaniesCard-input"
+                value={formData.skill}
+                onChange={handleInputChange}
+              />
+            </div>
+
+            {/* Attached Resume */}
+            <div className="PlacementCompaniesCard-form-group">
+              <label className="PlacementCompaniesCard-input-label">ATTACHED RESUME *</label>
+              <div className="PlacementCompaniesCard-file-box">
+                <label htmlFor="modal-resume-upload" className="PlacementCompaniesCard-choose-file-btn">
+                  Choose File
+                </label>
+                <input 
+                  id="modal-resume-upload"
+                  type="file" 
+                  accept=".pdf,.doc,.docx"
+                  onChange={handleFileChange}
+                  className="PlacementCompaniesCard-file-input-hidden"
+                  required
+                />
+                <span className="PlacementCompaniesCard-file-status">
+                  {formData.resume ? formData.resume.name : 'No file chosen'}
+                </span>
+              </div>
+              <span className="PlacementCompaniesCard-file-hint">
+                Upload PDF, DOC, or DOCX formats only. Max size 5MB.
+              </span>
+            </div>
+
+            {/* Submit Button */}
+            <button type="submit" className="PlacementCompaniesCard-submit-action">
+              <span>Submit Application</span>
+              <FiSend className="PlacementCompaniesCard-submit-icon" />
+            </button>
+          </form>
+
+        </div>
       </div>
     </section>
   );

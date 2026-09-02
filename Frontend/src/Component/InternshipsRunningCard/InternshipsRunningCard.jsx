@@ -27,7 +27,7 @@ const initialInternships = [
     residency: "NR",
     domain: "HUMANITY",
     description:
-      "fsbv et EFWR wt4 v4wtt wrtrt trgr ar&nbsp;जनवाद जस से जीव&nbsp;बेबे विश्वासा हे ए यूवी हे इरा बहरों&nbsp;बेशक नहीं&nbsp;",
+      "fsbv et EFWR wt4 v4wtt wrtrt trgr ar जनवाद जस से जीव बेबे विश्वासा हे ए यूवी हे इरा बहरों बेशक नहीं ",
     projectFocus: "retbga",
     keyModules: ["rhezr"],
     toolsTech: ["aewawt"],
@@ -125,6 +125,33 @@ const InternshipsRunningCard = () => {
 
   const toggleExpand = (id) => {
     setExpandedCards((prev) => ({ ...prev, [id]: !prev[id] }));
+  };
+
+  // Web Share API Handler with Clipboard Fallback
+  const handleShare = async (card) => {
+    const shareData = {
+      title: card.title,
+      text: `Check out this ${card.domain} internship program: ${card.title} (${card.code})`,
+      url: window.location.href, // Update this URL if you have specific detail pages
+    };
+
+    if (navigator.share) {
+      try {
+        await navigator.share(shareData);
+      } catch (err) {
+        // Suppress errors caused by user closing the native share modal
+        if (err.name !== "AbortError") {
+          console.error("Error sharing content:", err);
+        }
+      }
+    } else {
+      try {
+        await navigator.clipboard.writeText(shareData.url);
+        alert("Link copied to clipboard!");
+      } catch (err) {
+        console.error("Failed to copy link:", err);
+      }
+    }
   };
 
   const filteredInternships = initialInternships.filter((item) =>
@@ -398,6 +425,7 @@ const InternshipsRunningCard = () => {
                   <button
                     className="InternshipsRunningCard-btn-icon-only"
                     title="Share"
+                    onClick={() => handleShare(card)}
                   >
                     <FiShare2 />
                   </button>

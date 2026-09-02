@@ -333,3 +333,226 @@
     font-size: 16px;
   }
 }
+/* ==========================================================================
+   POPUP MODAL STYLES (Matching Reference Screenshot)
+   ========================================================================== */
+
+/* Overlay Container */
+.PlacementCompaniesCard-modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.45);
+  backdrop-filter: blur(4px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+  padding: 20px;
+
+  /* Smooth Transition Controls */
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  transition: opacity 0.3s cubic-bezier(0.16, 1, 0.3, 1), 
+              visibility 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.PlacementCompaniesCard-modal-overlay.show {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+}
+
+/* Modal Card Window */
+.PlacementCompaniesCard-modal-container {
+  background: #ffffff;
+  border-radius: 14px;
+  width: 100%;
+  max-width: 540px;
+  padding: 28px;
+  box-shadow: 0 20px 45px -10px rgba(0, 0, 0, 0.15);
+  box-sizing: border-box;
+  max-height: 90vh;
+  overflow-y: auto;
+
+  /* Smooth Entrance Animation */
+  transform: scale(0.95) translateY(12px);
+  transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.PlacementCompaniesCard-modal-overlay.show .PlacementCompaniesCard-modal-container {
+  transform: scale(1) translateY(0);
+}
+
+/* Header Area */
+.PlacementCompaniesCard-modal-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 22px;
+}
+
+.PlacementCompaniesCard-modal-title {
+  font-size: 20px;
+  font-weight: 700;
+  color: #111827;
+  margin: 0 0 6px 0;
+}
+
+.PlacementCompaniesCard-modal-subtitle {
+  font-size: 13.5px;
+  color: #6b7280;
+  margin: 0;
+  line-height: 1.4;
+}
+
+.PlacementCompaniesCard-modal-close-btn {
+  background: transparent;
+  border: none;
+  font-size: 18px;
+  color: #374151;
+  cursor: pointer;
+  padding: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 4px;
+  transition: background-color 0.2s ease;
+}
+
+.PlacementCompaniesCard-modal-close-btn:hover {
+  background-color: #f3f4f6;
+}
+
+/* Form Structural Layout */
+.PlacementCompaniesCard-modal-form {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.PlacementCompaniesCard-form-row {
+  display: flex;
+  gap: 14px;
+}
+
+.flex-wide { flex: 3; }
+.flex-narrow { flex: 2; }
+.flex-half { flex: 1; }
+
+.PlacementCompaniesCard-form-group {
+  display: flex;
+  flex-direction: column;
+}
+
+.PlacementCompaniesCard-input-label {
+  font-size: 11px;
+  font-weight: 800;
+  color: #111827;
+  letter-spacing: 0.5px;
+  margin-bottom: 6px;
+  text-transform: uppercase;
+}
+
+.PlacementCompaniesCard-input {
+  width: 100%;
+  height: 44px;
+  background-color: #f9fafb;
+  border: 1px solid #e5e7eb;
+  border-radius: 8px;
+  padding: 0 14px;
+  font-size: 14px;
+  color: #111827;
+  outline: none;
+  box-sizing: border-box;
+  font-family: inherit;
+  transition: border-color 0.2s ease, background-color 0.2s ease;
+}
+
+.PlacementCompaniesCard-input:focus {
+  border-color: #00ab6b;
+  background-color: #ffffff;
+}
+
+/* Attached Resume Section */
+.PlacementCompaniesCard-file-box {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  background-color: #f9fafb;
+  border: 1px solid #e5e7eb;
+  border-radius: 8px;
+  padding: 6px 12px;
+}
+
+.PlacementCompaniesCard-file-input-hidden {
+  display: none;
+}
+
+.PlacementCompaniesCard-choose-file-btn {
+  background-color: #e6f7f0;
+  color: #00ab6b;
+  font-size: 13px;
+  font-weight: 700;
+  padding: 8px 14px;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.PlacementCompaniesCard-choose-file-btn:hover {
+  background-color: #d1f2e4;
+}
+
+.PlacementCompaniesCard-file-status {
+  font-size: 13.5px;
+  color: #374151;
+}
+
+.PlacementCompaniesCard-file-hint {
+  font-size: 11.5px;
+  color: #6b7280;
+  margin-top: 6px;
+}
+
+/* Submit Application Button */
+.PlacementCompaniesCard-submit-action {
+  width: 100%;
+  height: 48px;
+  background-color: #00ab6b;
+  color: #ffffff;
+  border: none;
+  border-radius: 8px;
+  font-size: 15px;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  cursor: pointer;
+  margin-top: 8px;
+  transition: background-color 0.2s ease, transform 0.15s ease;
+}
+
+.PlacementCompaniesCard-submit-action:hover {
+  background-color: #00935b;
+}
+
+.PlacementCompaniesCard-submit-action:active {
+  transform: scale(0.99);
+}
+
+.PlacementCompaniesCard-submit-icon {
+  font-size: 16px;
+}
+
+/* Responsive adjustments for modal */
+@media (max-width: 580px) {
+  .PlacementCompaniesCard-form-row {
+    flex-direction: column;
+    gap: 16px;
+  }
+}
