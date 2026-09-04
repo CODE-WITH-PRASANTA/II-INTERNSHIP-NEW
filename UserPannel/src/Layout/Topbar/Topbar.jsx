@@ -28,7 +28,7 @@ const routeTitleMap = {
   '/contact-support': 'Contact Support',
 };
 
-// 🔹 Dummy User Data
+// Dummy User Data
 const dummyUser = {
   name: 'Alex Johnson',
   role: 'Frontend Intern',
@@ -45,7 +45,7 @@ const TopBar = () => {
 
   const currentTitle = routeTitleMap[location.pathname] || 'Dashboard';
 
-  // बाहर कहीं भी क्लिक करने पर ड्रॉपडाउन अपने आप बंद हो जाएगा
+  // बाहर कहीं भी क्लिक करने पर ड्रॉपडाउन बंद करने का लॉजिक
   useEffect(() => {
     const handleOutsideClick = (event) => {
       if (dropdownRef.current && !dropdownRef.current.contains(event.target)) {
@@ -56,9 +56,11 @@ const TopBar = () => {
     return () => document.removeEventListener('mousedown', handleOutsideClick);
   }, []);
 
+  // 🔹 Logout Logic: LocalStorage से auth हटाकर सीधे /login पर भेजना
   const handleLogout = () => {
     setIsProfileMenuOpen(false);
-    alert('Logged out successfully!');
+    localStorage.removeItem('isAuthenticated');
+    navigate('/login', { replace: true });
   };
 
   return (
@@ -87,7 +89,7 @@ const TopBar = () => {
           />
         </div>
 
-        {/* Notification Bell (Click to navigate) */}
+        {/* Notification Bell */}
         <button
           className="notification-btn"
           aria-label="Notifications"
@@ -183,6 +185,7 @@ const TopBar = () => {
 
               <div className="dropdown-divider"></div>
 
+              {/* Logout Button */}
               <button className="dropdown-item logout-btn" onClick={handleLogout}>
                 <LogOut size={16} className="dropdown-item-icon" />
                 <span>Logout</span>
