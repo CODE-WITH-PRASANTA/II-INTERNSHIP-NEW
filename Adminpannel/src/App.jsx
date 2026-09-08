@@ -5,6 +5,10 @@ import NoticeBoard from "./Component/NoticeBoard/NoticeBoard";
 import DonationLogs from "./Component/DonationLogs/DonationLogs";
 import SupportTickets from "./Component/SupportTickets/SupportTickets";
 import Settings from "./Component/Settings/Settings";
+import RecruitmentOpenings from "./Component/RecruitmentOpenings/RecruitmentOpenings";
+import PartnersOnboard from "./Component/PartnersOnboard/PartnersOnboard";
+import BlogsBoard from "./Component/BlogsBoard/BlogsBoard";
+import MediaDesk from "./Component/MediaDesk/MediaDesk";
 
 // Layout
 
@@ -13,12 +17,15 @@ const App = () => {
   return (
     <BrowserRouter>
       <Routes>
-<Route path="/reviews" element={<ReviewsModeration/>}/>
-    <Route path="/noticeboard" element={<NoticeBoard/>}/>   
+       <Route path="/reviews" element={<ReviewsModeration/>}/>
+       <Route path="/noticeboard" element={<NoticeBoard/>}/>   
        <Route path="/donationlogs" element={<DonationLogs/>}/>   
        <Route path="/support" element={<SupportTickets/>}/>   
        <Route path="/settings" element={<Settings/>}/>
-
+       <Route path="/recruitment" element={<RecruitmentOpenings/>}/>
+       <Route path="/partners" element={<PartnersOnboard/>}/>
+       <Route path="/blogsboard" element={<BlogsBoard/>}/>   
+       <Route path="/mediadesk" element={<MediaDesk/>}/>   
       </Routes>
     </BrowserRouter>
   );
