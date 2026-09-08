@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import './OnCampusCard.css';
 
 // React Icons matching reference design exactly
@@ -14,7 +15,8 @@ import {
   FiSend, 
   FiShare2, 
   FiGrid, 
-  FiList 
+  FiList,
+  FiX
 } from 'react-icons/fi';
 
 const internshipData = [
@@ -22,8 +24,8 @@ const internshipData = [
     id: 1,
     title: "Machine",
     tags: ["ON CAMPUS INTERNSHIP", "ON_CAMPUS"],
-    description: "Website Development Internship Progra Lead: Learnify, Lucknow Organized by: International Institute of Internship...",
-    projectFocus: "Rela time pipline",
+    description: "Website Development Internship Program Lead: Learnify, Lucknow Organized by: International Institute of Internship...",
+    projectFocus: "Real time pipeline",
     keyModules: ["fsdsgfdh"],
     toolsTech: ["sadf", "wads", "adsa"],
     duration: "3 Months"
@@ -51,8 +53,68 @@ const internshipData = [
 ];
 
 const OnCampusCard = () => {
+  const navigate = useNavigate();
+
   const [viewMode, setViewMode] = useState('grid'); // 'grid' | 'list'
   const [searchTerm, setSearchTerm] = useState('');
+
+  // Modal State Management
+  const [isModalOpen, setIsModalOpen] = useState(false);
+  const [selectedProgram, setSelectedProgram] = useState('');
+  const [formData, setFormData] = useState({
+    name: '',
+    address: '',
+    education: '',
+    mobile: '',
+    email: ''
+  });
+
+  const handleOpenModal = (programTitle) => {
+    setSelectedProgram(programTitle);
+    setIsModalOpen(true);
+  };
+
+  const handleCloseModal = () => {
+    setIsModalOpen(false);
+  };
+
+  const handleInputChange = (e) => {
+    const { name, value } = e.target;
+    setFormData((prev) => ({ ...prev, [name]: value }));
+  };
+
+  const handleSubmitInterest = (e) => {
+    e.preventDefault();
+    console.log("Submitting Interest Data:", { program: selectedProgram, ...formData });
+    setFormData({ name: '', address: '', education: '', mobile: '', email: '' });
+    setIsModalOpen(false);
+  };
+
+  // Web Share API Handler with Clipboard Fallback
+  const handleShare = async (item) => {
+    const shareData = {
+      title: item.title,
+      text: `Check out this internship program: ${item.title} (${item.duration})`,
+      url: window.location.href, // Replace with dynamic URL if applicable (e.g., `${window.location.origin}/internships/${item.id}`)
+    };
+
+    if (navigator.share) {
+      try {
+        await navigator.share(shareData);
+      } catch (err) {
+        if (err.name !== 'AbortError') {
+          console.error("Error sharing:", err);
+        }
+      }
+    } else {
+      try {
+        await navigator.clipboard.writeText(shareData.url);
+        alert("Link copied to clipboard!");
+      } catch (err) {
+        console.error("Failed to copy link:", err);
+      }
+    }
+  };
 
   return (
     <div className="OnCampusCard-wrapper">
@@ -253,14 +315,27 @@ const OnCampusCard = () => {
 
                 {/* Footer Actions */}
                 <div className="OnCampusCard-item-footer">
-                  <button className="OnCampusCard-btn-view" type="button">
-                    View Detail
-                  </button>
-                  <button className="OnCampusCard-btn-interest" type="button">
+                <button
+  className="OnCampusCard-btn-view"
+  type="button"
+  onClick={() => navigate('/oncampusviewdetails')}
+>
+  View Detail
+</button>
+                  <button 
+                    className="OnCampusCard-btn-interest" 
+                    type="button"
+                    onClick={() => handleOpenModal(item.title)}
+                  >
                     <span>Interest Send</span>
                     <FiSend className="OnCampusCard-send-icon" />
                   </button>
-                  <button className="OnCampusCard-btn-share" type="button" aria-label="Share">
+                  <button 
+                    className="OnCampusCard-btn-share" 
+                    type="button" 
+                    aria-label="Share"
+                    onClick={() => handleShare(item)}
+                  >
                     <FiShare2 />
                   </button>
                 </div>
@@ -271,6 +346,118 @@ const OnCampusCard = () => {
 
         </main>
       </div>
+
+      {/* Smooth Animated Modal Overlay */}
+      <div 
+        className={`OnCampusCard-modal-overlay ${isModalOpen ? 'show' : ''}`}
+        onClick={handleCloseModal}
+      >
+        <div 
+          className="OnCampusCard-modal-container"
+          onClick={(e) => e.stopPropagation()}
+        >
+          {/* Modal Header */}
+          <div className="OnCampusCard-modal-header">
+            <div>
+              <h2 className="OnCampusCard-modal-title">Interest Send</h2>
+              <p className="OnCampusCard-modal-subtitle">
+                Express your interest in the "{selectedProgram}" program.
+              </p>
+            </div>
+            <button 
+              className="OnCampusCard-modal-close-btn" 
+              onClick={handleCloseModal}
+              type="button"
+            >
+              <FiX />
+            </button>
+          </div>
+
+          {/* Modal Form */}
+          <form className="OnCampusCard-modal-form" onSubmit={handleSubmitInterest}>
+            
+            <div className="OnCampusCard-form-group">
+              <label className="OnCampusCard-form-label">NAME *</label>
+              <input 
+                type="text" 
+                name="name"
+                className="OnCampusCard-form-input" 
+                placeholder="Enter your full name" 
+                value={formData.name}
+                onChange={handleInputChange}
+                required
+              />
+            </div>
+
+            <div className="OnCampusCard-form-group">
+              <label className="OnCampusCard-form-label">ADDRESS *</label>
+              <input 
+                type="text" 
+                name="address"
+                className="OnCampusCard-form-input" 
+                placeholder="Enter your full address" 
+                value={formData.address}
+                onChange={handleInputChange}
+                required
+              />
+            </div>
+
+            <div className="OnCampusCard-form-group">
+              <label className="OnCampusCard-form-label">EDUCATION *</label>
+              <div className="OnCampusCard-select-wrapper">
+                <select 
+                  name="education"
+                  className="OnCampusCard-form-select"
+                  value={formData.education}
+                  onChange={handleInputChange}
+                  required
+                >
+                  <option value="" disabled hidden>Select education level</option>
+                  <option value="High School">High School</option>
+                  <option value="Diploma">Diploma</option>
+                  <option value="Undergraduate (B.Tech / B.Sc / BCA)">Undergraduate (B.Tech / B.Sc / BCA)</option>
+                  <option value="Postgraduate (M.Tech / M.Sc / MCA)">Postgraduate (M.Tech / M.Sc / MCA)</option>
+                  <option value="Ph.D.">Ph.D.</option>
+                </select>
+              </div>
+            </div>
+
+            <div className="OnCampusCard-form-row">
+              <div className="OnCampusCard-form-group">
+                <label className="OnCampusCard-form-label">MOBILE NO. *</label>
+                <input 
+                  type="tel" 
+                  name="mobile"
+                  className="OnCampusCard-form-input" 
+                  placeholder="+91 xxxxxxxxxx" 
+                  value={formData.mobile}
+                  onChange={handleInputChange}
+                  required
+                />
+              </div>
+
+              <div className="OnCampusCard-form-group">
+                <label className="OnCampusCard-form-label">EMAIL ID *</label>
+                <input 
+                  type="email" 
+                  name="email"
+                  className="OnCampusCard-form-input" 
+                  placeholder="your.email@example.com" 
+                  value={formData.email}
+                  onChange={handleInputChange}
+                  required
+                />
+              </div>
+            </div>
+
+            <button type="submit" className="OnCampusCard-modal-submit-btn">
+              Interest Send
+            </button>
+
+          </form>
+        </div>
+      </div>
+
     </div>
   );
 };

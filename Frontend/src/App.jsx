@@ -23,19 +23,27 @@ import Recuirment from "./Pages/Recuirment/Recuirment";
 // Media Pages
 import MediaVideos from "./Pages/MediaVideos/MediaVideos";
 import MediaPhotos from "./Pages/MediaPhotos/MediaPhotos";
-import OnlineMedia from "./Pages/OnlineMedia/OnlineMedia";
-import MediaNews from "./Pages/MediaNews/MediaNews";
+
+
 
 // Internship Pages
 import RunningInternships from "./Pages/RunningInternships/RunningInternships";
-import OnCampusInternship from "./Pages/OnCampusInternship/OnCampusInternship";
+
 import VirtualInternship from "./Pages/VirtualInternship/VirtualInternship";
 
 // Partner Pages
-import EducationalInstitute from "./Pages/EducationalInstitute/EducationalInstitute";
-import JobPlacement from "./Pages/JobPlacement/JobPlacement";
-import TechnicalSupport from "./Pages/TechnicalSupport/TechnicalSupport";
+
 import Notice from "./Component/Notice/Notice";
+import MainOnlineMedia from "./Pages/MainOnlineMedia/MainOnlineMedia";
+import MainMediaNews from "./Pages/MainMediaNews/MainMediaNews";
+import OnCampusInternships from "./Pages/OnCampusInternships/OnCampusInternships";
+import EducationalInstitutes from "./Pages/EducationalInstitutes/EducationalInstitutes";
+import PlacementCompanies from "./Pages/PlacementCompanies/PlacementCompanies";
+import TrainingSupport from "./Pages/TrainingSupport/TrainingSupport";
+import ReadArticle from "./Pages/ReadArticle/ReadArticle";
+import RunningIntenshipViewDetails from "./Pages/RunningIntenshipViewDetails/RunningIntenshipViewDetails";
+import OnCampusViewDetails from "./Component/OnCampusViewDetails/OnCampusViewDetails";
+import VirtualViewDetails from "./Component/VirtualViewDetails/VirtualViewDetails";
 
 
 const App = () => {
@@ -61,24 +69,27 @@ const App = () => {
         {/* Media Routes */}
         <Route path="/media/video" element={<MediaVideos />} />
         <Route path="/media/photos" element={<MediaPhotos />} />
-        <Route path="/media/online" element={<OnlineMedia />} />
-        <Route path="/media/news" element={<MediaNews />} />
+        <Route path="/media/online" element={<MainOnlineMedia/>} />
+        <Route path="/media/news" element={<MainMediaNews/>} />
 
         {/* Internship Routes */}
         <Route path="/internships/running" element={<RunningInternships />} />
-        <Route path="/internships/on-campus" element={<OnCampusInternship />} />
+        <Route path="/internships/on-campus" element={<OnCampusInternships />} />
         <Route path="/internships/virtual" element={<VirtualInternship />} />
 
         {/* Partner Routes */}
-        <Route path="/partners/educational" element={<EducationalInstitute />} />
-        <Route path="/partners/placement" element={<JobPlacement />} />
-        <Route path="/partners/training" element={<TechnicalSupport />} />
+        <Route path="/partners/educational" element={<EducationalInstitutes />} />
+        <Route path="/partners/placement" element={<PlacementCompanies/>} />
+        <Route path="/partners/training" element={<TrainingSupport />} />
 
         {/* Auth & Protected Routes */}
         <Route path="/login" element={<Loginpage />} />
         <Route path="/protectrouter" element={<Protectrouter />} />
         <Route path="Notice" element={<Notice/>}/>
-       
+       <Route path="/readarticle" element={<ReadArticle/>}/>
+       <Route path="/viewdetails" element={<RunningIntenshipViewDetails/>}/>
+       <Route path="/oncampusviewdetails" element={<OnCampusViewDetails/>}/>
+       <Route path="/virtualviewdetails" element={<VirtualViewDetails/>}/>
       </Routes>
       <Footer />
     </BrowserRouter>
