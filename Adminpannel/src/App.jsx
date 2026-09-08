@@ -3,6 +3,15 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import UserAccounts from "./Component/UserAccounts/UserAccounts";
 import Registrations from "./Component/Registrations/Registrations";
 import Internships from "./Component/Internships/Internships";
+import ReviewsModeration from "./Component/ReviewsModeration/ReviewsModeration";
+import NoticeBoard from "./Component/NoticeBoard/NoticeBoard";
+import DonationLogs from "./Component/DonationLogs/DonationLogs";
+import SupportTickets from "./Component/SupportTickets/SupportTickets";
+import Settings from "./Component/Settings/Settings";
+import RecruitmentOpenings from "./Component/RecruitmentOpenings/RecruitmentOpenings";
+import PartnersOnboard from "./Component/PartnersOnboard/PartnersOnboard";
+import BlogsBoard from "./Component/BlogsBoard/BlogsBoard";
+import MediaDesk from "./Component/MediaDesk/MediaDesk";
 
 // Layout
  
@@ -16,6 +25,15 @@ const App = () => {
         <Route path="/registrations" element={<Registrations />} />
         <Route path="/internships" element={<Internships />} />
         
+       <Route path="/reviews" element={<ReviewsModeration/>}/>
+       <Route path="/noticeboard" element={<NoticeBoard/>}/>   
+       <Route path="/donationlogs" element={<DonationLogs/>}/>   
+       <Route path="/support" element={<SupportTickets/>}/>   
+       <Route path="/settings" element={<Settings/>}/>
+       <Route path="/recruitment" element={<RecruitmentOpenings/>}/>
+       <Route path="/partners" element={<PartnersOnboard/>}/>
+       <Route path="/blogsboard" element={<BlogsBoard/>}/>   
+       <Route path="/mediadesk" element={<MediaDesk/>}/>   
       </Routes>
     </BrowserRouter>
   );

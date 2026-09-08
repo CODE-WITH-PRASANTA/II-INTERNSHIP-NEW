@@ -1,0 +1,417 @@
+:root {
+  --donation-logs-primary: #0d8a6a;
+  --donation-logs-primary-hover: #0a6f55;
+  --donation-logs-primary-light: #e6f4f1;
+  --donation-logs-bg-page: #f8fafc;
+  --donation-logs-bg-card: #ffffff;
+  --donation-logs-text-main: #0f172a;
+  --donation-logs-text-muted: #64748b;
+  --donation-logs-border: #e2e8f0;
+  --donation-logs-border-hover: #cbd5e1;
+  --donation-logs-table-header: #f8fafc;
+  --donation-logs-status-bg: #f1f5f9;
+  --donation-logs-status-text: #475569;
+  --donation-logs-radius-sm: 6px;
+  --donation-logs-radius: 10px;
+  --donation-logs-shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+  --donation-logs-shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.06), 0 2px 4px -2px rgba(0, 0, 0, 0.04);
+  --donation-logs-transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Base Page Container */
+.donation-logs-container {
+  padding: 32px 28px;
+  max-width: 1400px;
+  margin: 0 auto;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  color: var(--donation-logs-text-main);
+  background-color: var(--donation-logs-bg-page);
+  min-height: 100vh;
+  box-sizing: border-box;
+}
+
+/* Breadcrumb Navigation */
+.donation-logs-breadcrumb {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 8px;
+  font-size: 13.5px;
+  color: var(--donation-logs-primary);
+  font-weight: 600;
+  margin-bottom: 20px;
+}
+
+.donation-logs-breadcrumb-item {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  cursor: pointer;
+  white-space: nowrap;
+  transition: var(--donation-logs-transition);
+}
+
+.donation-logs-breadcrumb-item:hover:not(.donation-logs-breadcrumb-active) {
+  color: var(--donation-logs-primary-hover);
+  text-decoration: underline;
+}
+
+.donation-logs-breadcrumb-icon {
+  font-size: 16px;
+  flex-shrink: 0;
+}
+
+.donation-logs-breadcrumb-separator {
+  color: #94a3b8;
+  font-size: 11px;
+}
+
+.donation-logs-breadcrumb-active {
+  color: var(--donation-logs-primary);
+  font-weight: 700;
+  cursor: default;
+}
+
+/* Header Section */
+.donation-logs-header {
+  margin-bottom: 28px;
+}
+
+.donation-logs-header h1 {
+  font-size: 26px;
+  font-weight: 800;
+  margin: 0 0 6px 0;
+  color: var(--donation-logs-text-main);
+  letter-spacing: -0.02em;
+}
+
+.donation-logs-header p {
+  font-size: 14px;
+  color: var(--donation-logs-text-muted);
+  margin: 0;
+  line-height: 1.5;
+}
+
+/* Toolbar & Filters */
+.donation-logs-toolbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 20px;
+  flex-wrap: wrap;
+}
+
+/* Search Bar Component */
+.donation-logs-search {
+  position: relative;
+  flex: 1;
+  min-width: 280px;
+  max-width: 380px;
+}
+
+.donation-logs-search input {
+  width: 100%;
+  padding: 10px 14px 10px 40px;
+  font-size: 14px;
+  border: 1px solid var(--donation-logs-border);
+  border-radius: var(--donation-logs-radius-sm);
+  outline: none;
+  background-color: var(--donation-logs-bg-card);
+  transition: var(--donation-logs-transition);
+  box-sizing: border-box;
+  color: var(--donation-logs-text-main);
+  box-shadow: var(--donation-logs-shadow-sm);
+}
+
+.donation-logs-search input::placeholder {
+  color: #94a3b8;
+}
+
+.donation-logs-search input:focus {
+  border-color: var(--donation-logs-primary);
+  background-color: #ffffff;
+  box-shadow: 0 0 0 3px rgba(13, 138, 106, 0.15);
+}
+
+.donation-logs-search-icon {
+  position: absolute;
+  left: 14px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #94a3b8;
+  font-size: 18px;
+  pointer-events: none;
+  transition: var(--donation-logs-transition);
+}
+
+.donation-logs-search input:focus + .donation-logs-search-icon {
+  color: var(--donation-logs-primary);
+}
+
+/* Right Side Actions Group */
+.donation-logs-actions {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  flex-wrap: wrap;
+}
+
+/* Total Metric Badge */
+.donation-logs-total-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  padding: 8px 18px;
+  background-color: #ffffff;
+  border: 1px solid #bbf7d0;
+  border-radius: var(--donation-logs-radius-sm);
+  box-shadow: var(--donation-logs-shadow-sm);
+  transition: var(--donation-logs-transition);
+}
+
+.donation-logs-total-badge:hover {
+  border-color: #86efac;
+  box-shadow: 0 2px 4px rgba(13, 138, 106, 0.08);
+}
+
+.donation-logs-badge-icon {
+  font-size: 20px;
+  color: var(--donation-logs-primary);
+  flex-shrink: 0;
+}
+
+.donation-logs-badge-text {
+  display: flex;
+  flex-direction: column;
+  line-height: 1.25;
+}
+
+.donation-logs-badge-label {
+  font-size: 10px;
+  font-weight: 800;
+  color: #166534;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+.donation-logs-badge-value {
+  font-size: 17px;
+  font-weight: 800;
+  color: var(--donation-logs-text-main);
+  letter-spacing: -0.01em;
+}
+
+/* Export Button */
+.donation-logs-export-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 18px;
+  font-size: 13.5px;
+  font-weight: 600;
+  background-color: #ffffff;
+  border: 1px solid var(--donation-logs-border);
+  border-radius: var(--donation-logs-radius-sm);
+  color: var(--donation-logs-text-main);
+  cursor: pointer;
+  transition: var(--donation-logs-transition);
+  white-space: nowrap;
+  box-shadow: var(--donation-logs-shadow-sm);
+}
+
+.donation-logs-export-btn:hover {
+  background-color: #f8fafc;
+  border-color: var(--donation-logs-border-hover);
+  color: var(--donation-logs-primary);
+  transform: translateY(-1px);
+}
+
+.donation-logs-export-btn:active {
+  transform: translateY(0);
+}
+
+.donation-logs-export-icon {
+  font-size: 16px;
+  color: var(--donation-logs-text-muted);
+  transition: var(--donation-logs-transition);
+}
+
+.donation-logs-export-btn:hover .donation-logs-export-icon {
+  color: var(--donation-logs-primary);
+}
+
+/* Main Table Container Card */
+.donation-logs-card {
+  background-color: var(--donation-logs-bg-card);
+  border-radius: var(--donation-logs-radius);
+  border: 1px solid var(--donation-logs-border);
+  box-shadow: var(--donation-logs-shadow-md);
+  overflow: hidden;
+}
+
+.donation-logs-table-wrapper {
+  width: 100%;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+/* Data Table Styling */
+.donation-logs-table {
+  width: 100%;
+  border-collapse: collapse;
+  text-align: left;
+}
+
+.donation-logs-table th {
+  background-color: var(--donation-logs-table-header);
+  color: #475569;
+  font-size: 11.5px;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  padding: 16px 24px;
+  border-bottom: 1px solid var(--donation-logs-border);
+  white-space: nowrap;
+  text-transform: uppercase;
+}
+
+.donation-logs-table td {
+  padding: 18px 24px;
+  font-size: 14px;
+  color: var(--donation-logs-text-main);
+  border-bottom: 1px solid var(--donation-logs-border);
+  vertical-align: middle;
+}
+
+.donation-logs-table tbody tr:last-child td {
+  border-bottom: none;
+}
+
+.donation-logs-table tbody tr {
+  transition: var(--donation-logs-transition);
+}
+
+.donation-logs-table tbody tr:hover {
+  background-color: #f1f5f9;
+}
+
+/* Donor Details Cell */
+.donation-logs-donor-info {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+
+.donation-logs-donor-name {
+  font-weight: 700;
+  color: var(--donation-logs-text-main);
+  font-size: 14.5px;
+}
+
+.donation-logs-donor-meta {
+  font-size: 12.5px;
+  color: var(--donation-logs-text-muted);
+  font-weight: 400;
+}
+
+/* Amount Cell */
+.donation-logs-amount {
+  font-weight: 800;
+  font-size: 15px;
+  color: var(--donation-logs-text-main);
+}
+
+/* Status Pill */
+.donation-logs-status-pill {
+  display: inline-block;
+  padding: 4px 12px;
+  background-color: var(--donation-logs-status-bg);
+  color: var(--donation-logs-status-text);
+  font-size: 11px;
+  font-weight: 700;
+  border-radius: 20px;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  border: 1px solid #e2e8f0;
+}
+
+/* Message / Notes Cells */
+.donation-logs-note {
+  color: #334155;
+  max-width: 400px;
+  display: block;
+  line-height: 1.45;
+  word-break: break-word;
+}
+
+.donation-logs-note-italic {
+  color: #94a3b8;
+  font-style: italic;
+}
+
+/* Logged Date Cell */
+.donation-logs-date {
+  font-weight: 600;
+  color: var(--donation-logs-text-main);
+  white-space: nowrap;
+}
+
+/* Empty State Handling */
+.donation-logs-empty-cell {
+  padding: 64px 20px !important;
+  text-align: center;
+}
+
+.donation-logs-empty-state {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  color: var(--donation-logs-text-muted);
+  font-size: 14.5px;
+  font-weight: 500;
+}
+
+.donation-logs-empty-icon {
+  font-size: 32px;
+  color: #cbd5e1;
+}
+
+/* Responsive Styles for Mobile & Tablet */
+@media (max-width: 768px) {
+  .donation-logs-container {
+    padding: 20px 14px;
+  }
+
+  .donation-logs-header h1 {
+    font-size: 22px;
+  }
+
+  .donation-logs-toolbar {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 12px;
+  }
+
+  .donation-logs-search {
+    max-width: 100%;
+  }
+
+  .donation-logs-actions {
+    flex-direction: row;
+    justify-content: space-between;
+    width: 100%;
+  }
+
+  .donation-logs-total-badge,
+  .donation-logs-export-btn {
+    flex: 1;
+    justify-content: center;
+  }
+
+  .donation-logs-table th,
+  .donation-logs-table td {
+    padding: 14px 16px;
+  }
+}
