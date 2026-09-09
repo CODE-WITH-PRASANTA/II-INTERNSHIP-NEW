@@ -1,0 +1,503 @@
+:root {
+  --notice-board-primary: #0d8a6a;
+  --notice-board-primary-hover: #0a6f55;
+  --notice-board-bg: #ffffff;
+  --notice-board-text-dark: #111827;
+  --notice-board-text-muted: #6b7280;
+  --notice-board-border: #e5e7eb;
+  --notice-board-input-bg: #f9fafb;
+  --notice-board-radius: 8px;
+  --notice-board-transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Container */
+.notice-board-container {
+  padding: 24px;
+  max-width: 1400px;
+  margin: 0 auto;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  color: var(--notice-board-text-dark);
+  box-sizing: border-box;
+}
+
+/* Breadcrumbs */
+.notice-board-breadcrumb {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 8px;
+  font-size: 14px;
+  color: var(--notice-board-primary);
+  font-weight: 500;
+  margin-bottom: 20px;
+}
+
+.notice-board-breadcrumb-item {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  cursor: pointer;
+  white-space: nowrap;
+}
+
+.notice-board-breadcrumb-icon {
+  font-size: 16px;
+  flex-shrink: 0;
+}
+
+.notice-board-breadcrumb-separator {
+  color: var(--notice-board-text-muted);
+  font-size: 12px;
+}
+
+.notice-board-breadcrumb-active {
+  font-weight: 600;
+  cursor: default;
+}
+
+/* Header */
+.notice-board-header h1 {
+  font-size: 24px;
+  font-weight: 700;
+  margin: 0 0 8px 0;
+  color: var(--notice-board-text-dark);
+}
+
+.notice-board-header p {
+  font-size: 14px;
+  color: var(--notice-board-text-muted);
+  margin: 0 0 28px 0;
+  line-height: 1.5;
+}
+
+/* Grid Layout */
+.notice-board-grid {
+  display: grid;
+  grid-template-columns: 1fr 440px;
+  gap: 28px;
+  align-items: start;
+}
+
+/* Left Section Header */
+.notice-board-section-title {
+  font-size: 16px;
+  font-weight: 700;
+  margin: 0 0 16px 0;
+  color: var(--notice-board-text-dark);
+}
+
+/* Empty Notice State */
+.notice-board-empty-card {
+  border: 1px dashed #d1d5db;
+  border-radius: var(--notice-board-radius);
+  padding: 80px 24px;
+  text-align: center;
+  background-color: var(--notice-board-bg);
+}
+
+.notice-board-empty-icon-wrapper {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 48px;
+  height: 48px;
+  border: 2px solid #9ca3af;
+  border-radius: 50%;
+  margin-bottom: 12px;
+}
+
+.notice-board-empty-icon {
+  font-size: 24px;
+  color: #6b7280;
+}
+
+.notice-board-empty-card h3 {
+  font-size: 16px;
+  font-weight: 700;
+  margin: 0 0 6px 0;
+  color: var(--notice-board-text-dark);
+}
+
+.notice-board-empty-card p {
+  font-size: 13.5px;
+  color: var(--notice-board-text-muted);
+  margin: 0;
+}
+
+/* Announcement Cards List */
+.notice-board-announcements-list {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.notice-board-card {
+  background: #ffffff;
+  border: 1px solid var(--notice-board-border);
+  border-radius: var(--notice-board-radius);
+  padding: 20px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04);
+}
+
+.notice-board-card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 12px;
+  margin-bottom: 10px;
+}
+
+.notice-board-badge {
+  display: inline-block;
+  background-color: #e6f4f1;
+  color: var(--notice-board-primary);
+  font-size: 11px;
+  font-weight: 700;
+  padding: 3px 8px;
+  border-radius: 4px;
+  margin-bottom: 6px;
+  text-transform: uppercase;
+}
+
+.notice-board-card-title {
+  font-size: 16px;
+  font-weight: 700;
+  margin: 0;
+  color: var(--notice-board-text-dark);
+}
+
+.notice-board-btn-delete {
+  background: none;
+  border: none;
+  color: #9ca3af;
+  font-size: 18px;
+  cursor: pointer;
+  padding: 6px;
+  border-radius: 4px;
+  transition: var(--notice-board-transition);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.notice-board-btn-delete:hover {
+  color: #ef4444;
+  background-color: #fef2f2;
+}
+
+.notice-board-card-body {
+  font-size: 14px;
+  color: #374151;
+  line-height: 1.5;
+  margin: 0 0 16px 0;
+}
+
+.notice-board-card-footer {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  font-size: 12.5px;
+  color: var(--notice-board-text-muted);
+  border-top: 1px solid #f3f4f6;
+  padding-top: 12px;
+}
+
+.notice-board-card-date {
+  margin-left: auto;
+}
+
+/* Right Column Form Card */
+.notice-board-composer-card {
+  background: #ffffff;
+  border: 1px solid var(--notice-board-border);
+  border-radius: var(--notice-board-radius);
+  padding: 24px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.02);
+}
+
+.notice-board-composer-header {
+  margin-bottom: 24px;
+}
+
+.notice-board-composer-title-group {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+}
+
+.notice-board-composer-bell-icon {
+  font-size: 20px;
+  color: var(--notice-board-primary);
+  margin-top: 2px;
+  flex-shrink: 0;
+}
+
+.notice-board-composer-title-group h2 {
+  font-size: 16px;
+  font-weight: 700;
+  margin: 0 0 4px 0;
+  color: var(--notice-board-text-dark);
+}
+
+.notice-board-composer-title-group p {
+  font-size: 13px;
+  color: var(--notice-board-text-muted);
+  margin: 0;
+  line-height: 1.4;
+}
+
+/* Form Styling */
+.notice-board-composer-form {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.notice-board-form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.notice-board-form-group label {
+  font-size: 11.5px;
+  font-weight: 700;
+  color: #374151;
+  letter-spacing: 0.03em;
+}
+
+.notice-board-label-with-icon {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.notice-board-field-icon {
+  font-size: 14px;
+  color: var(--notice-board-text-muted);
+  flex-shrink: 0;
+}
+
+.notice-board-form-group input,
+.notice-board-form-group textarea,
+.notice-board-form-group select {
+  width: 100%;
+  padding: 10px 12px;
+  font-size: 14px; /* Minimum 16px on iOS prevents auto-zoom, but 14px works well globally */
+  border: 1px solid var(--notice-board-border);
+  border-radius: 6px;
+  background-color: var(--notice-board-input-bg);
+  outline: none;
+  box-sizing: border-box;
+  color: var(--notice-board-text-dark);
+  transition: var(--notice-board-transition);
+}
+
+.notice-board-form-group input:focus,
+.notice-board-form-group textarea:focus,
+.notice-board-form-group select:focus {
+  background-color: #ffffff;
+  border-color: var(--notice-board-primary);
+  box-shadow: 0 0 0 3px rgba(13, 138, 106, 0.1);
+}
+
+.notice-board-form-group textarea {
+  resize: vertical;
+}
+
+/* Segmented Control Buttons */
+.notice-board-type-toggle {
+  display: flex;
+  background-color: #f3f4f6;
+  padding: 4px;
+  border-radius: 6px;
+  gap: 4px;
+}
+
+.notice-board-type-btn {
+  flex: 1;
+  padding: 8px 12px;
+  font-size: 13px;
+  font-weight: 500;
+  border: none;
+  background: transparent;
+  color: var(--notice-board-text-muted);
+  border-radius: 4px;
+  cursor: pointer;
+  transition: var(--notice-board-transition);
+  text-align: center;
+  white-space: nowrap;
+}
+
+.notice-board-type-btn.active {
+  background-color: #ffffff;
+  color: var(--notice-board-text-dark);
+  font-weight: 600;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+}
+
+/* Custom Select Dropdown */
+.notice-board-select-wrapper {
+  position: relative;
+}
+
+.notice-board-select-wrapper select {
+  appearance: none;
+  -webkit-appearance: none;
+  cursor: pointer;
+  padding-right: 36px;
+}
+
+.notice-board-select-icon {
+  position: absolute;
+  right: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+  pointer-events: none;
+  color: var(--notice-board-text-muted);
+}
+
+/* Note Banner Box */
+.notice-board-note-box {
+  background-color: #f9fafb;
+  border: 1px solid var(--notice-board-border);
+  border-radius: 6px;
+  padding: 12px;
+}
+
+.notice-board-note-box p {
+  font-size: 12px;
+  color: #4b5563;
+  margin: 0;
+  line-height: 1.4;
+}
+
+/* Action Buttons */
+.notice-board-form-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 12px;
+  margin-top: 8px;
+}
+
+.notice-board-btn-clear {
+  padding: 10px 20px;
+  font-size: 13.5px;
+  font-weight: 500;
+  background: #ffffff;
+  border: 1px solid var(--notice-board-border);
+  color: var(--notice-board-text-dark);
+  border-radius: 6px;
+  cursor: pointer;
+  transition: var(--notice-board-transition);
+}
+
+.notice-board-btn-clear:hover {
+  background-color: #f3f4f6;
+}
+
+.notice-board-btn-broadcast {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 10px 22px;
+  font-size: 13.5px;
+  font-weight: 600;
+  background-color: var(--notice-board-primary);
+  color: #ffffff;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: var(--notice-board-transition);
+}
+
+.notice-board-btn-broadcast:hover {
+  background-color: var(--notice-board-primary-hover);
+}
+
+.notice-board-btn-icon {
+  font-size: 14px;
+}
+
+/* -------------------------------------------------------------------------- */
+/* Responsive Breakpoints & Mobile Optimization */
+/* -------------------------------------------------------------------------- */
+
+/* Tablets / Medium Displays (Below 1024px) */
+@media (max-width: 1024px) {
+  .notice-board-grid {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+
+  /* Re-order: Form comes first on mobile/tablets if preferred, or keep list first */
+  .notice-board-right-column {
+    order: -1; 
+  }
+}
+
+/* Mobile Devices (Below 640px) */
+@media (max-width: 640px) {
+  .notice-board-container {
+    padding: 16px 12px;
+  }
+
+  .notice-board-breadcrumb {
+    font-size: 13px;
+    margin-bottom: 16px;
+  }
+
+  .notice-board-header h1 {
+    font-size: 20px;
+  }
+
+  .notice-board-header p {
+    font-size: 13px;
+    margin-bottom: 20px;
+  }
+
+  .notice-board-composer-card {
+    padding: 16px;
+  }
+
+  /* Stack target type buttons vertically on small screens */
+  .notice-board-type-toggle {
+    flex-direction: column;
+    padding: 6px;
+  }
+
+  .notice-board-type-btn {
+    padding: 10px;
+    font-size: 13.5px;
+  }
+
+  /* Full-width action buttons on touch screens */
+  .notice-board-form-actions {
+    flex-direction: column-reverse;
+  }
+
+  .notice-board-btn-clear,
+  .notice-board-btn-broadcast {
+    width: 100%;
+    padding: 12px;
+  }
+
+  .notice-board-empty-card {
+    padding: 40px 16px;
+  }
+
+  .notice-board-card {
+    padding: 16px;
+  }
+
+  .notice-board-card-footer {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 6px;
+  }
+
+  .notice-board-card-date {
+    margin-left: 0;
+  }
+}
