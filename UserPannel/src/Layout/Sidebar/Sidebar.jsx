@@ -43,7 +43,7 @@ const Sidebar = ({ isCollapsed, setIsCollapsed, mobileOpen, setMobileOpen }) => 
       items: [
         { path: '/notifications', label: 'Notifications', icon: Bell, badge: 3 },
         { path: '/payments', label: 'Payments', icon: Wallet },
-        { path: '/profile', label: 'Profile', icon: User },
+        { path: '/profile', label: 'Registration Profile', icon: User },
         { path: '/settings', label: 'Settings', icon: Settings },
       ],
     },

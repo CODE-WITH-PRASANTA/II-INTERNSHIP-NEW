@@ -1,13 +1,22 @@
+/* Layout Root Container */
 .layout-root {
   min-height: 100vh;
   background-color: #f8fafc;
   color: #0f172a;
   display: flex;
   position: relative;
+  width: 100%;
   overflow-x: hidden;
   font-family: 'Plus Jakarta Sans', sans-serif;
+  box-sizing: border-box;
 }
 
+/* Mobile Overlay Backdrop */
+.layout-mobile-overlay {
+  display: none;
+}
+
+/* Main Content Wrapper */
 .layout-content-wrapper {
   flex: 1;
   margin-left: 270px;
@@ -16,16 +25,23 @@
   flex-direction: column;
   transition: margin-left 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   box-sizing: border-box;
+  width: calc(100% - 270px); /* Prevents overflow with large tables/charts */
+  max-width: 100%;
 }
 
 .layout-content-wrapper.sidebar-collapsed {
   margin-left: 82px;
+  width: calc(100% - 82px);
 }
 
+/* Main Body Content */
 .layout-main {
   flex: 1;
   padding: 24px 28px;
   box-sizing: border-box;
+  width: 100%;
+  max-width: 100%;
+  overflow-y: auto;
 }
 
 /* Page Demo Card */
@@ -34,6 +50,7 @@
   justify-content: center;
   align-items: center;
   min-height: 380px;
+  width: 100%;
 }
 
 .placeholder-card {
@@ -44,6 +61,8 @@
   text-align: center;
   color: #64748b;
   max-width: 480px;
+  width: 100%;
+  box-sizing: border-box;
   box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
 }
 
@@ -52,12 +71,37 @@
   margin-top: 0;
 }
 
+/* Tablets and Below (<= 992px) */
 @media (max-width: 992px) {
+  /* Overlay active for mobile drawer */
+  .layout-mobile-overlay {
+    display: block;
+    position: fixed;
+    inset: 0;
+    background-color: rgba(15, 23, 42, 0.5);
+    backdrop-filter: blur(2px);
+    z-index: 998; /* Under sidebar (ensure sidebar has z-index: 999 or 1000) */
+    transition: opacity 0.3s ease;
+  }
+
   .layout-content-wrapper,
   .layout-content-wrapper.sidebar-collapsed {
     margin-left: 0;
+    width: 100%;
   }
+
   .layout-main {
-    padding: 16px;
+    padding: 20px;
+  }
+}
+
+/* Small Mobile Screens (<= 576px) */
+@media (max-width: 576px) {
+  .layout-main {
+    padding: 14px 12px;
+  }
+
+  .placeholder-card {
+    padding: 24px 16px;
   }
 }

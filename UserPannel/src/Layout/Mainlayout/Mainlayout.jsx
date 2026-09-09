@@ -8,8 +8,22 @@ const Mainlayout = () => {
   const [isSidebarCollapsed, setIsSidebarCollapsed] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
 
+  // Close mobile sidebar when clicking backdrop
+  const handleCloseMobile = () => {
+    setMobileOpen(false);
+  };
+
   return (
     <div className="layout-root">
+      {/* Mobile Backdrop / Overlay */}
+      {mobileOpen && (
+        <div 
+          className="layout-mobile-overlay" 
+          onClick={handleCloseMobile}
+          aria-hidden="true"
+        />
+      )}
+
       {/* Sidebar */}
       <Sidebar 
         isCollapsed={isSidebarCollapsed} 
@@ -19,8 +33,19 @@ const Mainlayout = () => {
       />
 
       {/* Main Content Area */}
-      <div className={`layout-content-wrapper ${isSidebarCollapsed ? 'sidebar-collapsed' : ''}`}>
-        <TopBar />
+      <div 
+        className={`layout-content-wrapper ${
+          isSidebarCollapsed ? 'sidebar-collapsed' : ''
+        }`}
+      >
+        {/* Pass toggle function to TopBar if mobile hamburger button is located there */}
+        <TopBar 
+          mobileOpen={mobileOpen}
+          setMobileOpen={setMobileOpen}
+          isSidebarCollapsed={isSidebarCollapsed}
+          setIsSidebarCollapsed={setIsSidebarCollapsed}
+        />
+
         <main className="layout-main">
           <Outlet />
         </main>

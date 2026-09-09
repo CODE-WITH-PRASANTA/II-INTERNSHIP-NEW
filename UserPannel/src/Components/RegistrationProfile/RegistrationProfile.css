@@ -1,0 +1,1362 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
+
+/* Global Container Root */
+.registration-profile-root {
+  min-height: 100vh;
+  background-color: #f7faf9;
+  color: #111827;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  box-sizing: border-box;
+  padding-bottom: 60px;
+  width: 100%;
+}
+
+.registration-profile-root *,
+.registration-profile-root *::before,
+.registration-profile-root *::after {
+  box-sizing: border-box;
+}
+
+/* Emerald Banner Header */
+.registration-profile-banner {
+  height: clamp(160px, 20vw, 220px);
+  background: linear-gradient(135deg, #02ab77 0%, #00b37c 50%, #00c78a 100%);
+  width: 100%;
+}
+
+.registration-profile-wrapper {
+  max-width: 1320px;
+  margin: -70px auto 0;
+  padding: 0 24px;
+}
+
+/* Profile Identity Header Card */
+.registration-profile-header-card {
+  background: #ffffff;
+  border-radius: 16px;
+  padding: clamp(16px, 3vw, 28px) clamp(18px, 3vw, 32px);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.03);
+  border: 1px solid #edf2f7;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.registration-profile-avatar-row {
+  display: flex;
+  align-items: center;
+  gap: clamp(14px, 2.5vw, 24px);
+}
+
+.registration-profile-avatar-box {
+  width: clamp(72px, 9vw, 96px);
+  height: clamp(72px, 9vw, 96px);
+  border-radius: 50%;
+  background: #ffffff;
+  border: 4px solid #ffffff;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.12);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  flex-shrink: 0;
+}
+
+.registration-profile-avatar-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.registration-profile-avatar-inner {
+  width: 100%;
+  height: 100%;
+  background: #ebfaf4;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.registration-profile-identity {
+  display: flex;
+  flex-direction: column;
+}
+
+.registration-profile-name-bar {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.registration-profile-user-name {
+  font-size: clamp(18px, 2.2vw, 24px);
+  font-weight: 800;
+  color: #111827;
+  letter-spacing: -0.02em;
+  margin: 0;
+  word-break: break-word;
+}
+
+.registration-profile-verified-badge {
+  background-color: #e6f9f1;
+  color: #009668;
+  font-size: 11px;
+  font-weight: 700;
+  padding: 4px 10px;
+  border-radius: 9999px;
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  letter-spacing: 0.04em;
+  border: 1px solid #c2f1de;
+}
+
+.registration-profile-id-line {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 6px;
+  font-size: 14px;
+}
+
+.registration-profile-id-label {
+  color: #6b7280;
+}
+
+.registration-profile-id-tag {
+  background: #ecfbf5;
+  color: #00875a;
+  padding: 2px 8px;
+  border-radius: 6px;
+  font-weight: 700;
+  font-family: 'Courier New', Courier, monospace;
+}
+
+.registration-profile-copy-btn {
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  color: #6b7280;
+  display: flex;
+  align-items: center;
+  position: relative;
+  transition: color 0.2s;
+  padding: 4px;
+  min-width: 28px;
+  min-height: 28px;
+  justify-content: center;
+}
+
+.registration-profile-copy-btn:hover {
+  color: #00875a;
+}
+
+.registration-profile-tooltip {
+  position: absolute;
+  top: -24px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: #111827;
+  color: #fff;
+  font-size: 10px;
+  padding: 2px 6px;
+  border-radius: 4px;
+}
+
+.registration-profile-reg-date {
+  font-size: 13px;
+  color: #6b7280;
+  margin-top: 6px;
+}
+
+.registration-profile-reg-date strong {
+  color: #111827;
+}
+
+/* Action Buttons */
+.registration-profile-actions {
+  display: flex;
+  gap: 12px;
+}
+
+.registration-profile-btn-download {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  color: #374151;
+  padding: 10px 18px;
+  border-radius: 8px;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  white-space: nowrap;
+}
+
+.registration-profile-btn-download:hover {
+  background: #f8fafc;
+  border-color: #cbd5e1;
+}
+
+.registration-profile-btn-edit {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: #007652;
+  border: 1px solid #007652;
+  color: #ffffff;
+  padding: 10px 20px;
+  border-radius: 8px;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  box-shadow: 0 2px 6px rgba(0, 118, 82, 0.25);
+  white-space: nowrap;
+}
+
+.registration-profile-btn-edit:hover {
+  background: #006042;
+  box-shadow: 0 4px 10px rgba(0, 118, 82, 0.35);
+}
+
+/* Cards & Layout */
+.registration-profile-card {
+  background: #ffffff;
+  border-radius: 16px;
+  border: 1px solid #eef3f1;
+  padding: clamp(16px, 2.5vw, 24px);
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.02);
+  margin-top: 24px;
+  width: 100%;
+}
+
+.registration-profile-card-heading {
+  font-size: 18px;
+  font-weight: 700;
+  color: #111827;
+  margin-bottom: 24px;
+}
+
+.registration-profile-section-header {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.registration-profile-section-header h3 {
+  font-size: 16px;
+  font-weight: 700;
+  color: #111827;
+  margin: 0;
+}
+
+.registration-profile-section-icon {
+  width: 32px;
+  height: 32px;
+  border-radius: 8px;
+  background: #eefaf4;
+  color: #009668;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+/* Desktop 2-Column Grid */
+.registration-profile-grid-top {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 24px;
+}
+
+.registration-profile-fields-2col {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  row-gap: 24px;
+  column-gap: 32px;
+}
+
+.registration-profile-field-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 14px;
+}
+
+.registration-profile-field-icon {
+  width: 36px;
+  height: 36px;
+  border-radius: 8px;
+  background: #eefaf4;
+  color: #009668;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.registration-profile-field-title {
+  font-size: 11px;
+  font-weight: 600;
+  color: #8c98a4;
+  letter-spacing: 0.05em;
+  margin-bottom: 4px;
+  text-transform: uppercase;
+}
+
+.registration-profile-field-data {
+  font-size: 14px;
+  font-weight: 700;
+  color: #1f2937;
+  word-break: break-word;
+}
+
+/* Student Badge Card */
+.registration-profile-badge-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  justify-content: space-between;
+}
+
+.registration-profile-badge-top h3 {
+  font-size: 14px;
+  font-weight: 800;
+  letter-spacing: 0.05em;
+  color: #111827;
+  margin: 0;
+}
+
+.registration-profile-badge-top p {
+  font-size: 12px;
+  color: #6b7280;
+  margin-top: 4px;
+}
+
+.registration-profile-barcode-box {
+  width: 100%;
+  max-width: 270px;
+  border: 1px solid #eef2f5;
+  border-radius: 8px;
+  padding: 16px 14px 10px;
+  margin: 20px 0;
+  background: #fafafa;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.registration-profile-barcode-vector {
+  width: 100%;
+  height: 48px;
+}
+
+.registration-profile-barcode-code {
+  font-family: 'Courier New', Courier, monospace;
+  font-size: 11px;
+  color: #4b5563;
+  letter-spacing: 2px;
+  margin-top: 6px;
+}
+
+.registration-profile-verification-box {
+  background: #fbfdfc;
+  border: 1px solid #e2f4eb;
+  border-radius: 8px;
+  padding: 14px;
+  text-align: left;
+  width: 100%;
+}
+
+.registration-profile-verif-headline {
+  font-size: 11px;
+  font-weight: 700;
+  color: #009668;
+  letter-spacing: 0.04em;
+  display: block;
+  margin-bottom: 6px;
+}
+
+.registration-profile-verif-copy {
+  font-size: 12px;
+  color: #4b5563;
+  line-height: 1.5;
+  margin: 0;
+}
+
+/* Address Grids */
+.registration-profile-grid-address {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+}
+
+.registration-profile-address-panel {
+  background: #fbfcfc;
+  border: 1px solid #f0f4f3;
+  padding: 14px;
+  border-radius: 8px;
+  margin-bottom: 12px;
+}
+
+.registration-profile-address-row {
+  display: flex;
+  gap: 12px;
+}
+
+.registration-profile-flex-1 {
+  flex: 1;
+}
+
+/* Table Design */
+.registration-profile-table-scroll {
+  width: 100%;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+.registration-profile-table {
+  width: 100%;
+  min-width: 620px;
+  border-collapse: collapse;
+  text-align: left;
+}
+
+.registration-profile-table th {
+  font-size: 11px;
+  font-weight: 700;
+  color: #111827;
+  letter-spacing: 0.05em;
+  padding: 14px 12px;
+  border-bottom: 1px solid #edf2f7;
+  background-color: #fafbfc;
+}
+
+.registration-profile-table td {
+  padding: 18px 12px;
+  font-size: 13px;
+  color: #374151;
+  border-bottom: 1px solid #edf2f7;
+}
+
+.registration-profile-td-highlight {
+  font-weight: 700;
+  color: #111827;
+}
+
+.registration-profile-td-primary {
+  display: block;
+  font-weight: 700;
+  color: #111827;
+}
+
+.registration-profile-td-sub {
+  display: block;
+  font-size: 11px;
+  color: #6b7280;
+  margin-top: 2px;
+}
+
+.registration-profile-status-pill {
+  background: #e6f9f1;
+  color: #009668;
+  font-size: 11px;
+  font-weight: 700;
+  padding: 4px 10px;
+  border-radius: 9999px;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  border: 1px solid #bdf1dc;
+  white-space: nowrap;
+}
+
+.registration-profile-status-dot {
+  font-size: 8px;
+}
+
+/* Objectives & Declaration Grids */
+.registration-profile-grid-bottom {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+}
+
+.registration-profile-column-between {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.registration-profile-mt-2 {
+  margin-top: 12px;
+}
+
+.registration-profile-mt-3 {
+  margin-top: 16px;
+}
+
+.registration-profile-goal-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  border: 1px solid #a7ebd0;
+  background: #ebfaf4;
+  color: #007652;
+  font-weight: 700;
+  padding: 8px 18px;
+  border-radius: 8px;
+  margin-top: 10px;
+  font-size: 14px;
+}
+
+.registration-profile-footnote {
+  font-size: 12px;
+  color: #6b7280;
+  margin-top: 24px;
+  line-height: 1.4;
+}
+
+.registration-profile-signature-box {
+  background: #fbfcfd;
+  border: 1px solid #edf2f7;
+  border-radius: 12px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 24px 20px;
+  min-height: 130px;
+  gap: 12px;
+}
+
+.registration-profile-sig-preview-img {
+  max-height: 48px;
+  max-width: 160px;
+  object-fit: contain;
+}
+
+.registration-profile-stamp {
+  width: 60px;
+  height: 38px;
+  background: linear-gradient(135deg, #102a43 0%, #1e3a8a 100%);
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+}
+
+.registration-profile-stamp-inner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  line-height: 1;
+}
+
+.registration-profile-stamp-title {
+  font-size: 7px;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+}
+
+.registration-profile-stamp-year {
+  font-size: 11px;
+  font-weight: 800;
+  margin-top: 2px;
+  color: #38bdf8;
+}
+
+.registration-profile-stamp-label {
+  font-size: 11px;
+  font-weight: 700;
+  color: #64748b;
+  letter-spacing: 0.05em;
+}
+
+/* ========================================================================= */
+/* ----------------- MODAL POPUP STYLES ------------------------------------ */
+/* ========================================================================= */
+.registration-profile-modal-backdrop {
+  position: fixed;
+  inset: 0;
+  background: rgba(15, 23, 42, 0.5);
+  backdrop-filter: blur(4px);
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 16px;
+}
+
+.registration-profile-modal-container {
+  background: #ffffff;
+  width: 100%;
+  max-width: 820px;
+  max-height: 92vh;
+  border-radius: 20px;
+  overflow-y: auto;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+  padding: clamp(16px, 3vw, 32px);
+  position: relative;
+  animation: registrationProfileModalAnim 0.28s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+@keyframes registrationProfileModalAnim {
+  from {
+    opacity: 0;
+    transform: scale(0.96) translateY(12px);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+  }
+}
+
+.registration-profile-modal-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  margin-bottom: 24px;
+  gap: 12px;
+}
+
+.registration-profile-modal-headline {
+  font-size: clamp(20px, 3vw, 26px);
+  font-weight: 800;
+  color: #0f172a;
+  letter-spacing: -0.02em;
+  margin: 0;
+}
+
+.registration-profile-modal-subheadline {
+  font-size: 14px;
+  color: #64748b;
+  margin-top: 4px;
+}
+
+.registration-profile-modal-close {
+  background: #f1f5f9;
+  border: none;
+  cursor: pointer;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #64748b;
+  transition: all 0.2s;
+  flex-shrink: 0;
+}
+
+.registration-profile-modal-close:hover {
+  background: #e2e8f0;
+  color: #0f172a;
+}
+
+/* Stepper Track */
+.registration-profile-stepper-card {
+  background: #ffffff;
+  border: 1px solid #f1f5f9;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.03);
+  border-radius: 14px;
+  padding: 16px clamp(12px, 2.5vw, 24px);
+  margin-bottom: 28px;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+.registration-profile-stepper-track {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: relative;
+  min-width: 480px;
+}
+
+.registration-profile-step-unit {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  cursor: pointer;
+  z-index: 2;
+  position: relative;
+  flex: 1;
+}
+
+.registration-profile-step-bubble {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: #f1f5f9;
+  color: #64748b;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  font-size: 16px;
+  transition: all 0.25s ease;
+}
+
+.registration-profile-step-unit.is-active .registration-profile-step-bubble {
+  background: #007652;
+  color: #ffffff;
+  box-shadow: 0 4px 10px rgba(0, 118, 82, 0.35);
+}
+
+.registration-profile-step-unit.is-completed .registration-profile-step-bubble {
+  background: #007652;
+  color: #ffffff;
+}
+
+.registration-profile-step-labels {
+  margin-top: 8px;
+  display: flex;
+  flex-direction: column;
+}
+
+.registration-profile-step-number {
+  font-size: 12px;
+  font-weight: 700;
+  color: #64748b;
+}
+
+.registration-profile-step-unit.is-active .registration-profile-step-number {
+  color: #007652;
+}
+
+.registration-profile-step-caption {
+  font-size: 11px;
+  color: #94a3b8;
+  white-space: nowrap;
+}
+
+.registration-profile-step-line {
+  flex: 1;
+  height: 2.5px;
+  background: #e2e8f0;
+  margin: -24px 8px 0;
+  transition: background-color 0.25s ease;
+}
+
+.registration-profile-step-line.is-done {
+  background: #007652;
+}
+
+/* Modal Form Content Animation */
+.registration-profile-step-content {
+  animation: registrationProfileStepFade 0.25s ease-in-out;
+}
+
+@keyframes registrationProfileStepFade {
+  from {
+    opacity: 0;
+    transform: translateY(6px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.registration-profile-form-section-intro {
+  border-bottom: 1px solid #f1f5f9;
+  padding-bottom: 12px;
+  margin-bottom: 24px;
+}
+
+.registration-profile-form-section-intro h3 {
+  font-size: clamp(17px, 2.5vw, 19px);
+  font-weight: 800;
+  color: #0f172a;
+  margin: 0;
+}
+
+.registration-profile-form-section-intro p {
+  font-size: 13px;
+  color: #64748b;
+  margin-top: 4px;
+}
+
+.registration-profile-form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+  margin-bottom: 16px;
+}
+
+.registration-profile-input-group {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 16px;
+}
+
+.registration-profile-input-group label {
+  font-size: 12px;
+  font-weight: 700;
+  color: #0f172a;
+  letter-spacing: 0.03em;
+  margin-bottom: 6px;
+}
+
+.registration-profile-star {
+  color: #ef4444;
+  margin-left: 2px;
+}
+
+.registration-profile-optional {
+  color: #6b7280;
+  font-weight: 600;
+}
+
+.registration-profile-field-hint {
+  font-size: 11px;
+  font-style: italic;
+  color: #64748b;
+  margin-top: 6px;
+}
+
+.registration-profile-input-group input,
+.registration-profile-input-group select {
+  height: 48px;
+  background: #f8fafc;
+  border: 1px solid #e2e8f0;
+  border-radius: 8px;
+  padding: 0 14px;
+  font-size: 14px;
+  color: #1e293b;
+  outline: none;
+  transition: border-color 0.2s;
+  font-weight: 500;
+  width: 100%;
+}
+
+.registration-profile-input-group input:focus,
+.registration-profile-input-group select:focus {
+  border-color: #007652;
+  background: #ffffff;
+}
+
+.registration-profile-max-w-xs {
+  max-width: 340px;
+}
+
+.registration-profile-input-addon {
+  position: relative;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  width: 100%;
+}
+
+.registration-profile-date-input {
+  width: 100%;
+  cursor: pointer;
+}
+
+.registration-profile-date-input::-webkit-calendar-picker-indicator {
+  opacity: 0;
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  cursor: pointer;
+}
+
+.registration-profile-input-icon {
+  position: absolute;
+  right: 14px;
+  color: #64748b;
+  pointer-events: none;
+}
+
+/* Accordions */
+.registration-profile-accordion {
+  border: 1px solid #edf2f7;
+  border-radius: 10px;
+  margin-bottom: 16px;
+  background: #ffffff;
+  overflow: hidden;
+}
+
+.registration-profile-accordion-trigger {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 14px 16px;
+  cursor: pointer;
+  background: #fdfdfd;
+  user-select: none;
+  font-weight: 700;
+  font-size: 14px;
+}
+
+.registration-profile-accordion-title {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.registration-profile-accordion-body {
+  padding: 16px;
+  background: #ffffff;
+  border-top: 1px solid #edf2f7;
+}
+
+.registration-profile-p-0 {
+  padding: 0;
+}
+
+.registration-profile-qual-btn-row {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 12px;
+}
+
+.registration-profile-btn-add-qual {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  background: #007652;
+  color: #ffffff;
+  border: none;
+  padding: 10px 18px;
+  border-radius: 8px;
+  font-size: 13px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.registration-profile-btn-add-qual:hover {
+  background: #006042;
+}
+
+.registration-profile-modal-tbl td,
+.registration-profile-modal-tbl th {
+  padding: 14px 16px;
+}
+
+/* Custom Checkbox */
+.registration-profile-checkbox-bar {
+  margin: 18px 0;
+}
+
+.registration-profile-custom-checkbox {
+  display: inline-flex;
+  align-items: center;
+  position: relative;
+  cursor: pointer;
+  font-size: 12px;
+  font-weight: 700;
+  color: #0f172a;
+  letter-spacing: 0.04em;
+  user-select: none;
+  gap: 10px;
+}
+
+.registration-profile-custom-checkbox input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+  height: 0;
+  width: 0;
+}
+
+.registration-profile-check-box {
+  width: 18px;
+  height: 18px;
+  background-color: #f8fafc;
+  border: 1.5px solid #cbd5e1;
+  border-radius: 4px;
+  transition: all 0.2s;
+  display: inline-block;
+  position: relative;
+  flex-shrink: 0;
+}
+
+.registration-profile-custom-checkbox input:checked ~ .registration-profile-check-box {
+  background-color: #007652;
+  border-color: #007652;
+}
+
+.registration-profile-check-box::after {
+  content: "";
+  position: absolute;
+  display: none;
+  left: 5px;
+  top: 1px;
+  width: 4px;
+  height: 9px;
+  border: solid white;
+  border-width: 0 2px 2px 0;
+  transform: rotate(45deg);
+}
+
+.registration-profile-custom-checkbox input:checked ~ .registration-profile-check-box::after {
+  display: block;
+}
+
+/* Step 4 Document Upload Cards */
+.registration-profile-upload-col {
+  display: flex;
+  flex-direction: column;
+}
+
+.registration-profile-upload-label {
+  font-size: 12px;
+  font-weight: 700;
+  color: #0f172a;
+  margin-bottom: 8px;
+}
+
+.registration-profile-upload-card {
+  border: 1.5px dashed #cbd5e1;
+  border-radius: 12px;
+  padding: 24px 16px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background: #ffffff;
+  min-height: 170px;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.registration-profile-upload-card:hover {
+  border-color: #007652;
+  background-color: #fcfdfd;
+}
+
+.registration-profile-upload-active {
+  border-color: #009668;
+  background: #fbfdfc;
+}
+
+.registration-profile-uploaded-thumb {
+  width: 74px;
+  height: 84px;
+  object-fit: cover;
+  border-radius: 6px;
+  border: 1px solid #e2e8f0;
+  margin-bottom: 12px;
+}
+
+.registration-profile-uploaded-sig {
+  max-width: 140px;
+  max-height: 52px;
+  object-fit: contain;
+  margin-bottom: 12px;
+}
+
+.registration-profile-thumb-doc {
+  width: 74px;
+  height: 84px;
+  border: 1px solid #e2e8f0;
+  background: #ffffff;
+  border-radius: 6px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 6px 8px;
+  margin-bottom: 12px;
+}
+
+.registration-profile-thumb-header {
+  font-size: 6px;
+  color: #64748b;
+  margin-bottom: 8px;
+  text-align: center;
+}
+
+.registration-profile-thumb-lines {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.registration-profile-thumb-lines div {
+  height: 3px;
+  background: #e2e8f0;
+  border-radius: 2px;
+  width: 100%;
+}
+
+.registration-profile-thumb-lines div:last-child {
+  width: 60%;
+}
+
+.registration-profile-signature-thumb {
+  width: 86px;
+  height: 52px;
+  background: #111827;
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 12px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+}
+
+.registration-profile-thumb-badge {
+  color: #ffffff;
+  font-size: 7px;
+  font-weight: 700;
+  text-align: center;
+}
+
+.registration-profile-upload-meta {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  color: #64748b;
+}
+
+.registration-profile-filename {
+  font-size: 11px;
+  font-weight: 500;
+  word-break: break-all;
+  text-align: center;
+}
+
+/* Step 4 Declaration Box */
+.registration-profile-terms-box {
+  background: #f8fdfa;
+  border: 1px solid #cceee1;
+  border-radius: 12px;
+  padding: 16px 20px;
+  margin-top: 20px;
+}
+
+.registration-profile-terms-heading {
+  font-size: 11px;
+  font-weight: 800;
+  color: #007652;
+  letter-spacing: 0.05em;
+  display: block;
+  margin-bottom: 10px;
+}
+
+.registration-profile-terms-checkbox {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  cursor: pointer;
+  user-select: none;
+}
+
+.registration-profile-terms-checkbox input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+}
+
+.registration-profile-terms-checkbox input:checked ~ .registration-profile-check-box {
+  background-color: #007652;
+  border-color: #007652;
+}
+
+.registration-profile-terms-checkbox input:checked ~ .registration-profile-check-box::after {
+  display: block;
+}
+
+.registration-profile-terms-text strong {
+  font-size: 12px;
+  color: #0f172a;
+  line-height: 1.4;
+  display: block;
+}
+
+.registration-profile-terms-text p {
+  font-size: 11px;
+  color: #64748b;
+  margin-top: 3px;
+}
+
+/* Modal Bottom Footer Actions */
+.registration-profile-modal-footer {
+  display: flex;
+  justify-content: flex-end;
+  gap: 12px;
+  border-top: 1px solid #f1f5f9;
+  padding-top: 20px;
+  margin-top: 24px;
+}
+
+.registration-profile-btn-back {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  color: #1e293b;
+  padding: 11px 22px;
+  border-radius: 8px;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.registration-profile-btn-back:hover {
+  background: #f8fafc;
+  border-color: #cbd5e1;
+}
+
+.registration-profile-btn-submit {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: #007652;
+  color: #ffffff;
+  padding: 11px 24px;
+  border-radius: 8px;
+  font-size: 14px;
+  font-weight: 700;
+  border: none;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  box-shadow: 0 4px 12px rgba(0, 118, 82, 0.25);
+}
+
+.registration-profile-btn-submit:hover {
+  background: #006042;
+  transform: translateY(-1px);
+  box-shadow: 0 6px 14px rgba(0, 118, 82, 0.35);
+}
+
+/* ========================================================================= */
+/* -------------------- RESPONSIVE MEDIA QUERIES --------------------------- */
+/* ========================================================================= */
+
+/* Large Tablets & Laptops (< 1024px) */
+@media (max-width: 1024px) {
+  .registration-profile-grid-top {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Medium Tablets & Below (< 860px) */
+@media (max-width: 860px) {
+  .registration-profile-grid-address,
+  .registration-profile-grid-bottom {
+    grid-template-columns: 1fr;
+  }
+
+  .registration-profile-header-card {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .registration-profile-actions {
+    width: 100%;
+  }
+
+  .registration-profile-actions button {
+    flex: 1;
+    justify-content: center;
+  }
+}
+
+/* Mobile Devices (< 640px) */
+@media (max-width: 640px) {
+  .registration-profile-wrapper {
+    padding: 0 14px;
+    margin-top: -50px;
+  }
+
+  .registration-profile-fields-2col,
+  .registration-profile-form-row,
+  .registration-profile-address-row {
+    grid-template-columns: 1fr;
+    flex-direction: column;
+  }
+
+  .registration-profile-avatar-row {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 14px;
+  }
+
+  .registration-profile-actions {
+    flex-direction: column;
+  }
+
+  .registration-profile-actions button {
+    width: 100%;
+  }
+
+  .registration-profile-modal-container {
+    padding: 16px;
+    max-height: 96vh;
+    border-radius: 14px;
+  }
+
+  .registration-profile-modal-footer {
+    flex-direction: column-reverse;
+  }
+
+  .registration-profile-modal-footer button {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .registration-profile-barcode-box {
+    max-width: 100%;
+  }
+
+  .registration-profile-max-w-xs {
+    max-width: 100%;
+  }
+}
+
+/* Very Small Mobile (< 380px) */
+@media (max-width: 380px) {
+  .registration-profile-card {
+    padding: 12px;
+  }
+
+  .registration-profile-user-name {
+    font-size: 17px;
+  }
+
+  .registration-profile-field-data {
+    font-size: 13px;
+  }
+}
+
+/* Print Specific Media Query */
+@media print {
+  body {
+    background: #fff;
+  }
+  .registration-profile-banner,
+  .registration-profile-actions,
+  .registration-profile-modal-backdrop {
+    display: none !important;
+  }
+  .registration-profile-wrapper {
+    margin-top: 0;
+    max-width: 100%;
+    padding: 0;
+  }
+  .registration-profile-card {
+    box-shadow: none;
+    border: 1px solid #ddd;
+    page-break-inside: avoid;
+  }
+}

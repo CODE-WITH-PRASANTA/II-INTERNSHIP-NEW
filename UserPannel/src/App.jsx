@@ -14,6 +14,7 @@ import Notification from "./Pages/Notification/Notification";
 import Dashboard from "./Pages/Dashboard/Dashboard";
 import LoginForm from "./Components/Loginform/Loginform";
 import Protectrout from "./Components/Protectrout/Protectrout";
+import RegistrationProfile from "./Components/RegistrationProfile/RegistrationProfile";
 
 // Placeholder component for empty routes
 const PagePlaceholder = ({ title }) => (
@@ -49,6 +50,7 @@ const App = () => {
           <Route path="applications" element={<MyApplication />} />
           <Route path="id-cards" element={<IdCard />} />
           <Route path="notifications" element={<Notification />} />
+          <Route path="/profile" element={<RegistrationProfile />} />
 
           {/* Secondary Pages */}
           <Route path="certificates" element={<PagePlaceholder title="Certificates" />} />
