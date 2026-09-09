@@ -29,19 +29,19 @@ const App = () => {
           <Route index element={<Navigate to="/dashboard" replace />} />
 
           {/* Nested routes rendered inside MainLayout's <Outlet /> */}
-          <Route path="dashboard" element={<Dashboard />} />
-          <Route path="user-accounts" element={<UserAccounts />} />
-          <Route path="registrations" element={<Registrations />} />
+          <Route path="/dashboard" element={<Dashboard />} />
+          <Route path="/user-accounts" element={<UserAccounts />} />
+          <Route path="/registrations" element={<Registrations />} />
           <Route path="internships" element={<Internships />} />
-          <Route path="reviews-moderation" element={<ReviewsModeration />} />
-          <Route path="notice-board" element={<NoticeBoard />} />
-          <Route path="donation-logs" element={<DonationLogs />} />
-          <Route path="support-tickets" element={<SupportTickets />} />
-          <Route path="settings" element={<Settings />} />
-          <Route path="recruitment-openings" element={<RecruitmentOpenings />} />
-          <Route path="partners-onboard" element={<PartnersOnboard />} />
-          <Route path="blogs-board" element={<BlogsBoard />} />
-          <Route path="media-desk" element={<MediaDesk />} />
+          <Route path="/reviews-moderation" element={<ReviewsModeration />} />
+          <Route path="/notice-board" element={<NoticeBoard />} />
+          <Route path="/donation-logs" element={<DonationLogs />} />
+          <Route path="/support-tickets" element={<SupportTickets />} />
+          <Route path="/settings" element={<Settings />} />
+          <Route path="/recruitment-openings" element={<RecruitmentOpenings />} />
+          <Route path="/partners-onboard" element={<PartnersOnboard />} />
+          <Route path="/blogs-board" element={<BlogsBoard />} />
+          <Route path="/media-desk" element={<MediaDesk />} />
         </Route>
       </Routes>
     </BrowserRouter>

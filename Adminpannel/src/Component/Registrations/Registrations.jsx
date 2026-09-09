@@ -1,13 +1,12 @@
 import React, { useState, useMemo, useRef, useEffect } from "react";
 import {
-  FiFilter,
   FiSearch,
   FiDownload,
   FiMoreVertical,
   FiEye,
   FiEdit2,
   FiTrash2,
-  FiX,
+  FiX, 
   FiChevronLeft,
   FiChevronRight,
   FiChevronsLeft,
@@ -33,8 +32,6 @@ const INITIAL_STUDENTS = [
     educationTitle: "Under Graduate",
     educationSub: "Handia polytechnic handia Prayagraj",
     address: "Kiraon bakspur, Prayagraj , Uttar Pradesh",
-    status: "Approved",
-    appliedOn: "1 Sept 2026",
     fatherName: "Sabha jeet",
     motherName: "Suman devi",
     dob: "2002-06-10",
@@ -72,8 +69,6 @@ const INITIAL_STUDENTS = [
     educationTitle: "Post Graduate Pass Out",
     educationSub: "ICST",
     address: "Near Anandpur trust hospital Rajghat road Pisnari Baag Lalitpur , Lalitpur , Uttar Pradesh",
-    status: "Pending",
-    appliedOn: "1 Sept 2026",
     fatherName: "R. K. Bablani",
     motherName: "Kanta Devi",
     dob: "1999-04-12",
@@ -107,8 +102,6 @@ const INITIAL_STUDENTS = [
     educationTitle: "Under Graduate",
     educationSub: "Galgotias University",
     address: "705 Laurel Tower Sikka karnam greens sector 143B, Gautam Buddha Nagar, Uttar Pradesh",
-    status: "Pending",
-    appliedOn: "31 Aug 2026",
     fatherName: "S. K. Pandey",
     motherName: "Neelam Pandey",
     dob: "2003-09-18",
@@ -142,8 +135,6 @@ const INITIAL_STUDENTS = [
     educationTitle: "Graduate Pass Out",
     educationSub: "Kalinga University Raipur",
     address: "RAMSAGAR PARA MUDPAR CHU, Janjgiri champa , C.G. छत्तीसगढ़",
-    status: "Approved",
-    appliedOn: "31 Aug 2026",
     fatherName: "M. Kurrey",
     motherName: "G. Kurrey",
     dob: "2001-02-14",
@@ -177,8 +168,6 @@ const INITIAL_STUDENTS = [
     educationTitle: "Post Graduate Pass Out",
     educationSub: "bb",
     address: "3rd Floor, Prestige Falcon Towers, 19 Brunton Rd, District Test, Karnataka",
-    status: "Rejected",
-    appliedOn: "29 Aug 2026",
     fatherName: "N/A",
     motherName: "N/A",
     dob: "2000-01-01",
@@ -212,8 +201,6 @@ const INITIAL_STUDENTS = [
     educationTitle: "Graduate Pass Out",
     educationSub: "mm",
     address: "01 Narsinghpur, hgh, Madhya Pradesh",
-    status: "Approved",
-    appliedOn: "27 Aug 2026",
     fatherName: "B. Khuntia",
     motherName: "M. Khuntia",
     dob: "1998-11-20",
@@ -247,8 +234,6 @@ const INITIAL_STUDENTS = [
     educationTitle: "Under Graduate",
     educationSub: "Shrinathji institute of technology engineering",
     address: "Raj rajeshwar Mahadev mandir,rohida, Sirohi, Rajasthan",
-    status: "Pending",
-    appliedOn: "25 Aug 2026",
     fatherName: "L. Suthar",
     motherName: "S. Suthar",
     dob: "2002-08-15",
@@ -282,8 +267,6 @@ const INITIAL_STUDENTS = [
     educationTitle: "Under Graduate",
     educationSub: "Shreenathji institute of technology nathdwara",
     address: "Jain temple near by Ramseen , Jalore , Rajasthan",
-    status: "Approved",
-    appliedOn: "25 Aug 2026",
     fatherName: "K. Malviya",
     motherName: "P. Malviya",
     dob: "2001-12-05",
@@ -317,8 +300,6 @@ const INITIAL_STUDENTS = [
     educationTitle: "Graduate Pass Out",
     educationSub: "Rajiv Gandhi science Bangalore",
     address: "Aara machine ke pass budha dewal malpura , Tonk, Rajasthan",
-    status: "Approved",
-    appliedOn: "22 Aug 2026",
     fatherName: "R. Jangid",
     motherName: "G. Jangid",
     dob: "2000-03-30",
@@ -352,8 +333,6 @@ const INITIAL_STUDENTS = [
     educationTitle: "Graduate Pass Out",
     educationSub: "ARRDSSPS kotabujurg",
     address: "Awadah Sarawan Lalganj Azamgarh , Azamgarh , Uttar pradesh",
-    status: "Pending",
-    appliedOn: "7 Aug 2026",
     fatherName: "D. P. Mishra",
     motherName: "Sarita Mishra",
     dob: "1999-07-22",
@@ -387,8 +366,6 @@ const INITIAL_STUDENTS = [
     educationTitle: "Post Graduate",
     educationSub: "Delhi University",
     address: "Sector 18, Noida, Gautam Buddha Nagar, Uttar Pradesh",
-    status: "Rejected",
-    appliedOn: "2 Aug 2026",
     fatherName: "V. Sharma",
     motherName: "S. Sharma",
     dob: "2001-01-15",
@@ -418,13 +395,7 @@ const INITIAL_STUDENTS = [
 const Registrations = () => {
   const [activeTab, setActiveTab] = useState("student");
   const [students, setStudents] = useState(INITIAL_STUDENTS);
-  const [showFilters, setShowFilters] = useState(false);
   const [searchQuery, setSearchQuery] = useState("");
-  const [statusFilters, setStatusFilters] = useState({
-    Pending: false,
-    Approved: false,
-    Rejected: false
-  });
 
   // Action Menu State
   const [openActionId, setOpenActionId] = useState(null);
@@ -449,32 +420,18 @@ const Registrations = () => {
     return () => document.removeEventListener("mousedown", handleClickOutside);
   }, []);
 
-  // Filter Checkbox Handler
-  const handleStatusChange = (status) => {
-    setStatusFilters((prev) => ({
-      ...prev,
-      [status]: !prev[status]
-    }));
-    setCurrentPage(1);
-  };
-
   // Filter logic
   const filteredData = useMemo(() => {
     return students.filter((item) => {
       const query = searchQuery.toLowerCase();
-      const matchesSearch =
+      return (
         item.name.toLowerCase().includes(query) ||
         item.email.toLowerCase().includes(query) ||
         item.educationSub.toLowerCase().includes(query) ||
-        item.address.toLowerCase().includes(query);
-
-      const activeStatuses = Object.keys(statusFilters).filter((k) => statusFilters[k]);
-      const matchesStatus =
-        activeStatuses.length === 0 || activeStatuses.includes(item.status);
-
-      return matchesSearch && matchesStatus;
+        item.address.toLowerCase().includes(query)
+      );
     });
-  }, [students, searchQuery, statusFilters]);
+  }, [students, searchQuery]);
 
   // Pagination calculations
   const totalPages = Math.ceil(filteredData.length / rowsPerPage) || 1;
@@ -515,9 +472,9 @@ const Registrations = () => {
   };
 
   const exportToExcel = () => {
-    let csv = "S.NO,APPLICANT NAME,EMAIL,CONTACT NO,EDUCATION,COLLEGE,ADDRESS,APPLIED ON\n";
+    let csv = "S.NO,APPLICANT NAME,EMAIL,CONTACT NO,EDUCATION,COLLEGE,ADDRESS\n";
     filteredData.forEach((row, idx) => {
-      csv += `"${idx + 1}","${row.name}","${row.email}","${row.contact}","${row.educationTitle}","${row.educationSub}","${row.address.replace(/"/g, '""')}","${row.appliedOn}"\n`;
+      csv += `"${idx + 1}","${row.name}","${row.email}","${row.contact}","${row.educationTitle}","${row.educationSub}","${row.address.replace(/"/g, '""')}"\n`;
     });
     const blob = new Blob([csv], { type: "text/csv;charset=utf-8;" });
     const url = URL.createObjectURL(blob);
@@ -533,10 +490,13 @@ const Registrations = () => {
     <div className="registrations-container">
       {/* Top Header */}
       <header className="registrations-header">
-        <h1 className="registrations-title">Registrations &amp; Onboarding</h1>
-        <p className="registrations-subtitle">
-          Manage and oversee submissions for students, instructors, immersions, and recruiters.
-        </p>
+        <div className="registrations-header-content">
+          <div className="header-pill">Onboarding Center</div>
+          <h1 className="registrations-title">Registrations &amp; Onboarding</h1>
+          <p className="registrations-subtitle">
+            Oversee, filter, verify, and export member candidate records across all tracks.
+          </p>
+        </div>
       </header>
 
       {/* Tabs */}
@@ -579,19 +539,11 @@ const Registrations = () => {
 
         <div className="registrations-controls-bar">
           <div className="registrations-left-tools">
-            <button
-              type="button"
-              className={`registrations-filter-btn ${showFilters ? "active" : ""}`}
-              onClick={() => setShowFilters(!showFilters)}
-            >
-              <FiFilter /> {showFilters ? "Hide Filters" : "Show Filters"}
-            </button>
-
             <div className="registrations-search-wrap">
               <FiSearch className="registrations-search-icon" />
               <input
                 type="text"
-                placeholder="Search by name, email or institution"
+                placeholder="Search by name, email or institution..."
                 value={searchQuery}
                 onChange={(e) => {
                   setSearchQuery(e.target.value);
@@ -607,28 +559,8 @@ const Registrations = () => {
         </div>
       </div>
 
-      {/* Layout: Filter Drawer + Responsive Table */}
+      {/* Responsive Table */}
       <div className="registrations-content-row">
-        {showFilters && (
-          <aside className="registrations-filter-panel">
-            <h3 className="registrations-filter-title">Status</h3>
-            <div className="registrations-filter-options">
-              {["Pending", "Approved", "Rejected"].map((status) => (
-                <label key={status} className="registrations-checkbox-label">
-                  <input
-                    type="checkbox"
-                    checked={statusFilters[status]}
-                    onChange={() => handleStatusChange(status)}
-                  />
-                  <span className="registrations-checkmark"></span>
-                  <span>{status}</span>
-                </label>
-              ))}
-            </div>
-          </aside>
-        )}
-
-        {/* Data Table */}
         <div className="registrations-table-container">
           <table className="registrations-table">
             <thead>
@@ -638,14 +570,13 @@ const Registrations = () => {
                 <th className="registrations-col-contact">CONTACT NO.</th>
                 <th className="registrations-col-edu">EDUCATION / QUALIFICATION</th>
                 <th className="registrations-col-address">ADDRESS</th>
-                <th className="registrations-col-applied">APPLIED ON</th>
                 <th className="registrations-col-actions">ACTIONS</th>
               </tr>
             </thead>
             <tbody>
               {currentRows.length > 0 ? (
                 currentRows.map((item, index) => (
-                  <tr key={item.id}>
+                  <tr key={item.id} className="registrations-table-row">
                     <td className="registrations-col-sno">{startIndex + index + 1}</td>
                     <td className="registrations-col-name">
                       <div className="registrations-applicant-wrap">
@@ -661,7 +592,6 @@ const Registrations = () => {
                       </div>
                     </td>
                     <td className="registrations-col-address">{item.address}</td>
-                    <td className="registrations-col-applied">{item.appliedOn}</td>
                     <td className="registrations-col-actions">
                       <div
                         className="registrations-actions-dropdown-wrap"
@@ -716,7 +646,7 @@ const Registrations = () => {
                 ))
               ) : (
                 <tr>
-                  <td colSpan="7" className="registrations-no-data">
+                  <td colSpan="6" className="registrations-no-data">
                     No matching registration records found.
                   </td>
                 </tr>
@@ -785,7 +715,7 @@ const Registrations = () => {
         </div>
       </div>
 
-      {/* 5th IMAGE: VIEW DETAILS MODAL */}
+      {/* VIEW DETAILS MODAL */}
       {viewModalData && (
         <div className="registrations-modal-overlay" onClick={() => setViewModalData(null)}>
           <div
@@ -826,7 +756,6 @@ const Registrations = () => {
 
               {/* Personal & Contact Details Cards */}
               <div className="registrations-view-row">
-                {/* Personal Details */}
                 <div className="registrations-info-box">
                   <div className="registrations-info-title">
                     <FiUser /> PERSONAL DETAILS
@@ -853,13 +782,12 @@ const Registrations = () => {
                       <strong className="registrations-info-value">{viewModalData.dob}</strong>
                     </div>
                   </div>
-                  <div style={{ marginTop: "12px" }}>
+                  <div style={{ marginTop: "14px" }}>
                     <span className="registrations-info-label">Aadhar Card No.</span>
                     <strong className="registrations-info-value">{viewModalData.aadhar}</strong>
                   </div>
                 </div>
 
-                {/* Contact Details */}
                 <div className="registrations-info-box">
                   <div className="registrations-info-title">
                     <FiPhone /> CONTACT DETAILS
@@ -868,7 +796,7 @@ const Registrations = () => {
                     <span className="registrations-info-label">Mobile Phone Number</span>
                     <strong className="registrations-info-value">{viewModalData.contact}</strong>
                   </div>
-                  <div style={{ marginTop: "12px" }}>
+                  <div style={{ marginTop: "14px" }}>
                     <span className="registrations-info-label">Email Address</span>
                     <strong className="registrations-info-value">{viewModalData.email}</strong>
                   </div>
@@ -941,7 +869,7 @@ const Registrations = () => {
         </div>
       )}
 
-      {/* 6th IMAGE: EDIT DETAILS MODAL */}
+      {/* EDIT DETAILS MODAL */}
       {editModalData && (
         <div className="registrations-modal-overlay" onClick={() => setEditModalData(null)}>
           <div
@@ -965,7 +893,6 @@ const Registrations = () => {
             </div>
 
             <form onSubmit={handleEditSave} className="registrations-modal-scroll-area">
-              {/* Personal Details */}
               <div className="registrations-edit-card-section">
                 <h4 className="registrations-edit-section-header">PERSONAL DETAILS</h4>
                 <div className="registrations-edit-grid-two">
@@ -1042,7 +969,6 @@ const Registrations = () => {
                 </div>
               </div>
 
-              {/* Contact & Goals */}
               <div className="registrations-edit-card-section">
                 <h4 className="registrations-edit-section-header">CONTACT &amp; INTERNSHIP GOALS</h4>
                 <div className="registrations-edit-grid-two">
@@ -1085,7 +1011,6 @@ const Registrations = () => {
                 </div>
               </div>
 
-              {/* Local Address */}
               <div className="registrations-edit-card-section">
                 <h4 className="registrations-edit-section-header">LOCAL ADDRESS</h4>
                 <div className="registrations-field-group single-line">
@@ -1146,7 +1071,6 @@ const Registrations = () => {
                 </div>
               </div>
 
-              {/* Permanent Address */}
               <div className="registrations-edit-card-section">
                 <h4 className="registrations-edit-section-header">PERMANENT ADDRESS</h4>
                 <div className="registrations-field-group single-line">
@@ -1219,7 +1143,6 @@ const Registrations = () => {
                 </div>
               </div>
 
-              {/* Action Buttons */}
               <div className="registrations-modal-footer">
                 <button
                   type="button"
