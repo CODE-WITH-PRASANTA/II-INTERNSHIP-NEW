@@ -1,0 +1,409 @@
+:root {
+  --green-deep: #01382b;
+  --green-main: #014736;
+  --green-light: #06644d;
+  --green-glow: #10b981;
+  --green-subtle: rgba(1, 71, 54, 0.08);
+  --text-dark: #0f172a;
+}
+
+/* 3D Topbar Bar Shell */
+.topbar-container-3d {
+  width: 100%;
+  height: 68px;
+  background: #ffffff;
+  padding: 0 24px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  box-sizing: border-box;
+  position: sticky;
+  top: 0;
+  z-index: 90;
+  border-bottom: 2px solid #e6edea;
+  box-shadow: 0 6px 16px -4px rgba(1, 71, 54, 0.06);
+}
+
+/* --- Left Section --- */
+.topbar-left-3d {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  flex-shrink: 0;
+}
+
+/* 3D Tactile Push-down Buttons */
+.btn-3d-tactile {
+  width: 38px;
+  height: 38px;
+  background: linear-gradient(145deg, #ffffff, #edf3f0);
+  border: 1px solid #c9ded6;
+  border-bottom: 3px solid #014736;
+  border-radius: 10px;
+  color: #014736;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  box-shadow: 0 3px 6px rgba(1, 71, 54, 0.1);
+  transition: all 0.15s ease-in-out;
+}
+
+.btn-3d-tactile:hover {
+  background: #f0fdf4;
+  color: #047857;
+  transform: translateY(-1px);
+  box-shadow: 0 5px 10px rgba(1, 71, 54, 0.15);
+}
+
+.btn-3d-tactile:active {
+  transform: translateY(2px);
+  border-bottom-width: 1px;
+  box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.15);
+}
+
+/* 3D Breadcrumb Capsule */
+.breadcrumb-3d-capsule {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 14px;
+  background: linear-gradient(145deg, #f7faf8, #eef4f1);
+  border-radius: 20px;
+  border: 1px solid #d1e2dc;
+  box-shadow: inset 0 1px 2px rgba(255,255,255,0.9), 0 2px 5px rgba(1,71,54,0.06);
+}
+
+.crumb-segment {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  font-size: 12.5px;
+  color: #4b635b;
+  font-weight: 600;
+}
+
+.crumb-segment.active-segment {
+  color: #014736;
+  font-weight: 700;
+}
+
+.crumb-divider {
+  color: #8daea3;
+}
+
+/* --- Center Section: 3D Inset Cut Search Bar --- */
+.topbar-center-3d {
+  flex: 1;
+  max-width: 440px;
+  margin: 0 12px;
+}
+
+.search-inset-box {
+  position: relative;
+  display: flex;
+  align-items: center;
+  width: 100%;
+}
+
+.search-ico-3d {
+  position: absolute;
+  left: 14px;
+  color: #047857;
+  pointer-events: none;
+}
+
+.search-input-3d {
+  width: 100%;
+  height: 40px;
+  padding: 0 44px 0 40px;
+  border-radius: 12px;
+  border: 1px solid #c9ded6;
+  background: #f2f7f4;
+  /* 3D Inset Engraved Depth Shadow */
+  box-shadow: inset 0 2px 4px rgba(1, 71, 54, 0.08), inset 0 1px 2px rgba(0,0,0,0.05);
+  font-size: 13px;
+  color: var(--text-dark);
+  font-weight: 500;
+  outline: none;
+  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.search-input-3d:focus {
+  background: #ffffff;
+  border-color: #014736;
+  box-shadow: 0 0 0 3px rgba(1, 71, 54, 0.15), inset 0 1px 2px rgba(0,0,0,0.04);
+}
+
+.badge-3d-shortcut {
+  position: absolute;
+  right: 10px;
+  display: flex;
+  align-items: center;
+  gap: 2px;
+  padding: 2px 7px;
+  background: linear-gradient(180deg, #ffffff, #e2eae6);
+  border: 1px solid #b8d1c7;
+  border-bottom: 2px solid #94b5a8;
+  border-radius: 6px;
+  font-size: 10px;
+  font-weight: 700;
+  color: #014736;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.08);
+}
+
+/* --- Right Section --- */
+.topbar-right-3d {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  flex-shrink: 0;
+}
+
+/* 3D Status Pill */
+.status-pill-3d {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 6px 14px;
+  background: linear-gradient(145deg, #014736, #026049);
+  border: 1px solid #0a735a;
+  border-bottom: 2px solid #002b21;
+  border-radius: 20px;
+  box-shadow: 0 4px 10px rgba(1, 71, 54, 0.25);
+}
+
+.pulsing-core {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background-color: #34d399;
+  box-shadow: 0 0 8px #34d399;
+  animation: pulse-green 1.8s infinite;
+}
+
+@keyframes pulse-green {
+  0% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(52, 211, 153, 0.7); }
+  70% { transform: scale(1); box-shadow: 0 0 0 6px rgba(52, 211, 153, 0); }
+  100% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(52, 211, 153, 0); }
+}
+
+.pill-text {
+  font-size: 11.5px;
+  font-weight: 700;
+  color: #ffffff;
+  letter-spacing: 0.3px;
+}
+
+/* 3D Floating Notification Badge */
+.icon-btn-3d {
+  position: relative;
+}
+
+.badge-notification-3d {
+  position: absolute;
+  top: -5px;
+  right: -5px;
+  min-width: 17px;
+  height: 17px;
+  background: linear-gradient(135deg, #ef4444, #dc2626);
+  border: 2px solid #ffffff;
+  border-radius: 10px;
+  color: #ffffff;
+  font-size: 9.5px;
+  font-weight: 800;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 2px 6px rgba(220, 38, 38, 0.4);
+}
+
+.groove-separator {
+  width: 2px;
+  height: 28px;
+  background: linear-gradient(180deg, #d1e2dc, #f0fdf4);
+  border-radius: 2px;
+}
+
+/* --- 3D Profile Button --- */
+.profile-wrapper-3d {
+  position: relative;
+}
+
+.btn-3d-profile {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 4px 12px 4px 4px;
+  background: linear-gradient(145deg, #ffffff, #f2f7f4);
+  border: 1px solid #c9ded6;
+  border-bottom: 3px solid #014736;
+  border-radius: 30px;
+  cursor: pointer;
+  box-shadow: 0 4px 10px rgba(1, 71, 54, 0.08);
+  transition: all 0.15s ease-in-out;
+}
+
+.btn-3d-profile:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 6px 14px rgba(1, 71, 54, 0.14);
+}
+
+.btn-3d-profile:active {
+  transform: translateY(2px);
+  border-bottom-width: 1px;
+}
+
+.avatar-cube-3d {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #014736 0%, #059669 100%);
+  color: #ffffff;
+  font-weight: 800;
+  font-size: 13px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid rgba(255,255,255,0.4);
+  box-shadow: inset 0 2px 4px rgba(255,255,255,0.4), 0 2px 5px rgba(0,0,0,0.2);
+}
+
+.profile-identity {
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+}
+
+.admin-name {
+  font-size: 12.5px;
+  font-weight: 700;
+  color: #014736;
+  line-height: 1.2;
+}
+
+.admin-role {
+  font-size: 10.5px;
+  color: #648a7f;
+  font-weight: 600;
+  line-height: 1.2;
+}
+
+.chevron-3d {
+  color: #014736;
+  transition: transform 0.2s ease;
+}
+
+.chevron-3d.rotate {
+  transform: rotate(180deg);
+}
+
+/* 3D Elevated Dropdown Menu */
+.backdrop-click-mask {
+  position: fixed;
+  inset: 0;
+  z-index: 120;
+}
+
+.dropdown-panel-3d {
+  position: absolute;
+  top: calc(100% + 10px);
+  right: 0;
+  width: 220px;
+  background: #ffffff;
+  border: 1px solid #c9ded6;
+  border-top: 3px solid #014736;
+  border-radius: 14px;
+  box-shadow: 0 16px 36px -6px rgba(1, 71, 54, 0.2), 0 4px 12px rgba(0,0,0,0.05);
+  padding: 8px;
+  z-index: 130;
+  animation: float3DDown 0.18s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+@keyframes float3DDown {
+  from { opacity: 0; transform: translateY(-8px) scale(0.97); }
+  to { opacity: 1; transform: translateY(0) scale(1); }
+}
+
+.panel-header-3d {
+  padding: 8px 10px 10px 10px;
+  border-bottom: 1px solid #e6edea;
+}
+
+.hdr-name {
+  display: block;
+  font-size: 13px;
+  font-weight: 700;
+  color: #014736;
+}
+
+.hdr-email {
+  font-size: 11px;
+  color: #648a7f;
+}
+
+.panel-actions-3d {
+  padding-top: 6px;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.item-action-3d {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  padding: 8px 10px;
+  font-size: 12.5px;
+  font-weight: 600;
+  color: #27473e;
+  text-decoration: none;
+  border-radius: 8px;
+  border: none;
+  background: transparent;
+  cursor: pointer;
+  transition: all 0.15s ease;
+}
+
+.item-action-3d:hover {
+  background: #f0fdf4;
+  color: #014736;
+  transform: translateX(3px);
+}
+
+.groove-horizontal {
+  height: 1px;
+  background: #e6edea;
+  margin: 4px 0;
+}
+
+.item-action-3d.logout-3d {
+  color: #ef4444;
+}
+
+.item-action-3d.logout-3d:hover {
+  background: #fef2f2;
+}
+
+/* Responsiveness */
+@media (max-width: 860px) {
+  .status-pill-3d, .badge-3d-shortcut {
+    display: none;
+  }
+}
+
+@media (max-width: 768px) {
+  .topbar-container-3d {
+    padding: 0 16px;
+    height: 60px;
+  }
+
+  .topbar-center-3d {
+    display: none;
+  }
+
+  .profile-identity, .groove-separator {
+    display: none;
+  }
+}
