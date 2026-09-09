@@ -112,6 +112,15 @@ const ROLE_OPTIONS = [
   "Super Admin",
 ];
 
+const getInitials = (name = "") => {
+  return name
+    .trim()
+    .split(/\s+/)
+    .slice(0, 2)
+    .map((part) => part[0]?.toUpperCase() || "")
+    .join("");
+};
+
 const UserAccounts = () => {
   const [users, setUsers] = useState(initialUsers);
   const [searchQuery, setSearchQuery] = useState("");
@@ -337,18 +346,23 @@ const UserAccounts = () => {
       {/* Toast feedback popup */}
       {toastMessage && (
         <div className="userAccounts-toastNotification">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5">
             <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14" />
             <polyline points="22 4 12 14.01 9 11.01" />
           </svg>
-          {toastMessage}
+          <span>{toastMessage}</span>
         </div>
       )}
 
-      {/* Top Header */}
+      {/* Top Header Card */}
       <header className="userAccounts-pageHeader">
         <div className="userAccounts-headerLeft">
-          <h1 className="userAccounts-mainTitle">User Accounts Directory</h1>
+          <div className="userAccounts-titleWithBadge">
+            <h1 className="userAccounts-mainTitle">User Accounts Directory</h1>
+            <span className="userAccounts-userCountBadge">
+              {filteredUsers.length} Users
+            </span>
+          </div>
           <p className="userAccounts-subTitle">
             Create new database user profiles, toggle active status, and modify organizational role permissions.
           </p>
@@ -374,7 +388,7 @@ const UserAccounts = () => {
             className="userAccounts-btnPrimaryGreen"
             onClick={() => setIsCreateModalOpen(true)}
           >
-            <span className="userAccounts-plusIcon">⊕</span>
+            <span className="userAccounts-plusIcon">＋</span>
             Add New User
           </button>
         </div>
@@ -412,13 +426,24 @@ const UserAccounts = () => {
             </svg>
             <input
               type="text"
-              placeholder="Search by name or email"
+              placeholder="Search by name or email..."
               value={searchQuery}
               onChange={(e) => {
                 setSearchQuery(e.target.value);
                 setCurrentPage(1);
               }}
             />
+            {searchQuery && (
+              <button
+                className="userAccounts-clearSearchBtn"
+                onClick={() => {
+                  setSearchQuery("");
+                  setCurrentPage(1);
+                }}
+              >
+                ✕
+              </button>
+            )}
           </div>
         </div>
 
@@ -454,7 +479,7 @@ const UserAccounts = () => {
               <polyline points="7 10 12 15 17 10" />
               <line x1="12" y1="15" x2="12" y2="3" />
             </svg>
-            Export Excel
+            Export CSV
           </button>
           <button className="userAccounts-btnSecondaryColumns">
             <svg
@@ -464,9 +489,9 @@ const UserAccounts = () => {
               stroke="currentColor"
               strokeWidth="2"
             >
-              <polyline points="6 9 12 15 18 9" />
+              <path d="M4 6h16M4 12h16M4 18h16" />
             </svg>
-            View Columns
+            Columns
           </button>
         </div>
       </div>
@@ -476,7 +501,17 @@ const UserAccounts = () => {
         {/* Sidebar Filters */}
         {showFilters && (
           <aside className="userAccounts-filterSidebar">
-            <h3 className="userAccounts-filterTitle">Role</h3>
+            <div className="userAccounts-filterHeader">
+              <h3 className="userAccounts-filterTitle">Role Filters</h3>
+              {selectedRoles.length > 0 && (
+                <button
+                  className="userAccounts-filterClearBtn"
+                  onClick={() => setSelectedRoles([])}
+                >
+                  Clear all
+                </button>
+              )}
+            </div>
             <div className="userAccounts-filterCheckboxList">
               {ROLE_OPTIONS.map((role) => (
                 <label key={role} className="userAccounts-filterCheckboxItem">
@@ -493,19 +528,35 @@ const UserAccounts = () => {
           </aside>
         )}
 
-        {/* Data Table */}
+        {/* Data Table Container */}
         <div className="userAccounts-tableWrapper">
           <table className="userAccounts-table">
             <thead>
               <tr>
-                <th className="userAccounts-colSno">S. NO.</th>
-                <th className="userAccounts-colName">NAME</th>
-                <th className="userAccounts-colEmail">EMAIL ADDRESS</th>
-                <th className="userAccounts-colMobile">MOBILE NUMBER</th>
-                <th className="userAccounts-colRole">ROLE</th>
-                <th className="userAccounts-colProfile">PROFILE STATUS</th>
-                <th className="userAccounts-colActive">ACTIVE STATUS</th>
-                <th className="userAccounts-colActions">ACTIONS</th>
+                <th className="userAccounts-colSno">
+                  <span className="userAccounts-thBadge userAccounts-thSno">SL. NO.</span>
+                </th>
+                <th className="userAccounts-colName">
+                  <span className="userAccounts-thTitle">NAME</span>
+                </th>
+                <th className="userAccounts-colEmail">
+                  <span className="userAccounts-thTitle">EMAIL ADDRESS</span>
+                </th>
+                <th className="userAccounts-colMobile">
+                  <span className="userAccounts-thTitle">MOBILE NUMBER</span>
+                </th>
+                <th className="userAccounts-colRole">
+                  <span className="userAccounts-thTitle">ROLE</span>
+                </th>
+                <th className="userAccounts-colProfile">
+                  <span className="userAccounts-thTitle">PROFILE STATUS</span>
+                </th>
+                <th className="userAccounts-colActive">
+                  <span className="userAccounts-thTitle">ACTIVE STATUS</span>
+                </th>
+                <th className="userAccounts-colActions">
+                  <span className="userAccounts-thTitle">ACTIONS</span>
+                </th>
               </tr>
             </thead>
             <tbody>
@@ -513,14 +564,29 @@ const UserAccounts = () => {
                 paginatedUsers.map((user, index) => {
                   const serialNo = (currentPage - 1) * rowsPerPage + index + 1;
                   return (
-                    <tr key={user.id}>
-                      <td className="userAccounts-colSnoData">{serialNo}</td>
-                      <td className="userAccounts-colNameData">
-                        <span className="userAccounts-userNameText">{user.name}</span>
+                    <tr key={user.id} className="userAccounts-tableRow">
+                      <td className="userAccounts-colSno userAccounts-colSnoData">
+                        <span className="userAccounts-serialPill">{serialNo}</span>
                       </td>
-                      <td className="userAccounts-colEmailData">{user.email}</td>
-                      <td className="userAccounts-colMobileData">{user.mobile}</td>
-                      <td>
+                      <td className="userAccounts-colName userAccounts-colNameData">
+                        <div className="userAccounts-nameAvatarGroup" title={user.name}>
+                          <span className="userAccounts-avatarBadge">
+                            {getInitials(user.name)}
+                          </span>
+                          <span className="userAccounts-userNameText">
+                            {user.name}
+                          </span>
+                        </div>
+                      </td>
+                      <td className="userAccounts-colEmail userAccounts-colEmailData">
+                        <span className="userAccounts-emailPill" title={user.email}>{user.email}</span>
+                      </td>
+                      <td className="userAccounts-colMobile userAccounts-colMobileData">
+                        <span className={user.mobile === "—" ? "userAccounts-textMuted" : ""}>
+                          {user.mobile}
+                        </span>
+                      </td>
+                      <td className="userAccounts-colRole">
                         <span
                           className={`userAccounts-badge userAccounts-role-${user.badgeRole
                             ?.toLowerCase()
@@ -529,16 +595,17 @@ const UserAccounts = () => {
                           {user.badgeRole}
                         </span>
                       </td>
-                      <td>
+                      <td className="userAccounts-colProfile">
                         <span
                           className={`userAccounts-badge userAccounts-status-${user.profileStatus
                             .toLowerCase()
                             .replace(/\s+/g, "-")}`}
                         >
+                          <span className="userAccounts-statusDot"></span>
                           {user.profileStatus}
                         </span>
                       </td>
-                      <td>
+                      <td className="userAccounts-colActive">
                         <div className="userAccounts-activeSwitchContainer">
                           <label className="userAccounts-toggleSwitch">
                             <input
@@ -550,14 +617,16 @@ const UserAccounts = () => {
                           </label>
                           <span
                             className={`userAccounts-activeLabel ${
-                              user.active ? "userAccounts-textActive" : "userAccounts-textInactive"
+                              user.active
+                                ? "userAccounts-textActive"
+                                : "userAccounts-textInactive"
                             }`}
                           >
                             {user.active ? "ACTIVE" : "INACTIVE"}
                           </span>
                         </div>
                       </td>
-                      <td className="userAccounts-colActionsData">
+                      <td className="userAccounts-colActions userAccounts-colActionsData">
                         <div className="userAccounts-actionMenuContainer">
                           <button
                             className="userAccounts-btnDots"
@@ -567,6 +636,7 @@ const UserAccounts = () => {
                                 openDropdownId === user.id ? null : user.id
                               );
                             }}
+                            title="Options"
                           >
                             ⋮
                           </button>
@@ -628,7 +698,9 @@ const UserAccounts = () => {
               ) : (
                 <tr>
                   <td colSpan="8" className="userAccounts-noDataCell">
-                    No user accounts found.
+                    <div className="userAccounts-emptyIllustration">🔍</div>
+                    <p className="userAccounts-emptyTitle">No accounts match your criteria</p>
+                    <p className="userAccounts-emptySub">Try adjusting your filters or search keywords.</p>
                   </td>
                 </tr>
               )}
@@ -640,7 +712,7 @@ const UserAccounts = () => {
       {/* Pagination Footer */}
       <footer className="userAccounts-paginationBar">
         <div className="userAccounts-rowsPerPage">
-          <span>Rows per page</span>
+          <span>Rows per page:</span>
           <div className="userAccounts-selectWrapper">
             <select
               value={rowsPerPage}
@@ -659,7 +731,7 @@ const UserAccounts = () => {
 
         <div className="userAccounts-paginationPages">
           <span>
-            Page {currentPage} of {totalPages}
+            Page <strong>{currentPage}</strong> of <strong>{totalPages}</strong>
           </span>
           <div className="userAccounts-pageArrows">
             <button
@@ -721,7 +793,7 @@ const UserAccounts = () => {
 
             <form onSubmit={handleSaveEdit} className="userAccounts-modalForm">
               <div className="userAccounts-formGroup">
-                <label>ACCOUNT EMAIL</label>
+                <label>Account Email</label>
                 <input
                   type="text"
                   value={editingUser.email}
@@ -731,7 +803,7 @@ const UserAccounts = () => {
               </div>
 
               <div className="userAccounts-formGroup">
-                <label>DISPLAY NAME</label>
+                <label>Display Name</label>
                 <input
                   type="text"
                   value={editingUser.name}
@@ -743,7 +815,7 @@ const UserAccounts = () => {
               </div>
 
               <div className="userAccounts-formGroup">
-                <label>ASSIGNED ROLE</label>
+                <label>Assigned Role</label>
                 <div className="userAccounts-selectContainer">
                   <select
                     value={editingUser.role}
@@ -780,9 +852,9 @@ const UserAccounts = () => {
           >
             <div className="userAccounts-modalHeader">
               <div>
-                <h2 className="userAccounts-modalTitle">Admin: Create User Account</h2>
+                <h2 className="userAccounts-modalTitle">Create User Account</h2>
                 <p className="userAccounts-modalSubtitle">
-                  Manually registers a new account on the database.
+                  Register a verified user profile with instant access privileges.
                 </p>
               </div>
               <button
@@ -795,7 +867,7 @@ const UserAccounts = () => {
 
             <form onSubmit={handleCreateUser} className="userAccounts-modalForm">
               <div className="userAccounts-formGroup">
-                <label>EMAIL ADDRESS</label>
+                <label>Email Address</label>
                 <input
                   type="email"
                   placeholder="user@example.com"
@@ -808,7 +880,7 @@ const UserAccounts = () => {
               </div>
 
               <div className="userAccounts-formGroup">
-                <label>MOBILE NUMBER*</label>
+                <label>Mobile Number</label>
                 <input
                   type="text"
                   placeholder="Enter 10-digit mobile number"
@@ -821,7 +893,7 @@ const UserAccounts = () => {
               </div>
 
               <div className="userAccounts-formGroup">
-                <label>DISPLAY NAME</label>
+                <label>Display Name</label>
                 <input
                   type="text"
                   placeholder="John Doe"
@@ -834,7 +906,7 @@ const UserAccounts = () => {
               </div>
 
               <div className="userAccounts-formGroup">
-                <label>ASSIGNED ROLE</label>
+                <label>Assigned Role</label>
                 <div className="userAccounts-selectContainer">
                   <select
                     value={createForm.role}
@@ -855,12 +927,14 @@ const UserAccounts = () => {
               <div className="userAccounts-autoGenPasswordBox">
                 <div className="userAccounts-passwordInfo">
                   <span className="userAccounts-keyIcon">🔑</span>
-                  <span className="userAccounts-passwordLabel">
-                    Auto-generated Password:
-                  </span>
-                  <span className="userAccounts-passwordToken">
-                    {createForm.password}
-                  </span>
+                  <div>
+                    <div className="userAccounts-passwordLabel">
+                      Auto-generated Secure Password
+                    </div>
+                    <span className="userAccounts-passwordToken">
+                      {createForm.password}
+                    </span>
+                  </div>
                 </div>
                 <button
                   type="button"
@@ -885,7 +959,7 @@ const UserAccounts = () => {
               </div>
 
               <div className="userAccounts-formGroup">
-                <label>PASSWORD</label>
+                <label>Password</label>
                 <div className="userAccounts-inputWithIcon">
                   <input
                     type={showPassword ? "text" : "password"}
@@ -917,7 +991,7 @@ const UserAccounts = () => {
               </div>
 
               <div className="userAccounts-formGroup">
-                <label>CONFIRM PASSWORD</label>
+                <label>Confirm Password</label>
                 <div className="userAccounts-inputWithIcon">
                   <input
                     type={showPassword ? "text" : "password"}

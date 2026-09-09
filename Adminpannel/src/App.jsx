@@ -23,12 +23,12 @@ const App = () => {
     <BrowserRouter>
 
       <Routes>
-        <Route path="/" element={<MainLayout />}>
-          <Route path="dashboard" element={<Dashboard />} />
-        </Route>
-        <Route path="/user-accounts" element={<UserAccounts />} />
-        <Route path="/registrations" element={<Registrations />} />
-        <Route path="/internships" element={<Internships />} />
+       <Route path="/" element={<MainLayout />}>
+       <Route path="dashboard" element={<Dashboard />} />
+       
+       <Route path="/user-accounts" element={<UserAccounts />} />
+       <Route path="/registrations" element={<Registrations />} />
+       <Route path="/internships" element={<Internships />} />
         
        <Route path="/reviews" element={<ReviewsModeration/>}/>
        <Route path="/noticeboard" element={<NoticeBoard/>}/>   
@@ -38,7 +38,8 @@ const App = () => {
        <Route path="/recruitment" element={<RecruitmentOpenings/>}/>
        <Route path="/partners" element={<PartnersOnboard/>}/>
        <Route path="/blogsboard" element={<BlogsBoard/>}/>   
-       <Route path="/mediadesk" element={<MediaDesk/>}/>   
+       <Route path="/mediadesk" element={<MediaDesk/>}/>
+      </Route>   
       </Routes>
     </BrowserRouter>
   );
