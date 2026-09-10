@@ -1,18 +1,17 @@
-/* Base Full-Screen Wrapper without Horizontal Scroll */
+/* Base Full-Screen Wrapper */
 .userAccounts-container {
   width: 100%;
-  max-width: 100%;
+  max-width: 1440px;
+  margin: 0 auto;
   min-height: 100vh;
-  margin: 0;
-  
+  padding: 24px;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Inter", sans-serif;
   color: #0f172a;
   box-sizing: border-box;
   position: relative;
-  background-color: #f1f5f9;
+  background-color: #f8fafc;
   display: flex;
   flex-direction: column;
-  overflow-x: hidden;
 }
 
 .userAccounts-container * {
@@ -22,28 +21,29 @@
 /* Toast Feedback Alert */
 .userAccounts-toastNotification {
   position: fixed;
-  top: 28px;
-  right: 32px;
+  top: 20px;
+  right: 20px;
   z-index: 10000;
   display: flex;
   align-items: center;
   gap: 12px;
   background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
   color: #ffffff;
-  padding: 14px 22px;
+  padding: 12px 18px;
   border-radius: 12px;
   box-shadow: 0 14px 36px -6px rgba(15, 23, 42, 0.35);
   border: 1px solid rgba(255, 255, 255, 0.08);
   font-size: 13.5px;
   font-weight: 500;
   animation: userAccountsSlideDown 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+  max-width: calc(100vw - 40px);
 }
 
 .userAccounts-toastNotification svg {
-  width: 20px;
-  height: 20px;
+  width: 18px;
+  height: 18px;
+  flex-shrink: 0;
   color: #10b981;
-  filter: drop-shadow(0 0 6px rgba(16, 185, 129, 0.4));
 }
 
 /* Top Header Card */
@@ -52,26 +52,31 @@
   justify-content: space-between;
   align-items: center;
   flex-wrap: wrap;
-  gap: 20px;
-  padding: 24px 28px;
-  background: linear-gradient(135deg, #ffffff 0%, #f8fafc 100%);
+  gap: 16px;
+  padding: 22px 24px;
+  background: #ffffff;
   border: 1px solid #e2e8f0;
   border-radius: 14px;
-  box-shadow: 0 4px 18px rgba(15, 23, 42, 0.05);
+  box-shadow: 0 4px 16px rgba(15, 23, 42, 0.03);
   width: 100%;
+}
+
+.userAccounts-headerLeft {
+  flex: 1 1 300px;
 }
 
 .userAccounts-titleWithBadge {
   display: flex;
   align-items: center;
-  gap: 14px;
+  gap: 10px;
+  flex-wrap: wrap;
 }
 
 .userAccounts-mainTitle {
-  font-size: 26px;
+  font-size: 22px;
   font-weight: 800;
   color: #0f172a;
-  letter-spacing: -0.03em;
+  letter-spacing: -0.02em;
   margin: 0;
 }
 
@@ -80,94 +85,85 @@
   background: #ecfdf5;
   color: #047857;
   border: 1px solid #a7f3d0;
-  font-size: 12px;
+  font-size: 11.5px;
   font-weight: 700;
-  padding: 4px 12px;
+  padding: 3px 10px;
   border-radius: 20px;
-  letter-spacing: 0.02em;
 }
 
 .userAccounts-subTitle {
   margin-top: 6px;
-  font-size: 14px;
+  font-size: 13px;
   color: #64748b;
   margin-bottom: 0;
+  line-height: 1.5;
 }
 
 .userAccounts-headerRight {
   display: flex;
   align-items: center;
-  gap: 14px;
+  gap: 10px;
+  flex-wrap: wrap;
 }
 
 /* Header Buttons */
-.userAccounts-btnOutlineOrange {
+.userAccounts-btnOutlineOrange,
+.userAccounts-btnPrimaryGreen {
   display: inline-flex;
   align-items: center;
+  justify-content: center;
   gap: 8px;
+  padding: 9.5px 16px;
+  border-radius: 8px;
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+  white-space: nowrap;
+  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.userAccounts-btnOutlineOrange {
   background-color: #fff7ed;
   border: 1px solid #fed7aa;
   color: #c2410c;
-  padding: 10px 18px;
-  border-radius: 9px;
-  font-size: 13.5px;
-  font-weight: 600;
-  cursor: pointer;
-  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
-  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.04);
 }
 
 .userAccounts-btnOutlineOrange:hover {
   background-color: #ffedd5;
   border-color: #fdba74;
-  transform: translateY(-1px);
-  box-shadow: 0 4px 12px rgba(194, 65, 12, 0.12);
 }
 
 .userAccounts-btnPrimaryGreen {
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
   background: linear-gradient(135deg, #059669 0%, #047857 100%);
   color: #ffffff;
   border: 1px solid #047857;
-  padding: 10px 20px;
-  border-radius: 9px;
-  font-size: 13.5px;
-  font-weight: 600;
-  cursor: pointer;
-  box-shadow: 0 4px 14px rgba(5, 150, 105, 0.25);
-  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 0 4px 12px rgba(5, 150, 105, 0.2);
 }
 
 .userAccounts-btnPrimaryGreen:hover {
   background: linear-gradient(135deg, #047857 0%, #065f46 100%);
-  transform: translateY(-1px);
-  box-shadow: 0 6px 18px rgba(5, 150, 105, 0.35);
 }
 
 .userAccounts-plusIcon {
-  font-size: 16px;
-  line-height: 1;
+  font-size: 15px;
 }
 
 .userAccounts-iconMail,
 .userAccounts-iconDownload,
-.userAccounts-iconChevron,
 .userAccounts-filterIcon,
 .userAccounts-searchIcon {
-  width: 16px;
-  height: 16px;
+  width: 15px;
+  height: 15px;
+  flex-shrink: 0;
 }
 
-/* Table Controls Bar */
+/* Controls Bar */
 .userAccounts-controlsBar {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-top: 20px;
-  margin-bottom: 20px;
-  gap: 16px;
+  margin: 18px 0;
+  gap: 12px;
   flex-wrap: wrap;
   width: 100%;
 }
@@ -175,24 +171,23 @@
 .userAccounts-controlsLeft {
   display: flex;
   align-items: center;
-  gap: 12px;
-  flex: 1;
+  gap: 10px;
+  flex: 1 1 300px;
 }
 
 .userAccounts-btnFilterToggle {
   display: inline-flex;
   align-items: center;
-  gap: 8px;
+  gap: 6px;
   background-color: #ffffff;
   border: 1px solid #e2e8f0;
-  padding: 9.5px 16px;
+  padding: 8.5px 14px;
   border-radius: 8px;
-  font-size: 13.5px;
+  font-size: 13px;
   font-weight: 600;
   color: #334155;
   cursor: pointer;
-  transition: all 0.2s ease;
-  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.03);
+  white-space: nowrap;
 }
 
 .userAccounts-btnFilterToggle:hover,
@@ -210,7 +205,7 @@
 
 .userAccounts-searchWrapper .userAccounts-searchIcon {
   position: absolute;
-  left: 14px;
+  left: 12px;
   top: 50%;
   transform: translateY(-50%);
   color: #94a3b8;
@@ -219,15 +214,14 @@
 
 .userAccounts-searchWrapper input {
   width: 100%;
-  padding: 10px 36px 10px 38px;
-  font-size: 13.5px;
+  padding: 8.5px 32px 8.5px 34px;
+  font-size: 13px;
   border: 1px solid #e2e8f0;
   border-radius: 8px;
   outline: none;
   background-color: #ffffff;
   color: #1e293b;
-  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.03);
-  transition: all 0.2s ease;
+  transition: border-color 0.2s, box-shadow 0.2s;
 }
 
 .userAccounts-searchWrapper input:focus {
@@ -237,46 +231,38 @@
 
 .userAccounts-clearSearchBtn {
   position: absolute;
-  right: 10px;
+  right: 8px;
   top: 50%;
   transform: translateY(-50%);
   background: none;
   border: none;
   color: #94a3b8;
   cursor: pointer;
-  font-size: 11px;
+  font-size: 12px;
   width: 20px;
   height: 20px;
-  border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
 }
 
-.userAccounts-clearSearchBtn:hover {
-  background-color: #f1f5f9;
-  color: #334155;
-}
-
 .userAccounts-controlsRight {
   display: flex;
   align-items: center;
-  gap: 10px;
+  gap: 8px;
 }
 
 .userAccounts-btnSecondaryRemind,
-.userAccounts-btnSecondaryExport,
-.userAccounts-btnSecondaryColumns {
+.userAccounts-btnSecondaryExport {
   display: inline-flex;
   align-items: center;
-  gap: 8px;
-  padding: 9.5px 16px;
+  gap: 6px;
+  padding: 8.5px 14px;
   border-radius: 8px;
-  font-size: 13px;
+  font-size: 12.5px;
   font-weight: 600;
   cursor: pointer;
-  transition: all 0.2s ease;
-  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.03);
+  white-space: nowrap;
 }
 
 .userAccounts-btnSecondaryRemind {
@@ -285,63 +271,41 @@
   color: #ea580c;
 }
 
-.userAccounts-btnSecondaryRemind:hover {
-  background-color: #fed7aa;
-  transform: translateY(-1px);
-}
-
 .userAccounts-btnSecondaryExport {
   background-color: #ecfdf5;
   border: 1px solid #d1fae5;
   color: #059669;
 }
 
-.userAccounts-btnSecondaryExport:hover {
-  background-color: #d1fae5;
-  transform: translateY(-1px);
-}
-
-.userAccounts-btnSecondaryColumns {
-  background-color: #ffffff;
-  border: 1px solid #e2e8f0;
-  color: #334155;
-}
-
-.userAccounts-btnSecondaryColumns:hover {
-  background-color: #f8fafc;
-  border-color: #cbd5e1;
-}
-
-/* Main Content Layout */
+/* Layout Content */
 .userAccounts-contentLayout {
   display: flex;
   align-items: flex-start;
-  gap: 24px;
+  gap: 18px;
   width: 100%;
   flex: 1;
 }
 
 /* Filter Sidebar */
 .userAccounts-filterSidebar {
-  width: 240px;
+  width: 210px;
   flex-shrink: 0;
   background-color: #ffffff;
   border: 1px solid #e2e8f0;
   border-radius: 12px;
-  padding: 20px;
-  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.03);
-  animation: userAccountsFadeIn 0.25s ease-out;
+  padding: 16px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.02);
 }
 
 .userAccounts-filterHeader {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  margin-bottom: 16px;
+  margin-bottom: 12px;
 }
 
 .userAccounts-filterTitle {
-  font-size: 14px;
+  font-size: 12px;
   font-weight: 700;
   color: #0f172a;
   text-transform: uppercase;
@@ -353,35 +317,26 @@
   background: none;
   border: none;
   color: #059669;
-  font-size: 12px;
+  font-size: 11.5px;
   font-weight: 600;
   cursor: pointer;
   padding: 0;
 }
 
-.userAccounts-filterClearBtn:hover {
-  text-decoration: underline;
-}
-
 .userAccounts-filterCheckboxList {
   display: flex;
   flex-direction: column;
-  gap: 12px;
+  gap: 10px;
 }
 
 .userAccounts-filterCheckboxItem {
   display: flex;
   align-items: center;
-  gap: 10px;
+  gap: 8px;
   cursor: pointer;
-  font-size: 13px;
+  font-size: 12.5px;
   color: #334155;
   user-select: none;
-  transition: color 0.15s;
-}
-
-.userAccounts-filterCheckboxItem:hover {
-  color: #0f172a;
 }
 
 .userAccounts-filterCheckboxItem input {
@@ -389,13 +344,13 @@
 }
 
 .userAccounts-checkboxCustom {
-  width: 18px;
-  height: 18px;
+  width: 16px;
+  height: 16px;
   border: 1.5px solid #cbd5e1;
-  border-radius: 5px;
+  border-radius: 4px;
   background: #ffffff;
   position: relative;
-  transition: all 0.2s ease;
+  flex-shrink: 0;
 }
 
 .userAccounts-filterCheckboxItem input:checked + .userAccounts-checkboxCustom {
@@ -406,110 +361,80 @@
 .userAccounts-filterCheckboxItem input:checked + .userAccounts-checkboxCustom::after {
   content: "";
   position: absolute;
-  left: 5px;
-  top: 2px;
-  width: 5px;
-  height: 9px;
+  left: 4px;
+  top: 1px;
+  width: 4px;
+  height: 8px;
   border: solid white;
   border-width: 0 2px 2px 0;
   transform: rotate(45deg);
 }
 
-/* Full Width Data Table Container (No Horizontal Scroll) */
+/* Desktop Data Table Container */
 .userAccounts-tableWrapper {
   flex: 1;
   width: 100%;
-  overflow-x: hidden;
+  min-width: 0;
   background: #ffffff;
   border: 1px solid #e2e8f0;
-  border-radius: 14px;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.04);
+  border-radius: 12px;
+  box-shadow: 0 4px 18px rgba(0, 0, 0, 0.02);
+}
+
+.userAccounts-tableResponsiveScroll {
+  width: 100%;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
 }
 
 .userAccounts-table {
   width: 100%;
-  table-layout: fixed;
   border-collapse: separate;
   border-spacing: 0;
   text-align: left;
 }
 
-/* Header Gradient */
 .userAccounts-table thead tr {
   background: linear-gradient(180deg, #1e293b 0%, #0f172a 100%);
   position: sticky;
   top: 0;
-  z-index: 10;
+  z-index: 5;
 }
 
 .userAccounts-table th {
-  padding: 14px 12px;
+  padding: 12px 14px;
   vertical-align: middle;
   border-bottom: 2px solid #0f172a;
+  white-space: nowrap;
 }
 
-/* Fixed Percentage Widths to Eliminate Scrollbars */
-.userAccounts-colSno {
-  width: 6%;
-  text-align: center;
-}
+.userAccounts-colSno { width: 55px; text-align: center; }
+.userAccounts-colName { min-width: 180px; }
+.userAccounts-colEmail { min-width: 220px; }
+.userAccounts-colMobile { min-width: 120px; }
+.userAccounts-colRole { min-width: 125px; }
+.userAccounts-colProfile { min-width: 125px; }
+.userAccounts-colActive { min-width: 110px; }
+.userAccounts-colActions { width: 50px; text-align: center; }
 
-.userAccounts-colName {
-  width: 18%;
-}
-
-.userAccounts-colEmail {
-  width: 23%;
-}
-
-.userAccounts-colMobile {
-  width: 13%;
-}
-
-.userAccounts-colRole {
-  width: 13%;
-}
-
-.userAccounts-colProfile {
-  width: 13%;
-}
-
-.userAccounts-colActive {
-  width: 9%;
-}
-
-.userAccounts-colActions {
-  width: 5%;
-  text-align: center;
-}
-
-/* Styled Table Column Titles */
 .userAccounts-thTitle {
   font-size: 11px;
   font-weight: 800;
   color: #f8fafc;
   letter-spacing: 0.05em;
   text-transform: uppercase;
-  display: inline-block;
-  white-space: nowrap;
 }
 
 .userAccounts-thBadge {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 10.5px;
+  font-size: 10px;
   font-weight: 800;
-  letter-spacing: 0.05em;
-  padding: 4px 6px;
-  border-radius: 6px;
-  white-space: nowrap;
+  padding: 3px 5px;
+  border-radius: 4px;
 }
 
 .userAccounts-thSno {
   background-color: rgba(255, 255, 255, 0.15);
   color: #ffffff;
-  border: 1px solid rgba(255, 255, 255, 0.25);
 }
 
 .userAccounts-tableRow {
@@ -521,17 +446,13 @@
 }
 
 .userAccounts-table td {
-  padding: 13px 12px;
+  padding: 11px 14px;
   font-size: 13px;
   color: #334155;
   border-bottom: 1px solid #f1f5f9;
   vertical-align: middle;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  white-space: nowrap;
 }
 
-/* Serial Number Pill */
 .userAccounts-colSnoData {
   text-align: center;
 }
@@ -540,13 +461,13 @@
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  min-width: 26px;
-  height: 24px;
+  min-width: 24px;
+  height: 22px;
   background-color: #f1f5f9;
   color: #475569;
   font-weight: 700;
-  font-size: 11.5px;
-  border-radius: 6px;
+  font-size: 11px;
+  border-radius: 4px;
   border: 1px solid #e2e8f0;
 }
 
@@ -554,46 +475,37 @@
   display: flex;
   align-items: center;
   gap: 10px;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  white-space: nowrap;
 }
 
 .userAccounts-avatarBadge {
-  width: 30px;
-  height: 30px;
-  min-width: 30px;
+  width: 28px;
+  height: 28px;
+  min-width: 28px;
   border-radius: 50%;
   background: linear-gradient(135deg, #059669 0%, #0d9488 100%);
   color: #ffffff;
-  font-size: 11px;
+  font-size: 10.5px;
   font-weight: 700;
   display: flex;
   align-items: center;
   justify-content: center;
-  letter-spacing: 0.02em;
-  box-shadow: 0 2px 6px rgba(5, 150, 105, 0.25);
 }
 
 .userAccounts-userNameText {
   font-weight: 700;
   color: #0f172a;
-  letter-spacing: -0.01em;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  white-space: nowrap;
 }
 
 .userAccounts-emailPill {
   color: #334155;
-  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
-  font-size: 12px;
+  font-family: ui-monospace, monospace;
+  font-size: 11.5px;
   background-color: #f8fafc;
-  padding: 3px 6px;
-  border-radius: 6px;
+  padding: 2px 6px;
+  border-radius: 5px;
   border: 1px solid #e2e8f0;
   display: inline-block;
-  max-width: 100%;
+  max-width: 210px;
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
@@ -612,7 +524,6 @@
   font-weight: 700;
   padding: 3px 8px;
   border-radius: 20px;
-  letter-spacing: 0.02em;
   white-space: nowrap;
 }
 
@@ -653,12 +564,11 @@
   background-color: currentColor;
 }
 
-/* Active Toggle Switch */
+/* Active Toggle */
 .userAccounts-activeSwitchContainer {
   display: inline-flex;
   align-items: center;
   gap: 8px;
-  white-space: nowrap;
 }
 
 .userAccounts-toggleSwitch {
@@ -680,8 +590,8 @@
   cursor: pointer;
   inset: 0;
   background-color: #cbd5e1;
-  transition: 0.25s cubic-bezier(0.4, 0, 0.2, 1);
   border-radius: 20px;
+  transition: 0.2s ease;
 }
 
 .userAccounts-slider:before {
@@ -692,9 +602,8 @@
   left: 3px;
   bottom: 3px;
   background-color: white;
-  transition: 0.25s cubic-bezier(0.4, 0, 0.2, 1);
   border-radius: 50%;
-  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+  transition: 0.2s ease;
 }
 
 .userAccounts-toggleSwitch input:checked + .userAccounts-slider {
@@ -711,18 +620,13 @@
   letter-spacing: 0.04em;
 }
 
-.userAccounts-textActive {
-  color: #059669;
-}
+.userAccounts-textActive { color: #059669; }
+.userAccounts-textInactive { color: #94a3b8; }
 
-.userAccounts-textInactive {
-  color: #94a3b8;
-}
-
-/* Action Dropdown Menu */
+/* Desktop Options Menu */
 .userAccounts-colActionsData {
   text-align: center;
-  overflow: visible !important;
+  position: relative;
 }
 
 .userAccounts-actionMenuContainer {
@@ -735,14 +639,15 @@
   border: none;
   cursor: pointer;
   color: #64748b;
-  font-size: 17px;
-  width: 28px;
-  height: 28px;
+  font-size: 18px;
+  width: 32px;
+  height: 32px;
   border-radius: 6px;
-  display: inline-flex;
+  display: flex;
   align-items: center;
   justify-content: center;
-  transition: all 0.15s ease;
+  user-select: none;
+  transition: background-color 0.15s;
 }
 
 .userAccounts-btnDots:hover {
@@ -756,20 +661,19 @@
   top: calc(100% + 4px);
   background: #ffffff;
   border: 1px solid #e2e8f0;
-  border-radius: 10px;
+  border-radius: 8px;
   box-shadow: 0 10px 25px rgba(0, 0, 0, 0.12);
-  width: 165px;
-  z-index: 50;
-  overflow: hidden;
+  width: 160px;
+  z-index: 100;
   padding: 4px;
-  animation: userAccountsSlideDown 0.18s cubic-bezier(0.16, 1, 0.3, 1);
+  animation: userAccountsSlideDown 0.15s ease-out;
 }
 
 .userAccounts-dropdownItem {
   display: flex;
   align-items: center;
-  gap: 10px;
-  padding: 8px 12px;
+  gap: 8px;
+  padding: 9px 12px;
   font-size: 12.5px;
   font-weight: 500;
   background: none;
@@ -779,8 +683,7 @@
   cursor: pointer;
   color: #334155;
   border-radius: 6px;
-  transition: all 0.15s ease;
-  white-space: nowrap;
+  transition: background-color 0.15s;
 }
 
 .userAccounts-dropdownItem svg {
@@ -794,109 +697,93 @@
   color: #0f172a;
 }
 
-.userAccounts-dropdownItem.userAccounts-remind {
-  color: #ea580c;
-}
+.userAccounts-dropdownItem.userAccounts-remind { color: #ea580c; }
+.userAccounts-dropdownItem.userAccounts-remind:hover { background-color: #fff7ed; }
+.userAccounts-dropdownItem.userAccounts-delete { color: #dc2626; }
+.userAccounts-dropdownItem.userAccounts-delete:hover { background-color: #fef2f2; }
 
-.userAccounts-dropdownItem.userAccounts-remind:hover {
-  background-color: #fff7ed;
-}
-
-.userAccounts-dropdownItem.userAccounts-delete {
-  color: #dc2626;
-}
-
-.userAccounts-dropdownItem.userAccounts-delete:hover {
-  background-color: #fef2f2;
-}
-
-/* Empty State */
+/* Empty Table View */
 .userAccounts-noDataCell {
   text-align: center;
-  padding: 60px 20px !important;
+  padding: 40px 20px !important;
 }
 
 .userAccounts-emptyIllustration {
-  font-size: 36px;
-  margin-bottom: 12px;
+  font-size: 28px;
+  margin-bottom: 6px;
 }
 
 .userAccounts-emptyTitle {
-  font-size: 16px;
+  font-size: 15px;
   font-weight: 700;
   color: #0f172a;
-  margin: 0 0 6px 0;
+  margin: 0 0 4px 0;
 }
 
 .userAccounts-emptySub {
-  font-size: 13.5px;
+  font-size: 12.5px;
   color: #64748b;
   margin: 0;
 }
 
-/* Pagination Bar */
+/* Pagination Footer */
 .userAccounts-paginationBar {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-top: 24px;
-  padding: 16px 20px;
+  margin-top: 18px;
+  padding: 12px 18px;
   background-color: #ffffff;
   border: 1px solid #e2e8f0;
   border-radius: 12px;
-  font-size: 13.5px;
+  font-size: 13px;
   color: #475569;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.02);
-  width: 100%;
+  flex-wrap: wrap;
+  gap: 12px;
 }
 
 .userAccounts-rowsPerPage {
   display: flex;
   align-items: center;
-  gap: 10px;
+  gap: 8px;
 }
 
 .userAccounts-rowsPerPage select {
   border: 1px solid #e2e8f0;
-  border-radius: 8px;
-  padding: 6px 10px;
-  font-size: 13px;
+  border-radius: 6px;
+  padding: 4px 8px;
+  font-size: 12.5px;
   background-color: #ffffff;
   cursor: pointer;
-  outline: none;
-  color: #1e293b;
 }
 
 .userAccounts-paginationPages {
   display: flex;
   align-items: center;
-  gap: 16px;
+  gap: 14px;
 }
 
 .userAccounts-pageArrows {
   display: flex;
-  gap: 6px;
+  gap: 4px;
 }
 
 .userAccounts-pageArrows button {
   background-color: #ffffff;
   border: 1px solid #e2e8f0;
-  border-radius: 8px;
-  width: 34px;
-  height: 34px;
-  font-size: 14px;
+  border-radius: 6px;
+  width: 32px;
+  height: 32px;
+  font-size: 13px;
   cursor: pointer;
   display: flex;
   align-items: center;
   justify-content: center;
   color: #334155;
-  transition: all 0.2s ease;
 }
 
 .userAccounts-pageArrows button:hover:not(:disabled) {
   background-color: #f1f5f9;
-  border-color: #cbd5e1;
-  color: #0f172a;
 }
 
 .userAccounts-pageArrows button:disabled {
@@ -915,142 +802,120 @@
   justify-content: center;
   z-index: 1000;
   padding: 16px;
-  animation: userAccountsFadeIn 0.25s ease-out;
+  animation: userAccountsFadeIn 0.2s ease-out;
 }
 
 .userAccounts-modalCard {
   background: #ffffff;
-  border-radius: 16px;
+  border-radius: 14px;
   width: 100%;
-  max-width: 480px;
-  padding: 28px;
+  max-width: 440px;
+  padding: 22px;
   box-shadow: 0 20px 40px -8px rgba(0, 0, 0, 0.25);
-  animation: userAccountsScaleIn 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+  max-height: 90vh;
+  overflow-y: auto;
 }
 
 .userAccounts-modalHeader {
   display: flex;
   justify-content: space-between;
   align-items: flex-start;
-  margin-bottom: 22px;
+  margin-bottom: 18px;
 }
 
 .userAccounts-modalTitle {
-  font-size: 19px;
+  font-size: 17px;
   font-weight: 800;
   color: #0f172a;
-  letter-spacing: -0.02em;
   margin: 0;
 }
 
 .userAccounts-modalSubtitle {
-  font-size: 13.5px;
+  font-size: 12.5px;
   color: #64748b;
-  margin-top: 4px;
+  margin-top: 3px;
   margin-bottom: 0;
 }
 
 .userAccounts-btnModalClose {
   background: none;
   border: none;
-  font-size: 18px;
+  font-size: 16px;
   color: #94a3b8;
   cursor: pointer;
-  width: 32px;
-  height: 32px;
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  transition: all 0.15s;
-}
-
-.userAccounts-btnModalClose:hover {
-  background-color: #f1f5f9;
-  color: #0f172a;
+  padding: 4px;
 }
 
 .userAccounts-modalForm {
   display: flex;
   flex-direction: column;
-  gap: 18px;
+  gap: 14px;
 }
 
 .userAccounts-formGroup {
   display: flex;
   flex-direction: column;
-  gap: 6px;
+  gap: 5px;
 }
 
 .userAccounts-formGroup label {
-  font-size: 12px;
+  font-size: 11px;
   font-weight: 700;
   color: #334155;
   text-transform: uppercase;
-  letter-spacing: 0.04em;
 }
 
 .userAccounts-formGroup input,
 .userAccounts-formGroup select {
   width: 100%;
-  padding: 10.5px 14px;
-  font-size: 14px;
+  padding: 9.5px 12px;
+  font-size: 13px;
   border: 1.5px solid #e2e8f0;
-  border-radius: 9px;
+  border-radius: 8px;
   outline: none;
-  background-color: #ffffff;
-  color: #0f172a;
-  transition: border-color 0.2s, box-shadow 0.2s;
 }
 
 .userAccounts-formGroup input:focus,
 .userAccounts-formGroup select:focus {
   border-color: #059669;
-  box-shadow: 0 0 0 3px rgba(5, 150, 105, 0.12);
 }
 
 .userAccounts-inputDisabled {
-  background-color: #f8fafc !important;
-  color: #94a3b8 !important;
+  background-color: #f8fafc;
+  color: #94a3b8;
   cursor: not-allowed;
 }
 
-/* Password Auto-Gen */
 .userAccounts-autoGenPasswordBox {
   background: #fffbeb;
   border: 1px solid #fef3c7;
-  border-radius: 10px;
-  padding: 12px 16px;
+  border-radius: 8px;
+  padding: 10px 12px;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  gap: 12px;
+  gap: 8px;
 }
 
 .userAccounts-passwordInfo {
   display: flex;
   align-items: center;
-  gap: 12px;
-}
-
-.userAccounts-keyIcon {
-  font-size: 18px;
+  gap: 8px;
 }
 
 .userAccounts-passwordLabel {
-  font-size: 11px;
+  font-size: 10px;
   font-weight: 700;
   color: #b45309;
   text-transform: uppercase;
-  letter-spacing: 0.03em;
 }
 
 .userAccounts-passwordToken {
   background-color: #ffffff;
-  padding: 2px 8px;
-  border-radius: 5px;
-  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
-  font-size: 13px;
+  padding: 2px 6px;
+  border-radius: 4px;
+  font-family: ui-monospace, monospace;
+  font-size: 11.5px;
   font-weight: 700;
   color: #78350f;
   border: 1px solid #fde68a;
@@ -1062,29 +927,11 @@
   background: #ffffff;
   border: 1px solid #fde68a;
   border-radius: 6px;
-  padding: 6px 10px;
+  padding: 5px 8px;
   cursor: pointer;
   color: #b45309;
-  display: flex;
-  align-items: center;
-  transition: all 0.15s;
 }
 
-.userAccounts-btnCopy:hover {
-  background: #fef3c7;
-}
-
-.userAccounts-btnCopy svg {
-  width: 16px;
-  height: 16px;
-}
-
-.userAccounts-copiedText {
-  font-size: 11.5px;
-  font-weight: 700;
-}
-
-/* Eye Icon */
 .userAccounts-inputWithIcon {
   position: relative;
   width: 100%;
@@ -1092,7 +939,7 @@
 
 .userAccounts-eyeIconBtn {
   position: absolute;
-  right: 12px;
+  right: 10px;
   top: 50%;
   transform: translateY(-50%);
   background: none;
@@ -1101,61 +948,35 @@
   color: #94a3b8;
   display: flex;
   align-items: center;
-  padding: 4px;
 }
 
-.userAccounts-eyeIconBtn:hover {
-  color: #0f172a;
-}
-
-.userAccounts-eyeIconBtn svg {
-  width: 18px;
-  height: 18px;
-}
-
-/* Modal Submit Button */
 .userAccounts-btnSubmitGreen {
   background: linear-gradient(135deg, #059669 0%, #047857 100%);
   color: #ffffff;
-  font-size: 14.5px;
+  font-size: 13.5px;
   font-weight: 700;
   border: none;
-  border-radius: 9px;
-  padding: 12px;
+  border-radius: 8px;
+  padding: 10px;
   cursor: pointer;
-  margin-top: 8px;
-  box-shadow: 0 4px 12px rgba(5, 150, 105, 0.25);
-  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+  margin-top: 4px;
 }
 
-.userAccounts-btnSubmitGreen:hover {
-  background: linear-gradient(135deg, #047857 0%, #065f46 100%);
-  transform: translateY(-1px);
-  box-shadow: 0 6px 16px rgba(5, 150, 105, 0.35);
-}
-
-/* Keyframe Animations */
+/* Animations */
 @keyframes userAccountsFadeIn {
   from { opacity: 0; }
   to { opacity: 1; }
 }
 
 @keyframes userAccountsSlideDown {
-  from { transform: translateY(-12px); opacity: 0; }
+  from { transform: translateY(-8px); opacity: 0; }
   to { transform: translateY(0); opacity: 1; }
 }
 
-@keyframes userAccountsScaleIn {
-  from { transform: scale(0.96); opacity: 0; }
-  to { transform: scale(1); opacity: 1; }
-}
-
-/* Responsive Media Queries */
-@media (max-width: 960px) {
-  .userAccounts-container {
-    padding: 16px;
-  }
-
+/* =========================================================
+   TABLET RESPONSIVENESS (<= 1024px)
+   ========================================================= */
+@media (max-width: 1024px) {
   .userAccounts-contentLayout {
     flex-direction: column;
   }
@@ -1164,24 +985,227 @@
     width: 100%;
   }
 
+  .userAccounts-filterCheckboxList {
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 14px;
+  }
+}
+
+/* =========================================================
+   MOBILE RESPONSIVENESS (<= 768px): Card-Style Data Layout
+   ========================================================= */
+@media (max-width: 768px) {
+  .userAccounts-container {
+    padding: 14px;
+  }
+
+  .userAccounts-pageHeader {
+    padding: 16px;
+    gap: 14px;
+  }
+
+  .userAccounts-headerRight {
+    width: 100%;
+  }
+
+  .userAccounts-btnOutlineOrange,
+  .userAccounts-btnPrimaryGreen {
+    flex: 1 1 100%;
+    height: 42px;
+  }
+
   .userAccounts-controlsBar {
     flex-direction: column;
     align-items: stretch;
+    gap: 12px;
   }
 
   .userAccounts-controlsLeft,
   .userAccounts-controlsRight {
     width: 100%;
-    flex-wrap: wrap;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 8px;
   }
 
   .userAccounts-searchWrapper {
     max-width: 100%;
   }
 
+  .userAccounts-searchWrapper input {
+    height: 40px;
+  }
+
+  .userAccounts-btnSecondaryRemind,
+  .userAccounts-btnSecondaryExport,
+  .userAccounts-btnFilterToggle {
+    height: 40px;
+    justify-content: center;
+  }
+
+  /* Transform table into mobile cards */
+  .userAccounts-tableWrapper {
+    background: transparent;
+    border: none;
+    box-shadow: none;
+  }
+
+  .userAccounts-tableResponsiveScroll {
+    overflow: visible;
+  }
+
+  .userAccounts-table,
+  .userAccounts-table tbody {
+    display: block;
+    width: 100%;
+  }
+
+  .userAccounts-table thead {
+    display: none;
+  }
+
+  .userAccounts-tableRow {
+    display: flex;
+    flex-direction: column;
+    background: #ffffff;
+    border: 1px solid #e2e8f0;
+    border-radius: 14px;
+    padding: 16px 14px 10px 14px;
+    margin-bottom: 14px;
+    box-shadow: 0 2px 10px rgba(15, 23, 42, 0.04);
+    position: relative;
+  }
+
+  .userAccounts-table td {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 8px 0;
+    border-bottom: 1px dashed #e2e8f0;
+    font-size: 13px;
+    width: 100% !important;
+  }
+
+  .userAccounts-table td:last-child {
+    border-bottom: none;
+    padding-bottom: 0;
+  }
+
+  /* Field Labels */
+  .userAccounts-table td::before {
+    content: attr(data-label);
+    font-size: 11px;
+    font-weight: 700;
+    color: #64748b;
+    text-transform: uppercase;
+    letter-spacing: 0.03em;
+    margin-right: 12px;
+    flex-shrink: 0;
+  }
+
+  /* Card Header: Re-order Name and Serial Number */
+  .userAccounts-colSnoData {
+    order: -3;
+    padding-top: 0 !important;
+    border-bottom: none !important;
+    margin-bottom: -4px;
+  }
+
+  .userAccounts-colNameData {
+    order: -2;
+    padding-bottom: 10px !important;
+    border-bottom: 1px solid #e2e8f0 !important;
+    margin-bottom: 4px;
+  }
+
+  .userAccounts-colNameData .userAccounts-userNameText {
+    font-size: 14px;
+  }
+
+  .userAccounts-emailPill {
+    max-width: 190px;
+  }
+
+  /* Floating Action Dropdown Button (Top Right Corner) */
+  .userAccounts-colActionsData {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    width: auto !important;
+    padding: 0 !important;
+    border: none !important;
+    z-index: 20;
+  }
+
+  .userAccounts-colActionsData::before {
+    display: none;
+  }
+
+  .userAccounts-actionMenuContainer {
+    position: static;
+  }
+
+  .userAccounts-btnDots {
+    width: 36px;
+    height: 36px;
+    background-color: #f8fafc;
+    border: 1px solid #e2e8f0;
+    border-radius: 8px;
+    font-size: 20px;
+  }
+
+  /* Mobile Actions Dropdown Popover */
+  .userAccounts-actionsDropdown {
+    position: absolute;
+    top: 50px;
+    right: 12px;
+    width: 180px;
+    background: #ffffff;
+    border: 1px solid #cbd5e1;
+    border-radius: 10px;
+    box-shadow: 0 12px 30px rgba(15, 23, 42, 0.18);
+    z-index: 500;
+    padding: 6px;
+  }
+
+  .userAccounts-dropdownItem {
+    padding: 10px 12px;
+    font-size: 13px;
+  }
+
+  .userAccounts-dropdownItem svg {
+    width: 16px;
+    height: 16px;
+  }
+
+  /* Pagination Bar on Mobile */
   .userAccounts-paginationBar {
     flex-direction: column;
-    align-items: flex-start;
-    gap: 16px;
+    align-items: center;
+    gap: 12px;
+  }
+}
+
+/* =========================================================
+   SMALL MOBILE SCREENS (<= 480px)
+   ========================================================= */
+@media (max-width: 480px) {
+  /* Bottom-sheet Modal */
+  .userAccounts-modalOverlay {
+    align-items: flex-end;
+    padding: 0;
+  }
+
+  .userAccounts-modalCard {
+    max-width: 100%;
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
+    padding: 22px 16px;
+    max-height: 85vh;
+  }
+
+  .userAccounts-emailPill {
+    max-width: 140px;
   }
 }

@@ -127,7 +127,7 @@ const UserAccounts = () => {
   const [showFilters, setShowFilters] = useState(false);
   const [selectedRoles, setSelectedRoles] = useState([]);
 
-  // Pagination State
+  // Pagination
   const [rowsPerPage, setRowsPerPage] = useState(10);
   const [currentPage, setCurrentPage] = useState(1);
 
@@ -172,7 +172,6 @@ const UserAccounts = () => {
     return () => document.removeEventListener("click", handleOutsideClick);
   }, []);
 
-  // Filter roles handler
   const handleRoleCheckboxChange = (role) => {
     setSelectedRoles((prev) =>
       prev.includes(role) ? prev.filter((r) => r !== role) : [...prev, role]
@@ -180,14 +179,12 @@ const UserAccounts = () => {
     setCurrentPage(1);
   };
 
-  // Toggle user active status
   const handleToggleActive = (id) => {
     setUsers((prev) =>
       prev.map((u) => (u.id === id ? { ...u, active: !u.active } : u))
     );
   };
 
-  // Delete user
   const handleDeleteUser = (id) => {
     if (window.confirm("Are you sure you want to delete this user?")) {
       setUsers((prev) => prev.filter((u) => u.id !== id));
@@ -196,14 +193,12 @@ const UserAccounts = () => {
     }
   };
 
-  // Open edit modal
   const handleOpenEditModal = (user) => {
     setEditingUser({ ...user });
     setIsEditModalOpen(true);
     setOpenDropdownId(null);
   };
 
-  // Save changes from Edit Modal
   const handleSaveEdit = (e) => {
     e.preventDefault();
     setUsers((prev) =>
@@ -222,7 +217,6 @@ const UserAccounts = () => {
     showToast("User updated successfully.");
   };
 
-  // Create User submit
   const handleCreateUser = (e) => {
     e.preventDefault();
     if (!createForm.email || !createForm.name) return;
@@ -257,13 +251,11 @@ const UserAccounts = () => {
     setTimeout(() => setCopied(false), 1800);
   };
 
-  // Single User Reminder via 3-dots menu
   const handleSendSingleReminder = (user) => {
     setOpenDropdownId(null);
     showToast(`Reminder email sent to ${user.name} (${user.email})`);
   };
 
-  // Bulk Reminder handler
   const handleSendBulkReminder = () => {
     const incompleteUsers = users.filter((u) => u.profileStatus !== "Completed");
     if (incompleteUsers.length === 0) {
@@ -273,7 +265,6 @@ const UserAccounts = () => {
     showToast(`Reminder sent to ${incompleteUsers.length} incomplete profile(s).`);
   };
 
-  // Export to Excel / CSV handler
   const handleExportExcel = () => {
     if (filteredUsers.length === 0) {
       showToast("No data to export.");
@@ -317,7 +308,6 @@ const UserAccounts = () => {
     showToast("User accounts exported to CSV successfully.");
   };
 
-  // Filtering Logic
   const filteredUsers = useMemo(() => {
     return users.filter((u) => {
       const matchesSearch =
@@ -334,7 +324,6 @@ const UserAccounts = () => {
     });
   }, [users, searchQuery, selectedRoles]);
 
-  // Pagination Logic
   const totalPages = Math.ceil(filteredUsers.length / rowsPerPage) || 1;
   const paginatedUsers = useMemo(() => {
     const start = (currentPage - 1) * rowsPerPage;
@@ -343,9 +332,9 @@ const UserAccounts = () => {
 
   return (
     <div className="userAccounts-container">
-      {/* Toast feedback popup */}
+      {/* Feedback Toast */}
       {toastMessage && (
-        <div className="userAccounts-toastNotification">
+        <div className="userAccounts-toastNotification" role="alert">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5">
             <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14" />
             <polyline points="22 4 12 14.01 9 11.01" />
@@ -382,19 +371,19 @@ const UserAccounts = () => {
               <rect x="2" y="4" width="20" height="16" rx="2" />
               <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7" />
             </svg>
-            Send Reminder to Incomplete Profiles
+            <span>Send Reminder to Incomplete Profiles</span>
           </button>
           <button
             className="userAccounts-btnPrimaryGreen"
             onClick={() => setIsCreateModalOpen(true)}
           >
             <span className="userAccounts-plusIcon">＋</span>
-            Add New User
+            <span>Add New User</span>
           </button>
         </div>
       </header>
 
-      {/* Control Bar: Filter Toggle, Search, Actions */}
+      {/* Filter, Search & Export Controls */}
       <div className="userAccounts-controlsBar">
         <div className="userAccounts-controlsLeft">
           <button
@@ -410,7 +399,7 @@ const UserAccounts = () => {
             >
               <polygon points="22 3 2 3 10 12.46 10 19 14 21 14 12.46 22 3" />
             </svg>
-            {showFilters ? "Hide Filters" : "Show Filters"}
+            <span>{showFilters ? "Hide Filters" : "Show Filters"}</span>
           </button>
 
           <div className="userAccounts-searchWrapper">
@@ -440,6 +429,7 @@ const UserAccounts = () => {
                   setSearchQuery("");
                   setCurrentPage(1);
                 }}
+                aria-label="Clear search"
               >
                 ✕
               </button>
@@ -462,7 +452,7 @@ const UserAccounts = () => {
               <rect x="2" y="4" width="20" height="16" rx="2" />
               <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7" />
             </svg>
-            Remind Incomplete
+            <span>Remind Incomplete</span>
           </button>
           <button
             className="userAccounts-btnSecondaryExport"
@@ -479,24 +469,12 @@ const UserAccounts = () => {
               <polyline points="7 10 12 15 17 10" />
               <line x1="12" y1="15" x2="12" y2="3" />
             </svg>
-            Export CSV
-          </button>
-          <button className="userAccounts-btnSecondaryColumns">
-            <svg
-              className="userAccounts-iconChevron"
-              viewBox="0 0 24 24"
-              fill="none"
-              stroke="currentColor"
-              strokeWidth="2"
-            >
-              <path d="M4 6h16M4 12h16M4 18h16" />
-            </svg>
-            Columns
+            <span>Export CSV</span>
           </button>
         </div>
       </div>
 
-      {/* Main Layout Area */}
+      {/* Main Body Layout */}
       <div className="userAccounts-contentLayout">
         {/* Sidebar Filters */}
         {showFilters && (
@@ -528,184 +506,187 @@ const UserAccounts = () => {
           </aside>
         )}
 
-        {/* Data Table Container */}
+        {/* Responsive Table / Card Container */}
         <div className="userAccounts-tableWrapper">
-          <table className="userAccounts-table">
-            <thead>
-              <tr>
-                <th className="userAccounts-colSno">
-                  <span className="userAccounts-thBadge userAccounts-thSno">SL. NO.</span>
-                </th>
-                <th className="userAccounts-colName">
-                  <span className="userAccounts-thTitle">NAME</span>
-                </th>
-                <th className="userAccounts-colEmail">
-                  <span className="userAccounts-thTitle">EMAIL ADDRESS</span>
-                </th>
-                <th className="userAccounts-colMobile">
-                  <span className="userAccounts-thTitle">MOBILE NUMBER</span>
-                </th>
-                <th className="userAccounts-colRole">
-                  <span className="userAccounts-thTitle">ROLE</span>
-                </th>
-                <th className="userAccounts-colProfile">
-                  <span className="userAccounts-thTitle">PROFILE STATUS</span>
-                </th>
-                <th className="userAccounts-colActive">
-                  <span className="userAccounts-thTitle">ACTIVE STATUS</span>
-                </th>
-                <th className="userAccounts-colActions">
-                  <span className="userAccounts-thTitle">ACTIONS</span>
-                </th>
-              </tr>
-            </thead>
-            <tbody>
-              {paginatedUsers.length > 0 ? (
-                paginatedUsers.map((user, index) => {
-                  const serialNo = (currentPage - 1) * rowsPerPage + index + 1;
-                  return (
-                    <tr key={user.id} className="userAccounts-tableRow">
-                      <td className="userAccounts-colSno userAccounts-colSnoData">
-                        <span className="userAccounts-serialPill">{serialNo}</span>
-                      </td>
-                      <td className="userAccounts-colName userAccounts-colNameData">
-                        <div className="userAccounts-nameAvatarGroup" title={user.name}>
-                          <span className="userAccounts-avatarBadge">
-                            {getInitials(user.name)}
-                          </span>
-                          <span className="userAccounts-userNameText">
-                            {user.name}
-                          </span>
-                        </div>
-                      </td>
-                      <td className="userAccounts-colEmail userAccounts-colEmailData">
-                        <span className="userAccounts-emailPill" title={user.email}>{user.email}</span>
-                      </td>
-                      <td className="userAccounts-colMobile userAccounts-colMobileData">
-                        <span className={user.mobile === "—" ? "userAccounts-textMuted" : ""}>
-                          {user.mobile}
-                        </span>
-                      </td>
-                      <td className="userAccounts-colRole">
-                        <span
-                          className={`userAccounts-badge userAccounts-role-${user.badgeRole
-                            ?.toLowerCase()
-                            .replace(/\s+/g, "-")}`}
-                        >
-                          {user.badgeRole}
-                        </span>
-                      </td>
-                      <td className="userAccounts-colProfile">
-                        <span
-                          className={`userAccounts-badge userAccounts-status-${user.profileStatus
-                            .toLowerCase()
-                            .replace(/\s+/g, "-")}`}
-                        >
-                          <span className="userAccounts-statusDot"></span>
-                          {user.profileStatus}
-                        </span>
-                      </td>
-                      <td className="userAccounts-colActive">
-                        <div className="userAccounts-activeSwitchContainer">
-                          <label className="userAccounts-toggleSwitch">
-                            <input
-                              type="checkbox"
-                              checked={user.active}
-                              onChange={() => handleToggleActive(user.id)}
-                            />
-                            <span className="userAccounts-slider"></span>
-                          </label>
-                          <span
-                            className={`userAccounts-activeLabel ${
-                              user.active
-                                ? "userAccounts-textActive"
-                                : "userAccounts-textInactive"
-                            }`}
-                          >
-                            {user.active ? "ACTIVE" : "INACTIVE"}
-                          </span>
-                        </div>
-                      </td>
-                      <td className="userAccounts-colActions userAccounts-colActionsData">
-                        <div className="userAccounts-actionMenuContainer">
-                          <button
-                            className="userAccounts-btnDots"
-                            onClick={(e) => {
-                              e.stopPropagation();
-                              setOpenDropdownId(
-                                openDropdownId === user.id ? null : user.id
-                              );
-                            }}
-                            title="Options"
-                          >
-                            ⋮
-                          </button>
-
-                          {openDropdownId === user.id && (
-                            <div className="userAccounts-actionsDropdown">
-                              <button
-                                className="userAccounts-dropdownItem userAccounts-edit"
-                                onClick={() => handleOpenEditModal(user)}
-                              >
-                                <svg
-                                  viewBox="0 0 24 24"
-                                  fill="none"
-                                  stroke="currentColor"
-                                  strokeWidth="2"
-                                >
-                                  <path d="M12 20h9" />
-                                  <path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z" />
-                                </svg>
-                                Edit Details
-                              </button>
-                              <button
-                                className="userAccounts-dropdownItem userAccounts-remind"
-                                onClick={() => handleSendSingleReminder(user)}
-                              >
-                                <svg
-                                  viewBox="0 0 24 24"
-                                  fill="none"
-                                  stroke="currentColor"
-                                  strokeWidth="2"
-                                >
-                                  <rect x="2" y="4" width="20" height="16" rx="2" />
-                                  <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7" />
-                                </svg>
-                                Send Reminder
-                              </button>
-                              <button
-                                className="userAccounts-dropdownItem userAccounts-delete"
-                                onClick={() => handleDeleteUser(user.id)}
-                              >
-                                <svg
-                                  viewBox="0 0 24 24"
-                                  fill="none"
-                                  stroke="currentColor"
-                                  strokeWidth="2"
-                                >
-                                  <polyline points="3 6 5 6 21 6" />
-                                  <path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2" />
-                                </svg>
-                                Delete User
-                              </button>
-                            </div>
-                          )}
-                        </div>
-                      </td>
-                    </tr>
-                  );
-                })
-              ) : (
+          <div className="userAccounts-tableResponsiveScroll">
+            <table className="userAccounts-table">
+              <thead>
                 <tr>
-                  <td colSpan="8" className="userAccounts-noDataCell">
-                    <div className="userAccounts-emptyIllustration">🔍</div>
-                    <p className="userAccounts-emptyTitle">No accounts match your criteria</p>
-                    <p className="userAccounts-emptySub">Try adjusting your filters or search keywords.</p>
-                  </td>
+                  <th className="userAccounts-colSno">
+                    <span className="userAccounts-thBadge userAccounts-thSno">SL. NO.</span>
+                  </th>
+                  <th className="userAccounts-colName">
+                    <span className="userAccounts-thTitle">NAME</span>
+                  </th>
+                  <th className="userAccounts-colEmail">
+                    <span className="userAccounts-thTitle">EMAIL ADDRESS</span>
+                  </th>
+                  <th className="userAccounts-colMobile">
+                    <span className="userAccounts-thTitle">MOBILE NUMBER</span>
+                  </th>
+                  <th className="userAccounts-colRole">
+                    <span className="userAccounts-thTitle">ROLE</span>
+                  </th>
+                  <th className="userAccounts-colProfile">
+                    <span className="userAccounts-thTitle">PROFILE STATUS</span>
+                  </th>
+                  <th className="userAccounts-colActive">
+                    <span className="userAccounts-thTitle">ACTIVE STATUS</span>
+                  </th>
+                  <th className="userAccounts-colActions">
+                    <span className="userAccounts-thTitle">ACTIONS</span>
+                  </th>
                 </tr>
-              )}
-            </tbody>
-          </table>
+              </thead>
+              <tbody>
+                {paginatedUsers.length > 0 ? (
+                  paginatedUsers.map((user, index) => {
+                    const serialNo = (currentPage - 1) * rowsPerPage + index + 1;
+                    const isDropdownOpen = openDropdownId === user.id;
+
+                    return (
+                      <tr key={user.id} className="userAccounts-tableRow">
+                        <td className="userAccounts-colSno userAccounts-colSnoData" data-label="Sl. No.">
+                          <span className="userAccounts-serialPill">{serialNo}</span>
+                        </td>
+                        
+                        <td className="userAccounts-colName userAccounts-colNameData" data-label="Name">
+                          <div className="userAccounts-nameAvatarGroup" title={user.name}>
+                            <span className="userAccounts-avatarBadge">
+                              {getInitials(user.name)}
+                            </span>
+                            <span className="userAccounts-userNameText">
+                              {user.name}
+                            </span>
+                          </div>
+                        </td>
+
+                        <td className="userAccounts-colEmail userAccounts-colEmailData" data-label="Email Address">
+                          <span className="userAccounts-emailPill" title={user.email}>
+                            {user.email}
+                          </span>
+                        </td>
+
+                        <td className="userAccounts-colMobile userAccounts-colMobileData" data-label="Mobile Number">
+                          <span className={user.mobile === "—" ? "userAccounts-textMuted" : ""}>
+                            {user.mobile}
+                          </span>
+                        </td>
+
+                        <td className="userAccounts-colRole" data-label="Role">
+                          <span
+                            className={`userAccounts-badge userAccounts-role-${user.badgeRole
+                              ?.toLowerCase()
+                              .replace(/\s+/g, "-")}`}
+                          >
+                            {user.badgeRole}
+                          </span>
+                        </td>
+
+                        <td className="userAccounts-colProfile" data-label="Profile Status">
+                          <span
+                            className={`userAccounts-badge userAccounts-status-${user.profileStatus
+                              ?.toLowerCase()
+                              .replace(/\s+/g, "-")}`}
+                          >
+                            <span className="userAccounts-statusDot"></span>
+                            {user.profileStatus}
+                          </span>
+                        </td>
+
+                        <td className="userAccounts-colActive" data-label="Active Status">
+                          <div className="userAccounts-activeSwitchContainer">
+                            <label className="userAccounts-toggleSwitch">
+                              <input
+                                type="checkbox"
+                                checked={user.active}
+                                onChange={() => handleToggleActive(user.id)}
+                              />
+                              <span className="userAccounts-slider"></span>
+                            </label>
+                            <span
+                              className={`userAccounts-activeLabel ${
+                                user.active
+                                  ? "userAccounts-textActive"
+                                  : "userAccounts-textInactive"
+                              }`}
+                            >
+                              {user.active ? "ACTIVE" : "INACTIVE"}
+                            </span>
+                          </div>
+                        </td>
+
+                        {/* Options Action Button and Dropdown Menu */}
+                        <td className="userAccounts-colActions userAccounts-colActionsData" data-label="Actions">
+                          <div className="userAccounts-actionMenuContainer">
+                            <button
+                              type="button"
+                              className="userAccounts-btnDots"
+                              onClick={(e) => {
+                                e.stopPropagation();
+                                setOpenDropdownId(isDropdownOpen ? null : user.id);
+                              }}
+                              aria-haspopup="true"
+                              aria-expanded={isDropdownOpen}
+                              title="More options"
+                            >
+                              ⋮
+                            </button>
+
+                            {isDropdownOpen && (
+                              <div className="userAccounts-actionsDropdown">
+                                <button
+                                  type="button"
+                                  className="userAccounts-dropdownItem userAccounts-edit"
+                                  onClick={() => handleOpenEditModal(user)}
+                                >
+                                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                                    <path d="M12 20h9" />
+                                    <path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z" />
+                                  </svg>
+                                  <span>Edit Details</span>
+                                </button>
+                                <button
+                                  type="button"
+                                  className="userAccounts-dropdownItem userAccounts-remind"
+                                  onClick={() => handleSendSingleReminder(user)}
+                                >
+                                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                                    <rect x="2" y="4" width="20" height="16" rx="2" />
+                                    <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7" />
+                                  </svg>
+                                  <span>Send Reminder</span>
+                                </button>
+                                <button
+                                  type="button"
+                                  className="userAccounts-dropdownItem userAccounts-delete"
+                                  onClick={() => handleDeleteUser(user.id)}
+                                >
+                                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                                    <polyline points="3 6 5 6 21 6" />
+                                    <path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2" />
+                                  </svg>
+                                  <span>Delete User</span>
+                                </button>
+                              </div>
+                            )}
+                          </div>
+                        </td>
+                      </tr>
+                    );
+                  })
+                ) : (
+                  <tr>
+                    <td colSpan="8" className="userAccounts-noDataCell">
+                      <div className="userAccounts-emptyIllustration">🔍</div>
+                      <p className="userAccounts-emptyTitle">No accounts match your criteria</p>
+                      <p className="userAccounts-emptySub">Try adjusting your filters or search keywords.</p>
+                    </td>
+                  </tr>
+                )}
+              </tbody>
+            </table>
+          </div>
         </div>
       </div>
 
@@ -773,7 +754,7 @@ const UserAccounts = () => {
           onClick={() => setIsEditModalOpen(false)}
         >
           <div
-            className="userAccounts-modalCard userAccounts-editModal"
+            className="userAccounts-modalCard"
             onClick={(e) => e.stopPropagation()}
           >
             <div className="userAccounts-modalHeader">
@@ -786,6 +767,7 @@ const UserAccounts = () => {
               <button
                 className="userAccounts-btnModalClose"
                 onClick={() => setIsEditModalOpen(false)}
+                aria-label="Close modal"
               >
                 ✕
               </button>
@@ -847,7 +829,7 @@ const UserAccounts = () => {
           onClick={() => setIsCreateModalOpen(false)}
         >
           <div
-            className="userAccounts-modalCard userAccounts-createModal"
+            className="userAccounts-modalCard"
             onClick={(e) => e.stopPropagation()}
           >
             <div className="userAccounts-modalHeader">
@@ -860,6 +842,7 @@ const UserAccounts = () => {
               <button
                 className="userAccounts-btnModalClose"
                 onClick={() => setIsCreateModalOpen(false)}
+                aria-label="Close modal"
               >
                 ✕
               </button>
@@ -882,7 +865,7 @@ const UserAccounts = () => {
               <div className="userAccounts-formGroup">
                 <label>Mobile Number</label>
                 <input
-                  type="text"
+                  type="tel"
                   placeholder="Enter 10-digit mobile number"
                   value={createForm.mobile}
                   onChange={(e) =>
@@ -945,12 +928,7 @@ const UserAccounts = () => {
                   {copied ? (
                     <span className="userAccounts-copiedText">Copied!</span>
                   ) : (
-                    <svg
-                      viewBox="0 0 24 24"
-                      fill="none"
-                      stroke="currentColor"
-                      strokeWidth="2"
-                    >
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
                       <rect x="9" y="9" width="13" height="13" rx="2" ry="2" />
                       <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1" />
                     </svg>
@@ -976,13 +954,9 @@ const UserAccounts = () => {
                     type="button"
                     className="userAccounts-eyeIconBtn"
                     onClick={() => setShowPassword(!showPassword)}
+                    aria-label={showPassword ? "Hide password" : "Show password"}
                   >
-                    <svg
-                      viewBox="0 0 24 24"
-                      fill="none"
-                      stroke="currentColor"
-                      strokeWidth="2"
-                    >
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
                       <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8z" />
                       <circle cx="12" cy="12" r="3" />
                     </svg>
@@ -1008,13 +982,9 @@ const UserAccounts = () => {
                     type="button"
                     className="userAccounts-eyeIconBtn"
                     onClick={() => setShowPassword(!showPassword)}
+                    aria-label={showPassword ? "Hide password" : "Show password"}
                   >
-                    <svg
-                      viewBox="0 0 24 24"
-                      fill="none"
-                      stroke="currentColor"
-                      strokeWidth="2"
-                    >
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
                       <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8z" />
                       <circle cx="12" cy="12" r="3" />
                     </svg>

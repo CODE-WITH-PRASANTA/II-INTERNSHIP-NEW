@@ -6,7 +6,7 @@ const InternshipsIcons = {
     <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
       <polyline points="22 12 18 12 15 21 9 3 6 12 2 12" />
     </svg>
-  ),
+  ), 
   Clock: () => (
     <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
       <circle cx="12" cy="12" r="10" /><polyline points="12 6 12 12 16 14" />
@@ -23,7 +23,7 @@ const InternshipsIcons = {
     </svg>
   ),
   Search: () => (
-    <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
       <circle cx="11" cy="11" r="8" /><line x1="21" y1="21" x2="16.65" y2="16.65" />
     </svg>
   ),
@@ -129,14 +129,14 @@ const InternshipsIcons = {
 const initialInternships = [
   {
     id: "IN2026II81462",
-    title: "FUTURE YUVA 2050: Interns...",
+    title: "FUTURE YUVA 2050: Internship-cum-Skill Enhancement Programme",
     subtitle: "International Institute of Internship",
     type: "PAID",
     creator: "SUPER_ADMIN",
-    mentor: "Mentor: Senior Instructor",
-    duration: "7 Days (60 Hrs.) • ₹7...",
-    location: "Heartfulness Training Ce...",
-    mode: "(OFFLINE)",
+    mentor: "Senior Instructor",
+    duration: "7 Days (60 Hrs.) • ₹7,693",
+    location: "Heartfulness Training Centre, Valsad, Gujarat",
+    mode: "OFFLINE",
     status: "APPROVED"
   }
 ];
@@ -188,15 +188,10 @@ const defaultEditDescription = `FUTURE YUVA 2050
 Internship-cum-Skill Enhancement Programme
 (भविष्य पुराण से भविष्य निर्माण तक)
 
---------------------------------------------------------------------------------
-
 सात दिवसीय, आवासीय आध्यात्मिक+वैज्ञानिक दृष्टिकोण+ UGC मानदंडों पर आधारित
-
 आध्यात्मिक दृष्टि • Artificial Intelligence • Future Skills • Youth Leadership
 
-“पुराणों की दृष्टि से भविष्य को समझें, AI की शक्ति से भविष्य को गढ़ें।”
-
---------------------------------------------------------------------------------
+“पुराणों की दृष्टि से भविष्य को समझें, AI की शक्ति से भविष्य को गढ़ें।”
 
 ~ कार्यक्रम दिनांक: 15 से 21 दिसंबर 2026
 ~ कार्यक्रम स्थल: हार्टफुलनेस प्रशिक्षण केंद्र, वलसाड़, गुजरात, भारत
@@ -205,82 +200,16 @@ Internship-cum-Skill Enhancement Programme
 ~ सीट: 60
 
 ऑनलाइन पंजीकरण लिंक: www.iiinternship.in
-
-इंटर्नशिप: निःशुल्क होगा।
-~ व्यवस्था शुल्क: प्रत्येक युवा/युवती को एक खूबसूरत माहौल में आवास+भोजन+अन्य सुविधा हेतु सहयोग शुल्क ऑनलाइन पंजीकरण के वक्त मात्र 7,693/- रुपए अदा करना होगा।
-
---------------------------------------------------------------------------------
-
-🔱
-
-कार्यक्रम की मूल अवधारणा
-
-भविष्य पुराण हिंदू धर्म के 18 महापुराणों में से नौवां और एक अत्यंत महत्वपूर्ण पुराण है। "भविष्य" शब्द का अर्थ है "आने वाला समय"। महर्षि वेदव्यास जी द्वारा रचित इस पुराण में मुख्य रूप से भविष्य में घटने वाली घटनाओं का वर्णन है।
-यह पुराण चार भागों में विभाजित है: ब्राह्म, मध्यम, प्रतिसर्ग और उत्तर पर्व। इसमें धर्म, सदाचार और सूर्य उपासना के साथ-साथ इतिहास और भविष्य का अद्भुत मिश्रण मिलता है।
-
-इस कार्यक्रम का आधार भविष्य पुराण में वर्णित भविष्य की कल्पना, धर्म, सामाजिक जीवन, मानव आचरण और समय-बोध से जुड़े विचारों को एक आध्यात्मिक-सांस्कृतिक अध्ययन के रूप में लेने के साथ-साथ भविष्य में सचेत होते हुए तैयार होना है।
-
-इसके साथ युवाओं को यह समझाया जाएगा कि—
-“भविष्य केवल भविष्यवाणी से नहीं बन जाता; भविष्य आज के ज्ञान, चरित्र, नैतिकता, मानवता, कौशल और सही निर्णयों से बनता और संवरता है।”
-इसी विचार को AI, डिजिटल टेक्नोलॉजी, रोज़गार, उद्यमिता और नेतृत्व कौशल से जोड़ा जाएगा।
-
-इस Internship-cum-Skill Enhancement Programme के चार स्तंभ होंगे:
-
-Spiritual Wisdom
-Artificial Intelligence
-Future Skills
-Responsible Youth Leadership
-
---------------------------------------------------------------------------------
-
-7-दिवसीय, आवासीय कार्यक्रम की रूप-रेखा
-
-DAY 1 — “भविष्य की खोज”
-
-Future Through the Lens of Ancient Wisdom
-
-Theme:
-“हमारा अतीत हमें भविष्य के लिए क्या सिखाता है?”
-
-सत्र:
-~भविष्य पुराण : परिचय और ऐतिहासिक-सांस्कृतिक संदर्भ।
-~भारतीय काल-दृष्टि और भविष्य की अवधारणा।
-~भविष्यवाणी और भविष्य-निर्माण में अंतर।
-~भारतीय ज्ञान परंपरा में मानव जीवन का उद्देश्य
-~आज का युवा और बदलती दुनिया
-
-Activity:
-“My Vision of 2050”
-हर प्रतिभागी लिखेंगे:
-वर्ष 2050 में मैं स्वयं को कहाँ देखता/देखती हूँ और भारत को कहाँ देखना चाहता/चाहती हूँ?
-
---------------------------------------------------------------------------------
-
-DAY 2 — “AI और मानव चेतना”
-
-Artificial Intelligence vs Human Intelligence
-यह दिन कार्यक्रम का सबसे आकर्षक हिस्सा होगा।
-
-मुख्य विषय:
-~ AI क्या है?
-~ Generative AI क्या कर सकता है?
-~ AI और मानव बुद्धि में अंतर
-~ क्या AI मानव का स्थान लेगा?
-~ भविष्य की नौकरियों पर AI का प्रभाव
-~ AI Ethics
-~ Deepfake, misinformation और digital responsibility.
-~ AI के युग में मानवीय मूल्यों की भूमिका
-
-Practical Workshop:
-प्रतिभागी सीखेंगे:
-~ AI से Research
-~ AI से Presentation`;
+व्यवस्था शुल्क: आवास+भोजन+अन्य सुविधा हेतु शुल्क मात्र 7,693/- रुपए।`;
 
 const Internships = () => {
   const [internshipsList, setInternshipsList] = useState(initialInternships);
   const [activeTab, setActiveTab] = useState("running");
   const [searchTerm, setSearchTerm] = useState("");
-  const [isActionsDropdownOpen, setIsActionsDropdownOpen] = useState(false);
+  
+  // Track open dropdown by item ID
+  const [openDropdownId, setOpenDropdownId] = useState(null);
+
   const [isCreateModalOpen, setIsCreateModalOpen] = useState(false);
   const [isDetailsModalOpen, setIsDetailsModalOpen] = useState(false);
   const [isApplicationsModalOpen, setIsApplicationsModalOpen] = useState(false);
@@ -288,34 +217,27 @@ const Internships = () => {
   const [isDeleteModalOpen, setIsDeleteModalOpen] = useState(false);
   const [selectedInternship, setSelectedInternship] = useState(null);
 
-  // Applications modal search & status filters
   const [appSearchTerm, setAppSearchTerm] = useState("");
   const [appFilterStatus, setAppFilterStatus] = useState("ALL");
 
-  // Edit form interactive module & skill tags
   const [editModules, setEditModules] = useState(["AI"]);
   const [editSkills, setEditSkills] = useState([
     "प्रतिभागियों के लिए कंप्यूटर का बेसिक ज्ञान होना अनिवार्य है।"
   ]);
 
-  const actionsDropdownRef = useRef(null);
-  const actionButtonRef = useRef(null);
+  const dropdownContainerRef = useRef(null);
 
+  // Close menus on outside click or Escape
   useEffect(() => {
     const handleOutsideClick = (e) => {
-      if (
-        actionsDropdownRef.current &&
-        !actionsDropdownRef.current.contains(e.target) &&
-        actionButtonRef.current &&
-        !actionButtonRef.current.contains(e.target)
-      ) {
-        setIsActionsDropdownOpen(false);
+      if (dropdownContainerRef.current && !dropdownContainerRef.current.contains(e.target)) {
+        setOpenDropdownId(null);
       }
     };
 
     const handleKeyDown = (e) => {
       if (e.key === "Escape") {
-        setIsActionsDropdownOpen(false);
+        setOpenDropdownId(null);
         setIsCreateModalOpen(false);
         setIsDetailsModalOpen(false);
         setIsApplicationsModalOpen(false);
@@ -332,18 +254,16 @@ const Internships = () => {
     };
   }, []);
 
+  // Prevent background scroll when modals are open
   useEffect(() => {
-    if (
+    const isAnyModalOpen =
       isCreateModalOpen ||
       isDetailsModalOpen ||
       isApplicationsModalOpen ||
       isEditModalOpen ||
-      isDeleteModalOpen
-    ) {
-      document.body.style.overflow = "hidden";
-    } else {
-      document.body.style.overflow = "auto";
-    }
+      isDeleteModalOpen;
+
+    document.body.style.overflow = isAnyModalOpen ? "hidden" : "unset";
   }, [
     isCreateModalOpen,
     isDetailsModalOpen,
@@ -356,15 +276,26 @@ const Internships = () => {
     { id: "running", label: "Running Internships", icon: <InternshipsIcons.Activity /> },
     { id: "pending", label: "Pending Internships", icon: <InternshipsIcons.Clock /> },
     { id: "oncampus", label: "On Campus Internships", icon: <InternshipsIcons.Building /> },
-    { id: "virtual", label: "Virtual Internships", icon: <InternshipsIcons.Laptop /> },
+    { id: "virtual", label: "Virtual Internships", icon: <InternshipsIcons.Laptop /> }
   ];
 
+  const filteredInternships = internshipsList.filter((item) => {
+    const term = searchTerm.toLowerCase();
+    return (
+      item.title.toLowerCase().includes(term) ||
+      item.id.toLowerCase().includes(term) ||
+      item.location.toLowerCase().includes(term) ||
+      item.subtitle.toLowerCase().includes(term)
+    );
+  });
+
   const filteredApplications = dummyApplications.filter((app) => {
+    const term = appSearchTerm.toLowerCase();
     const matchesSearch =
-      app.name.toLowerCase().includes(appSearchTerm.toLowerCase()) ||
-      app.email.toLowerCase().includes(appSearchTerm.toLowerCase()) ||
-      app.college.toLowerCase().includes(appSearchTerm.toLowerCase()) ||
-      app.id.toLowerCase().includes(appSearchTerm.toLowerCase());
+      app.name.toLowerCase().includes(term) ||
+      app.email.toLowerCase().includes(term) ||
+      app.college.toLowerCase().includes(term) ||
+      app.id.toLowerCase().includes(term);
     const matchesStatus =
       appFilterStatus === "ALL" || app.status.toUpperCase() === appFilterStatus.toUpperCase();
     return matchesSearch && matchesStatus;
@@ -372,21 +303,28 @@ const Internships = () => {
 
   const confirmDeleteInternship = () => {
     if (selectedInternship) {
-      setInternshipsList((prev) =>
-        prev.filter((item) => item.id !== selectedInternship.id)
-      );
+      setInternshipsList((prev) => prev.filter((item) => item.id !== selectedInternship.id));
     }
     setIsDeleteModalOpen(false);
     setSelectedInternship(null);
   };
 
+  const handleActionClick = (actionType, item) => {
+    setSelectedInternship(item);
+    setOpenDropdownId(null);
+    if (actionType === "details") setIsDetailsModalOpen(true);
+    if (actionType === "applications") setIsApplicationsModalOpen(true);
+    if (actionType === "edit") setIsEditModalOpen(true);
+    if (actionType === "delete") setIsDeleteModalOpen(true);
+  };
+
   return (
-    <div className="internships-root">
+    <div className="internships-root" ref={dropdownContainerRef}>
       {/* Top Header */}
       <div className="internships-header">
-        <h1 className="internships-header-title">Internships</h1>
+        <h1 className="internships-header-title">Internships Management</h1>
         <p className="internships-header-subtitle">
-          Manage active internship postings across running, on-campus, and virtual categories — monitor applications and approve submissions.
+          Manage, inspect, and evaluate active cohort listings and applicants across running and virtual programs.
         </p>
       </div>
 
@@ -395,10 +333,11 @@ const Internships = () => {
         {tabs.map((tab) => (
           <button
             key={tab.id}
+            type="button"
             className={`internships-tab-button ${activeTab === tab.id ? "internships-tab-button-active" : ""}`}
             onClick={() => {
               setActiveTab(tab.id);
-              setIsActionsDropdownOpen(false);
+              setOpenDropdownId(null);
             }}
           >
             <span className="internships-tab-button-icon">{tab.icon}</span>
@@ -407,25 +346,25 @@ const Internships = () => {
         ))}
       </div>
 
-      {/* Action Filters Bar */}
+      {/* Search Toolbar */}
       <div className="internships-toolbar">
         <div className="internships-search-field">
           <InternshipsIcons.Search />
           <input
             type="text"
-            placeholder="Search by ID, title, company or location"
+            placeholder="Search by ID, title, company..."
             value={searchTerm}
             onChange={(e) => setSearchTerm(e.target.value)}
           />
         </div>
 
-        <button className="internships-btn-add" onClick={() => setIsCreateModalOpen(true)}>
+        <button type="button" className="internships-btn-add" onClick={() => setIsCreateModalOpen(true)}>
           <InternshipsIcons.Plus />
           <span>Add New Internship</span>
         </button>
       </div>
 
-      {/* Internship Table */}
+      {/* Data Table */}
       <div className="internships-table-container">
         <table className="internships-table">
           <thead>
@@ -441,109 +380,116 @@ const Internships = () => {
             </tr>
           </thead>
           <tbody>
-            {activeTab === "running" && internshipsList.length > 0 ? (
-              internshipsList.map((item) => (
-                <tr key={item.id}>
-                  <td>
-                    <span className="internships-badge-id">{item.id}</span>
-                  </td>
-                  <td>
-                    <div className="internships-opp-title">{item.title}</div>
-                    <div className="internships-opp-subtitle">{item.subtitle}</div>
-                  </td>
-                  <td>
-                    <span className="internships-badge-type">{item.type}</span>
-                  </td>
-                  <td>
-                    <div>
-                      <span className="internships-badge-creator">{item.creator}</span>
-                    </div>
-                    <div className="internships-opp-mentor">{item.mentor}</div>
-                  </td>
-                  <td>
-                    <div className="internships-cell-text">{item.duration}</div>
-                  </td>
-                  <td>
-                    <div className="internships-cell-text">{item.location}</div>
-                    <div className="internships-cell-subtext">{item.mode}</div>
-                  </td>
-                  <td>
-                    <span className="internships-badge-status-approved">{item.status}</span>
-                  </td>
-                  <td className="internships-table-actions-cell">
-                    <button
-                      ref={actionButtonRef}
-                      className={`internships-btn-action-trigger ${isActionsDropdownOpen ? "active" : ""}`}
-                      onClick={() => {
-                        setSelectedInternship(item);
-                        setIsActionsDropdownOpen((prev) => !prev);
-                      }}
-                      aria-label="Actions"
-                      aria-expanded={isActionsDropdownOpen}
-                    >
-                      <InternshipsIcons.MoreHorizontal />
-                    </button>
+            {activeTab === "running" && filteredInternships.length > 0 ? (
+              filteredInternships.map((item) => {
+                const isOpen = openDropdownId === item.id;
+                return (
+                  <tr key={item.id} className={isOpen ? "row-highlighted" : ""}>
+                    <td>
+                      <span className="internships-badge-id">{item.id}</span>
+                    </td>
+                    <td>
+                      <div className="internships-opp-title">{item.title}</div>
+                      <div className="internships-opp-subtitle">{item.subtitle}</div>
+                    </td>
+                    <td>
+                      <span className="internships-badge-type">{item.type}</span>
+                    </td>
+                    <td>
+                      <div>
+                        <span className="internships-badge-creator">{item.creator}</span>
+                      </div>
+                      <div className="internships-opp-mentor">Mentor: {item.mentor}</div>
+                    </td>
+                    <td>
+                      <div className="internships-cell-text">{item.duration}</div>
+                    </td>
+                    <td>
+                      <div className="internships-cell-text">{item.location}</div>
+                      <div className="internships-cell-subtext">({item.mode})</div>
+                    </td>
+                    <td>
+                      <span className="internships-badge-status-approved">{item.status}</span>
+                    </td>
+                    <td className="internships-table-actions-cell">
+                      <button
+                        type="button"
+                        className={`internships-btn-action-trigger ${isOpen ? "active" : ""}`}
+                        onClick={(e) => {
+                          e.stopPropagation();
+                          setOpenDropdownId(isOpen ? null : item.id);
+                        }}
+                        aria-label="Actions"
+                        aria-expanded={isOpen}
+                      >
+                        <InternshipsIcons.MoreHorizontal />
+                      </button>
 
-                    {/* 3-Dot Action Dropdown with Smooth Transitions */}
-                    <div
-                      ref={actionsDropdownRef}
-                      className={`internships-dropdown-menu ${isActionsDropdownOpen ? "internships-dropdown-menu-open" : ""}`}
-                    >
-                      <button
-                        type="button"
-                        className="internships-dropdown-item"
-                        onClick={() => {
-                          setIsActionsDropdownOpen(false);
-                          setIsDetailsModalOpen(true);
-                        }}
-                      >
-                        <InternshipsIcons.Eye />
-                        <span>View Full Details</span>
-                      </button>
-                      <button
-                        type="button"
-                        className="internships-dropdown-item"
-                        onClick={() => {
-                          setIsActionsDropdownOpen(false);
-                          setIsApplicationsModalOpen(true);
-                        }}
-                      >
-                        <InternshipsIcons.Users />
-                        <span>View Applications</span>
-                      </button>
-                      <button
-                        type="button"
-                        className="internships-dropdown-item"
-                        onClick={() => {
-                          setIsActionsDropdownOpen(false);
-                          setIsEditModalOpen(true);
-                        }}
-                      >
-                        <InternshipsIcons.Edit />
-                        <span>Edit Internship</span>
-                      </button>
-                      <button
-                        type="button"
-                        className="internships-dropdown-item internships-dropdown-item-danger"
-                        onClick={() => {
-                          setIsActionsDropdownOpen(false);
-                          setSelectedInternship(item);
-                          setIsDeleteModalOpen(true);
-                        }}
-                      >
-                        <InternshipsIcons.Trash />
-                        <span>Delete Internship</span>
-                      </button>
-                    </div>
-                  </td>
-                </tr>
-              ))
+                      {/* Backdrop for mobile drawer dismiss */}
+                      {isOpen && (
+                        <div 
+                          className="internships-dropdown-backdrop" 
+                          onClick={() => setOpenDropdownId(null)} 
+                        />
+                      )}
+
+                      {/* Dropdown Menu / Mobile Bottom Sheet */}
+                      <div className={`internships-dropdown-menu ${isOpen ? "internships-dropdown-menu-open" : ""}`}>
+                        <div className="internships-mobile-drag-handle" />
+                        <div className="internships-mobile-menu-header">
+                          <span className="internships-badge-id">{item.id}</span>
+                          <button 
+                            type="button" 
+                            className="internships-mobile-close-action"
+                            onClick={() => setOpenDropdownId(null)}
+                          >
+                            <InternshipsIcons.Close />
+                          </button>
+                        </div>
+
+                        <button
+                          type="button"
+                          className="internships-dropdown-item"
+                          onClick={() => handleActionClick("details", item)}
+                        >
+                          <InternshipsIcons.Eye />
+                          <span>View Full Details</span>
+                        </button>
+                        <button
+                          type="button"
+                          className="internships-dropdown-item"
+                          onClick={() => handleActionClick("applications", item)}
+                        >
+                          <InternshipsIcons.Users />
+                          <span>View Applications</span>
+                        </button>
+                        <button
+                          type="button"
+                          className="internships-dropdown-item"
+                          onClick={() => handleActionClick("edit", item)}
+                        >
+                          <InternshipsIcons.Edit />
+                          <span>Edit Internship</span>
+                        </button>
+                        <button
+                          type="button"
+                          className="internships-dropdown-item internships-dropdown-item-danger"
+                          onClick={() => handleActionClick("delete", item)}
+                        >
+                          <InternshipsIcons.Trash />
+                          <span>Delete Internship</span>
+                        </button>
+                      </div>
+                    </td>
+                  </tr>
+                );
+              })
             ) : (
               <tr>
                 <td colSpan="8" className="internships-table-empty">
                   <div className="internships-empty-wrap">
                     <InternshipsIcons.Grid />
-                    <span>No results found.</span>
+                    <span>No internships found in this section.</span>
                   </div>
                 </td>
               </tr>
@@ -555,35 +501,23 @@ const Internships = () => {
       {/* DELETE CONFIRMATION MODAL */}
       {isDeleteModalOpen && (
         <div className="internships-modal-overlay" onClick={() => setIsDeleteModalOpen(false)}>
-          <div
-            className="internships-modal-dialog internships-delete-modal-dialog"
-            onClick={(e) => e.stopPropagation()}
-          >
+          <div className="internships-modal-dialog internships-delete-modal-dialog" onClick={(e) => e.stopPropagation()}>
             <div className="internships-delete-modal-body">
               <div className="internships-delete-icon-wrapper">
                 <InternshipsIcons.AlertTriangle />
               </div>
               <h3 className="internships-delete-title">Delete Internship Posting?</h3>
               <p className="internships-delete-text">
-                Are you sure you want to delete{" "}
-                <strong>{selectedInternship?.title || "this internship"}</strong> (ID:{" "}
+                Are you sure you want to delete <strong>{selectedInternship?.title || "this internship"}</strong> (ID:{" "}
                 <span className="internships-delete-id-tag">{selectedInternship?.id}</span>)?
-                This action cannot be undone and will permanently remove all related specifications and applicant tracking records.
+                This action cannot be undone.
               </p>
             </div>
             <div className="internships-delete-modal-footer">
-              <button
-                type="button"
-                className="internships-btn-cancel"
-                onClick={() => setIsDeleteModalOpen(false)}
-              >
+              <button type="button" className="internships-btn-cancel" onClick={() => setIsDeleteModalOpen(false)}>
                 Keep Internship
               </button>
-              <button
-                type="button"
-                className="internships-btn-delete-confirm"
-                onClick={confirmDeleteInternship}
-              >
+              <button type="button" className="internships-btn-delete-confirm" onClick={confirmDeleteInternship}>
                 Delete Permanently
               </button>
             </div>
@@ -591,7 +525,7 @@ const Internships = () => {
         </div>
       )}
 
-      {/* EDIT RUNNING INTERNSHIP MODAL */}
+      {/* EDIT MODAL */}
       {isEditModalOpen && (
         <div className="internships-modal-overlay" onClick={() => setIsEditModalOpen(false)}>
           <div className="internships-modal-dialog" onClick={(e) => e.stopPropagation()}>
@@ -599,40 +533,40 @@ const Internships = () => {
               <div>
                 <h2 className="internships-modal-header-title">Super Admin: Edit Running Internship</h2>
                 <p className="internships-modal-header-subtitle">
-                  Modify and update details, assigned instructor, and curriculum metadata.
+                  Modify details, instructor credentials, and syllabus information.
                 </p>
               </div>
               <button
+                type="button"
                 className="internships-modal-close-btn"
                 onClick={() => setIsEditModalOpen(false)}
-                aria-label="Close modal"
+                aria-label="Close"
               >
                 <InternshipsIcons.Close />
               </button>
             </div>
 
             <div className="internships-modal-body">
-              {/* Section 1: Basic Information */}
               <div className="internships-form-section">
                 <div className="internships-form-section-header">
                   <InternshipsIcons.Briefcase />
                   <span className="internships-form-section-title">Basic Information</span>
                 </div>
                 <div className="internships-form-grid">
-                  <div className="internships-field-group">
+                  <div className="internships-field-group internships-col-span-2">
                     <label>INTERNSHIP TITLE *</label>
                     <div className="internships-input-box">
                       <InternshipsIcons.Briefcase />
                       <input
                         type="text"
-                        defaultValue="FUTURE YUVA 2050: Internship-cum-Skill Enhancement Progra..."
+                        defaultValue={selectedInternship?.title || "FUTURE YUVA 2050"}
                         className="internships-input-highlighted"
                       />
                     </div>
                   </div>
 
                   <div className="internships-field-group">
-                    <label>COMPANY / ORGANIZATION NAME *</label>
+                    <label>COMPANY / ORGANIZATION *</label>
                     <div className="internships-input-box">
                       <InternshipsIcons.Building />
                       <input type="text" defaultValue="International Institute of Internship" />
@@ -654,7 +588,7 @@ const Internships = () => {
                     <label>LOCATION *</label>
                     <div className="internships-input-box">
                       <InternshipsIcons.MapPin />
-                      <input type="text" defaultValue="Heartfulness Training Centre, Valsad, Gujrat, India" />
+                      <input type="text" defaultValue="Valsad, Gujarat, India" />
                     </div>
                   </div>
 
@@ -665,128 +599,21 @@ const Internships = () => {
                       <input type="text" defaultValue="7 Days (60 Hrs.)" />
                     </div>
                   </div>
-
-                  <div className="internships-field-group">
-                    <label>PROGRAM START DATE</label>
-                    <div className="internships-input-box">
-                      <InternshipsIcons.Calendar />
-                      <input type="text" defaultValue="December 14th, 2026" />
-                    </div>
-                  </div>
-
-                  <div className="internships-field-group internships-col-single">
-                    <label>LAST DATE TO APPLY</label>
-                    <div className="internships-input-box">
-                      <InternshipsIcons.Calendar />
-                      <input type="text" defaultValue="October 9th, 2026" />
-                    </div>
-                  </div>
                 </div>
               </div>
 
-              {/* Section 2: Instructor & Mentor Assignment */}
-              <div className="internships-form-section">
-                <div className="internships-form-section-header">
-                  <InternshipsIcons.Users />
-                  <span className="internships-form-section-title">Instructor & Mentor Assignment</span>
-                </div>
-                <div className="internships-form-grid internships-form-grid-full">
-                  <div className="internships-field-group">
-                    <label>ASSIGNED INSTRUCTOR / MENTOR</label>
-                    <div className="internships-select-box">
-                      <select defaultValue="Senior Instructor (instructor@hilux.com)">
-                        <option>Senior Instructor (instructor@hilux.com)</option>
-                        <option>Dr. Rajesh Verma (dr.verma@example.com)</option>
-                        <option>Dr. Avishek Kumar (avishek@example.com)</option>
-                      </select>
-                    </div>
-                    <span className="internships-field-guide">
-                      Assigning an instructor routes the internship to their review panel for approval or tracking.
-                    </span>
-                  </div>
-                </div>
-              </div>
-
-              {/* Section 3: Program & Academic Metadata */}
-              <div className="internships-form-section">
-                <div className="internships-form-section-header">
-                  <InternshipsIcons.Layers />
-                  <span className="internships-form-section-title">Program & Academic Metadata</span>
-                </div>
-                <div className="internships-form-grid">
-                  <div className="internships-field-group">
-                    <label>DEPARTMENT</label>
-                    <div className="internships-input-box">
-                      <InternshipsIcons.Building />
-                      <input type="text" defaultValue="Education & Skill Development (AI/ML)" />
-                    </div>
-                  </div>
-
-                  <div className="internships-field-group">
-                    <label>CATEGORY *</label>
-                    <div className="internships-select-box">
-                      <select defaultValue="Running Program">
-                        <option>Running Program</option>
-                        <option>Incubation</option>
-                      </select>
-                    </div>
-                  </div>
-
-                  <div className="internships-field-group">
-                    <label>TIME PERIOD / HOUSING</label>
-                    <div className="internships-input-box">
-                      <InternshipsIcons.Clock />
-                      <input type="text" defaultValue="7 Days Residential" />
-                    </div>
-                  </div>
-
-                  <div className="internships-field-group">
-                    <label>ACADEMIC CREDITS</label>
-                    <div className="internships-input-box">
-                      <input type="text" defaultValue="2" />
-                    </div>
-                  </div>
-
-                  <div className="internships-field-group">
-                    <label>ORGANIZER NAME</label>
-                    <div className="internships-input-box">
-                      <InternshipsIcons.Building />
-                      <input type="text" defaultValue="International Institute of Internship" />
-                    </div>
-                  </div>
-
-                  <div className="internships-field-group">
-                    <label>CONTACT DETAILS</label>
-                    <div className="internships-input-box">
-                      <input type="text" defaultValue="Dr. Avishek Kumar (+91 9472351693)" />
-                    </div>
-                  </div>
-
-                  <div className="internships-field-group internships-col-span-2">
-                    <label>ELIGIBILITY / QUALIFICATION REQUIRED</label>
-                    <div className="internships-input-box">
-                      <input
-                        type="text"
-                        defaultValue="Under Graduate/PG & Pass Out Graduate/PG Any Discipline Student"
-                      />
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-              {/* Section 4: Compensation & Pricing */}
               <div className="internships-form-section">
                 <div className="internships-form-section-header">
                   <InternshipsIcons.DollarSign />
-                  <span className="internships-form-section-title">Compensation & Pricing</span>
+                  <span className="internships-form-section-title">Fee & Pricing</span>
                 </div>
                 <div className="internships-form-grid">
                   <div className="internships-field-group">
                     <label>INTERNSHIP TYPE *</label>
                     <div className="internships-select-box">
-                      <select defaultValue="Paid (Enrollment Fee Required)">
-                        <option>Paid (Enrollment Fee Required)</option>
-                        <option>Free (No fees)</option>
+                      <select defaultValue="Paid">
+                        <option>Paid</option>
+                        <option>Free</option>
                         <option>Stipend</option>
                       </select>
                     </div>
@@ -795,124 +622,29 @@ const Internships = () => {
                   <div className="internships-field-group">
                     <label>ENROLLMENT FEE (INR) *</label>
                     <div className="internships-input-box">
-                      <span className="internships-currency-sym">$</span>
+                      <span className="internships-currency-sym">₹</span>
                       <input type="text" defaultValue="7693" />
                     </div>
                   </div>
                 </div>
               </div>
 
-              {/* Section 5: Details, Facilities & Career Opportunities */}
               <div className="internships-form-section">
                 <div className="internships-form-section-header">
                   <InternshipsIcons.FileText />
-                  <span className="internships-form-section-title">Details, Facilities & Career Opportunities</span>
+                  <span className="internships-form-section-title">Description</span>
                 </div>
-
                 <div className="internships-editor-wrapper">
-                  <label className="internships-editor-label">DESCRIPTION *</label>
-                  <div className="internships-editor-box">
-                    <div className="internships-editor-toolbar">
-                      <div className="internships-editor-toolbar-group">
-                        <button type="button" className="internships-editor-btn"><b>B</b></button>
-                        <button type="button" className="internships-editor-btn"><i>I</i></button>
-                        <button type="button" className="internships-editor-btn">H₂</button>
-                        <button type="button" className="internships-editor-btn">H₃</button>
-                        <button type="button" className="internships-editor-btn">P</button>
-                      </div>
-                      <div className="internships-editor-toolbar-separator" />
-                      <div className="internships-editor-toolbar-group">
-                        <button type="button" className="internships-editor-btn">≡</button>
-                        <button type="button" className="internships-editor-btn">1≡</button>
-                        <button type="button" className="internships-editor-btn">❝</button>
-                        <button type="button" className="internships-editor-btn">&lt;&gt;</button>
-                        <button type="button" className="internships-editor-btn">—</button>
-                      </div>
-                      <div className="internships-editor-toolbar-separator" />
-                      <div className="internships-editor-toolbar-group">
-                        <button type="button" className="internships-editor-btn">🔗</button>
-                        <button type="button" className="internships-editor-btn">Tx</button>
-                        <button type="button" className="internships-editor-btn">↺</button>
-                        <button type="button" className="internships-editor-btn">↻</button>
-                      </div>
-                      <div className="internships-editor-toolbar-right">
-                        <button type="button" className="internships-editor-html-btn">&lt;&gt; HTML</button>
-                      </div>
-                    </div>
-                    <textarea
-                      className="internships-editor-textarea internships-editor-textarea-large"
-                      defaultValue={defaultEditDescription}
-                    />
-                    <div className="internships-editor-tip">
-                      Tip: Use toolbar or keyboard shortcuts — Ctrl+B Bold, Ctrl+I Italic. Switch to HTML view for raw editing.
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-              {/* Section 6: Curriculum, Tools & Skills */}
-              <div className="internships-form-section">
-                <div className="internships-form-section-header">
-                  <InternshipsIcons.Sparkles />
-                  <span className="internships-form-section-title">Curriculum, Tools & Skills</span>
-                </div>
-
-                <div className="internships-form-grid internships-form-grid-full">
-                  <div className="internships-field-group">
-                    <label>MODULES</label>
-                    <div className="internships-chip-input-container">
-                      {editModules.map((mod, idx) => (
-                        <span key={idx} className="internships-chip-tag">
-                          {mod}
-                          <button
-                            type="button"
-                            className="internships-chip-remove"
-                            onClick={() => setEditModules(editModules.filter((_, i) => i !== idx))}
-                          >
-                            ×
-                          </button>
-                        </span>
-                      ))}
-                    </div>
-                    <span className="internships-field-guide">Press Enter or Comma after typing each module.</span>
-                  </div>
-
-                  <div className="internships-field-group">
-                    <label>TOOLS USED</label>
-                    <div className="internships-input-box">
-                      <input type="text" placeholder="E.g. Next.js, Go, Docker, Kubernetes, Prometheus" />
-                    </div>
-                    <span className="internships-field-guide">Press Enter or Comma after typing each tool.</span>
-                  </div>
-
-                  <div className="internships-field-group">
-                    <label>SKILLS REQUIRED / LEARNED</label>
-                    <div className="internships-chip-input-container">
-                      {editSkills.map((sk, idx) => (
-                        <span key={idx} className="internships-chip-tag">
-                          {sk}
-                          <button
-                            type="button"
-                            className="internships-chip-remove"
-                            onClick={() => setEditSkills(editSkills.filter((_, i) => i !== idx))}
-                          >
-                            ×
-                          </button>
-                        </span>
-                      ))}
-                    </div>
-                    <span className="internships-field-guide">Press Enter or Comma after typing each skill.</span>
-                  </div>
+                  <textarea
+                    className="internships-editor-textarea internships-editor-textarea-large"
+                    defaultValue={defaultEditDescription}
+                  />
                 </div>
               </div>
             </div>
 
             <div className="internships-modal-footer">
-              <button
-                type="button"
-                className="internships-btn-cancel"
-                onClick={() => setIsEditModalOpen(false)}
-              >
+              <button type="button" className="internships-btn-cancel" onClick={() => setIsEditModalOpen(false)}>
                 Cancel
               </button>
               <button
@@ -923,44 +655,42 @@ const Internships = () => {
                   setIsEditModalOpen(false);
                 }}
               >
-                Update Internship
+                Save Changes
               </button>
             </div>
           </div>
         </div>
       )}
 
-      {/* VIEW APPLICATIONS MODAL */}
+      {/* APPLICATIONS MODAL */}
       {isApplicationsModalOpen && (
         <div className="internships-modal-overlay" onClick={() => setIsApplicationsModalOpen(false)}>
-          <div
-            className="internships-modal-dialog internships-applications-modal-dialog"
-            onClick={(e) => e.stopPropagation()}
-          >
+          <div className="internships-modal-dialog internships-applications-modal-dialog" onClick={(e) => e.stopPropagation()}>
             <div className="internships-modal-header">
               <div>
                 <div className="internships-app-header-title-row">
-                  <h2 className="internships-modal-header-title">Cohort Student Applications</h2>
-                  <span className="internships-badge-id">IN2026II81462</span>
+                  <h2 className="internships-modal-header-title">Applications Received</h2>
+                  <span className="internships-badge-id">{selectedInternship?.id}</span>
                 </div>
                 <p className="internships-modal-header-subtitle">
-                  FUTURE YUVA 2050: Internship-cum-Skill Enhancement Programme • Total Submissions: {dummyApplications.length}
+                  Cohort: {selectedInternship?.title}
                 </p>
               </div>
               <button
+                type="button"
                 className="internships-modal-close-btn"
                 onClick={() => setIsApplicationsModalOpen(false)}
-                aria-label="Close modal"
+                aria-label="Close"
               >
                 <InternshipsIcons.Close />
               </button>
             </div>
 
-            <div className="internships-modal-body internships-applications-modal-body">
+            <div className="internships-modal-body">
               <div className="internships-app-stats-strip">
                 <div className="internships-app-stat-tile">
-                  <span className="internships-app-stat-number">4</span>
-                  <span className="internships-app-stat-tag">Total Received</span>
+                  <span className="internships-app-stat-number">{dummyApplications.length}</span>
+                  <span className="internships-app-stat-tag">Total</span>
                 </div>
                 <div className="internships-app-stat-tile">
                   <span className="internships-app-stat-number stat-green">1</span>
@@ -985,7 +715,7 @@ const Internships = () => {
                   <InternshipsIcons.Search />
                   <input
                     type="text"
-                    placeholder="Search applicant name, email, college or application ID..."
+                    placeholder="Filter by name, email, college..."
                     value={appSearchTerm}
                     onChange={(e) => setAppSearchTerm(e.target.value)}
                   />
@@ -1010,7 +740,7 @@ const Internships = () => {
                     onClick={() => alert("Downloading applications CSV...")}
                   >
                     <InternshipsIcons.Download />
-                    <span>Export CSV</span>
+                    <span>Export</span>
                   </button>
                 </div>
               </div>
@@ -1019,10 +749,10 @@ const Internships = () => {
                 <table className="internships-app-table">
                   <thead>
                     <tr>
-                      <th>APPLICANT ID</th>
-                      <th>CANDIDATE INFO</th>
-                      <th>COLLEGE & PROGRAM</th>
-                      <th>APPLIED DATE</th>
+                      <th>ID</th>
+                      <th>CANDIDATE</th>
+                      <th>COLLEGE</th>
+                      <th>DATE</th>
                       <th>STATUS</th>
                       <th className="internships-table-th-actions">REVIEW ACTION</th>
                     </tr>
@@ -1036,9 +766,7 @@ const Internships = () => {
                           </td>
                           <td>
                             <div className="internships-app-cand-name">{candidate.name}</div>
-                            <div className="internships-app-cand-contact">
-                              {candidate.email} • {candidate.phone}
-                            </div>
+                            <div className="internships-app-cand-contact">{candidate.email}</div>
                           </td>
                           <td>
                             <div className="internships-app-college-name">{candidate.college}</div>
@@ -1048,9 +776,7 @@ const Internships = () => {
                             <span className="internships-app-date">{candidate.appliedDate}</span>
                           </td>
                           <td>
-                            <span
-                              className={`internships-app-status-badge status-${candidate.status.toLowerCase().replace(/\s+/g, "-")}`}
-                            >
+                            <span className={`internships-app-status-badge status-${candidate.status.toLowerCase().replace(/\s+/g, "-")}`}>
                               {candidate.status}
                             </span>
                           </td>
@@ -1059,17 +785,15 @@ const Internships = () => {
                               <button
                                 type="button"
                                 className="internships-app-btn-status btn-approve"
-                                title="Approve Application"
-                                onClick={() => alert(`Application ${candidate.id} Approved`)}
+                                onClick={() => alert(`Approved ${candidate.id}`)}
                               >
                                 <InternshipsIcons.CheckCircle />
-                                <span>Approve</span>
+                                <span>Accept</span>
                               </button>
                               <button
                                 type="button"
                                 className="internships-app-btn-status btn-reject"
-                                title="Reject Application"
-                                onClick={() => alert(`Application ${candidate.id} Rejected`)}
+                                onClick={() => alert(`Rejected ${candidate.id}`)}
                               >
                                 <InternshipsIcons.XCircle />
                                 <span>Reject</span>
@@ -1081,10 +805,7 @@ const Internships = () => {
                     ) : (
                       <tr>
                         <td colSpan="6" className="internships-table-empty">
-                          <div className="internships-empty-wrap">
-                            <InternshipsIcons.Grid />
-                            <span>No matching applicant applications found.</span>
-                          </div>
+                          No applications match current filters.
                         </td>
                       </tr>
                     )}
@@ -1094,11 +815,7 @@ const Internships = () => {
             </div>
 
             <div className="internships-modal-footer">
-              <button
-                type="button"
-                className="internships-btn-cancel"
-                onClick={() => setIsApplicationsModalOpen(false)}
-              >
+              <button type="button" className="internships-btn-cancel" onClick={() => setIsApplicationsModalOpen(false)}>
                 Close
               </button>
             </div>
@@ -1106,109 +823,56 @@ const Internships = () => {
         </div>
       )}
 
-      {/* VIEW FULL DETAILS MODAL */}
+      {/* FULL DETAILS MODAL */}
       {isDetailsModalOpen && (
         <div className="internships-modal-overlay" onClick={() => setIsDetailsModalOpen(false)}>
-          <div
-            className="internships-modal-dialog internships-details-modal-dialog"
-            onClick={(e) => e.stopPropagation()}
-          >
+          <div className="internships-modal-dialog internships-details-modal-dialog" onClick={(e) => e.stopPropagation()}>
             <div className="internships-modal-header">
               <div>
-                <h2 className="internships-modal-header-title">Internship Payload Details</h2>
+                <h2 className="internships-modal-header-title">Internship Specifications</h2>
                 <p className="internships-modal-header-subtitle">
-                  IN2026II81462 — Full breakdown of cohort specification and responses.
+                  ID: {selectedInternship?.id}
                 </p>
               </div>
               <button
+                type="button"
                 className="internships-modal-close-btn"
                 onClick={() => setIsDetailsModalOpen(false)}
-                aria-label="Close modal"
+                aria-label="Close"
               >
                 <InternshipsIcons.Close />
               </button>
             </div>
 
-            <div className="internships-modal-body internships-details-modal-body">
-              <div className="internships-payload-status-card">
-                <span className="internships-payload-status-label">Approval Status:</span>
-                <span className="internships-badge-status-approved">APPROVED</span>
-              </div>
-
+            <div className="internships-modal-body">
               <div className="internships-payload-hero-card">
                 <div className="internships-payload-hero-top">
-                  <div className="internships-payload-hero-left">
-                    <h3 className="internships-payload-title">
-                      FUTURE YUVA 2050: Internship-cum-Skill Enhancement Programme (भविष्य पुराण से भविष्य निर्माण तक)
-                    </h3>
-                    <p className="internships-payload-subtitle">
-                      International Institute of Internship • Heartfulness Training Centre, Valsad, Gujrat, India
-                    </p>
+                  <div>
+                    <h3 className="internships-payload-title">{selectedInternship?.title}</h3>
+                    <p className="internships-payload-subtitle">{selectedInternship?.subtitle}</p>
                   </div>
                   <div className="internships-payload-hero-right">
-                    <span className="internships-badge-running">RUNNING</span>
-                    <div className="internships-payload-pricing">
-                      <span className="internships-payload-pricing-label">Type & Pricing</span>
-                      <span className="internships-payload-pricing-value">₹7,693</span>
-                    </div>
+                    <span className="internships-badge-running">{selectedInternship?.mode}</span>
+                    <span className="internships-payload-pricing-value">₹7,693</span>
                   </div>
                 </div>
 
                 <div className="internships-payload-stats-grid">
                   <div className="internships-payload-stat-item">
-                    <span className="internships-payload-stat-label">Mode</span>
-                    <span className="internships-payload-stat-value">OFFLINE</span>
-                  </div>
-                  <div className="internships-payload-stat-item">
                     <span className="internships-payload-stat-label">Duration</span>
                     <span className="internships-payload-stat-value">7 Days (60 Hrs.)</span>
                   </div>
                   <div className="internships-payload-stat-item">
-                    <span className="internships-payload-stat-label">Start Date</span>
-                    <span className="internships-payload-stat-value">Dec 14, 2026</span>
+                    <span className="internships-payload-stat-label">Location</span>
+                    <span className="internships-payload-stat-value">{selectedInternship?.location}</span>
                   </div>
                   <div className="internships-payload-stat-item">
-                    <span className="internships-payload-stat-label">Last Date to Apply</span>
-                    <span className="internships-payload-stat-value">Oct 10, 2026</span>
+                    <span className="internships-payload-stat-label">Start Date</span>
+                    <span className="internships-payload-stat-value">Dec 15, 2026</span>
                   </div>
-                </div>
-              </div>
-
-              <div className="internships-payload-section-card">
-                <div className="internships-payload-card-title">
-                  <InternshipsIcons.Layers />
-                  <span>Program & Academic Specifications</span>
-                </div>
-                <div className="internships-payload-specs-grid">
-                  <div className="internships-payload-spec-item">
-                    <span className="internships-payload-spec-label">Internship ID:</span>
-                    <span className="internships-badge-id">IN2026II81462</span>
-                  </div>
-                  <div className="internships-payload-spec-item">
-                    <span className="internships-payload-spec-label">Department:</span>
-                    <span className="internships-payload-spec-val">Education & Skill Development (AI/ML)</span>
-                  </div>
-                  <div className="internships-payload-spec-item">
-                    <span className="internships-payload-spec-label">Academic Credits:</span>
-                    <span className="internships-payload-spec-val">2</span>
-                  </div>
-                  <div className="internships-payload-spec-item">
-                    <span className="internships-payload-spec-label">Housing / Time Period:</span>
-                    <span className="internships-payload-spec-val">7 Days Residential</span>
-                  </div>
-                  <div className="internships-payload-spec-item">
-                    <span className="internships-payload-spec-label">Organizer:</span>
-                    <span className="internships-payload-spec-val">International Institute of Internship</span>
-                  </div>
-                  <div className="internships-payload-spec-item">
-                    <span className="internships-payload-spec-label">Contact Person / Details:</span>
-                    <span className="internships-payload-spec-val">Dr. Avishek Kumar (+91 9472351693)</span>
-                  </div>
-                  <div className="internships-payload-spec-item internships-payload-full-row">
-                    <span className="internships-payload-spec-label">Eligibility / Qualification:</span>
-                    <span className="internships-payload-spec-val">
-                      Under Graduate/PG & Pass Out Graduate/PG Any Discipline Student
-                    </span>
+                  <div className="internships-payload-stat-item">
+                    <span className="internships-payload-stat-label">Credits</span>
+                    <span className="internships-payload-stat-value">2 (UGC Recognized)</span>
                   </div>
                 </div>
               </div>
@@ -1216,96 +880,16 @@ const Internships = () => {
               <div className="internships-payload-section-card">
                 <div className="internships-payload-card-title">
                   <InternshipsIcons.FileText />
-                  <span>Description & Opportunities</span>
+                  <span>Program Description</span>
                 </div>
-
-                <div className="internships-payload-desc-group">
-                  <span className="internships-payload-subheading">Description:</span>
-                  <div className="internships-payload-desc-box">
-                    <p>
-                      <strong>FUTURE YUVA 2050: Internship-cum-Skill Enhancement Programme (भविष्य पुराण से भविष्य निर्माण तक)</strong>
-                    </p>
-                    <p>
-                      सात दिवसीय, आवासीय आध्यात्मिक+वैज्ञानिक दृष्टिकोण+ UGC मानदंडों पर आधारित — आध्यात्मिक दृष्टि • Artificial Intelligence • Future Skills • Youth Leadership
-                    </p>
-                    <p>
-                      "पुराणों की दृष्टि से भविष्य को समझें, AI की शक्ति से भविष्य को गढ़ें।"
-                    </p>
-                    <p>
-                      ~ कार्यक्रम दिनांक: 15 से 21 दिसंबर 2026<br />
-                      ~ कार्यक्रम स्थल: हार्टफुलनेस प्रशिक्षण केंद्र, वलसाड़, गुजरात, भारत<br />
-                      ~ पात्रता: अध्ययनरत/सफल स्नातक व स्नातकोत्तर विद्यार्थी/जिज्ञासु<br />
-                      ~ क्रेडिट: 2 (60 घंटा) | सीट: 60
-                    </p>
-                    <p>
-                      ऑनलाइन पंजीकरण लिंक:{" "}
-                      <a href="http://www.iiinternship.in" target="_blank" rel="noreferrer" className="internships-payload-link">
-                        www.iiinternship.in
-                      </a>
-                    </p>
-                    <p>
-                      Technical Support: Lernify Consultancy LLP, BCC Greens, Deva Road, Lucknow, UP<br />
-                      संपर्क सूत्र: डॉ. अभिषेक कुमार (मुख्य प्रबंध निदेशक):{" "}
-                      <a href="tel:+919472351693" className="internships-payload-link">+91 9472351693</a>, श्री तपस कुमार (मुख्य कार्यपालक अधिकारी):{" "}
-                      <a href="tel:+919911439898" className="internships-payload-link">+91 9911439898</a>, श्री राजीव भारद्वाज (कार्यक्रम प्रबंधक):{" "}
-                      <a href="tel:+919006726655" className="internships-payload-link">+91 9006726655</a><br />
-                      सानिध्य व मार्गदर्शन: सौहार्द शिरोमणि संत डॉ. सौरभ जी महाराज, गोरखपुर, उत्तर प्रदेश
-                    </p>
-                    <p>
-                      यह Internship-cum-Skill Enhancement Programme ज्ञान, कौशल, practical experience और सामाजिक उत्तरदायित्व के माध्यम से युवाओं को भविष्य पुराण से भविष्य निर्माण की दिशा में सक्षम बनाने पर केंद्रित है।
-                    </p>
-                  </div>
-                </div>
-
-                <div className="internships-payload-desc-group">
-                  <span className="internships-payload-subheading">Facilities Provided:</span>
-                  <div className="internships-payload-facility-box">
-                    कार्यक्रम के अंतर्गत प्रतिभागियों को 7 दिनों तक सुरक्षित, स्वच्छ एवं सुखद वातावरण में रहने तथा पौष्टिक भोजन की समुचित व्यवस्था उपलब्ध कराई जाएगी। छात्र एवं छात्राओं के लिए अलग-अलग सुरक्षित एवं सुव्यवस्थित डॉर्मेटरी आवास की व्यवस्था होगी। साथ ही, अध्ययन, प्रशिक्षण एवं सामूहिक गतिविधियों के लिए आवश्यक अनुकूल वातावरण सुनिश्चित किया जाएगा।
-                  </div>
-                </div>
-
-                <div className="internships-payload-desc-group">
-                  <span className="internships-payload-subheading">Career Opportunities:</span>
-                  <div className="internships-payload-facility-box">
-                    इस इंटर्नशिप से युवाओं को आर्टिफ़िशियल इंटेलिजेंस (AI), मशीन लर्निंग, डेटा साइंस, डिजिटल टेक्नोलॉजी, सॉफ्टवेयर डेवलपमेंट, रिसर्च एवं इनोवेशन जैसे उभरते क्षेत्रों में करियर के अवसर प्राप्त होंगे। यह कार्यक्रम युवाओं की व्यावहारिक दक्षता, रोज़गार क्षमता, उद्यमिता एवं भविष्य की तकनीकी आवश्यकताओं के अनुरूप तैयारी को बढ़ावा देगा।
-                  </div>
-                </div>
-              </div>
-
-              <div className="internships-payload-section-card">
-                <div className="internships-payload-card-title">
-                  <InternshipsIcons.Sparkles />
-                  <span>Curriculum, Tools & Skills</span>
-                </div>
-                <div className="internships-payload-curriculum-content">
-                  <div className="internships-payload-curriculum-block">
-                    <span className="internships-payload-subheading">Modules:</span>
-                    <div>
-                      <span className="internships-badge-module">AI</span>
-                    </div>
-                  </div>
-
-                  <div className="internships-payload-curriculum-block">
-                    <span className="internships-payload-subheading">Tools Required:</span>
-                    <div className="internships-payload-plain-text">No tools listed</div>
-                  </div>
-
-                  <div className="internships-payload-curriculum-block">
-                    <span className="internships-payload-subheading">Skills Imparted:</span>
-                    <div>
-                      <span className="internships-badge-skill">प्रतिभागियों के लिए कंप्यूटर का बेसिक ज्ञान होना अनिवार्य है।</span>
-                    </div>
-                  </div>
+                <div className="internships-payload-desc-box">
+                  <p>{defaultEditDescription}</p>
                 </div>
               </div>
             </div>
 
             <div className="internships-modal-footer">
-              <button
-                type="button"
-                className="internships-btn-cancel"
-                onClick={() => setIsDetailsModalOpen(false)}
-              >
+              <button type="button" className="internships-btn-cancel" onClick={() => setIsDetailsModalOpen(false)}>
                 Close
               </button>
             </div>
@@ -1319,309 +903,59 @@ const Internships = () => {
           <div className="internships-modal-dialog" onClick={(e) => e.stopPropagation()}>
             <div className="internships-modal-header">
               <div>
-                <h2 className="internships-modal-header-title">Super Admin: Create Running Internship</h2>
-                <p className="internships-modal-header-subtitle">
-                  Register and post a new running internship with complete cohort metadata and mentor assignment.
-                </p>
+                <h2 className="internships-modal-header-title">Create Internship</h2>
+                <p className="internships-modal-header-subtitle">Post a new program offering</p>
               </div>
-              <button className="internships-modal-close-btn" onClick={() => setIsCreateModalOpen(false)}>
+              <button
+                type="button"
+                className="internships-modal-close-btn"
+                onClick={() => setIsCreateModalOpen(false)}
+                aria-label="Close"
+              >
                 <InternshipsIcons.Close />
               </button>
             </div>
 
             <div className="internships-modal-body">
-              {/* Basic Information */}
               <div className="internships-form-section">
-                <div className="internships-form-section-header">
-                  <InternshipsIcons.Briefcase />
-                  <span className="internships-form-section-title">Basic Information</span>
-                </div>
                 <div className="internships-form-grid">
-                  <div className="internships-field-group">
+                  <div className="internships-field-group internships-col-span-2">
                     <label>INTERNSHIP TITLE *</label>
                     <div className="internships-input-box">
-                      <InternshipsIcons.Briefcase />
-                      <input type="text" placeholder="E.g. Software Engineering Practice (Full-Stack)" />
-                    </div>
-                  </div>
-
-                  <div className="internships-field-group">
-                    <label>COMPANY / ORGANIZATION NAME *</label>
-                    <div className="internships-input-box">
-                      <InternshipsIcons.Building />
-                      <input type="text" placeholder="E.g. IIIT Center of Excellence" />
-                    </div>
-                  </div>
-
-                  <div className="internships-field-group">
-                    <label>MODE *</label>
-                    <div className="internships-select-box">
-                      <select defaultValue="Offline (In-Person)">
-                        <option>Offline (In-Person)</option>
-                        <option>Online (Virtual)</option>
-                        <option>Hybrid</option>
-                      </select>
-                    </div>
-                  </div>
-
-                  <div className="internships-field-group">
-                    <label>LOCATION *</label>
-                    <div className="internships-input-box">
-                      <InternshipsIcons.MapPin />
-                      <input type="text" placeholder="E.g. BCC Greens, Deva Road, Lucknow, Uttar Pradesh" />
+                      <input type="text" placeholder="E.g. Advanced AI Systems Practicum" />
                     </div>
                   </div>
 
                   <div className="internships-field-group">
                     <label>DURATION *</label>
                     <div className="internships-input-box">
-                      <InternshipsIcons.Clock />
-                      <input type="text" placeholder="E.g. 3 Months" />
+                      <input type="text" placeholder="E.g. 8 Weeks" />
                     </div>
                   </div>
 
                   <div className="internships-field-group">
-                    <label>PROGRAM START DATE</label>
+                    <label>LOCATION *</label>
                     <div className="internships-input-box">
-                      <InternshipsIcons.Calendar />
-                      <input type="text" placeholder="Pick a date" />
+                      <input type="text" placeholder="E.g. Mumbai / Hybrid" />
                     </div>
-                  </div>
-
-                  <div className="internships-field-group internships-col-single">
-                    <label>LAST DATE TO APPLY</label>
-                    <div className="internships-input-box">
-                      <InternshipsIcons.Calendar />
-                      <input type="text" placeholder="Pick a date" />
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-              {/* Instructor & Mentor Assignment */}
-              <div className="internships-form-section">
-                <div className="internships-form-section-header">
-                  <InternshipsIcons.Users />
-                  <span className="internships-form-section-title">Instructor & Mentor Assignment</span>
-                </div>
-                <div className="internships-form-grid internships-form-grid-full">
-                  <div className="internships-field-group">
-                    <label>ASSIGNED INSTRUCTOR / MENTOR</label>
-                    <div className="internships-select-box">
-                      <select defaultValue="">
-                        <option value="" disabled>Select an instructor</option>
-                        <option value="1">Dr. Rajesh Verma</option>
-                        <option value="2">Senior Instructor</option>
-                      </select>
-                    </div>
-                    <span className="internships-field-guide">
-                      Assigning an instructor routes the internship to their review panel for approval or tracking.
-                    </span>
-                  </div>
-                </div>
-              </div>
-
-              {/* Program & Academic Metadata */}
-              <div className="internships-form-section">
-                <div className="internships-form-section-header">
-                  <InternshipsIcons.Layers />
-                  <span className="internships-form-section-title">Program & Academic Metadata</span>
-                </div>
-                <div className="internships-form-grid">
-                  <div className="internships-field-group">
-                    <label>DEPARTMENT</label>
-                    <div className="internships-input-box">
-                      <InternshipsIcons.Building />
-                      <input type="text" placeholder="E.g. Engineering" />
-                    </div>
-                  </div>
-
-                  <div className="internships-field-group">
-                    <label>CATEGORY *</label>
-                    <div className="internships-select-box">
-                      <select defaultValue="Running Program">
-                        <option>Running Program</option>
-                        <option>Incubation</option>
-                      </select>
-                    </div>
-                  </div>
-
-                  <div className="internships-field-group">
-                    <label>TIME PERIOD / HOUSING</label>
-                    <div className="internships-input-box">
-                      <InternshipsIcons.Clock />
-                      <input type="text" placeholder="E.g. Non-Residential or Residential" />
-                    </div>
-                  </div>
-
-                  <div className="internships-field-group">
-                    <label>ACADEMIC CREDITS</label>
-                    <div className="internships-input-box">
-                      <input type="text" placeholder="E.g. 4 Credits" />
-                    </div>
-                  </div>
-
-                  <div className="internships-field-group">
-                    <label>ORGANIZER NAME</label>
-                    <div className="internships-input-box">
-                      <InternshipsIcons.Building />
-                      <input type="text" placeholder="E.g. IIIT Center of Excellence" />
-                    </div>
-                  </div>
-
-                  <div className="internships-field-group">
-                    <label>CONTACT DETAILS</label>
-                    <div className="internships-input-box">
-                      <input type="text" placeholder="E.g. Mr. Rajan Kumar (+91 9472351693)" />
-                    </div>
-                  </div>
-
-                  <div className="internships-field-group internships-col-span-2">
-                    <label>ELIGIBILITY / QUALIFICATION REQUIRED</label>
-                    <div className="internships-input-box">
-                      <input type="text" placeholder="E.g. B.Tech/M.Tech (CS/IT) 3rd/4th Year" />
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-              {/* Compensation & Pricing */}
-              <div className="internships-form-section">
-                <div className="internships-form-section-header">
-                  <InternshipsIcons.DollarSign />
-                  <span className="internships-form-section-title">Compensation & Pricing</span>
-                </div>
-                <div className="internships-form-grid">
-                  <div className="internships-field-group">
-                    <label>INTERNSHIP TYPE *</label>
-                    <div className="internships-select-box">
-                      <select defaultValue="Free (No fees)">
-                        <option>Free (No fees)</option>
-                        <option>Paid</option>
-                        <option>Stipend</option>
-                      </select>
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-              {/* Details, Facilities & Career Opportunities */}
-              <div className="internships-form-section">
-                <div className="internships-form-section-header">
-                  <InternshipsIcons.FileText />
-                  <span className="internships-form-section-title">Details, Facilities & Career Opportunities</span>
-                </div>
-
-                <div className="internships-editor-wrapper">
-                  <label className="internships-editor-label">DESCRIPTION *</label>
-                  <div className="internships-editor-box">
-                    <div className="internships-editor-toolbar">
-                      <div className="internships-editor-toolbar-group">
-                        <button type="button" className="internships-editor-btn"><b>B</b></button>
-                        <button type="button" className="internships-editor-btn"><i>I</i></button>
-                        <button type="button" className="internships-editor-btn">H₂</button>
-                        <button type="button" className="internships-editor-btn">H₃</button>
-                        <button type="button" className="internships-editor-btn">P</button>
-                      </div>
-                      <div className="internships-editor-toolbar-separator" />
-                      <div className="internships-editor-toolbar-group">
-                        <button type="button" className="internships-editor-btn">≡</button>
-                        <button type="button" className="internships-editor-btn">1≡</button>
-                        <button type="button" className="internships-editor-btn">❝</button>
-                        <button type="button" className="internships-editor-btn">&lt;&gt;</button>
-                        <button type="button" className="internships-editor-btn">—</button>
-                      </div>
-                      <div className="internships-editor-toolbar-separator" />
-                      <div className="internships-editor-toolbar-group">
-                        <button type="button" className="internships-editor-btn">🔗</button>
-                        <button type="button" className="internships-editor-btn">Tx</button>
-                        <button type="button" className="internships-editor-btn">↺</button>
-                        <button type="button" className="internships-editor-btn">↻</button>
-                      </div>
-                      <div className="internships-editor-toolbar-right">
-                        <button type="button" className="internships-editor-html-btn">&lt;&gt; HTML</button>
-                      </div>
-                    </div>
-                    <textarea className="internships-editor-textarea" placeholder="Write your article..."></textarea>
-                    <div className="internships-editor-tip">
-                      Tip: Use toolbar or keyboard shortcuts — Ctrl+B Bold, Ctrl+I Italic. Switch to HTML view for raw editing.
-                    </div>
-                  </div>
-                </div>
-
-                <div className="internships-form-grid internships-form-grid-full" style={{ marginTop: 16 }}>
-                  <div className="internships-field-group">
-                    <label>PROJECT FOCUS</label>
-                    <div className="internships-input-box">
-                      <InternshipsIcons.Sparkles />
-                      <input type="text" placeholder="E.g. Real-time Telemetry Dashboard" />
-                    </div>
-                  </div>
-
-                  <div className="internships-field-group">
-                    <label>FACILITIES PROVIDED</label>
-                    <div className="internships-input-box">
-                      <input type="text" placeholder="E.g. Access to high-performance computing lab, library subscription, and lunch coupons" />
-                    </div>
-                  </div>
-
-                  <div className="internships-field-group">
-                    <label>CAREER OPPORTUNITIES</label>
-                    <div className="internships-input-box">
-                      <input type="text" placeholder="E.g. Pre-placement interview (PPI) opportunity with partner tech firms" />
-                    </div>
-                  </div>
-
-                  <div className="internships-field-group">
-                    <label>ONBOARDING INSTRUCTIONS</label>
-                    <div className="internships-input-box">
-                      <input type="text" placeholder="Setup instructions, link to onboarding portal, pre-requisites..." />
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-              {/* Curriculum, Tools & Skills */}
-              <div className="internships-form-section">
-                <div className="internships-form-section-header">
-                  <InternshipsIcons.Sparkles />
-                  <span className="internships-form-section-title">Curriculum, Tools & Skills</span>
-                </div>
-
-                <div className="internships-form-grid internships-form-grid-full">
-                  <div className="internships-field-group">
-                    <label>MODULES</label>
-                    <div className="internships-input-box">
-                      <input type="text" placeholder="E.g. Microservices Architecture, Docker & Kubernetes, CI/CD Setup" />
-                    </div>
-                    <span className="internships-field-guide">Press Enter or Comma after typing each module.</span>
-                  </div>
-
-                  <div className="internships-field-group">
-                    <label>TOOLS USED</label>
-                    <div className="internships-input-box">
-                      <input type="text" placeholder="E.g. Next.js, Go, Docker, Kubernetes, Prometheus" />
-                    </div>
-                    <span className="internships-field-guide">Press Enter or Comma after typing each tool.</span>
-                  </div>
-
-                  <div className="internships-field-group">
-                    <label>SKILLS REQUIRED / LEARNED</label>
-                    <div className="internships-input-box">
-                      <input type="text" placeholder="E.g. TypeScript, Golang, Docker basics" />
-                    </div>
-                    <span className="internships-field-guide">Press Enter or Comma after typing each skill.</span>
                   </div>
                 </div>
               </div>
             </div>
 
             <div className="internships-modal-footer">
-              <button className="internships-btn-cancel" onClick={() => setIsCreateModalOpen(false)}>
+              <button type="button" className="internships-btn-cancel" onClick={() => setIsCreateModalOpen(false)}>
                 Cancel
               </button>
-              <button className="internships-btn-submit" onClick={() => setIsCreateModalOpen(false)}>
-                Create Running Internship
+              <button
+                type="button"
+                className="internships-btn-submit"
+                onClick={() => {
+                  alert("Created successfully!");
+                  setIsCreateModalOpen(false);
+                }}
+              >
+                Publish Program
               </button>
             </div>
           </div>
