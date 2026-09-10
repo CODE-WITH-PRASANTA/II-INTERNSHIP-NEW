@@ -54,7 +54,11 @@ const initialNotifications = [
   }
 ];
 
-const Topbar = ({ toggleSidebar, pageTitle = "Registrations" }) => {
+const Topbar = ({ 
+  toggleSidebar, 
+  pageTitle = "Registrations", 
+  isSidebarCollapsed = false 
+}) => {
   const [searchQuery, setSearchQuery] = useState('');
   const [isProfileOpen, setIsProfileOpen] = useState(false);
   const [isNotificationOpen, setIsNotificationOpen] = useState(false);
@@ -96,195 +100,200 @@ const Topbar = ({ toggleSidebar, pageTitle = "Registrations" }) => {
   };
 
   return (
-    <header className="topbar-container-3d">
-      {/* Left Section: 3D Toggle & Breadcrumb */}
-      <div className="topbar-left-3d">
-        <button 
-          className="btn-3d-tactile toggle-btn-3d" 
-          onClick={toggleSidebar} 
-          title="Toggle Navigation"
-          type="button"
-        >
-          <Menu size={18} />
-        </button>
-
-        <div className="breadcrumb-3d-capsule">
-          <div className="crumb-segment">
-            <Home size={13} className="crumb-ico" />
-            <span>Portal</span>
-          </div>
-          <ChevronRight size={12} className="crumb-divider" />
-          <div className="crumb-segment active-segment">
-            <span>{pageTitle}</span>
-          </div>
-        </div>
-      </div>
-
-      {/* Center: 3D Inset Carved Search Bar */}
-      <div className="topbar-center-3d">
-        <div className="search-inset-box">
-          <Search size={16} className="search-ico-3d" />
-          <input 
-            type="text" 
-            placeholder="Search candidates, applications, logs..."
-            value={searchQuery}
-            onChange={(e) => setSearchQuery(e.target.value)}
-            className="search-input-3d"
-          />
-          <div className="badge-3d-shortcut">
-            <Command size={10} />
-            <span>K</span>
-          </div>
-        </div>
-      </div>
-
-      {/* Right: 3D Controls & User Profile */}
-      <div className="topbar-right-3d">
-        {/* Status Pill with 3D Depth */}
-        <div className="status-pill-3d">
-          <span className="pulsing-core"></span>
-          <span className="pill-text">Super Admin</span>
-        </div>
-
-        {/* 3D Embossed Notification Button & Panel Container */}
-        <div className="notification-wrapper-3d">
+    <>
+      <header className={`topbar-container-3d ${isSidebarCollapsed ? 'sidebar-collapsed' : ''}`}>
+        {/* Left Section: 3D Toggle & Breadcrumb */}
+        <div className="topbar-left-3d">
           <button 
-            className={`btn-3d-tactile icon-btn-3d ${isNotificationOpen ? 'active' : ''}`}
-            title="Notifications" 
+            className="btn-3d-tactile toggle-btn-3d" 
+            onClick={toggleSidebar} 
+            title="Toggle Navigation"
             type="button"
-            onClick={() => {
-              setIsNotificationOpen(!isNotificationOpen);
-              setIsProfileOpen(false);
-            }}
           >
-            <Bell size={17} />
-            {unreadCount > 0 && <span className="badge-notification-3d">{unreadCount}</span>}
+            <Menu size={18} />
           </button>
 
-          {/* 3D Elevated Notification Dropdown */}
-          {isNotificationOpen && (
-            <>
-              <div className="backdrop-click-mask" onClick={() => setIsNotificationOpen(false)} />
-              <div className="dropdown-panel-3d notif-panel-3d">
-                <div className="notif-header-3d">
-                  <div className="notif-title-row">
-                    <span className="notif-heading">Notifications</span>
-                    {unreadCount > 0 && (
-                      <button className="btn-mark-all" onClick={markAllAsRead}>
-                        <CheckCheck size={14} /> Mark all read
+          <div className="breadcrumb-3d-capsule">
+            <div className="crumb-segment">
+              <Home size={13} className="crumb-ico" />
+              <span>Portal</span>
+            </div>
+            <ChevronRight size={12} className="crumb-divider" />
+            <div className="crumb-segment active-segment">
+              <span>{pageTitle}</span>
+            </div>
+          </div>
+        </div>
+
+        {/* Center: 3D Inset Carved Search Bar */}
+        <div className="topbar-center-3d">
+          <div className="search-inset-box">
+            <Search size={16} className="search-ico-3d" />
+            <input 
+              type="text" 
+              placeholder="Search candidates, applications, logs..."
+              value={searchQuery}
+              onChange={(e) => setSearchQuery(e.target.value)}
+              className="search-input-3d"
+            />
+            <div className="badge-3d-shortcut">
+              <Command size={10} />
+              <span>K</span>
+            </div>
+          </div>
+        </div>
+
+        {/* Right: 3D Controls & User Profile */}
+        <div className="topbar-right-3d">
+          {/* Status Pill with 3D Depth */}
+          <div className="status-pill-3d">
+            <span className="pulsing-core"></span>
+            <span className="pill-text">Super Admin</span>
+          </div>
+
+          {/* 3D Embossed Notification Button & Panel Container */}
+          <div className="notification-wrapper-3d">
+            <button 
+              className={`btn-3d-tactile icon-btn-3d ${isNotificationOpen ? 'active' : ''}`}
+              title="Notifications" 
+              type="button"
+              onClick={() => {
+                setIsNotificationOpen(!isNotificationOpen);
+                setIsProfileOpen(false);
+              }}
+            >
+              <Bell size={17} />
+              {unreadCount > 0 && <span className="badge-notification-3d">{unreadCount}</span>}
+            </button>
+
+            {/* 3D Elevated Notification Dropdown */}
+            {isNotificationOpen && (
+              <>
+                <div className="backdrop-click-mask" onClick={() => setIsNotificationOpen(false)} />
+                <div className="dropdown-panel-3d notif-panel-3d">
+                  <div className="notif-header-3d">
+                    <div className="notif-title-row">
+                      <span className="notif-heading">Notifications</span>
+                      {unreadCount > 0 && (
+                        <button className="btn-mark-all" onClick={markAllAsRead}>
+                          <CheckCheck size={14} /> Mark all read
+                        </button>
+                      )}
+                    </div>
+                    
+                    {/* Tabs */}
+                    <div className="notif-tabs">
+                      <button 
+                        className={`tab-btn ${activeTab === 'all' ? 'active' : ''}`}
+                        onClick={() => setActiveTab('all')}
+                      >
+                        All ({notifications.length})
                       </button>
+                      <button 
+                        className={`tab-btn ${activeTab === 'unread' ? 'active' : ''}`}
+                        onClick={() => setActiveTab('unread')}
+                      >
+                        Unread ({unreadCount})
+                      </button>
+                    </div>
+                  </div>
+
+                  {/* Notification Items List */}
+                  <div className="notif-body-3d">
+                    {filteredNotifications.length === 0 ? (
+                      <div className="notif-empty">
+                        <span>No notifications found</span>
+                      </div>
+                    ) : (
+                      filteredNotifications.map((notif) => (
+                        <div 
+                          key={notif.id} 
+                          className={`notif-item-3d ${!notif.read ? 'unread' : ''}`}
+                          onClick={() => toggleNotificationRead(notif.id)}
+                        >
+                          <div className="notif-icon-wrapper">
+                            {getTypeIcon(notif.type)}
+                          </div>
+                          <div className="notif-content">
+                            <div className="notif-item-header">
+                              <span className="notif-item-title">{notif.title}</span>
+                              <span className="notif-time">{notif.time}</span>
+                            </div>
+                            <p className="notif-item-msg">{notif.message}</p>
+                          </div>
+                          <button 
+                            className="btn-delete-notif" 
+                            title="Delete"
+                            onClick={(e) => {
+                              e.stopPropagation();
+                              removeNotification(notif.id);
+                            }}
+                          >
+                            <Trash2 size={13} />
+                          </button>
+                        </div>
+                      ))
                     )}
                   </div>
-                  
-                  {/* Tabs */}
-                  <div className="notif-tabs">
-                    <button 
-                      className={`tab-btn ${activeTab === 'all' ? 'active' : ''}`}
-                      onClick={() => setActiveTab('all')}
-                    >
-                      All ({notifications.length})
-                    </button>
-                    <button 
-                      className={`tab-btn ${activeTab === 'unread' ? 'active' : ''}`}
-                      onClick={() => setActiveTab('unread')}
-                    >
-                      Unread ({unreadCount})
+                </div>
+              </>
+            )}
+          </div>
+
+          <div className="groove-separator"></div>
+
+          {/* 3D Profile Card Menu */}
+          <div className="profile-wrapper-3d">
+            <button 
+              className="btn-3d-profile"
+              onClick={() => {
+                setIsProfileOpen(!isProfileOpen);
+                setIsNotificationOpen(false);
+              }}
+              type="button"
+            >
+              <div className="avatar-cube-3d">
+                <span>S</span>
+              </div>
+              <div className="profile-identity">
+                <span className="admin-name">System Admin</span>
+                <span className="admin-role">Super Access</span>
+              </div>
+              <ChevronDown size={14} className={`chevron-3d ${isProfileOpen ? 'rotate' : ''}`} />
+            </button>
+
+            {/* 3D Elevated Dropdown */}
+            {isProfileOpen && (
+              <>
+                <div className="backdrop-click-mask" onClick={() => setIsProfileOpen(false)} />
+                <div className="dropdown-panel-3d">
+                  <div className="panel-header-3d">
+                    <span className="hdr-name">System Admin</span>
+                    <span className="hdr-email">superadmin@hilux.com</span>
+                  </div>
+
+                  <div className="panel-actions-3d">
+                    <a href="#profile" className="item-action-3d" onClick={() => setIsProfileOpen(false)}>
+                      <User size={15} /> My Profile
+                    </a>
+                    <a href="#settings" className="item-action-3d" onClick={() => setIsProfileOpen(false)}>
+                      <Settings size={15} /> Settings
+                    </a>
+                    <div className="groove-horizontal"></div>
+                    <button className="item-action-3d logout-3d" onClick={() => setIsProfileOpen(false)}>
+                      <LogOut size={15} /> Sign Out
                     </button>
                   </div>
                 </div>
-
-                {/* Notification Items List */}
-                <div className="notif-body-3d">
-                  {filteredNotifications.length === 0 ? (
-                    <div className="notif-empty">
-                      <span>No notifications found</span>
-                    </div>
-                  ) : (
-                    filteredNotifications.map((notif) => (
-                      <div 
-                        key={notif.id} 
-                        className={`notif-item-3d ${!notif.read ? 'unread' : ''}`}
-                        onClick={() => toggleNotificationRead(notif.id)}
-                      >
-                        <div className="notif-icon-wrapper">
-                          {getTypeIcon(notif.type)}
-                        </div>
-                        <div className="notif-content">
-                          <div className="notif-item-header">
-                            <span className="notif-item-title">{notif.title}</span>
-                            <span className="notif-time">{notif.time}</span>
-                          </div>
-                          <p className="notif-item-msg">{notif.message}</p>
-                        </div>
-                        <button 
-                          className="btn-delete-notif" 
-                          title="Delete"
-                          onClick={(e) => {
-                            e.stopPropagation();
-                            removeNotification(notif.id);
-                          }}
-                        >
-                          <Trash2 size={13} />
-                        </button>
-                      </div>
-                    ))
-                  )}
-                </div>
-              </div>
-            </>
-          )}
+              </>
+            )}
+          </div>
         </div>
+      </header>
 
-        <div className="groove-separator"></div>
-
-        {/* 3D Profile Card Menu */}
-        <div className="profile-wrapper-3d">
-          <button 
-            className="btn-3d-profile"
-            onClick={() => {
-              setIsProfileOpen(!isProfileOpen);
-              setIsNotificationOpen(false);
-            }}
-            type="button"
-          >
-            <div className="avatar-cube-3d">
-              <span>S</span>
-            </div>
-            <div className="profile-identity">
-              <span className="admin-name">System Admin</span>
-              <span className="admin-role">Super Access</span>
-            </div>
-            <ChevronDown size={14} className={`chevron-3d ${isProfileOpen ? 'rotate' : ''}`} />
-          </button>
-
-          {/* 3D Elevated Dropdown */}
-          {isProfileOpen && (
-            <>
-              <div className="backdrop-click-mask" onClick={() => setIsProfileOpen(false)} />
-              <div className="dropdown-panel-3d">
-                <div className="panel-header-3d">
-                  <span className="hdr-name">System Admin</span>
-                  <span className="hdr-email">superadmin@hilux.com</span>
-                </div>
-
-                <div className="panel-actions-3d">
-                  <a href="#profile" className="item-action-3d" onClick={() => setIsProfileOpen(false)}>
-                    <User size={15} /> My Profile
-                  </a>
-                  <a href="#settings" className="item-action-3d" onClick={() => setIsProfileOpen(false)}>
-                    <Settings size={15} /> Settings
-                  </a>
-                  <div className="groove-horizontal"></div>
-                  <button className="item-action-3d logout-3d" onClick={() => setIsProfileOpen(false)}>
-                    <LogOut size={15} /> Sign Out
-                  </button>
-                </div>
-              </div>
-            </>
-          )}
-        </div>
-      </div>
-    </header>
+      {/* Spacer so main content does not slip under topbar */}
+      <div className="topbar-placeholder-spacer" />
+    </>
   );
 };
 
