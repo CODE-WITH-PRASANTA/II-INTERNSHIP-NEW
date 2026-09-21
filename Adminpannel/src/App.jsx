@@ -1,6 +1,6 @@
 import React from "react";
 import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
-
+ 
 // Components
 import UserAccounts from "./Component/UserAccounts/UserAccounts";
 import Registrations from "./Component/Registrations/Registrations";
@@ -18,7 +18,8 @@ import MediaDesk from "./Component/MediaDesk/MediaDesk";
 // Layout & Pages
 import MainLayout from "./Layout/Mainlayout/Mainlayout";
 import Dashboard from "./Pages/Dashboard/Dashboard";
-
+import ImmersionPrograms from "./Component/ImmersionPrograms/ImmersionPrograms";
+ 
 const App = () => {
   return (
     <BrowserRouter>
@@ -42,6 +43,8 @@ const App = () => {
           <Route path="/partners-onboard" element={<PartnersOnboard />} />
           <Route path="/blogs-board" element={<BlogsBoard />} />
           <Route path="/media-desk" element={<MediaDesk />} />
+          <Route path="/immersion-programs" element={<ImmersionPrograms />} />
+          
         </Route>
       </Routes>
     </BrowserRouter>

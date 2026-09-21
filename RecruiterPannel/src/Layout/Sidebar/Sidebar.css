@@ -1,0 +1,552 @@
+/* ==========================================
+                 SIDEBAR
+========================================== */
+
+.Sidebar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+  width: var(--sidebar-w, 280px);
+  height: 100vh;
+  height: 100dvh;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  color: #fff;
+  background:
+    radial-gradient(130% 65% at 0% 0%, rgba(68, 209, 144, 0.22) 0%, transparent 65%),
+    radial-gradient(80% 40% at 100% 100%, rgba(16, 185, 129, 0.15) 0%, transparent 55%),
+    linear-gradient(180deg, #0d5435 0%, #09422a 50%, #052e21 100%);
+  box-shadow: 4px 0 28px rgba(3, 23, 15, 0.35);
+  border-right: 1px solid rgba(255, 255, 255, 0.08);
+  transition: width 0.32s cubic-bezier(0.4, 0, 0.2, 1),
+              transform 0.32s cubic-bezier(0.4, 0, 0.2, 1),
+              box-shadow 0.32s ease;
+  user-select: none;
+}
+
+/* ==========================================
+              BACKGROUND GLOWS
+========================================== */
+
+.Sidebar-glow {
+  position: absolute;
+  pointer-events: none;
+  border-radius: 50%;
+  filter: blur(48px);
+  z-index: 0;
+}
+
+.Sidebar-glow-one {
+  top: -40px;
+  left: -40px;
+  width: 170px;
+  height: 170px;
+  background: rgba(52, 211, 153, 0.18);
+}
+
+.Sidebar-glow-two {
+  bottom: 80px;
+  right: -30px;
+  width: 140px;
+  height: 140px;
+  background: rgba(16, 185, 129, 0.12);
+}
+
+/* ==========================================
+            LEAF WATERMARK
+========================================== */
+
+.Sidebar-leaf {
+  position: absolute;
+  right: -30px;
+  bottom: -15px;
+  width: 210px;
+  height: 210px;
+  color: #fff;
+  opacity: 0.06;
+  pointer-events: none;
+  z-index: 0;
+  transition: right 0.35s ease, opacity 0.35s ease;
+}
+
+/* ==========================================
+              LOGO SECTION
+========================================== */
+
+.Sidebar-logoSection {
+  position: relative;
+  z-index: 2;
+  height: var(--topbar-h, 74px);
+  padding: 12px 14px;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+}
+
+.Sidebar-logoCard {
+  flex: 1;
+  min-width: 0;
+  height: 100%;
+  padding: 6px 12px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  background: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.16), 0 1px 3px rgba(0, 0, 0, 0.08);
+  overflow: hidden;
+  transition: all 0.25s ease;
+}
+
+.Sidebar-logoWrapper {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.Sidebar-logoImg {
+  max-width: 100%;
+  max-height: 100%;
+  width: auto;
+  height: auto;
+  object-fit: contain;
+  display: block;
+}
+
+/* Fallback Typography Logo */
+.Sidebar-logoFallback {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  width: 100%;
+}
+
+.Sidebar-logoMark {
+  width: 34px;
+  height: 34px;
+  flex-shrink: 0;
+  border-radius: 8px;
+  background: linear-gradient(135deg, #0e6440, #22a36b);
+  color: #fff;
+  font-size: 14px;
+  font-weight: 700;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0 2px 6px rgba(14, 100, 64, 0.3);
+}
+
+.Sidebar-logoText {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  line-height: 1.15;
+}
+
+.Sidebar-logoText strong {
+  font-size: 12.5px;
+  font-weight: 700;
+  color: #083424;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  letter-spacing: -0.2px;
+}
+
+.Sidebar-logoText small {
+  font-size: 8.5px;
+  font-weight: 600;
+  color: #4b6b5c;
+  white-space: nowrap;
+  letter-spacing: 0.4px;
+  margin-top: 1px;
+}
+
+/* ==========================================
+                 MENU
+========================================== */
+
+.Sidebar-menu {
+  position: relative;
+  z-index: 1;
+  flex: 1;
+  min-height: 0;
+  padding: 10px 12px;
+  overflow-x: hidden;
+  overflow-y: auto;
+  overscroll-behavior: contain;
+  -webkit-overflow-scrolling: touch;
+}
+
+.Sidebar-menu::-webkit-scrollbar {
+  width: 4px;
+}
+
+.Sidebar-menu::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.16);
+  border-radius: 10px;
+}
+
+.Sidebar-menu::-webkit-scrollbar-thumb:hover {
+  background: rgba(255, 255, 255, 0.3);
+}
+
+.Sidebar-section {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+  margin-bottom: 6px;
+}
+
+.Sidebar-sectionLabel {
+  padding: 14px 14px 6px;
+  font-size: 11px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.8px;
+  color: rgba(255, 255, 255, 0.55);
+  white-space: nowrap;
+}
+
+.Sidebar-sectionItems {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+
+.Sidebar-link {
+  min-height: 44px;
+  padding: 9px 14px;
+  display: flex;
+  align-items: center;
+  gap: 13px;
+  border-radius: 10px;
+  text-decoration: none;
+  font-size: 14px;
+  font-weight: 500;
+  color: rgba(255, 255, 255, 0.82);
+  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
+}
+
+.Sidebar-link:hover {
+  background: rgba(255, 255, 255, 0.08);
+  color: #ffffff;
+  transform: translateX(2px);
+}
+
+.Sidebar-link.active {
+  background: linear-gradient(135deg, rgba(46, 179, 122, 0.95), rgba(20, 125, 80, 0.95));
+  color: #ffffff;
+  font-weight: 600;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.22),
+              inset 0 1px 0 rgba(255, 255, 255, 0.2);
+}
+
+.Sidebar-link:focus-visible,
+.Sidebar-user:focus-visible,
+.Sidebar-collapse:focus-visible,
+.Sidebar-close:focus-visible {
+  outline: 2px solid #52e3a4;
+  outline-offset: 2px;
+}
+
+.Sidebar-icon {
+  width: 22px;
+  min-width: 22px;
+  font-size: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.Sidebar-icon svg {
+  stroke-width: 2;
+}
+
+.Sidebar-title {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  letter-spacing: -0.1px;
+}
+
+/* ==========================================
+                FOOTER
+========================================== */
+
+.Sidebar-footer {
+  position: relative;
+  z-index: 2;
+  flex-shrink: 0;
+  padding: 10px 12px 14px;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  background: rgba(5, 46, 33, 0.45);
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(8px);
+}
+
+.Sidebar-user,
+.Sidebar-collapse {
+  width: 100%;
+  border: none;
+  background: transparent;
+  color: inherit;
+  font: inherit;
+  text-align: left;
+  cursor: pointer;
+  border-radius: 10px;
+  transition: all 0.2s ease;
+}
+
+.Sidebar-user {
+  padding: 8px 10px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.Sidebar-user:hover,
+.Sidebar-collapse:hover {
+  background: rgba(255, 255, 255, 0.08);
+}
+
+.Sidebar-avatar {
+  width: 36px;
+  height: 36px;
+  flex-shrink: 0;
+  border-radius: 10px;
+  background: #f0fdf4;
+  color: #0b4f32;
+  font-size: 14px;
+  font-weight: 700;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+}
+
+.Sidebar-userInfo {
+  flex: 1;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  line-height: 1.25;
+}
+
+.Sidebar-userInfo strong {
+  font-size: 13.5px;
+  font-weight: 600;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  color: #fff;
+}
+
+.Sidebar-userInfo small {
+  font-size: 11.5px;
+  color: rgba(255, 255, 255, 0.65);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.Sidebar-userChevron {
+  flex-shrink: 0;
+  font-size: 16px;
+  color: rgba(255, 255, 255, 0.7);
+  transition: transform 0.2s ease;
+}
+
+.Sidebar-user:hover .Sidebar-userChevron {
+  color: #fff;
+}
+
+.Sidebar-collapse {
+  padding: 9px 12px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-size: 13.5px;
+  font-weight: 500;
+  color: rgba(255, 255, 255, 0.85);
+}
+
+.Sidebar-collapse svg {
+  font-size: 19px;
+  flex-shrink: 0;
+}
+
+/* ==========================================
+         CLOSE BUTTON (Mobile Drawer)
+========================================== */
+
+.Sidebar-close {
+  display: none;
+  position: absolute;
+  right: 18px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 32px;
+  height: 32px;
+  border: none;
+  border-radius: 8px;
+  background: rgba(11, 61, 42, 0.12);
+  color: #0b3d2a;
+  font-size: 18px;
+  cursor: pointer;
+  justify-content: center;
+  align-items: center;
+  transition: background 0.2s ease;
+}
+
+.Sidebar-close:hover {
+  background: rgba(11, 61, 42, 0.22);
+}
+
+/* ==========================================
+         OVERLAY (Mobile Drawer)
+========================================== */
+
+.Sidebar-overlay {
+  display: none;
+}
+
+/* ==========================================
+            DESKTOP COLLAPSED STATE
+========================================== */
+
+@media (min-width: 993px) {
+  .Sidebar.collapsed {
+    width: var(--sidebar-w-collapsed, 78px);
+  }
+
+  .Sidebar.collapsed .Sidebar-logoSection {
+    padding: 12px 10px;
+  }
+
+  .Sidebar.collapsed .Sidebar-logoCard {
+    padding: 6px;
+    justify-content: center;
+  }
+
+  .Sidebar.collapsed .Sidebar-logoText,
+  .Sidebar.collapsed .Sidebar-title,
+  .Sidebar.collapsed .Sidebar-userInfo,
+  .Sidebar.collapsed .Sidebar-userChevron,
+  .Sidebar.collapsed .Sidebar-collapseText,
+  .Sidebar.collapsed .Sidebar-sectionLabel span {
+    display: none;
+  }
+
+  .Sidebar.collapsed .Sidebar-sectionLabel {
+    height: 1px;
+    padding: 0;
+    margin: 12px 10px 8px;
+    background: rgba(255, 255, 255, 0.15);
+  }
+
+  .Sidebar.collapsed .Sidebar-link,
+  .Sidebar.collapsed .Sidebar-user,
+  .Sidebar.collapsed .Sidebar-collapse {
+    justify-content: center;
+    padding-left: 0;
+    padding-right: 0;
+  }
+
+  .Sidebar.collapsed .Sidebar-link:hover {
+    transform: none;
+  }
+
+  .Sidebar.collapsed .Sidebar-leaf {
+    right: -85px;
+  }
+}
+
+/* ==========================================
+            TABLET & MOBILE (Drawer)
+========================================== */
+
+@media (max-width: 992px) {
+  .Sidebar {
+    width: 280px;
+    transform: translateX(-100%);
+    box-shadow: none;
+  }
+
+  .Sidebar.mobile-open {
+    transform: translateX(0);
+    box-shadow: 0 0 45px rgba(0, 0, 0, 0.45);
+  }
+
+  .Sidebar-close {
+    display: flex;
+  }
+
+  .Sidebar-collapse {
+    display: none;
+  }
+
+  .Sidebar-overlay {
+    display: block;
+    position: fixed;
+    inset: 0;
+    z-index: 999;
+    background: rgba(3, 20, 13, 0.6);
+    backdrop-filter: blur(3px);
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+  }
+
+  .Sidebar-overlay.show {
+    opacity: 1;
+    visibility: visible;
+  }
+}
+
+/* ==========================================
+               MOBILE
+========================================== */
+
+@media (max-width: 768px) {
+  .Sidebar {
+    width: 265px;
+  }
+
+  .Sidebar-link {
+    min-height: 42px;
+    padding: 8px 12px;
+    font-size: 13.5px;
+  }
+}
+
+/* ==========================================
+            SMALL MOBILE
+========================================== */
+
+@media (max-width: 480px) {
+  .Sidebar {
+    width: 250px;
+  }
+
+  .Sidebar-logoSection {
+    padding: 10px 10px;
+  }
+
+  .Sidebar-link {
+    min-height: 40px;
+    padding: 8px 10px;
+    font-size: 13px;
+  }
+
+  .Sidebar-icon {
+    font-size: 18px;
+  }
+}

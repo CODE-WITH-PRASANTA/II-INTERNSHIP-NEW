@@ -1,0 +1,1532 @@
+/* =========================================================
+   MY PROFILE - MAIN
+========================================================= */
+
+.MyProfile {
+  width: 100%;
+  min-height: 100vh;
+  padding: 28px 32px 60px;
+  background: #ffffff;
+  color: #101010;
+  font-family:
+    Inter,
+    -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    sans-serif;
+  box-sizing: border-box;
+}
+
+.MyProfile *,
+.MyProfile *::before,
+.MyProfile *::after {
+  box-sizing: border-box;
+}
+
+/* =========================================================
+   HEADER
+========================================================= */
+
+.MyProfile__header {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  margin-bottom: 28px;
+}
+
+.MyProfile__headerLeft {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.MyProfile__headerIcon {
+  width: 50px;
+  height: 50px;
+  border-radius: 15px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #e9f5f1;
+  color: #00875f;
+  font-size: 21px;
+  flex-shrink: 0;
+}
+
+.MyProfile__title {
+  margin: 0;
+  font-size: 30px;
+  line-height: 1.15;
+  font-weight: 750;
+  color: #080808;
+}
+
+.MyProfile__subtitle {
+  margin: 5px 0 0;
+  color: #687086;
+  font-size: 16px;
+}
+
+.MyProfile__headerActions {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.MyProfile__printButton,
+.MyProfile__editButton {
+  min-height: 40px;
+  padding: 0 17px;
+  border-radius: 7px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  font-size: 14px;
+  cursor: pointer;
+  transition: 0.2s ease;
+}
+
+.MyProfile__printButton {
+  border: 1px solid #00885f;
+  background: #00885f;
+  color: #fff;
+}
+
+.MyProfile__printButton:hover {
+  background: #00724f;
+  transform: translateY(-1px);
+}
+
+.MyProfile__editButton {
+  border: 1px solid #d9dde4;
+  background: #fff;
+  color: #111827;
+}
+
+.MyProfile__editButton:hover {
+  background: #f7f8f9;
+}
+
+/* =========================================================
+   PRINT AREA
+========================================================= */
+
+.MyProfile__printArea {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.MyProfile__application {
+  width: 930px;
+  max-width: 100%;
+  border: 1px solid #9ba9d2;
+  padding: 28px;
+  background: #fff;
+  color: #08204d;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 12px;
+}
+
+.MyProfile__applicationHeader {
+  min-height: 72px;
+  border-bottom: 1px solid #8e9bc1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+.MyProfile__applicationTitle {
+  text-align: center;
+}
+
+.MyProfile__applicationTitle h2 {
+  margin: 0;
+  color: #3c25a6;
+  font-size: 19px;
+  font-weight: 700;
+}
+
+.MyProfile__applicationTitle p {
+  margin: 6px 0 0;
+  color: #00164b;
+  font-weight: 600;
+}
+
+.MyProfile__qr {
+  width: 70px;
+  height: 70px;
+  position: absolute;
+  right: 5px;
+  top: 1px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #000;
+  font-size: 67px;
+}
+
+.MyProfile__applicationMeta {
+  min-height: 30px;
+  border-bottom: 1px solid #9ba9d2;
+  display: flex;
+  align-items: center;
+  gap: 25px;
+}
+
+.MyProfile__applicationMeta span {
+  white-space: nowrap;
+}
+
+.MyProfile__printSection {
+  margin-top: 15px;
+}
+
+.MyProfile__printSectionTitle {
+  background: #f0f3fa;
+  border-top: 1px solid #9ba9d2;
+  border-bottom: 1px solid #9ba9d2;
+  padding: 7px 8px;
+  font-weight: 700;
+}
+
+.MyProfile__printSectionHeading {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #f0f3fa;
+  border-top: 1px solid #9ba9d2;
+  border-bottom: 1px solid #9ba9d2;
+  padding: 7px 8px;
+}
+
+.MyProfile__printSectionHeading span {
+  font-weight: 400;
+}
+
+.MyProfile__personalGrid {
+  display: grid;
+  grid-template-columns: 1fr 120px;
+}
+
+.MyProfile__personalRows {
+  border-left: 1px solid #b8c4dd;
+}
+
+.MyProfile__printRow {
+  min-height: 29px;
+  display: grid;
+  grid-template-columns: 38% 62%;
+  border-bottom: 1px solid #c3cce0;
+}
+
+.MyProfile__printRow span,
+.MyProfile__printRow strong {
+  padding: 6px 8px;
+}
+
+.MyProfile__printRow span {
+  border-right: 1px solid #c3cce0;
+  font-weight: 400;
+}
+
+.MyProfile__printRow strong {
+  font-weight: 400;
+}
+
+.MyProfile__profilePhotoBox {
+  border-right: 1px solid #b8c4dd;
+  border-bottom: 1px solid #b8c4dd;
+  padding: 7px;
+}
+
+.MyProfile__profilePhoto {
+  width: 100%;
+  height: 130px;
+  display: block;
+  object-fit: cover;
+}
+
+.MyProfile__addressGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  margin-top: 10px;
+}
+
+.MyProfile__addressBox {
+  border: 1px solid #c3cce0;
+}
+
+.MyProfile__addressBox + .MyProfile__addressBox {
+  border-left: 0;
+}
+
+.MyProfile__addressTitle {
+  background: #f0f3fa;
+  padding: 7px;
+  font-weight: 700;
+}
+
+.MyProfile__addressBox p {
+  margin: 0;
+  padding: 9px;
+  line-height: 1.5;
+}
+
+.MyProfile__tableWrapper {
+  width: 100%;
+  overflow-x: auto;
+}
+
+.MyProfile__table {
+  width: 100%;
+  border-collapse: collapse;
+  min-width: 650px;
+}
+
+.MyProfile__table th,
+.MyProfile__table td {
+  border: 1px solid #bdc8df;
+  padding: 7px 8px;
+  text-align: left;
+  vertical-align: top;
+  line-height: 1.45;
+}
+
+.MyProfile__table th {
+  background: #f0f3fa;
+  font-weight: 700;
+}
+
+.MyProfile__printText {
+  padding: 0 8px;
+}
+
+.MyProfile__documentList,
+.MyProfile__specificList {
+  margin: 8px 0 0;
+  padding-left: 22px;
+  line-height: 1.55;
+}
+
+.MyProfile__declarationText {
+  padding: 0 8px;
+  line-height: 1.65;
+}
+
+.MyProfile__signatureArea {
+  min-height: 105px;
+  border-top: 1px solid #9ba9d2;
+  margin-top: 15px;
+  padding-top: 8px;
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+}
+
+.MyProfile__signatureArea p {
+  margin: 0 0 5px;
+}
+
+.MyProfile__signatureBox {
+  width: 170px;
+  text-align: center;
+}
+
+.MyProfile__signatureImage {
+  width: 100px;
+  height: 55px;
+  object-fit: cover;
+  display: block;
+  margin: 0 auto 5px;
+}
+
+/* =========================================================
+   MODAL
+========================================================= */
+
+.MyProfile__modalOverlay {
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  background: rgba(0, 0, 0, 0.62);
+  display: flex;
+  align-items: stretch;
+  justify-content: center;
+  padding: 0;
+  overflow: auto;
+  animation: MyProfileFadeIn 0.2s ease;
+}
+
+@keyframes MyProfileFadeIn {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+.MyProfile__registrationModal {
+  width: 100%;
+  min-height: 100vh;
+  display: grid;
+  grid-template-columns: minmax(350px, 44%) minmax(600px, 56%);
+  background: #fff;
+  overflow: hidden;
+}
+
+/* =========================================================
+   SIDEBAR
+========================================================= */
+
+.MyProfile__registrationSidebar {
+  min-height: 100vh;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 48px 44px;
+  background:
+    radial-gradient(
+      circle at 70% 25%,
+      rgba(18, 118, 56, 0.72),
+      transparent 28%
+    ),
+    radial-gradient(
+      circle at 30% 80%,
+      rgba(0, 91, 41, 0.5),
+      transparent 34%
+    ),
+    linear-gradient(
+      145deg,
+      #020403 0%,
+      #051009 45%,
+      #103d1c 75%,
+      #05130a 100%
+    );
+  color: #fff;
+  overflow: hidden;
+}
+
+.MyProfile__registrationSidebar::before {
+  content: "";
+  position: absolute;
+  width: 500px;
+  height: 500px;
+  left: -160px;
+  bottom: 80px;
+  border-radius: 44% 56% 61% 39%;
+  border: 34px solid rgba(102, 190, 112, 0.25);
+  transform: rotate(-28deg);
+  filter: blur(1px);
+}
+
+.MyProfile__registrationSidebar::after {
+  content: "";
+  position: absolute;
+  width: 430px;
+  height: 700px;
+  right: -250px;
+  top: -100px;
+  border-radius: 50%;
+  border-left: 35px solid rgba(72, 161, 92, 0.3);
+  transform: rotate(20deg);
+}
+
+.MyProfile__sidebarLogo {
+  position: relative;
+  z-index: 2;
+  width: 165px;
+  min-height: 88px;
+  padding: 12px;
+  background: #fff;
+  color: #111;
+  border-radius: 9px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  box-shadow: 0 10px 35px rgba(0, 0, 0, 0.25);
+}
+
+.MyProfile__fakeLogo {
+  width: 42px;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #168348;
+  font-weight: 800;
+  font-size: 19px;
+  border-radius: 50%;
+  background:
+    radial-gradient(circle, #fff 35%, transparent 36%),
+    conic-gradient(
+      #f2c900,
+      #2d84c6,
+      #e24e35,
+      #3c9d59,
+      #f2c900
+    );
+}
+
+.MyProfile__sidebarLogo strong {
+  display: block;
+  font-size: 8px;
+  line-height: 1.35;
+}
+
+.MyProfile__sidebarContent {
+  position: relative;
+  z-index: 3;
+  max-width: 92%;
+  padding: 28px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 16px;
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+}
+
+.MyProfile__sidebarContent h3 {
+  margin: 0;
+  font-size: 17px;
+  line-height: 1.55;
+  color: rgba(255, 255, 255, 0.93);
+}
+
+.MyProfile__sidebarDivider {
+  width: 100%;
+  height: 1px;
+  margin: 20px 0;
+  background: rgba(255, 255, 255, 0.16);
+}
+
+.MyProfile__sidebarContent > strong {
+  display: block;
+  font-size: 14px;
+}
+
+.MyProfile__sidebarContent > span {
+  display: block;
+  margin-top: 3px;
+  color: rgba(255, 255, 255, 0.62);
+  font-size: 12px;
+}
+
+/* =========================================================
+   REGISTRATION CONTENT
+========================================================= */
+
+.MyProfile__registrationContent {
+  height: 100vh;
+  overflow-y: auto;
+  padding: 25px 38px 45px;
+  background: #f8faf9;
+}
+
+.MyProfile__registrationTop {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 15px;
+  margin-bottom: 18px;
+}
+
+.MyProfile__registrationTop h2 {
+  margin: 0;
+  color: #090b0b;
+  font-size: 31px;
+  line-height: 1.15;
+}
+
+.MyProfile__registrationTop p {
+  margin: 5px 0 0;
+  color: #69707b;
+  font-size: 15px;
+}
+
+.MyProfile__modalClose {
+  width: 38px;
+  height: 38px;
+  border: 1px solid #dfe3e7;
+  background: #fff;
+  color: #535a62;
+  border-radius: 9px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.MyProfile__modalClose:hover {
+  background: #f2f4f4;
+}
+
+/* =========================================================
+   STEPS
+========================================================= */
+
+.MyProfile__steps {
+  width: 100%;
+  min-height: 110px;
+  padding: 20px 28px;
+  display: flex;
+  align-items: flex-start;
+  border: 1px solid #e1e5e4;
+  border-radius: 16px;
+  background: #fff;
+  margin-bottom: 20px;
+}
+
+.MyProfile__step {
+  flex: 0 0 auto;
+  min-width: 100px;
+  border: 0;
+  background: transparent;
+  padding: 0;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 7px;
+}
+
+.MyProfile__stepCircle {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background: #f3f4f4;
+  border: 1px solid #e1e3e4;
+  color: #737881;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  font-size: 16px;
+}
+
+.MyProfile__step--active .MyProfile__stepCircle,
+.MyProfile__step--completed .MyProfile__stepCircle {
+  color: #fff;
+  background: #00895f;
+  border-color: #00895f;
+}
+
+.MyProfile__step--active .MyProfile__stepText strong,
+.MyProfile__step--completed .MyProfile__stepText strong {
+  color: #00895f;
+}
+
+.MyProfile__stepText {
+  text-align: center;
+}
+
+.MyProfile__stepText strong {
+  display: block;
+  color: #6d727b;
+  font-size: 13px;
+}
+
+.MyProfile__stepText small {
+  display: block;
+  margin-top: 2px;
+  color: #92969c;
+  font-size: 11px;
+}
+
+.MyProfile__stepLine {
+  flex: 1;
+  height: 3px;
+  margin-top: 23px;
+  background: #eeeeee;
+}
+
+.MyProfile__stepLine--completed {
+  background: #00895f;
+}
+
+/* =========================================================
+   REGISTRATION CARD
+========================================================= */
+
+.MyProfile__registrationCard {
+  background: #fff;
+  border: 1px solid #e0e4e2;
+  border-radius: 16px;
+  padding: 25px;
+  box-shadow: 0 5px 20px rgba(20, 40, 30, 0.07);
+}
+
+.MyProfile__registrationCardHeader {
+  padding-bottom: 16px;
+  margin-bottom: 25px;
+  border-bottom: 1px solid #e7e9e8;
+}
+
+.MyProfile__registrationCardHeader h3 {
+  margin: 0;
+  font-size: 21px;
+  color: #0b0d0e;
+}
+
+.MyProfile__registrationCardHeader p {
+  margin: 4px 0 0;
+  color: #69727d;
+  font-size: 13px;
+}
+
+/* =========================================================
+   FORM
+========================================================= */
+
+.MyProfile__formGrid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 19px 20px;
+}
+
+.MyProfile__field {
+  min-width: 0;
+}
+
+.MyProfile__field--full {
+  grid-column: 1 / -1;
+}
+
+.MyProfile__field label {
+  display: block;
+  margin-bottom: 7px;
+  color: #111;
+  font-size: 11px;
+  line-height: 1.3;
+  font-weight: 700;
+}
+
+.MyProfile__field label span {
+  color: #e32222;
+  margin-left: 2px;
+}
+
+.MyProfile__optional {
+  color: #777f88;
+  font-size: 10px;
+  font-weight: 500;
+  margin-left: 2px;
+}
+
+.MyProfile__inputWrapper {
+  position: relative;
+}
+
+.MyProfile__inputWrapper input,
+.MyProfile__selectWrapper select {
+  width: 100%;
+  height: 39px;
+  padding: 0 12px;
+  border: 1px solid #dfe2e5;
+  border-radius: 7px;
+  background: #fbfbfb;
+  color: #101318;
+  font-size: 13px;
+  outline: none;
+  transition: 0.2s ease;
+}
+
+.MyProfile__inputWrapper input:focus,
+.MyProfile__selectWrapper select:focus {
+  border-color: #00895f;
+  background: #fff;
+  box-shadow: 0 0 0 3px rgba(0, 137, 95, 0.08);
+}
+
+.MyProfile__inputWrapper input:disabled {
+  color: #777;
+  background: #f1f2f2;
+  cursor: not-allowed;
+}
+
+.MyProfile__inputIcon {
+  position: absolute;
+  z-index: 2;
+  left: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #747b84;
+}
+
+.MyProfile__inputIcon + input {
+  padding-left: 35px;
+}
+
+.MyProfile__calendarIcon {
+  position: absolute;
+  right: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #737a82;
+  pointer-events: none;
+}
+
+.MyProfile__inputWrapper input[type="date"] {
+  padding-right: 40px;
+}
+
+.MyProfile__selectWrapper {
+  position: relative;
+}
+
+.MyProfile__selectWrapper select {
+  appearance: none;
+  -webkit-appearance: none;
+  padding-right: 35px;
+  cursor: pointer;
+}
+
+.MyProfile__selectWrapper svg {
+  position: absolute;
+  right: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+  pointer-events: none;
+  color: #707780;
+  font-size: 11px;
+}
+
+/* =========================================================
+   ADDRESS
+========================================================= */
+
+.MyProfile__addressAccordion {
+  margin-top: 22px;
+  border: 1px solid #e0e3e4;
+  border-radius: 13px;
+  overflow: hidden;
+  background: #fff;
+}
+
+.MyProfile__accordionHeader {
+  width: 100%;
+  min-height: 54px;
+  padding: 0 18px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border: 0;
+  background: #fff;
+  color: #101314;
+  cursor: pointer;
+  font-size: 15px;
+  font-weight: 700;
+}
+
+.MyProfile__accordionHeader span {
+  display: flex;
+  align-items: center;
+  gap: 11px;
+}
+
+.MyProfile__accordionHeader span svg {
+  color: #00895f;
+}
+
+.MyProfile__accordionHeader em {
+  color: #e11;
+  font-style: normal;
+}
+
+.MyProfile__accordionBody {
+  padding: 18px;
+  border-top: 1px solid #e7e9e9;
+  background: #fafafa;
+}
+
+.MyProfile__addressFormGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 18px;
+  margin-top: 18px;
+}
+
+.MyProfile__sameAddress {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin: 20px 0;
+  cursor: pointer;
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.MyProfile__sameAddress input,
+.MyProfile__declarationCheck input {
+  width: 19px;
+  height: 19px;
+  accent-color: #00895f;
+  cursor: pointer;
+}
+
+/* =========================================================
+   ITEM LIST
+========================================================= */
+
+.MyProfile__itemsList {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-bottom: 20px;
+}
+
+.MyProfile__itemCard {
+  min-height: 74px;
+  padding: 15px;
+  border: 1px solid #e0e4e3;
+  border-radius: 13px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 15px;
+  background: #fff;
+}
+
+.MyProfile__itemCard > div:first-child {
+  min-width: 0;
+}
+
+.MyProfile__itemCard strong {
+  display: block;
+  color: #111;
+  font-size: 14px;
+}
+
+.MyProfile__itemCard small {
+  display: block;
+  margin-top: 4px;
+  color: #7a8088;
+  font-size: 11px;
+}
+
+.MyProfile__itemActions {
+  display: flex;
+  gap: 12px;
+  flex-shrink: 0;
+}
+
+.MyProfile__iconButton {
+  width: 30px;
+  height: 30px;
+  border: 0;
+  background: transparent;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.MyProfile__iconButton--edit {
+  color: #00895f;
+}
+
+.MyProfile__iconButton--delete {
+  color: #e51f26;
+}
+
+.MyProfile__addBox {
+  padding: 18px;
+  border: 1px solid #e0e3e4;
+  border-radius: 13px;
+  background: #fff;
+}
+
+.MyProfile__addBox h4 {
+  margin: 0 0 20px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: #111;
+  font-size: 14px;
+}
+
+.MyProfile__addBox h4 svg {
+  color: #00895f;
+}
+
+/* =========================================================
+   FILE UPLOAD
+========================================================= */
+
+.MyProfile__fileControl {
+  min-height: 39px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  border: 1px solid #dfe2e5;
+  border-radius: 7px;
+  background: #fbfbfb;
+  padding: 3px;
+  overflow: hidden;
+}
+
+.MyProfile__fileControl button {
+  height: 31px;
+  padding: 0 10px;
+  border: 1px solid #d9dcdf;
+  border-radius: 6px;
+  background: #fff;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  cursor: pointer;
+  white-space: nowrap;
+}
+
+.MyProfile__fileControl span {
+  min-width: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  color: #838991;
+  font-size: 11px;
+}
+
+/* =========================================================
+   SAVE / NAVIGATION
+========================================================= */
+
+.MyProfile__saveAddButton {
+  min-height: 35px;
+  margin-top: 17px;
+  padding: 0 13px;
+  border: 0;
+  border-radius: 6px;
+  background: #00895f;
+  color: #fff;
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  cursor: pointer;
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.MyProfile__saveAddButton:hover,
+.MyProfile__nextButton:hover,
+.MyProfile__finalButton:hover {
+  background: #00724f;
+}
+
+.MyProfile__navigation {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 15px;
+  margin-top: 23px;
+  padding-top: 17px;
+  border-top: 1px solid #e3e5e5;
+}
+
+.MyProfile__previousButton,
+.MyProfile__nextButton,
+.MyProfile__finalButton {
+  min-height: 38px;
+  padding: 0 17px;
+  border-radius: 6px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  cursor: pointer;
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.MyProfile__previousButton {
+  background: #fff;
+  border: 1px solid #dfe3e3;
+  color: #17191b;
+}
+
+.MyProfile__previousButton:hover {
+  background: #f6f7f7;
+}
+
+.MyProfile__nextButton,
+.MyProfile__finalButton {
+  border: 1px solid #00895f;
+  background: #00895f;
+  color: #fff;
+}
+
+/* =========================================================
+   UPLOAD CARDS
+========================================================= */
+
+.MyProfile__uploadGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 18px;
+}
+
+.MyProfile__uploadCard {
+  min-height: 235px;
+  padding: 22px;
+  border: 1px dashed #d7dddc;
+  border-radius: 14px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  text-align: center;
+}
+
+.MyProfile__uploadCard h4 {
+  margin: 0 0 18px;
+  color: #111;
+  font-size: 15px;
+}
+
+.MyProfile__uploadButton {
+  min-height: 39px;
+  padding: 0 15px;
+  border: 1px solid #dfe2e2;
+  border-radius: 7px;
+  background: #fff;
+  color: #121414;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  cursor: pointer;
+}
+
+.MyProfile__uploadButton:hover {
+  border-color: #00895f;
+  color: #00895f;
+}
+
+.MyProfile__uploadedName {
+  max-width: 100%;
+  margin-top: 13px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  color: #7a8187;
+  font-size: 12px;
+}
+
+.MyProfile__uploadPhoto {
+  width: 92px;
+  height: 92px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-bottom: 15px;
+}
+
+.MyProfile__uploadSignature {
+  width: 130px;
+  height: 58px;
+  object-fit: cover;
+  border: 1px solid #e0e3e3;
+  margin-bottom: 15px;
+}
+
+/* =========================================================
+   DECLARATION
+========================================================= */
+
+.MyProfile__declarationCheck {
+  margin-top: 27px;
+  padding-top: 20px;
+  border-top: 1px solid #e2e5e4;
+  display: flex;
+  align-items: flex-start;
+  gap: 13px;
+  cursor: pointer;
+  color: #111;
+  font-size: 12px;
+  font-weight: 700;
+  line-height: 1.35;
+}
+
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media (max-width: 1200px) {
+  .MyProfile {
+    padding: 22px;
+  }
+
+  .MyProfile__registrationModal {
+    grid-template-columns: 330px 1fr;
+  }
+
+  .MyProfile__registrationSidebar {
+    padding: 35px 25px;
+  }
+
+  .MyProfile__registrationContent {
+    padding: 22px;
+  }
+
+  .MyProfile__formGrid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .MyProfile__uploadGrid {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .MyProfile__uploadCard:last-child {
+    grid-column: 1 / -1;
+  }
+}
+
+/* =========================================================
+   TABLET SMALL
+========================================================= */
+
+@media (max-width: 900px) {
+  .MyProfile__header {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .MyProfile__headerActions {
+    width: 100%;
+  }
+
+  .MyProfile__printButton,
+  .MyProfile__editButton {
+    flex: 1;
+  }
+
+  .MyProfile__registrationModal {
+    grid-template-columns: 1fr;
+  }
+
+  .MyProfile__registrationSidebar {
+    min-height: 270px;
+    height: 270px;
+    padding: 25px;
+  }
+
+  .MyProfile__sidebarContent {
+    max-width: 100%;
+    padding: 18px;
+  }
+
+  .MyProfile__sidebarContent h3 {
+    font-size: 14px;
+  }
+
+  .MyProfile__registrationContent {
+    height: auto;
+    min-height: calc(100vh - 270px);
+  }
+}
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 650px) {
+  .MyProfile {
+    padding: 15px 10px 40px;
+  }
+
+  .MyProfile__headerLeft {
+    align-items: flex-start;
+  }
+
+  .MyProfile__title {
+    font-size: 24px;
+  }
+
+  .MyProfile__subtitle {
+    font-size: 13px;
+    line-height: 1.5;
+  }
+
+  .MyProfile__headerActions {
+    flex-direction: column;
+  }
+
+  .MyProfile__printButton,
+  .MyProfile__editButton {
+    width: 100%;
+  }
+
+  .MyProfile__application {
+    padding: 12px;
+    font-size: 9px;
+  }
+
+  .MyProfile__applicationHeader {
+    padding-right: 55px;
+  }
+
+  .MyProfile__applicationTitle h2 {
+    font-size: 13px;
+  }
+
+  .MyProfile__applicationTitle p {
+    font-size: 9px;
+  }
+
+  .MyProfile__qr {
+    width: 45px;
+    height: 45px;
+    font-size: 42px;
+  }
+
+  .MyProfile__applicationMeta {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 4px;
+    padding: 6px 0;
+  }
+
+  .MyProfile__personalGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .MyProfile__profilePhotoBox {
+    display: flex;
+    justify-content: center;
+    padding: 10px;
+  }
+
+  .MyProfile__profilePhoto {
+    width: 100px;
+    height: 100px;
+  }
+
+  .MyProfile__addressGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .MyProfile__addressBox + .MyProfile__addressBox {
+    border-left: 1px solid #c3cce0;
+    border-top: 0;
+  }
+
+  .MyProfile__printSectionHeading {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 4px;
+  }
+
+  .MyProfile__registrationSidebar {
+    min-height: 235px;
+    height: 235px;
+    padding: 20px;
+  }
+
+  .MyProfile__sidebarLogo {
+    width: 145px;
+    min-height: 65px;
+  }
+
+  .MyProfile__sidebarContent {
+    padding: 14px;
+  }
+
+  .MyProfile__sidebarContent h3 {
+    font-size: 12px;
+  }
+
+  .MyProfile__sidebarDivider {
+    margin: 12px 0;
+  }
+
+  .MyProfile__registrationContent {
+    padding: 17px 12px 30px;
+  }
+
+  .MyProfile__registrationTop h2 {
+    font-size: 24px;
+  }
+
+  .MyProfile__registrationTop p {
+    font-size: 12px;
+  }
+
+  .MyProfile__steps {
+    padding: 14px 5px;
+    min-height: 95px;
+    overflow-x: auto;
+  }
+
+  .MyProfile__step {
+    min-width: 78px;
+  }
+
+  .MyProfile__stepCircle {
+    width: 38px;
+    height: 38px;
+    font-size: 13px;
+  }
+
+  .MyProfile__stepText strong {
+    font-size: 10px;
+  }
+
+  .MyProfile__stepText small {
+    font-size: 9px;
+  }
+
+  .MyProfile__stepLine {
+    margin-top: 18px;
+  }
+
+  .MyProfile__registrationCard {
+    padding: 15px;
+    border-radius: 12px;
+  }
+
+  .MyProfile__registrationCardHeader h3 {
+    font-size: 18px;
+  }
+
+  .MyProfile__registrationCardHeader p {
+    line-height: 1.5;
+  }
+
+  .MyProfile__formGrid {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+
+  .MyProfile__addressFormGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .MyProfile__uploadGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .MyProfile__uploadCard:last-child {
+    grid-column: auto;
+  }
+
+  .MyProfile__navigation {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .MyProfile__navigation > span {
+    display: none;
+  }
+
+  .MyProfile__previousButton,
+  .MyProfile__nextButton,
+  .MyProfile__finalButton {
+    width: 100%;
+  }
+
+  .MyProfile__itemCard {
+    align-items: flex-start;
+  }
+
+  .MyProfile__itemActions {
+    gap: 3px;
+  }
+
+  .MyProfile__declarationCheck {
+    font-size: 10px;
+  }
+}
+
+/* =========================================================
+   VERY SMALL MOBILE
+========================================================= */
+
+@media (max-width: 400px) {
+  .MyProfile__title {
+    font-size: 21px;
+  }
+
+  .MyProfile__headerIcon {
+    width: 42px;
+    height: 42px;
+  }
+
+  .MyProfile__registrationTop h2 {
+    font-size: 21px;
+  }
+
+  .MyProfile__step {
+    min-width: 67px;
+  }
+
+  .MyProfile__stepCircle {
+    width: 34px;
+    height: 34px;
+  }
+
+  .MyProfile__registrationCard {
+    padding: 12px;
+  }
+}
+
+/* =========================================================
+   PRINT / SAVE PDF
+========================================================= */
+
+@media print {
+  @page {
+    size: A4;
+    margin: 8mm;
+  }
+
+  html,
+  body {
+    margin: 0 !important;
+    padding: 0 !important;
+    background: #fff !important;
+  }
+
+  .MyProfile {
+    padding: 0 !important;
+    background: #fff !important;
+  }
+
+  .MyProfile__header {
+    display: none !important;
+  }
+
+  .MyProfile__modalOverlay {
+    display: none !important;
+  }
+
+  .MyProfile__printArea {
+    display: block !important;
+  }
+
+  .MyProfile__application {
+    width: 100% !important;
+    max-width: none !important;
+    border: 1px solid #8e9bc1 !important;
+    margin: 0 !important;
+    padding: 15px !important;
+  }
+
+  .MyProfile__printSection {
+    break-inside: avoid;
+    page-break-inside: avoid;
+  }
+
+  .MyProfile__table {
+    page-break-inside: auto;
+  }
+
+  .MyProfile__table tr {
+    page-break-inside: avoid;
+    page-break-after: auto;
+  }
+}

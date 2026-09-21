@@ -1,0 +1,945 @@
+/* ==========================================================================
+   COMPONENT: ImmersionPrograms
+   Theme Color: #008F68 (Emerald Green Accent)
+   Font Family: Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto
+========================================================================== */
+
+/* Main Container */
+.ImmersionPrograms-container {
+  box-sizing: border-box;
+  padding: 24px 32px;
+  background-color: #ffffff;
+  min-height: 100vh;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
+    Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  color: #1e293b;
+  -webkit-font-smoothing: antialiased;
+}
+
+.ImmersionPrograms-container *,
+.ImmersionPrograms-container *::before,
+.ImmersionPrograms-container *::after {
+  box-sizing: border-box;
+}
+
+/* Header Section */
+.ImmersionPrograms-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  gap: 16px;
+  margin-bottom: 24px;
+}
+
+.ImmersionPrograms-header__titles {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.ImmersionPrograms-header__title {
+  font-size: 24px;
+  font-weight: 700;
+  color: #0f172a;
+  letter-spacing: -0.02em;
+  margin: 0;
+}
+
+.ImmersionPrograms-header__subtitle {
+  font-size: 14px;
+  color: #64748b;
+  font-weight: 400;
+  margin: 0;
+}
+
+.ImmersionPrograms-header__actions {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.ImmersionPrograms-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 8px 18px;
+  border-radius: 8px;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.15s ease;
+  line-height: 1.4;
+}
+
+.ImmersionPrograms-btn--category {
+  background-color: #ffffff;
+  color: #0f172a;
+  border: 1px solid #e2e8f0;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+}
+
+.ImmersionPrograms-btn--category:hover {
+  background-color: #f8fafc;
+  border-color: #cbd5e1;
+}
+
+.ImmersionPrograms-btn--program {
+  background-color: #008f68;
+  color: #ffffff;
+  border: 1px solid #008f68;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.08);
+}
+
+.ImmersionPrograms-btn--program:hover {
+  background-color: #007a58;
+}
+
+.ImmersionPrograms-btn__icon {
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 1;
+}
+
+/* Tabs Strip */
+.ImmersionPrograms-tabs {
+  display: flex;
+  align-items: center;
+  gap: 28px;
+  border-bottom: 1px solid #e2e8f0;
+  margin-bottom: 24px;
+}
+
+.ImmersionPrograms-tabs__item {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: transparent;
+  border: none;
+  padding: 12px 2px;
+  font-size: 14px;
+  font-weight: 500;
+  color: #64748b;
+  cursor: pointer;
+  position: relative;
+  transition: color 0.15s ease;
+}
+
+.ImmersionPrograms-tabs__item:hover {
+  color: #0f172a;
+}
+
+.ImmersionPrograms-tabs__item--active {
+  color: #0f172a;
+  font-weight: 600;
+}
+
+.ImmersionPrograms-tabs__item--active::after {
+  content: "";
+  position: absolute;
+  bottom: -1px;
+  left: 0;
+  right: 0;
+  height: 2.5px;
+  background-color: #008f68;
+  border-radius: 2px 2px 0 0;
+}
+
+.ImmersionPrograms-tabs__icon {
+  width: 17px;
+  height: 17px;
+}
+
+/* Layout with Optional Sidebar */
+.ImmersionPrograms-content {
+  display: flex;
+  gap: 24px;
+  align-items: flex-start;
+}
+
+.ImmersionPrograms-sidebar {
+  width: 220px;
+  flex-shrink: 0;
+  padding: 8px 12px 16px 0;
+  border-right: 1px solid #f1f5f9;
+}
+
+.ImmersionPrograms-sidebar__heading {
+  font-size: 14px;
+  font-weight: 600;
+  color: #0f172a;
+  margin: 0 0 16px 0;
+}
+
+.ImmersionPrograms-sidebar__list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.ImmersionPrograms-sidebar__item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 13px;
+  color: #334155;
+  cursor: pointer;
+  user-select: none;
+}
+
+.ImmersionPrograms-sidebar__checkbox {
+  width: 16px;
+  height: 16px;
+  accent-color: #008f68;
+  cursor: pointer;
+  border-radius: 4px;
+}
+
+.ImmersionPrograms-sidebar__text {
+  line-height: 1.3;
+}
+
+/* Main Area & Controls */
+.ImmersionPrograms-main {
+  flex: 1;
+  min-width: 0;
+}
+
+.ImmersionPrograms-controls {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 20px;
+  flex-wrap: wrap;
+}
+
+.ImmersionPrograms-controls__btn-filter {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background-color: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 8px;
+  padding: 8px 14px;
+  font-size: 13px;
+  font-weight: 500;
+  color: #1e293b;
+  cursor: pointer;
+  transition: all 0.15s ease;
+}
+
+.ImmersionPrograms-controls__btn-filter:hover {
+  background-color: #f8fafc;
+}
+
+.ImmersionPrograms-controls__filter-icon {
+  width: 14px;
+  height: 14px;
+  color: #475569;
+}
+
+.ImmersionPrograms-controls__search {
+  position: relative;
+  width: 280px;
+  max-width: 100%;
+}
+
+.ImmersionPrograms-controls__search-icon {
+  position: absolute;
+  left: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 15px;
+  height: 15px;
+  color: #94a3b8;
+  pointer-events: none;
+}
+
+.ImmersionPrograms-controls__search-input {
+  width: 100%;
+  padding: 8px 12px 8px 32px;
+  font-size: 13px;
+  border: 1px solid #e2e8f0;
+  border-radius: 8px;
+  background-color: #ffffff;
+  color: #1e293b;
+  outline: none;
+  transition: border-color 0.15s ease;
+}
+
+.ImmersionPrograms-controls__search-input:focus {
+  border-color: #008f68;
+}
+
+/* Empty State */
+.ImmersionPrograms-empty {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  min-height: 380px;
+  background-color: #fafbfc;
+  border-radius: 8px;
+  margin-top: 10px;
+}
+
+.ImmersionPrograms-empty__icon {
+  width: 22px;
+  height: 22px;
+}
+
+.ImmersionPrograms-empty__text {
+  font-size: 14px;
+  color: #64748b;
+  font-weight: 500;
+  margin: 0;
+}
+
+/* Table Design */
+.ImmersionPrograms-table-responsive {
+  width: 100%;
+  overflow-x: auto;
+}
+
+.ImmersionPrograms-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 13.5px;
+}
+
+.ImmersionPrograms-table__header-row {
+  background-color: #f8fafc;
+  border-top: 1px solid #f1f5f9;
+  border-bottom: 1px solid #f1f5f9;
+}
+
+.ImmersionPrograms-table th {
+  text-align: left;
+  padding: 12px 14px;
+  font-size: 11.5px;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  color: #64748b;
+  white-space: nowrap;
+}
+
+.ImmersionPrograms-table td {
+  padding: 14px;
+  vertical-align: middle;
+  border-bottom: 1px solid #f8fafc;
+}
+
+.ImmersionPrograms-table__body-row:hover {
+  background-color: #fafbfc;
+}
+
+/* Badges & Cell Formats */
+.ImmersionPrograms-badge-id {
+  display: inline-block;
+  background-color: #e6f7f2;
+  color: #008f68;
+  font-family: monospace;
+  font-weight: 700;
+  font-size: 12px;
+  padding: 4px 8px;
+  border-radius: 6px;
+  white-space: nowrap;
+}
+
+.ImmersionPrograms-title-text {
+  font-weight: 600;
+  color: #0f172a;
+  margin-bottom: 3px;
+}
+
+.ImmersionPrograms-category-tag {
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  color: #64748b;
+}
+
+.ImmersionPrograms-table__cell-location,
+.ImmersionPrograms-table__cell-duration {
+  color: #334155;
+  font-size: 13px;
+}
+
+.ImmersionPrograms-fees-text {
+  color: #008f68;
+  font-weight: 600;
+  font-size: 13px;
+}
+
+/* 3-Dot Actions */
+.ImmersionPrograms-table__cell-actions {
+  position: relative;
+  text-align: right;
+}
+
+.ImmersionPrograms-menu-container {
+  position: relative;
+  display: inline-block;
+}
+
+.ImmersionPrograms-menu-trigger {
+  background: transparent;
+  border: none;
+  font-size: 18px;
+  letter-spacing: 1.5px;
+  color: #64748b;
+  cursor: pointer;
+  padding: 4px 8px;
+  border-radius: 4px;
+}
+
+.ImmersionPrograms-menu-trigger:hover {
+  background-color: #f1f5f9;
+  color: #0f172a;
+}
+
+.ImmersionPrograms-menu-dropdown {
+  position: absolute;
+  right: 0;
+  top: 100%;
+  margin-top: 4px;
+  width: 170px;
+  background-color: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 8px;
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1),
+    0 4px 6px -4px rgba(0, 0, 0, 0.1);
+  padding: 6px 0;
+  z-index: 50;
+}
+
+.ImmersionPrograms-menu-dropdown__item {
+  display: block;
+  width: 100%;
+  text-align: left;
+  background: transparent;
+  border: none;
+  padding: 8px 14px;
+  font-size: 13px;
+  color: #1e293b;
+  cursor: pointer;
+}
+
+.ImmersionPrograms-menu-dropdown__item:hover {
+  background-color: #f8fafc;
+}
+
+.ImmersionPrograms-menu-dropdown__item--delete {
+  color: #ef4444;
+}
+
+.ImmersionPrograms-menu-dropdown__item--delete:hover {
+  background-color: #fef2f2;
+}
+
+/* Pagination */
+.ImmersionPrograms-pagination {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 32px;
+  padding: 16px 0 0 0;
+  margin-top: 16px;
+  font-size: 13px;
+  color: #334155;
+  flex-wrap: wrap;
+}
+
+.ImmersionPrograms-pagination__rows {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.ImmersionPrograms-pagination__label {
+  font-size: 13px;
+  color: #334155;
+}
+
+.ImmersionPrograms-pagination__select {
+  border: 1px solid #e2e8f0;
+  border-radius: 6px;
+  padding: 5px 12px;
+  font-size: 13px;
+  background-color: #ffffff;
+  color: #0f172a;
+  outline: none;
+  cursor: pointer;
+}
+
+.ImmersionPrograms-pagination__nav {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.ImmersionPrograms-pagination__page-info {
+  font-size: 13px;
+  color: #0f172a;
+  font-weight: 500;
+}
+
+.ImmersionPrograms-pagination__buttons {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.ImmersionPrograms-pagination__arrow {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 6px;
+  font-size: 14px;
+  color: #334155;
+  cursor: pointer;
+  transition: all 0.15s ease;
+}
+
+.ImmersionPrograms-pagination__arrow:hover:not(:disabled) {
+  background-color: #f8fafc;
+  color: #0f172a;
+}
+
+.ImmersionPrograms-pagination__arrow:disabled {
+  opacity: 0.35;
+  cursor: not-allowed;
+}
+
+/* Modals Overlay & Common Elements */
+.ImmersionPrograms-modal-overlay {
+  position: fixed;
+  inset: 0;
+  background-color: rgba(15, 23, 42, 0.45);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 16px;
+  z-index: 1000;
+}
+
+.ImmersionPrograms-modal-box {
+  background-color: #ffffff;
+  border-radius: 12px;
+  width: 100%;
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+  padding: 24px;
+  position: relative;
+}
+
+.ImmersionPrograms-modal-box--sm {
+  max-width: 480px;
+}
+
+.ImmersionPrograms-modal-box--lg {
+  max-width: 580px;
+  max-height: 90vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.ImmersionPrograms-modal-box--details {
+  max-width: 580px;
+  max-height: 90vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.ImmersionPrograms-modal-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.ImmersionPrograms-modal-title {
+  font-size: 18px;
+  font-weight: 700;
+  color: #0f172a;
+  margin: 0;
+}
+
+.ImmersionPrograms-modal-close {
+  background: transparent;
+  border: none;
+  font-size: 16px;
+  color: #64748b;
+  cursor: pointer;
+  padding: 4px;
+}
+
+.ImmersionPrograms-modal-close:hover {
+  color: #0f172a;
+}
+
+.ImmersionPrograms-modal-subtitle {
+  font-size: 13.5px;
+  color: #64748b;
+  margin-top: 4px;
+  margin-bottom: 20px;
+}
+
+/* Modal Scroll Container with Hidden Scrollbars */
+.ImmersionPrograms-modal-scroll {
+  overflow-y: auto;
+  padding-right: 4px;
+  -ms-overflow-style: none; /* IE/Edge */
+  scrollbar-width: none; /* Firefox */
+}
+
+.ImmersionPrograms-modal-scroll::-webkit-scrollbar {
+  display: none; /* Chrome, Safari, Edge */
+}
+
+/* Modal Form Fields */
+.ImmersionPrograms-form-group {
+  margin-bottom: 16px;
+}
+
+.ImmersionPrograms-form-label {
+  display: block;
+  font-size: 11.5px;
+  font-weight: 700;
+  letter-spacing: 0.03em;
+  color: #1e293b;
+  margin-bottom: 6px;
+}
+
+.ImmersionPrograms-form-input {
+  width: 100%;
+  padding: 9px 12px;
+  border: 1px solid #e2e8f0;
+  border-radius: 6px;
+  font-size: 13.5px;
+  color: #1e293b;
+  outline: none;
+  background-color: #fbfcfe;
+  transition: border-color 0.15s ease;
+}
+
+.ImmersionPrograms-form-input:focus {
+  border-color: #008f68;
+  background-color: #ffffff;
+}
+
+.ImmersionPrograms-form-select {
+  cursor: pointer;
+}
+
+.ImmersionPrograms-form-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+
+/* Modal Action Footer Buttons */
+.ImmersionPrograms-modal-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+}
+
+.ImmersionPrograms-modal-actions--border {
+  border-top: 1px solid #f1f5f9;
+  padding-top: 16px;
+  margin-top: 16px;
+}
+
+.ImmersionPrograms-modal-btn {
+  padding: 8px 18px;
+  border-radius: 6px;
+  font-size: 13.5px;
+  font-weight: 500;
+  cursor: pointer;
+  line-height: 1.4;
+}
+
+.ImmersionPrograms-modal-btn--cancel {
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  color: #0f172a;
+}
+
+.ImmersionPrograms-modal-btn--cancel:hover {
+  background-color: #f8fafc;
+}
+
+.ImmersionPrograms-modal-btn--submit {
+  background: #008f68;
+  border: 1px solid #008f68;
+  color: #ffffff;
+  padding-left: 20px;
+  padding-right: 20px;
+}
+
+.ImmersionPrograms-modal-btn--submit:hover {
+  background-color: #007a58;
+}
+
+/* Rich Editor */
+.ImmersionPrograms-editor {
+  border: 1px solid #e2e8f0;
+  border-radius: 8px;
+  overflow: hidden;
+  background-color: #ffffff;
+}
+
+.ImmersionPrograms-editor__toolbar {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 6px;
+  padding: 8px 12px;
+  border-bottom: 1px solid #e2e8f0;
+  background-color: #ffffff;
+}
+
+.ImmersionPrograms-editor__tool {
+  background: transparent;
+  border: none;
+  font-size: 12px;
+  font-weight: 600;
+  color: #475569;
+  cursor: pointer;
+  padding: 4px 6px;
+  border-radius: 4px;
+}
+
+.ImmersionPrograms-editor__tool:hover {
+  background-color: #f1f5f9;
+}
+
+.ImmersionPrograms-editor__sep {
+  color: #cbd5e1;
+  margin: 0 4px;
+}
+
+.ImmersionPrograms-editor__html {
+  margin-left: auto;
+  font-size: 11px;
+  font-weight: 600;
+  color: #64748b;
+}
+
+.ImmersionPrograms-editor__area {
+  width: 100%;
+  border: none;
+  outline: none;
+  padding: 12px;
+  font-size: 13px;
+  font-family: inherit;
+  resize: vertical;
+}
+
+.ImmersionPrograms-editor__hint {
+  border-top: 1px solid #f1f5f9;
+  padding: 8px 12px;
+  font-size: 11px;
+  color: #64748b;
+  background-color: #fbfcfe;
+}
+
+/* Details Modal Specs (Image 9) */
+.ImmersionPrograms-details-title-row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.ImmersionPrograms-details-info-icon {
+  width: 20px;
+  height: 20px;
+}
+
+.ImmersionPrograms-card-banner {
+  border: 1px solid #e2e8f0;
+  border-radius: 8px;
+  padding: 16px;
+  margin-bottom: 16px;
+  background-color: #ffffff;
+}
+
+.ImmersionPrograms-card-banner__badges {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 12px;
+}
+
+.ImmersionPrograms-badge-category {
+  display: inline-block;
+  background-color: #e6f7f2;
+  color: #008f68;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.03em;
+  padding: 4px 10px;
+  border-radius: 12px;
+}
+
+.ImmersionPrograms-badge-active {
+  background-color: #eafaf1;
+  color: #008f68;
+  border: 1px solid #b7ebd0;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.03em;
+  padding: 3px 8px;
+  border-radius: 12px;
+}
+
+.ImmersionPrograms-card-banner__name {
+  font-size: 16px;
+  font-weight: 700;
+  color: #0f172a;
+  margin: 0;
+}
+
+.ImmersionPrograms-specs-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+  margin-bottom: 16px;
+}
+
+.ImmersionPrograms-spec-card {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  border: 1px solid #f1f5f9;
+  border-radius: 8px;
+  padding: 12px 14px;
+  background-color: #ffffff;
+}
+
+.ImmersionPrograms-spec-card__icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.ImmersionPrograms-spec-card__label {
+  font-size: 10px;
+  font-weight: 700;
+  color: #64748b;
+  letter-spacing: 0.03em;
+  margin-bottom: 2px;
+}
+
+.ImmersionPrograms-spec-card__value {
+  font-size: 13.5px;
+  font-weight: 700;
+  color: #0f172a;
+}
+
+.ImmersionPrograms-spec-card__value--green {
+  color: #008f68;
+}
+
+.ImmersionPrograms-section-block {
+  margin-bottom: 16px;
+}
+
+.ImmersionPrograms-section-heading {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  margin-bottom: 8px;
+}
+
+.ImmersionPrograms-section-heading h4 {
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  color: #1e293b;
+  margin: 0;
+}
+
+.ImmersionPrograms-description-box {
+  border: 1px solid #f1f5f9;
+  border-radius: 8px;
+  padding: 12px 14px;
+  font-size: 13px;
+  color: #475569;
+  background-color: #ffffff;
+  line-height: 1.5;
+}
+
+.ImmersionPrograms-features-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+
+.ImmersionPrograms-list-card {
+  border: 1px solid #f1f5f9;
+  border-radius: 8px;
+  padding: 14px;
+  background-color: #ffffff;
+  min-height: 140px;
+}
+
+.ImmersionPrograms-bullet-list {
+  list-style: disc;
+  padding-left: 18px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin: 0;
+}
+
+.ImmersionPrograms-bullet-list li {
+  font-size: 12.5px;
+  color: #475569;
+  line-height: 1.4;
+}
+
+/* ---------------- Responsive Styles ---------------- */
+@media (max-width: 900px) {
+  .ImmersionPrograms-content {
+    flex-direction: column;
+  }
+  .ImmersionPrograms-sidebar {
+    width: 100%;
+    border-right: none;
+    border-bottom: 1px solid #e2e8f0;
+    padding-bottom: 16px;
+  }
+  .ImmersionPrograms-sidebar__list {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+    gap: 8px;
+  }
+}
+
+@media (max-width: 640px) {
+  .ImmersionPrograms-container {
+    padding: 16px;
+  }
+  .ImmersionPrograms-header {
+    flex-direction: column;
+  }
+  .ImmersionPrograms-header__actions {
+    width: 100%;
+  }
+  .ImmersionPrograms-btn {
+    flex: 1;
+    justify-content: center;
+  }
+  .ImmersionPrograms-form-grid,
+  .ImmersionPrograms-specs-grid,
+  .ImmersionPrograms-features-grid {
+    grid-template-columns: 1fr;
+  }
+  .ImmersionPrograms-pagination {
+    justify-content: center;
+  }
+}
